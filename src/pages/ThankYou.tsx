@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Send, Phone, Mail, User, MessageSquare } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -18,6 +20,7 @@ const staggerContainer = {
 
 const ThankYou = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -31,16 +34,46 @@ const ThankYou = () => {
     setForm((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Send to Supabase
-    console.log("Lead submitted:", { ...form, timestamp: new Date().toISOString(), source: "funnel", step: "booking" });
+    setLoading(true);
+
+    // Get UTM source from URL params
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get("utm_source") || params.get("ref") || "direct";
+
+    const { error } = await supabase.from("leads").insert({
+      full_name: form.name,
+      email: form.email,
+      whatsapp: form.whatsapp,
+      has_store: form.hasStore,
+      revenue_goal: form.revenueGoal,
+      ready_to_invest: form.readyToInvest,
+      source,
+      funnel_step: "booking",
+    });
+
+    setLoading(false);
+
+    if (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Strategy call booked! 🎉",
+      description: "We'll reach out via WhatsApp within 24 hours.",
+    });
     setSubmitted(true);
   };
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <div className="min-h-screen bg-background flex items-center justify-center px-4 pt-16">
         <motion.div
           className="glass-card p-10 text-center max-w-md mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -66,7 +99,7 @@ const ThankYou = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background py-12 sm:py-20">
+    <div className="min-h-screen bg-background py-12 sm:py-20 pt-28">
       <div className="section-container">
         <motion.div
           className="max-w-xl mx-auto"
@@ -136,7 +169,7 @@ const ThankYou = () => {
                   value={form.whatsapp}
                   onChange={(e) => handleChange("whatsapp", e.target.value)}
                   className="w-full bg-secondary/50 border border-border rounded-lg py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder:text-muted-foreground"
-                  placeholder="+91 98765 43210"
+                  placeholder="+1 555 123 4567"
                 />
               </div>
             </div>
@@ -166,7 +199,7 @@ const ThankYou = () => {
             <div>
               <label className="text-sm font-medium mb-2 block">Monthly Revenue Goal?</label>
               <div className="grid grid-cols-3 gap-3">
-                {["₹5 Lakh", "₹10 Lakh+", "₹50 Lakh+"].map((opt) => (
+                {["$5K", "$10K+", "$50K+"].map((opt) => (
                   <button
                     key={opt}
                     type="button"
@@ -206,9 +239,10 @@ const ThankYou = () => {
 
             <button
               type="submit"
-              className="gradient-cta w-full py-4 rounded-lg text-base font-bold flex items-center justify-center gap-2"
+              disabled={loading}
+              className="gradient-cta w-full py-4 rounded-lg text-base font-bold flex items-center justify-center gap-2 disabled:opacity-60"
             >
-              <Send className="w-5 h-5" /> Confirm My Strategy Call
+              <Send className="w-5 h-5" /> {loading ? "Submitting..." : "Confirm My Strategy Call"}
             </button>
 
             <p className="text-xs text-muted-foreground text-center">

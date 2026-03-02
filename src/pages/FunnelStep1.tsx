@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, Play, Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, CreditCard, LineChart } from "lucide-react";
+import { CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, CreditCard, LineChart } from "lucide-react";
+import PortfolioSection from "@/components/PortfolioSection";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,11 +19,14 @@ const staggerContainer = {
 
 const FunnelStep1 = () => {
   const navigate = useNavigate();
-
   const handleCTA = () => navigate("/thank-you");
 
+  const scrollToServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="min-h-screen bg-background overflow-hidden">
+    <div className="min-h-screen bg-background overflow-hidden pt-16">
       {/* Hero Section */}
       <section className="relative radial-glow py-20 sm:py-28 lg:py-36">
         <div className="section-container relative z-10">
@@ -76,6 +80,7 @@ const FunnelStep1 = () => {
                 className="absolute inset-0 w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -126,15 +131,18 @@ const FunnelStep1 = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 text-primary font-semibold text-lg mb-4">
+            <button
+              onClick={scrollToServices}
+              className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:gap-3 transition-all cursor-pointer bg-transparent border-none"
+            >
               <ArrowRight className="w-5 h-5" /> How Shopify Pros Fixes This
-            </div>
+            </button>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20">
+      <section id="services" className="py-20">
         <div className="section-container">
           <motion.div
             initial="hidden"
@@ -182,6 +190,9 @@ const FunnelStep1 = () => {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <PortfolioSection />
+
       {/* Social Proof Section */}
       <section className="py-20 relative radial-glow">
         <div className="section-container relative z-10">
@@ -197,7 +208,6 @@ const FunnelStep1 = () => {
             </motion.h2>
           </motion.div>
 
-          {/* Stats Row */}
           <motion.div
             className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
             initial="hidden"
@@ -207,7 +217,7 @@ const FunnelStep1 = () => {
           >
             {[
               { value: "100+", label: "Stores Launched" },
-              { value: "₹5 Cr+", label: "Client Revenue Generated" },
+              { value: "$2M+", label: "Client Revenue Generated" },
               { value: "150k+", label: "Orders Processed" },
               { value: "30-Day", label: "Avg Delivery" },
             ].map((stat, i) => (
@@ -218,7 +228,6 @@ const FunnelStep1 = () => {
             ))}
           </motion.div>
 
-          {/* Testimonials */}
           <motion.div
             className="grid sm:grid-cols-3 gap-6"
             initial="hidden"
@@ -249,7 +258,7 @@ const FunnelStep1 = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20">
+      <section id="pricing" className="py-20">
         <div className="section-container">
           <motion.div
             initial="hidden"
@@ -270,10 +279,9 @@ const FunnelStep1 = () => {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            {/* Starter */}
             <motion.div variants={fadeInUp} custom={0} className="glass-card p-8 flex flex-col">
               <h3 className="text-xl font-bold mb-1">Starter</h3>
-              <div className="text-3xl font-black text-gradient-gold mb-2">₹1,50,000</div>
+              <div className="text-3xl font-black text-gradient-gold mb-2">$1,800</div>
               <p className="text-sm text-muted-foreground mb-6">Ideal for new brands validating product-market fit.</p>
               <ul className="space-y-3 mb-8 flex-1">
                 {["Custom theme development", "Mobile-optimized design", "5 core pages", "Basic CRO setup", "14-day delivery"].map((item, i) => (
@@ -288,7 +296,6 @@ const FunnelStep1 = () => {
               </button>
             </motion.div>
 
-            {/* Growth */}
             <motion.div variants={fadeInUp} custom={1} className="glass-card p-8 flex flex-col border border-primary/30 relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
                 POPULAR
@@ -313,7 +320,7 @@ const FunnelStep1 = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 relative radial-glow">
+      <section id="final-cta" className="py-24 relative radial-glow">
         <div className="section-container relative z-10 text-center">
           <motion.div
             initial="hidden"
