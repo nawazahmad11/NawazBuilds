@@ -42,7 +42,7 @@ const ThankYou = () => {
     const params = new URLSearchParams(window.location.search);
     const source = params.get("utm_source") || params.get("ref") || "direct";
 
-    const { error } = await supabase.from("leads").insert({
+    const { error } = await supabase.from("ShopifyTable").insert({
       full_name: form.name,
       email: form.email,
       whatsapp: form.whatsapp,
