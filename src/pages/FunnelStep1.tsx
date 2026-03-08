@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, CreditCard, LineChart } from "lucide-react";
+import { 
+  CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, 
+  Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, 
+  CreditCard, LineChart 
+} from "lucide-react";
 import PortfolioSection from "@/components/PortfolioSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
+import PricingSection from "@/components/PricingSection";
+
 
 
 const fadeInUp = {
@@ -34,12 +40,11 @@ const FunnelStep1 = () => {
       {/* 1. Vignette Effect Overlay */}
       <div className="vignette-overlay" />
 
-      {/* 2. Hero Section (Updated with Mesh Glow Wrapper) */}
-      <section className="relative overflow-hidden py-24 lg:py-26 z-20">
-        {/* Background Glows */}
+      {/* 2. Hero Section */}
+      <section className="relative overflow-hidden py-24 lg:py-17 z-20">
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full opacity-50" />
-          <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] bg-gold/5 blur-[100px] rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full opacity-50 pointer-events-none" />
+          <div className="absolute top-[-10%] right-[-5%] w-[300px] h-[300px] bg-gold/5 blur-[100px] rounded-full pointer-events-none" />
         </div>
 
         <div className="section-container relative z-10">
@@ -49,12 +54,12 @@ const FunnelStep1 = () => {
             animate="visible"
             variants={staggerContainer}
           >
-            {/* UPDATED: Available for New Opportunities with SHIMMER */}
             <motion.div variants={fadeInUp} custom={0} className="mb-8 flex justify-center">
-              <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                 <a 
-                  className="hover:bg-white/10 bg-muted/30 group flex w-fit items-center gap-4 rounded-full p-1.5 pl-5 transition-all duration-300" 
-                  href="#services"
+                  className="hover:bg-white/10 bg-muted/30 group flex w-fit items-center gap-4 rounded-full p-1.5 pl-5 transition-all duration-300 cursor-pointer" 
+                  onClick={(e) => { e.preventDefault(); scrollToServices(); }}
+                  aria-label="Available for New Opportunities, scroll to services"
                 >
                   <span className="shimmer-text-effect text-sm font-semibold tracking-wide">
                     Available for New Opportunities
@@ -74,18 +79,17 @@ const FunnelStep1 = () => {
               </div>
             </motion.div>
 
-            {/* NEON HERO TITLE SECTION */}
             <motion.h1 
               variants={fadeInUp} 
               custom={2} 
-              className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-16 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
+              className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
             >
               Shopify <span className="relative inline-block">
                 <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
                       style={{ 
                         backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
                         WebkitBackgroundClip: "text",
-                        animation: "aurora 5s linear infinite"
+                        animation: "aurora 2s linear infinite"
                       }}>
                   Expert
                 </span>
@@ -110,36 +114,40 @@ const FunnelStep1 = () => {
             <motion.p 
               variants={fadeInUp} 
               custom={3} 
-              className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 mt-12 font-light leading-relaxed"
+              className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed"
             >
-              I build high-performance Shopify stores that turn browsers into buyers—focused on speed, conversion, and 7-figure scalability.
+              I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
             </motion.p>
 
             <motion.div variants={fadeInUp} custom={5} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <button onClick={handleCTA} className="gradient-cta px-8 py-4 rounded-lg text-lg animate-pulse-glow flex items-center gap-2">
+              <button 
+                onClick={handleCTA} 
+                className="gradient-cta px-8 py-4 rounded-lg text-lg animate-pulse-glow flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-xl shadow-primary/20"
+                aria-label="Book Free Strategy Call"
+              >
                 <Target className="w-5 h-5" /> Book Free Strategy Call
               </button>
             </motion.div>
             <motion.div variants={fadeInUp} custom={6} className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 check-green" /> No obligation</span>
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 check-green" /> Free consultation</span>
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 check-green" /> Limited monthly slots</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No obligation</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Free consultation</span>
+              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Limited monthly slots</span>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* 3. Video Section */}
-      <section className="py-16 z-20 relative">
+      {/* 3. Video*/}
+      <section className="py-0 z-20 relative">
         <div className="section-container">
           <motion.div
-            className="max-w-3xl mx-auto glass-card p-2 rounded-xl shadow-2xl shadow-primary/10"
+            className="max-w-3xl mx-auto glass-card p-2 rounded-xl shadow-2xl shadow-primary/10 border border-white/10"
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            whileInView={{ opacity: 1, scale: 1.12 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative aspect-video rounded-lg overflow-hidden">
+            <div className="relative aspect-video rounded-lg overflow-hidden bg-black/50">
               <iframe
                 src="https://www.youtube.com/embed/nTqJnVJi1K4"
                 title="Shopify Pros - Watch How We Build"
@@ -153,15 +161,13 @@ const FunnelStep1 = () => {
         </div>
       </section>
 
-      {/* 4. NEW STATS SECTION */}
-      
-      {/* 5. Problem → Solution Section (REPLACED WITH 3D TILT VERSION) */}
-      <section className="py-6 relative z-20">
+      {/* 4. Problem → Solution */}
+      <section className="py-20 relative z-20">
         <div className="section-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
             className="text-center mb-12"
           >
@@ -191,14 +197,14 @@ const FunnelStep1 = () => {
                 variants={fadeInUp} 
                 custom={i} 
                 whileHover={{ scale: 1.05, rotateX: 8, rotateY: -8, z: 50 }}
-                className="glass-card p-8 text-center relative group transition-all duration-300 border border-white/5 hover:border-destructive/30"
+                className="glass-card p-8 text-center relative group transition-all duration-300 border border-white/5 hover:border-destructive/40 bg-white/[0.02]"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <div className="absolute -inset-1 bg-gradient-to-b from-destructive/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity -z-10" />
-                <div className="w-14 h-14 rounded-lg bg-destructive/10 flex items-center justify-center mx-auto mb-6 shadow-lg" style={{ transform: "translateZ(30px)" }}>
-                  <item.icon className="w-7 h-7 text-destructive" />
+                <div className="absolute -inset-1 bg-gradient-to-b from-destructive/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10" />
+                <div className="w-14 h-14 rounded-lg bg-destructive/10 flex items-center justify-center mx-auto mb-6 shadow-lg border border-destructive/20" style={{ transform: "translateZ(30px)" }}>
+                  <item.icon className="w-7 h-7 text-destructive group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <h3 className="font-bold text-xl mb-3 text-white" style={{ transform: "translateZ(40px)" }}>{item.title}</h3>
+                <h3 className="font-bold text-xl mb-3 text-white group-hover:text-destructive/90 transition-colors" style={{ transform: "translateZ(40px)" }}>{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed" style={{ transform: "translateZ(20px)" }}>{item.desc}</p>
               </motion.div>
             ))}
@@ -212,23 +218,24 @@ const FunnelStep1 = () => {
           >
             <button
               onClick={scrollToServices}
-              className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:gap-3 transition-all cursor-pointer bg-transparent border-none"
+              aria-label="Scroll to how we fix this"
+              className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:gap-4 hover:text-primary/80 transition-all cursor-pointer bg-transparent border-none"
             >
-              <ArrowRight className="w-5 h-5" /> How Shopify Pros Fixes This
+              How Shopify Pros Fixes This <ArrowRight className="w-5 h-5" /> 
             </button>
           </motion.div>
         </div>
       </section>
 
-     {/* 6. Services Section - SLEEK & COMPACT VERSION */}
-     <section id="services" className="py-20 z-20 relative">
+     {/* 5. Services Section*/}
+     <section id="services" className="py-5 z-20 relative">
         <div className="section-container">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
-            className="text-center mb-10" // Margin kam kar di
+            className="text-center mb-10"
           >
             <motion.h2 variants={fadeInUp} custom={0} className="text-3xl sm:text-4xl font-bold mb-3 text-white tracking-tight">
               What I Build For You
@@ -239,7 +246,7 @@ const FunnelStep1 = () => {
           </motion.div>
 
           <motion.div
-            className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto" // Gap aur max-width kam kar di
+            className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto" 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -259,23 +266,22 @@ const FunnelStep1 = () => {
                 key={i}
                 variants={fadeInUp}
                 custom={i}
-                whileHover={{ y: -3, scale: 1.01 }} // Subtle movement
-                className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-primary/40 hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-md overflow-hidden"
+                whileHover={{ y: -3, scale: 1.02 }} 
+                className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-primary/50 hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-md overflow-hidden cursor-default"
               >
-                {/* Subtle Hover Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300" />
                 
-                <div className="flex-shrink-0">
-                  <div className="p-1.5 rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                <div className="flex-shrink-0 z-10">
+                  <div className="p-1.5 rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300 shadow-sm shadow-primary/20">
                     <CheckCircle className="w-4 h-4" />
                   </div>
                 </div>
 
-                <div className="flex flex-col">
-                  <h4 className="text-sm font-semibold text-white group-hover:text-primary transition-colors">
+                <div className="flex flex-col z-10">
+                  <h4 className="text-sm font-semibold text-white group-hover:text-primary transition-colors duration-300">
                     {item.label}
                   </h4>
-                  <p className="text-[10px] text-white/40 group-hover:text-white/60 transition-colors leading-tight">
+                  <p className="text-[10px] text-white/50 group-hover:text-white/80 transition-colors leading-tight">
                     {item.desc}
                   </p>
                 </div>
@@ -285,7 +291,7 @@ const FunnelStep1 = () => {
         </div>
       </section>
 
-{/* About Section is here*/}
+{/* About Section*/}
 <div className="z-20 relative">
         <AboutSection />
       </div>
@@ -296,13 +302,12 @@ const FunnelStep1 = () => {
         <PortfolioSection />
       </div>
 
-     {/* 8. Social Proof & Testimonials Section */}
-<section className="py-8 relative overflow-hidden z-20">
+     {/* 8. Social Proof & Testimonials */}
+<section className="py-12 relative overflow-hidden z-20">
   <div className="section-container relative z-10 text-white">
     
-    {/* STATS ROW - Clean & Professional */}
     <motion.div
-      className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-8 bg-white/[0.01] backdrop-blur-sm"
+      className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-10 bg-white/[0.01] backdrop-blur-sm shadow-inner"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -314,22 +319,21 @@ const FunnelStep1 = () => {
         { value: "150k+", label: "Orders Processed" },
         { value: "30-Day", label: "Avg Delivery" },
       ].map((stat, i) => (
-        <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group">
-          <div className="text-4xl sm:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+        <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group cursor-default">
+          <div className="text-4xl sm:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(var(--primary),0.3)]">
             {stat.value}
           </div>
-          <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em]">
+          <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
             {stat.label}
           </div>
         </motion.div>
       ))}
     </motion.div>
 
-    {/* SECTION HEADER */}
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-50px" }}
       variants={staggerContainer}
       className="text-center mb-16"
     >
@@ -342,7 +346,7 @@ const FunnelStep1 = () => {
     </motion.div>
   </div>
 
-  {/* MARQUEE TESTIMONIALS - 3 ROWS COMPACT ANIMATION */}
+  {/* MARQUEE TESTIMONIALS*/}
   <style>{`
     @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     @keyframes marquee-right { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
@@ -351,7 +355,7 @@ const FunnelStep1 = () => {
     .marquee-wrapper:hover .animate-left, .marquee-wrapper:hover .animate-right { animation-play-state: paused; }
   `}</style>
 
-  <div className="marquee-wrapper flex flex-col gap-4 relative">
+  <div className="marquee-wrapper flex flex-col gap-4 relative py-4">
     {(() => {
       const allReviews = [
         { name: "James Anderson", platform: "Upwork", logo: "https://cdn.worldvectorlogo.com/logos/upwork-1.svg", text: "The custom Liquid sections they built for my product page increased our conversion rate by 2.4%. Remarkable work.", initial: "JA", color: "from-blue-500 to-cyan-600" },
@@ -376,7 +380,6 @@ const FunnelStep1 = () => {
         { name: "Paul Richards", platform: "Fiverr", logo: "https://cdn.worldvectorlogo.com/logos/fiverr-1.svg", text: "The best investment for my e-commerce brand. Their theme customization is flawless and clean.", initial: "PR", color: "from-red-600 to-red-800" }
       ];
 
-      // Slicing to create 3 unique rows from 40 items (concat used to triple data)
       const dataSet = [...allReviews, ...allReviews];
       const rows = [
         dataSet.slice(0, 13),
@@ -390,12 +393,12 @@ const FunnelStep1 = () => {
             {rowData.map((t, i) => (
               <div
                 key={i}
-                className="w-[320px] shrink-0 p-5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-primary/40 transition-all duration-300 whitespace-normal"
+                className="w-[320px] shrink-0 p-5 rounded-xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:border-primary/40 hover:bg-white/[0.05] transition-all duration-300 whitespace-normal shadow-md"
               >
                 <div className="flex items-center justify-between mb-3">
                    <div className="flex items-center gap-2">
                       <img src={t.logo} alt={t.platform} className="w-4 h-4 opacity-70" />
-                      <span className="text-[9px] font-bold text-white/30 uppercase tracking-widest">{t.platform}</span>
+                      <span className="text-[9px] font-bold text-white/40 uppercase tracking-widest">{t.platform}</span>
                    </div>
                    <div className="flex gap-0.5">
                       {[...Array(5)].map((_, j) => (
@@ -409,12 +412,12 @@ const FunnelStep1 = () => {
                 </p>
                 
                 <div className="flex items-center gap-3">
-                  <div className={`h-8 w-8 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-[10px] font-bold text-white shadow-lg`}>
+                  <div className={`h-8 w-8 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-[10px] font-bold text-white shadow-lg border border-white/20`}>
                     {t.initial}
                   </div>
                   <div>
                     <div className="font-semibold text-xs text-white">{t.name}</div>
-                    <div className="text-[9px] text-white/30 uppercase tracking-wider">Merchant</div>
+                    <div className="text-[9px] text-white/40 uppercase tracking-wider">Merchant</div>
                   </div>
                 </div>
               </div>
@@ -424,126 +427,35 @@ const FunnelStep1 = () => {
       ));
     })()}
 
-    {/* Side Fades for Premium Look */}
-    <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-30 pointer-events-none" />
-    <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-30 pointer-events-none" />
-  </div>
-</section>
-
-      {/* 9. Pricing Section - Alignment Fixed */}
-<section id="pricing" className="py-24 z-20 relative overflow-hidden">
-  <div className="section-container relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-tight">
-        Ready to Scale Your <span className="text-gradient-gold">Business?</span>
-      </h2>
-      <p className="text-white/40 max-w-xl mx-auto text-base font-light">
-        Transparent pricing with no hidden developer fees.
-      </p>
-    </motion.div>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto items-stretch">
-      
-      {/* 1. MAINTENANCE - $99 */}
-      <motion.div 
-        whileHover={{ y: -5 }}
-        className="glass-card p-8 flex flex-col border border-white/5 shadow-lg h-full"
-      >
-        <div className="h-32 mb-6"> {/* Fixed header height */}
-          <h3 className="text-lg font-bold text-white/70">Maintenance</h3>
-          <div className="text-4xl font-black text-white mt-2">$99</div>
-          <p className="text-[10px] text-white/30 mt-1 italic uppercase tracking-wider">Store Refresh & Fixes</p>
-        </div>
-        <ul className="space-y-3 mb-8 flex-1">
-          {["Speed Optimization (90+)", "Bug Fixes & App Setup", "10 Product Listings", "Conversion Audit", "2-3 Days Delivery"].map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-sm text-white/50 font-light">
-              <CheckCircle className="w-4 h-4 text-green-500/70 flex-shrink-0" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleCTA} className="w-full py-3 rounded-lg text-sm font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10">
-          Get Started
-        </button>
-      </motion.div>
-
-      {/* 2. STANDARD - $299 (The Hero Package) */}
-      <motion.div 
-        whileHover={{ y: -10 }}
-        className="glass-card p-8 flex flex-col border-2 border-primary/40 shadow-2xl relative bg-white/[0.04] md:scale-105 z-30 h-full"
-      >
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-black px-4 py-1 rounded-full uppercase z-40 whitespace-nowrap">
-          Best Seller
-        </div>
-        <div className="h-32 mb-6"> {/* Fixed header height */}
-          <h3 className="text-xl font-bold text-primary">Full Store Design</h3>
-          <div className="text-5xl font-black text-white mt-2">$299</div>
-          <p className="text-[10px] text-primary/70 mt-2 font-medium italic">*Premium theme license cost not included</p>
-        </div>
-        <ul className="space-y-4 mb-8 flex-1">
-          {["High-Converting UI/UX Design", "Winning Product Research", "Custom Liquid Functionality", "13-15 Days Rapid Delivery", "Mobile-First Optimization", "Marketing Pixel Setup", "30 Days Support"].map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-sm text-white/90">
-              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-              <span className={item.includes("13-15 Days") ? "font-bold text-primary" : ""}>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleCTA} className="gradient-cta w-full py-4 rounded-xl text-sm font-black text-black uppercase tracking-widest">
-          Claim This Offer
-        </button>
-      </motion.div>
-
-      {/* 3. ENTERPRISE - CUSTOM (Fixed Alignment) */}
-      <motion.div 
-        whileHover={{ y: -5 }}
-        className="glass-card p-8 flex flex-col border border-white/5 shadow-lg h-full"
-      >
-        <div className="h-32 mb-6"> {/* Fixed header height matches others */}
-          <h3 className="text-lg font-bold text-white/70">Enterprise</h3>
-          <div className="text-4xl font-black text-white mt-2 italic tracking-tighter">Custom</div>
-          <p className="text-[10px] text-white/30 mt-1 italic uppercase tracking-wider">7-Figure Scalability</p>
-        </div>
-        <ul className="space-y-3 mb-8 flex-1">
-          {["Headless Shopify (Hydrogen)", "Custom App Development", "Advanced API Integration", "Unlimited Support", "Full Brand Strategy", "Priority 24/7 Support"].map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-sm text-white/50 font-light">
-              <CheckCircle className="w-4 h-4 text-green-500/70 flex-shrink-0" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <button onClick={handleCTA} className="w-full py-3 rounded-lg text-sm font-semibold bg-white/5 text-white border border-white/10 hover:bg-white/10">
-          Book Discovery Call
-        </button>
-      </motion.div>
-
-    </div>
+    <div className="absolute inset-y-0 left-0 w-32 md:w-48 bg-gradient-to-r from-background via-background/80 to-transparent z-30 pointer-events-none" />
+    <div className="absolute inset-y-0 right-0 w-32 md:w-48 bg-gradient-to-l from-background via-background/80 to-transparent z-30 pointer-events-none" />
   </div>
 </section>
 
 
-    {/* Blog Section */}
+    {/* 9. Pricing Section*/}
+    <div className="z-20 relative">
+        <PricingSection />
+      </div>
+
+    {/* Blog*/}
     <div className="z-20 relative">
         <BlogSection />
       </div>
 
 
-{/* About Section is here*/}
+{/* About is here*/}
 <div className="z-20 relative">
         <FAQSection />
       </div>
 
-      {/* 10. Final CTA Section */}
+      {/* 10. Final CTA */}
       <section id="final-cta" className="py-24 relative radial-glow z-20">
         <div className="section-container relative z-10 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
           >
             <motion.h2 variants={fadeInUp} custom={0} className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
@@ -551,12 +463,16 @@ const FunnelStep1 = () => {
               <span className="text-gradient-gold">Revenue Machine?</span>
             </motion.h2>
             <motion.div variants={fadeInUp} custom={1}>
-              <button onClick={handleCTA} className="gradient-cta px-10 py-5 rounded-xl text-lg animate-pulse-glow inline-flex items-center gap-2">
+              <button 
+                onClick={handleCTA} 
+                className="gradient-cta px-10 py-5 rounded-xl text-lg animate-pulse-glow inline-flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-2xl shadow-primary/20"
+                aria-label="Get My Free Strategy Call"
+              >
                 <Rocket className="w-5 h-5" /> Get My Free Strategy Call
               </button>
             </motion.div>
-            <motion.p variants={fadeInUp} custom={2} className="mt-6 text-muted-foreground text-sm">
-              <Shield className="w-4 h-4 inline mr-1" />
+            <motion.p variants={fadeInUp} custom={2} className="mt-6 text-muted-foreground text-sm flex items-center justify-center">
+              <Shield className="w-4 h-4 mr-2 text-primary" />
               Limited onboarding capacity each month. Secure your spot now.
             </motion.p>
           </motion.div>
@@ -564,8 +480,12 @@ const FunnelStep1 = () => {
       </section>
 
       {/* Sticky Mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-lg border-t border-border z-50 sm:hidden">
-        <button onClick={handleCTA} className="gradient-cta w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-xl border-t border-white/10 z-50 sm:hidden pb-safe">
+        <button 
+          onClick={handleCTA} 
+          className="gradient-cta w-full py-3.5 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+          aria-label="Book Free Strategy Call (Mobile)"
+        >
           <Target className="w-5 h-5" /> Book Free Strategy Call
         </button>
       </div>
@@ -585,6 +505,9 @@ const FunnelStep1 = () => {
         @keyframes aurora {
           from { background-position: 0% 50%; }
           to { background-position: 200% 50%; }
+        }
+        .pb-safe {
+          padding-bottom: env(safe-area-inset-bottom, 16px);
         }
       `}</style>
     </div>

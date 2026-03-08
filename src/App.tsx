@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails.tsx";
 import ScrollToTop from "./components/ScrollToTop";
+import ToolsPage from "./pages/Tools"; 
 
 const queryClient = new QueryClient();
 
@@ -29,10 +30,10 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/tools" element={<ToolsPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
-
     </TooltipProvider>
   </QueryClientProvider>
 );

@@ -6,13 +6,13 @@ const fadeInUp = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.5, duration: 0.6, ease: "easeOut" as const },
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" as const }, // Thora delay optimize kiya
   }),
 };
 
 const projects = [
   { name: "Luxe Fragrances", cat: "Luxury Perfumes", img: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800" },
-  { name: "FitGear India", cat: "Fitness Apparel", img: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800" },
+  { name: "FitGears", cat: "Fitness Apparel", img: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800" },
   { name: "Silk & Stone", cat: "Modern Fashion", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" },
   { name: "Urban Kicks", cat: "Sneaker Store", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800" },
   { name: "Pure Brew", cat: "Coffee Roasters", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800" },
@@ -43,8 +43,9 @@ const PortfolioSection = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           variants={fadeInUp}
+          custom={0}
         >
           <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tight">
             My <span className="text-gradient-gold">Work</span>
@@ -61,31 +62,35 @@ const PortfolioSection = () => {
           {duplicatedProjects.map((project, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -10, scale: 1.05 }}
-              className="w-[350px] md:w-[450px] shrink-0 group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl transition-all duration-500"
+              whileHover={{ y: -10, scale: 1.02 }} // Scale thora subtle kiya for elegance
+              className="w-[350px] md:w-[450px] shrink-0 group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl transition-all duration-500 cursor-pointer"
             >
               {/* Image with Grayscale to Color Transition */}
-              <div className="aspect-[16/11] overflow-hidden">
+              <div className="aspect-[16/11] overflow-hidden bg-white/5">
                 <img 
                   src={project.img} 
-                  alt={project.name} 
+                  alt={`${project.name} Portfolio Preview`} 
+                  loading="lazy" // <--- Performance boost
                   className="w-full h-full object-cover transition-all duration-700 grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110"
                 />
               </div>
 
               {/* Overlay Content */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2 block">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                <div className="transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <span className="text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-2 block drop-shadow-md">
                     {project.cat}
                   </span>
-                  <h3 className="text-2xl font-bold text-white mb-4">{project.name}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">{project.name}</h3>
                   
                   <div className="flex items-center gap-4">
-                    <button className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary transition-colors">
+                    <button 
+                      aria-label={`View live preview of ${project.name}`}
+                      className="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-xs font-bold hover:bg-primary hover:scale-105 hover:shadow-[0_0_15px_rgba(var(--primary),0.4)] transition-all duration-300"
+                    >
                       Live Preview <ExternalLink className="w-3 h-3" />
                     </button>
-                    <span className="text-white/40 text-xs font-medium group-hover:text-primary transition-colors italic">
+                    <span className="text-white/50 text-xs font-medium group-hover:text-primary transition-colors duration-300 italic">
                       Shopify Plus Build
                     </span>
                   </div>
@@ -99,13 +104,13 @@ const PortfolioSection = () => {
         </div>
 
         {/* Cinematic Side Fades */}
-        <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-background via-background/75 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-64 bg-gradient-to-l from-background via-background/75 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-background via-background/560 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-background via-background/50 to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* Decorative Line */}
-      <div className="mt-1 flex justify-center">
-         <div className="h-[2px] w-60 bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+      <div className="mt-4 flex justify-center">
+         <div className="h-[2px] w-60 bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-50" />
       </div>
     </section>
   );

@@ -28,17 +28,11 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative group px-4"
-          >
+            className="relative group px-4">
             <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-500 opacity-50" />
             <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-white/5">
-            <img 
-  src="/profile-image.jpg" 
-  alt="Nawaz Ahmad" 
-  className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
-/>
+            <img src="/NawazCartMyPortfolio.webp" alt="Nawaz Ahmad" className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"/>
             </div>
-            
             {/* Experience Floating Badge */}
             <div className="absolute -bottom-6 -right-2 glass-card p-6 border-primary/20 hidden md:block">
               <div className="text-3xl font-black text-primary">10+</div>
