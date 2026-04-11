@@ -2,7 +2,7 @@ export const blogPosts = [
     {
       id: "why-shopify-stores-fail",
       title: "Why Most Shopify Stores Fail After Launch (And How to Fix Yours)",
-      date: "March 25, 2026",
+      date: "April 5, 2026",
       author: "Nawaz Ahmad",
       category: "STRATEGY",
       readTime: "12 min read",
