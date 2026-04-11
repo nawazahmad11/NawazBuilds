@@ -3,15 +3,19 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
+import ScrollToTop from "./components/ScrollToTop";
+
+// Pages
 import FunnelStep1 from "./pages/FunnelStep1";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 import BlogPage from "./pages/BlogPage";
-import BlogDetails from "./pages/BlogDetails.tsx";
-import ScrollToTop from "./components/ScrollToTop";
-import ToolsPage from "./pages/Tools"; 
+import BlogPostDetail from "./pages/BlogPostDetail";  
+import ToolsPage from "./pages/Tools";
 
 const queryClient = new QueryClient();
 
@@ -21,16 +25,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Header />
         <Routes>
+          {/* Root Redirect */}
           <Route path="/" element={<Navigate to="/funnel/step1" replace />} />
+          
+          {/* Funnel Routes */}
           <Route path="/funnel/step1" element={<FunnelStep1 />} />
           <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/blog/:id" element={<BlogDetails />} />
+          
+          {/* Blog Routes - Dynamic System */}
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogPostDetail />} />
+          
+          {/* Tools Page */}
           <Route path="/tools" element={<ToolsPage />} />
+          
+          {/* 404 - Always keep this at the very bottom */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>

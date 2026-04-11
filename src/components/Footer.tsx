@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
           <form className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto xl:min-w-[500px]">
             <input placeholder="you@example.com" className="flex-1 px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white focus:outline-none focus:border-[#f9a825]/50 transition-all" type="email" />
-            <button className="px-10 py-4 rounded-xl bg-[#f9a825] text-black font-black uppercase text-[11px] tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-2">Subscribe <Send size={14} /></button>
+            <button className="px-6 py-4 rounded-xl bg-[#f9a825] text-black font-black uppercase text-[17px] tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-3">Subscribe <Send size={19} /></button>
           </form>
         </div>
 

@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // Link import kiya
 
 const blogs = [
   {
-    id: "shopify-speed-secrets",
-    title: "Shopify Speed Secrets: How to Hit a 90+ Score in 2024",
+    id: "why-shopify-stores-fail",
+    title: "Why Most Shopify Stores Fail After Launch (And How to Fix Yours)",
     excerpt: "Learn the exact technical steps to optimize your Liquid code and images for lightning-fast loading times.",
-    date: "March 15, 2024",
-    image: "/blog-1.jpg" 
+    date: "April 12, 2026",
+    image: "/Why Most Shopify Stores Fail After Launch.webp",
   },
   {
-    id: "high-converting-funnels",
-    title: "The Psychology of High-Converting Shopify Funnels",
+    id: "high-converting-product-pages",
+    title: "The Brutal Truth About Shopify Conversion Rates",
     excerpt: "Why some stores get clicks while others get sales. Discover the layout secrets of 7-figure brands.",
-    date: "March 10, 2024",
-    image: "/blog-2.jpg"
+    date: "April 13, 2026",
+    image: "/Shopify Conversion Rates.webp",
   },
   {
-    id: "marketing-automation",
-    title: "Marketing Automation: Set Your Sales on Autopilot",
+    id: "shopify-redesign-signs-2026",
+    title: "7 Signs Your Shopify Store Needs a Redesign (2026 Edition)",
     excerpt: "Stop chasing customers. Learn how to set up email and SMS flows that bring back 30% of abandoned carts.",
-    date: "March 5, 2024",
-    image: "/blog-3.jpg"
+    date: "April 14, 2026",
+    image: "/Signs Shopify Store Needs a Redesign.webp",
   }
 ];
 
 const BlogSection = () => {
-  const navigate = useNavigate(); // Navigation handle karne ke liye
+  // useNavigate ki ab zaroorat nahi hai yahan
 
   return (
     <section id="blog" className="py-24 bg-black/10 relative overflow-hidden">
@@ -44,42 +44,48 @@ const BlogSection = () => {
             </p>
           </div>
           
-          {/* ✅ Improved Button with Navigate */}
-          <button 
-            onClick={() => navigate('/blog')} 
-            className="px-6 py-2 border border-primary/40 text-primary rounded-full text-sm font-bold flex items-center gap-2 hover:bg-primary/10 transition-all group"
+          {/* ✅ Fixed: Link for Right Click Support */}
+          <Link 
+            to="/blog" 
+            className="px-6 py-2 border border-primary/40 text-primary rounded-full text-sm font-bold flex items-center gap-2 hover:bg-primary/10 transition-all group no-underline"
           >
             View all posts <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
 
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
           {blogs.map((blog, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ backgroundColor: "rgba(255,255,255,0.02)" }}
-              className={`p-8 flex flex-col cursor-pointer border-white/5 ${i !== blogs.length - 1 ? 'md:border-r' : ''} border-b md:border-b-0`}
-              onClick={() => navigate(`/blog/${blog.id}`)} // Individual post navigation
+            /* ✅ Fixed: Wrapped entire card in Link for Right Click functionality */
+            <Link 
+              key={i} 
+              to={`/blog/${blog.id}`} 
+              className="no-underline block group"
             >
-              <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/10 relative group-card">
-                <img 
-                  src={blog.image} 
-                  alt={blog.title} 
-                  className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" 
-                />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
+              <motion.div 
+                whileHover={{ backgroundColor: "rgba(255,255,255,0.02)" }}
+                className={`p-8 h-full flex flex-col border-white/5 ${i !== blogs.length - 1 ? 'md:border-r' : ''} border-b md:border-b-0 transition-colors`}
+              >
+                <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/10 relative group-card">
+                  <img 
+                    src={blog.image} 
+                    alt={blog.title} 
+                    className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" 
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors line-clamp-2 select-none">
                 {blog.title}
-              </h3>
-              <p className="text-white/40 text-sm font-light mb-6 flex-1 line-clamp-3">
-                {blog.excerpt}
-              </p>
-              <div className="text-[10px] text-white/20 font-black uppercase tracking-widest border-t border-white/5 pt-4 flex justify-between items-center">
-                <span>{blog.date}</span>
-                <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
-              </div>
-            </motion.div>
+                  
+                </h3>
+                <p className="text-white/40 text-sm font-light mb-6 flex-1 line-clamp-3">
+                  {blog.excerpt}
+                </p>
+                <div className="text-[10px] text-white/20 font-black uppercase tracking-widest border-t border-white/5 pt-4 flex justify-between items-center">
+                  <span>{blog.date}</span>
+                  <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
 
