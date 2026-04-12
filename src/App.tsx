@@ -29,8 +29,10 @@ const App = () => (
         <Header />
         <Routes>
           {/* Root Redirect */}
-          <Route path="/" element={<Navigate to="/funnel/step1" replace />} />
+          <Route path="/" element={<FunnelStep1 />} />
+          {/* <Route path="/" element={<Navigate to="/funnel/step1" replace />} /> */}
           
+
           {/* Funnel Routes */}
           <Route path="/funnel/step1" element={<FunnelStep1 />} />
           <Route path="/thank-you" element={<ThankYou />} />
