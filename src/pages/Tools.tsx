@@ -91,7 +91,7 @@ const ToolsPage = () => {
         
         {/* Header Section */}
         <div className="mb-16 text-center lg:text-left">
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 italic tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase">
             E-commerce <span className="text-[#f9a825]">Growth Engine</span>
           </h1>
           <p className="text-white/40 max-w-2xl text-lg leading-relaxed font-medium">
@@ -110,7 +110,7 @@ const ToolsPage = () => {
         {/* Full Tools Grid Selector */}
         <div className="mt-28">
           <div className="flex items-center gap-4 mb-10">
-            <h3 className="text-2xl font-bold text-white italic tracking-tight uppercase">Core Intelligence Tools</h3>
+            <h3 className="text-2xl font-bold text-white tracking-tight uppercase">Core Intelligence Tools</h3>
             <div className="h-[1px] flex-1 bg-white/5"></div>
           </div>
           
@@ -135,7 +135,7 @@ const ToolsPage = () => {
                   </span>
                 </div>
                 
-                <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[#f9a825] transition-colors uppercase italic tracking-tight">
+                <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[#f9a825] transition-colors uppercase tracking-tight">
                   {tool.title}
                 </h4>
                 <p className="text-xs text-white/30 leading-relaxed font-medium">

@@ -35,7 +35,7 @@ const ProfitCalculator = () => {
       <div className="w-full max-w-6xl mx-auto p-4 md:p-8 bg-[#0a0a0a] border border-white/5 rounded-[32px] shadow-2xl overflow-hidden">
         
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 italic tracking-tight uppercase">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight uppercase">
             Profit <span className="text-[#f9a825]">Margin</span> Calculator
           </h2>
           <p className="text-white/20 text-[10px] font-black uppercase tracking-[4px]">Financial Intelligence Suite</p>
@@ -50,24 +50,24 @@ const ProfitCalculator = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 italic tracking-widest">Selling Price ($)</label>
+                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Selling Price ($)</label>
                 <input type="number" onChange={(e) => setSellingPrice(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 italic tracking-widest">Product Cost ($)</label>
+                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Product Cost ($)</label>
                 <input type="number" onChange={(e) => setProductCost(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 italic tracking-widest">Ad Spend ($)</label>
+                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Ad Spend ($)</label>
                 <input type="number" onChange={(e) => setAdSpend(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 italic tracking-widest">Shipping ($)</label>
+                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Shipping ($)</label>
                 <input type="number" onChange={(e) => setShipping(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
               </div>
             </div>
             <div className="space-y-2 pt-2">
-              <label className="text-white/40 text-[10px] font-bold uppercase ml-2 italic tracking-widest">Other Costs ($)</label>
+              <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Other Costs ($)</label>
               <input type="number" onChange={(e) => setOther(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="Apps, Fees, Taxes..." />
             </div>
           </div>
@@ -108,13 +108,13 @@ const ProfitCalculator = () => {
               <div className="grid grid-cols-2 gap-4 mt-12">
                  <div className="bg-black/40 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
                     <p className="text-[9px] font-black text-[#f9a825] uppercase tracking-widest mb-1 italic">ROAS (Ad Scale)</p>
-                    <h5 className="text-3xl font-black text-white italic tracking-tighter">
+                    <h5 className="text-3xl font-black text-white tracking-tighter">
                       {roas.toFixed(1)}x
                     </h5>
                  </div>
                  <div className="bg-black/40 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
-                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest mb-1 italic">Net ROI %</p>
-                    <h5 className={`text-3xl font-black italic tracking-tighter ${roi >= 0 ? 'text-white' : 'text-red-500'}`}>
+                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest mb-1">Net ROI %</p>
+                    <h5 className={`text-3xl font-black tracking-tighter ${roi >= 0 ? 'text-white' : 'text-red-500'}`}>
                       {roi.toFixed(1)}%
                     </h5>
                  </div>
@@ -129,7 +129,7 @@ const ProfitCalculator = () => {
                 <div className="w-10 h-10 rounded-xl bg-[#f9a825]/10 flex items-center justify-center text-[#f9a825]"><Info size={20}/></div>
                 <div>
                     <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Net Profit ($)</p>
-                    <p className={`text-xl font-black italic tracking-tighter ${profit >= 0 ? 'text-white' : 'text-red-500'}`}>
+                    <p className={`text-xl font-black tracking-tighter ${profit >= 0 ? 'text-white' : 'text-red-500'}`}>
                       ${profit.toFixed(2)}
                     </p>
                 </div>
@@ -138,14 +138,14 @@ const ProfitCalculator = () => {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40"><BarChart3 size={20}/></div>
                 <div>
                     <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Break-Even Point</p>
-                    <p className="text-xl font-black text-white/60 italic tracking-tighter">${totalCost.toFixed(2)}</p>
+                    <p className="text-xl font-black text-white/60 tracking-tighter">${totalCost.toFixed(2)}</p>
                 </div>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-[24px] flex items-center gap-4 hover:bg-white/[0.04] transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40"><TrendingUp size={20}/></div>
                 <div>
                     <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Margin Efficiency</p>
-                    <p className="text-xl font-black text-white italic tracking-tighter">{margin.toFixed(1)}%</p>
+                    <p className="text-xl font-black text-white tracking-tighter">{margin.toFixed(1)}%</p>
                 </div>
             </div>
         </div>
@@ -155,14 +155,14 @@ const ProfitCalculator = () => {
       {content && (
         <div className="max-w-4xl mx-auto mt-24 px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
-            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
             <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             {content.features?.map((f: any, i: number) => (
               <div key={i} className="p-8 bg-[#0d0d0d] border border-white/5 rounded-[32px] hover:border-[#f9a825]/30 transition-all group">
-                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic flex items-center gap-2">
+                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 flex items-center gap-2">
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /> {f.title}
                 </h3>
                 <p className="text-white/30 text-sm leading-relaxed">{f.detail}</p>
@@ -173,13 +173,13 @@ const ProfitCalculator = () => {
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-10">
               <HelpCircle className="text-[#f9a825]" size={32} />
-              <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">Frequently Asked Questions</h3>
+              <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Frequently Asked Questions</h3>
             </div>
             <div className="space-y-4">
               {content.faqs?.map((faq: any, i: number) => (
                 <div key={i} className={`group overflow-hidden bg-white/[0.02] border rounded-2xl transition-all duration-300 ${activeIndex === i ? "border-[#f9a825]/40 bg-white/[0.04]" : "border-white/5"}`}>
                   <button onClick={() => setActiveIndex(activeIndex === i ? null : i)} className="w-full p-6 flex items-center justify-between text-left outline-none">
-                    <h4 className={`font-bold uppercase text-sm italic tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
+                    <h4 className={`font-bold uppercase text-sm tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
