@@ -1,3 +1,4 @@
+import { useState } from "react"; // Nayi state add ki
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { Instagram, Linkedin, Mail, MapPin, Youtube, Send, MessageCircle } from "lucide-react";
 
@@ -5,6 +6,34 @@ const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const websiteLogo = "/NawazCart.png"; 
+
+  // --- Naya Function: Newsletter Logic ---
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("loading");
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvK37gtvSmjBV-ob6SriOgfIMT_bx4Zhs04oMDx2vNL0r5RbE9qNbozCoUHnG0iJuMsg/exec"; 
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors", 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      });
+      setStatus("success");
+      setEmail(""); 
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
+  };
+  // --------------------------------------
 
   const scrollToSection = (id: string) => {
     if (location.pathname !== "/") {
@@ -49,7 +78,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* NEW GROWTH TOOLS COLUMN */}
             <div className="space-y-5">
               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Growth Tools</h4>
               <ul className="space-y-3 text-sm text-white/40 font-medium">
@@ -58,7 +86,6 @@ const Footer = () => {
                 <li><Link to="/tools?tool=generator" className="hover:text-[#f9a825] transition-colors">Name Generator</Link></li>
                 <li><Link to="/tools?tool=detector" className="hover:text-[#f9a825] transition-colors">Theme Detector</Link></li>
               </ul>
-
             </div>
 
             <div className="space-y-5">
@@ -84,9 +111,25 @@ const Footer = () => {
             <h4 className="text-xl font-bold text-white mb-2 italic">Scale Your Shopify Store</h4>
             <p className="text-sm text-white/40">Get conversion and speed tips directly to your inbox.</p>
           </div>
-          <form className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto xl:min-w-[500px]">
-            <input placeholder="you@example.com" className="flex-1 px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white focus:outline-none focus:border-[#f9a825]/50 transition-all" type="email" />
-            <button className="px-6 py-4 rounded-xl bg-[#f9a825] text-black font-black uppercase text-[17px] tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-3">Subscribe <Send size={19} /></button>
+          {/* Form ko update kiya taake functions connect ho sakein */}
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto xl:min-w-[500px]">
+            <input 
+              placeholder="you@example.com" 
+              className="flex-1 px-6 py-4 rounded-xl border border-white/10 bg-white/5 text-white focus:outline-none focus:border-[#f9a825]/50 transition-all" 
+              type="email" 
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "loading" || status === "success"}
+            />
+            <button 
+              type="submit"
+              disabled={status === "loading" || status === "success"}
+              className="px-6 py-4 rounded-xl bg-[#f9a825] text-black font-black uppercase text-[17px] tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-3 disabled:opacity-50 min-w-[180px]"
+            >
+              {status === "loading" ? "Wait..." : status === "success" ? "Subscribed!" : "Subscribe"} 
+              <Send size={19} />
+            </button>
           </form>
         </div>
 

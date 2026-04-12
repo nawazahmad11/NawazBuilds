@@ -64,7 +64,8 @@ const Header = () => {
         className={`
           flex items-center justify-between transition-all duration-700 ease-in-out pointer-events-auto
           ${isScrolled 
-            ? "max-w-5xl w-[90%] bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-8 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
+            ? "max-w-5xl w-[95%] md:w-[90%] bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-4 md:px-8 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+            // ? "max-w-5xl w-[90%] bg-black/40 backdrop-blur-xl border border-white/10 rounded-full px-8 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
             : "max-w-7xl w-full bg-transparent px-6 py-4"
           }
         `}
