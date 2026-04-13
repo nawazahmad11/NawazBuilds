@@ -35,7 +35,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 px-6 relative overflow-hidden">
+    <section id="process" className="py-15 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Section Header */}

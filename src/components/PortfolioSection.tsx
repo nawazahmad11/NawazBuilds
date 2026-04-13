@@ -279,11 +279,10 @@ const PortfolioSection = () => {
       </div>
 
       {/* --- NEW FEATURE SHOWCASE SECTION (APPEAR/DISAPPEAR) --- */}
-      <div className="section-container relative z-20">
+      {/* <div className="section-container relative z-20">
         <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
             
-            {/* Left Side: Text Details */}
             <div className="order-2 lg:order-1">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -316,7 +315,6 @@ const PortfolioSection = () => {
                 </motion.div>
               </AnimatePresence>
 
-              {/* Progress Indicators */}
               <div className="flex gap-3 mt-12">
                 {showcaseProjects.map((_, i) => (
                   <div 
@@ -327,26 +325,6 @@ const PortfolioSection = () => {
                 ))}
               </div>
             </div>
-
-            {/* Right Side: Image Appear/Disappear */}
-            {/* <div className="order-1 lg:order-2 relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeIndex}
-                  src={showcaseProjects[activeIndex].img}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.8, ease: "circOut" }}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  alt="Showcase Project"
-                />
-              </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent pointer-events-none" />
-            </div> */}
-
-
-              {/* Right Side: Image Appear/Disappear (Open Style - No Bounds) */}
               <div className="order-1 lg:order-2 relative flex items-center justify-center">
               <AnimatePresence mode="wait">
                   <motion.div
@@ -370,14 +348,97 @@ const PortfolioSection = () => {
                     />
                   </motion.div>
                 </AnimatePresence>
-                
-                {/* Optional: Halka sa glow peeche dene ke liye (agar dark mode hai) */}
+
                 <div className="absolute -z-10 w-[80%] h-[80%] bg-primary/10 blur-[120px] rounded-full" />
               </div>
 
           </div>
         </div>
+      </div> */}
+
+
+      {/* --- NEW FEATURE SHOWCASE SECTION --- */}
+<div className="section-container relative z-20">
+  <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
+      
+      {/* Left Side: Text Details */}
+      {/* ADDED: min-h and flex to keep text centered and stable */}
+      <div className="order-2 lg:order-1 min-h-[450px] md:min-h-[400px] flex flex-col justify-center relative">
+        <AnimatePresence mode="popLayout"> {/* MOVED: mode to popLayout */}
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-primary font-black tracking-widest text-xs uppercase mb-4 block">Project Spotlight</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+              {showcaseProjects[activeIndex].title}
+            </h2>
+            <p className="text-white/50 text-lg mb-8 font-light leading-relaxed">
+              {showcaseProjects[activeIndex].description}
+            </p>
+            
+            <div className="space-y-4 mb-10">
+              {showcaseProjects[activeIndex].features.map((feature, idx) => (
+                <div key={idx} className="flex items-center gap-3 text-white/80">
+                  <CheckCircle2 size={20} className="text-primary" />
+                  <span className="font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <button className="group flex items-center gap-3 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-black transition-all duration-500">
+              View Case Study <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+            </button>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Progress Indicators - Stays fixed at bottom of text container */}
+        <div className="flex gap-3 mt-12">
+          {showcaseProjects.map((_, i) => (
+            <div 
+              key={i} 
+              onClick={() => setActiveIndex(i)}
+              className={`h-1 transition-all duration-500 cursor-pointer rounded-full ${activeIndex === i ? 'w-12 bg-primary' : 'w-4 bg-white/10'}`}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* Right Side: Image Appear/Disappear */}
+      {/* ADDED: min-h to prevent layout collapse on mobile */}
+      <div className="order-1 lg:order-2 relative flex items-center justify-center min-h-[300px] md:min-h-[580px]">
+        <AnimatePresence mode="popLayout">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, x: 50, filter: "blur(10px)", scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+            exit={{ opacity: 0, x: -50, filter: "blur(10px)", scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.8 }}
+            className="w-full flex justify-center absolute inset-0 items-center" // ADDED: absolute inset-0
+          >
+            <img
+              src={showcaseProjects[activeIndex].img}
+              className="w-full h-auto max-h-[450px] md:max-h-[580px] object-contain rounded-[2.5rem] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]" 
+              alt="Showcase Project"
+            />
+          </motion.div>
+        </AnimatePresence>
+        
+        {/* Glow Background */}
+        <div className="absolute -z-10 w-[80%] h-[80%] bg-primary/10 blur-[120px] rounded-full" />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+      
     </section>
   );
 };
