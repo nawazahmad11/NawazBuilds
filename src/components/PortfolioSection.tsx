@@ -202,12 +202,14 @@ const showcaseProjects = [
 ];
 
 const projects = [
-  { name: "Luxe Fragrances", cat: "Luxury Perfumes", img: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=800" },
+  { name: "Luxe Fragrances", cat: "Luxury Perfumes", img: "/Nawaz-Builds-Perfume-ShopifyStore.webp" },
   { name: "FitGears", cat: "Fitness Apparel", img: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800" },
   { name: "Silk & Stone", cat: "Modern Fashion", img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800" },
-  { name: "Urban Kicks", cat: "Sneaker Store", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=800" },
-  { name: "Pure Brew", cat: "Coffee Roasters", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800" },
+  { name: "Urban Fit", cat: "Clothing Store", img: "/Nawaz-Builds-Urban-Clothing-ShopifyStore.webp" },
   { name: "Glow Skin", cat: "Organic Skincare", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800" },
+  { name: "Nura Fashion", cat: "Fashion", img: "/Nawaz-Builds-Ladies-ShopifyStore.webp" },
+  { name: "Pure Brew", cat: "Coffee Roasters", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800" },
+  { name: "Denim Den", cat: "Kids Wear", img: "/Nawaz-Builds-KidsWear-ShopifyStore.webp" },
 ];
 
 const duplicatedProjects = [...projects, ...projects, ...projects];

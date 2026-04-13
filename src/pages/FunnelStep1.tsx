@@ -10,6 +10,10 @@ import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
 import PricingSection from "@/components/PricingSection";
+import { AnimatedCounter } from "@/components/Tools/AnimatedCounter";
+
+import AuditSection from "@/components/AuditSection";
+import ProcessSection from "@/components/ProcessSection";
 
 
 
@@ -296,7 +300,6 @@ const FunnelStep1 = () => {
         <AboutSection />
       </div>
 
-
       {/* 7. Portfolio Section */}
       <div className="z-20 relative">
         <PortfolioSection />
@@ -306,7 +309,7 @@ const FunnelStep1 = () => {
 <section className="py-12 relative overflow-hidden z-20">
   <div className="section-container relative z-10 text-white">
     
-    <motion.div
+    {/* <motion.div
       className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-10 bg-white/[0.01] backdrop-blur-sm shadow-inner"
       initial="hidden"
       whileInView="visible"
@@ -317,7 +320,7 @@ const FunnelStep1 = () => {
         { value: "150+", label: "Stores Launched" },
         { value: "$2M+", label: "Client Revenue" },
         { value: "150k+", label: "Orders Processed" },
-        { value: "30-Day", label: "Avg Delivery" },
+        { value: "15-Day", label: "Avg Delivery" },
       ].map((stat, i) => (
         <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group cursor-default">
           <div className="text-4xl sm:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(var(--primary),0.3)]">
@@ -328,7 +331,36 @@ const FunnelStep1 = () => {
           </div>
         </motion.div>
       ))}
+    </motion.div> */}
+
+
+<motion.div
+  className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-10 bg-white/[0.01] backdrop-blur-sm shadow-inner"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+>
+  {[
+    { value: 150, suffix: "+", label: "Stores Launched" },
+    { value: 2, prefix: "$", suffix: "M+", label: "Client Revenue" },
+    { value: 150, suffix: "k+", label: "Orders Processed" },
+    { value: 15, suffix: "-Day", label: "Avg Delivery" },
+  ].map((stat, i) => (
+    <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group cursor-default">
+      <div className="text-4xl sm:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(var(--primary),0.3)]">
+        {/* Yahan prefix (jaise $) agar ho toh wo dikhayein aur counter chalayein */}
+        {stat.prefix && <span>{stat.prefix}</span>}
+        <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+      </div>
+      <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
+        {stat.label}
+      </div>
     </motion.div>
+  ))}
+</motion.div>
+
+
 
     <motion.div
       initial="hidden"
@@ -438,14 +470,25 @@ const FunnelStep1 = () => {
         <PricingSection />
       </div>
 
+
+      <div className="z-20 relative">
+      <ProcessSection />
+      </div>
+
+
+      <div className="z-20 relative">
+      <AuditSection />
+      </div>
+
+
     {/* Blog*/}
     <div className="z-20 relative">
         <BlogSection />
       </div>
 
 
-{/* About is here*/}
-<div className="z-20 relative">
+      {/* About is here*/}
+    <div className="z-20 relative">
         <FAQSection />
       </div>
 
