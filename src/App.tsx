@@ -17,6 +17,7 @@ import BlogPage from "./pages/BlogPage";
 import BlogPostDetail from "./pages/BlogPostDetail";  
 import ToolsPage from "./pages/Tools";
 import AuditPopup from "./components/AuditPopup";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -51,7 +52,7 @@ const App = () => (
         <Footer />
 
         <AuditPopup />
-
+        <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
