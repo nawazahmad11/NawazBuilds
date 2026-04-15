@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import BlogPage from "./pages/BlogPage";
 import BlogPostDetail from "./pages/BlogPostDetail";  
 import ToolsPage from "./pages/Tools";
+import AuditPopup from "./components/AuditPopup";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,9 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+
+        <AuditPopup />
+
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

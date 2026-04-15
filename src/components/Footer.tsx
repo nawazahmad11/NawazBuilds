@@ -16,7 +16,7 @@ const Footer = () => {
     if (!email) return;
 
     setStatus("loading");
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzvK37gtvSmjBV-ob6SriOgfIMT_bx4Zhs04oMDx2vNL0r5RbE9qNbozCoUHnG0iJuMsg/exec"; 
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyMUlRY1rQYmA450Lf1t0lMp-C_WAwoCjBpjqDEigCy2fb58dNF4jD7muP2Vi5Ig2odAg/exec"; 
 
     try {
       await fetch(SCRIPT_URL, {

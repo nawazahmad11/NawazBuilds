@@ -18,7 +18,7 @@ const ProcessSection = () => {
       num: "03",
       day: "Day 4-10",
       title: "Development",
-      desc: "Building your Shopify/WP store with custom liquid code and speed optimization.",
+      desc: "Building your Shopify store with custom liquid code and speed optimization.",
     },
     {
       num: "04",
