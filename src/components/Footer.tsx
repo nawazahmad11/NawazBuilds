@@ -137,14 +137,35 @@ const Footer = () => {
           <div className="flex items-center space-x-6">
             <span className="text-[10px] font-black uppercase tracking-[3px] text-white/20">Socials:</span>
             <div className="flex items-center space-x-4">
-              {[<Youtube size={20} />, <Linkedin size={20} />, <Instagram size={20} />, <MessageCircle size={20} />].map((icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all">{icon}</a>
+              {[
+                { icon: <Youtube size={20} />, url: "" },
+                { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/" },
+                { icon: <Instagram size={20} />, url: "" },
+                { icon: <MessageCircle size={20} />, url: "https://wa.me/923394146447" }
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all"
+                >
+                  {social.icon}
+                </a>
               ))}
             </div>
           </div>
-          <div className="text-[10px] font-bold text-white/20 uppercase tracking-[4px]">© {new Date().getFullYear()} NAWAZ AHMAD. ALL RIGHTS RESERVED.</div>
+          <div className="text-[10px] font-bold text-white/20 uppercase tracking-[4px]">
+            © {new Date().getFullYear()} NAWAZ AHMAD. ALL RIGHTS RESERVED.
+          </div>
         </div>
+
+
+        
       </div>
+
+
+
     </footer>
   );
 };
