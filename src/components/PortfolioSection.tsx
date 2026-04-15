@@ -100,7 +100,7 @@ const projects = [
 
   { name: "Silk & Stone", 
     cat: "Modern Fashion", 
-    img: "Nawaz-Builds-ovrthnk-Shopify-Store",
+    img: "/Nawaz-Builds-ovrthnk-Shopify-Store.webp",
     link: "https://ovrthnk.us/"
   },
 
