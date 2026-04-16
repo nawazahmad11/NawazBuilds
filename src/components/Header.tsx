@@ -72,7 +72,17 @@ const Header = () => {
       >
         {/* Logo Section */}
         <div onClick={() => navigate("/")} className="flex items-center gap-3 cursor-pointer shrink-0">
-          <img src={websiteLogo} alt="Logo" className="w-10 h-10 object-contain rounded-full border border-white/10" />
+          
+          {/* <img src={websiteLogo} alt="Logo" className="w-10 h-10 object-contain rounded-full border border-white/10" /> */}
+          
+          <img 
+            src={websiteLogo} 
+            alt="Logo" 
+            width="40" 
+            height="40" 
+            className="w-10 h-10 object-contain rounded-full border border-white/10" 
+          />
+
           <span className="text-xl font-black tracking-tight text-white italic">Nawaz Ahmad</span>
         </div>
 

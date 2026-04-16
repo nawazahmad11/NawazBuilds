@@ -55,7 +55,17 @@ const Footer = () => {
           
           <div className="lg:col-span-4 space-y-7">
             <div className="flex items-center space-x-3">
-              <img src={websiteLogo} alt="Logo" className="h-10 w-auto rounded-full object-contain" />
+              
+              {/* <img src={websiteLogo} alt="Logo" className="h-10 w-auto rounded-full object-contain" /> */}
+
+              <img 
+                src={websiteLogo} 
+                alt="Logo" 
+                width="40" 
+                height="40" 
+                className="h-10 w-auto rounded-full object-contain" 
+              />
+
               <h3 className="text-xl font-bold tracking-tight text-white italic">Nawaz Ahmad</h3>
             </div>
             <p className="text-white/40 text-sm leading-relaxed max-w-md">Shopify Architect & Performance Expert. Helping e-commerce brands scale from $0 to 7-figures with high-performance stores.</p>
