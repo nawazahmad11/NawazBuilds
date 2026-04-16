@@ -170,11 +170,11 @@ const PortfolioSection = () => {
         </div>
         <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 md:w-64 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-      </div>
+          </div>
 
-      {/* --- FEATURE SHOWCASE (IMPROVED PERFORMANCE) --- */}
-      <div className="section-container relative z-20">
-        <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
+        {/* --- FEATURE SHOWCASE (IMPROVED PERFORMANCE) --- */}
+        {/* <div className="section-container relative z-20">
+          <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
 
             <div className="order-2 lg:order-1 min-h-[450px] md:min-h-[400px] flex flex-col justify-center relative">
@@ -244,7 +244,9 @@ const PortfolioSection = () => {
 
           </div>
         </div>
-      </div>
+      </div> */}
+
+       
     </section>
   );
 };
