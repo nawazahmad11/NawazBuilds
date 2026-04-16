@@ -150,7 +150,7 @@ const FunnelStep1 = () => {
           >
             <div className="relative aspect-video rounded-lg overflow-hidden bg-black/50">
               <iframe
-                src="https://www.youtube.com/embed/3yt-kojnojk"
+                // src="https://www.youtube.com/embed/3yt-kojnojk"
                 title="Shopify Pros - Watch How We Build"
                 className="absolute inset-0 w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
