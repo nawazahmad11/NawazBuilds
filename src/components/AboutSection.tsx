@@ -24,21 +24,64 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Side: Profile Image */}
-          <motion.div 
+          {/* <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative group px-4">
             <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-500 opacity-50" />
             <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-white/5">
-            <img src="/NawazCartMyPortfolio.webp" alt="Nawaz Ahmad" className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"/>
+           
+                `      <img 
+                src="/nawaz-build-portfolio-image.webp" 
+                alt="Nawaz Ahmad" 
+                width={600} 
+                height={800}
+                loading="eager"
+                fetchPriority="high" 
+                decoding="async"
+                className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+              />`
+
             </div>
-            {/* Experience Floating Badge */}
+           
             <div className="absolute -bottom-6 -right-2 glass-card p-6 border-primary/20 hidden md:block">
               <div className="text-3xl font-black text-primary">10+</div>
               <div className="text-[10px] text-white/40 uppercase tracking-widest font-bold font-sans">Years Exp.</div>
             </div>
-          </motion.div>
+          </motion.div> */}
+
+
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative group px-4"
+            >
+              {/* Background Glow Effect - Iska size check karein */}
+              <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-500 opacity-50" />
+              
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-[#050505]">
+                <img 
+                  src="/nawaz-build-portfolio-image.webp" 
+                  alt="Nawaz Ahmad" 
+                  width={600} 
+                  height={800}
+                  loading="eager"
+                  fetchPriority="high" 
+                  decoding="async"
+                  className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Experience Floating Badge */}
+              <div className="absolute -bottom-6 -right-2 glass-card p-6 border-primary/20 hidden md:block">
+                <div className="text-3xl font-black text-[#f9a825]">10+</div>
+                <div className="text-[10px] text-white/40 uppercase tracking-widest font-bold font-sans">Years Exp.</div>
+              </div>
+            </motion.div>
+
+
 
           {/* Right Side: Professional Content */}
           <div className="space-y-8">
