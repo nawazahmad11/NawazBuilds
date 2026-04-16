@@ -59,12 +59,12 @@ const Footer = () => {
               {/* <img src={websiteLogo} alt="Logo" className="h-10 w-auto rounded-full object-contain" /> */}
 
               <img 
-                src={websiteLogo} 
-                alt="Logo" 
-                width="40" 
-                height="40" 
-                className="h-10 w-auto rounded-full object-contain" 
-              />
+                  src={websiteLogo} 
+                  alt="Logo" 
+                  width={40} 
+                  height={40} 
+                  className="h-10 w-auto object-contain rounded-full" 
+                />
 
               <h3 className="text-xl font-bold tracking-tight text-white italic">Nawaz Ahmad</h3>
             </div>
