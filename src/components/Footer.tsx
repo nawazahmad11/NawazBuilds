@@ -5,7 +5,7 @@ import { Instagram, Linkedin, Mail, MapPin, Youtube, Send, MessageCircle } from 
 const Footer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const websiteLogo = "/NawazCart.png"; 
+  const websiteLogo = "/NawazCart.webp"; 
 
   // --- Naya Function: Newsletter Logic ---
   const [email, setEmail] = useState("");
