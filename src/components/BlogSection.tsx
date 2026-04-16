@@ -8,21 +8,21 @@ const blogs = [
     title: "Why Most Shopify Stores Fail After Launch (And How to Fix Yours)",
     excerpt: "95% of Shopify stores fail. Master the audits and conversion hacks used by top brands to fix funnel and maximize ROI.",
     date: "April 5, 2026",
-    image: "/Why Most Shopify Stores Fail After Launch.webp",
+    image: "/shopify-store-failure-reasons.webp",
   },
   {
     id: "high-converting-product-pages",
     title: "The Brutal Truth About Shopify Conversion Rates",
     excerpt: "Stop wasting ads on a broken store. Fix your conversion leaks and double your revenue with our Shopify 2.0 UI/UX secrets.",
     date: "April 13, 2026",
-    image: "/Shopify Conversion Rates.webp",
+    image: "/shopify-conversion-rates.webp",
   },
   {
     id: "shopify-redesign-signs-2026",
     title: "7 Signs Your Shopify Store Needs a Redesign (2026 Edition)",
     excerpt: "Is your store stuck in 2022? Spot the 7 red flags killing your sales and learn how a 2026 redesign scales Customer LTV.",
     date: "April 14, 2026",
-    image: "/Signs Shopify Store Needs a Redesign.webp",
+    image: "/shopify-store-redesign-signs.webp",
   }
 ];
 

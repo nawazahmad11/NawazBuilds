@@ -6,7 +6,7 @@ export const blogPosts = [
       author: "Nawaz Ahmad",
       category: "STRATEGY",
       readTime: "12 min read",
-      image: "/Why Most Shopify Stores Fail After Launch.webp",
+      image: "/shopify-store-failure-reasons.webp",
       toc: [
         { id: "reasons-fail", title: "Real Reasons for Failure" },
         { id: "quick-wins", title: "10-Minute Fixes" },
@@ -68,7 +68,7 @@ export const blogPosts = [
 
           <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/The Psychology of the Sale.webp" 
+        src="/sales-psychology.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -108,7 +108,7 @@ export const blogPosts = [
 
                  <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Website Design and Speed.webp" 
+        src="/website-design-speed.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -116,11 +116,6 @@ export const blogPosts = [
       
         <p><strong>The Fix:</strong> Delete any <strong>Shopify app</strong> you haven't used in 30 days. Every script added to your header slows down the "First Contentful Paint".</p>
 
-
- 
-
-
-  
         <h2 id="case-study">📈 Case Study: From 0 Sales to $2,000/Week</h2>
         <p><strong>The Problem:</strong> A store selling eco-friendly water bottles was getting 500 visitors a day but <strong>0 sales</strong>.</p>
         <p><strong>The Diagnosis:</strong> We used <strong>session recordings</strong> (Hotjar) to see that people were getting stuck at the shipping page because shipping was $12 and only showed up at the very end.</p>
@@ -130,7 +125,7 @@ export const blogPosts = [
 
           <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Case Study From 0 Sales to $2,000.webp" 
+        src="/sales-case-study.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -168,7 +163,7 @@ export const blogPosts = [
   
           <div style="text-align: center; margin: 40px 0;">
         <img 
-        src="/The Post Purchase Experience.webp" 
+        src="/post-purchase-experience.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -277,22 +272,7 @@ export const blogPosts = [
         author: "Nawaz Ahmad",
         category: "CONVERSION",
         readTime: "10 min read",
-        image: "/Shopify Conversion Rates.webp",
-        // toc: [
-        //     { id: "intro", title: "The Brutal Truth" },
-        //     { id: "foundations", title: "The Foundations" },
-        //     { id: "best-practices", title: "Product Page Best Practices" },
-        //     { id: "eliminating-friction", title: "Eliminating Friction at Checkout" },
-        //     { id: "technical-excellence", title: "Technical Excellence & Core Web Vitals" },
-        //     { id: "tool-stack", title: "The Expert's Tool Stack" },
-        //     { id: "common-mistakes", title: "Common Beginner Mistakes" },
-        //     { id: "quick-wins", title: "Quick Wins: 5 Ways to Boost Sales Fast" },
-        //     { id: "case-study", title: "Mini Case Study: The 24-Hour CRO Fix" },
-        //     { id: "final-checklist", title: "Actionable Checklist: Is Your Store Ready?" },
-        //     { id: "conclusion", title: "Conclusion: Making the Customer's Life Easier" },
-        //     { id: "faqs", title: "Frequently Asked Questions" }
-        //   ],
-
+        image: "/shopify-conversion-rates.webp",
 
         toc: [
             { id: "intro", title: "1. The Brutal Truth", level: 2 },
@@ -380,8 +360,8 @@ export const blogPosts = [
     
             <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Choosing the Right Theme.webp" 
-        alt="Shopify Design Reference" 
+        src="/choosing-right-theme.webp" 
+        alt="Shopify Design Reference"
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
       </div>
@@ -410,7 +390,7 @@ export const blogPosts = [
 
             <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Mobile Only Add to Cart.webp" 
+        src="/mobile-only-add to-cart.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -436,7 +416,7 @@ export const blogPosts = [
     
             <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Product Page Best Practices.webp" 
+        src="/product-page-best-practices.webp"
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -482,7 +462,7 @@ export const blogPosts = [
 
         <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Eliminating Friction at Checkout Shoping.webp" 
+        src="/shopify-checkout-optimization.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -508,7 +488,7 @@ export const blogPosts = [
 
         <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Technical Excellence & Core Web Vitals.webp" 
+        src="/shopify-core-web-vitals.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -733,7 +713,7 @@ export const blogPosts = [
       author: "Nawaz Ahmad",
       category: "DESIGN",
       readTime: "12 min read",
-      image: "/Signs Shopify Store Needs a Redesign.webp",
+      image: "/shopify-store-redesign-signs.webp",
       toc: [
           { id: "intro", title: "1. The Reality Check", level: 2 },
           { id: "identity-crisis", title: "2. The Identity Crisis", level: 2 },
@@ -818,7 +798,7 @@ export const blogPosts = [
 
         <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Core Web Vitals.webp" 
+        src="/core-web-vitals.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -874,7 +854,7 @@ export const blogPosts = [
 
       <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/High Traffic, Zero Sales (The Conversion Funnel Leak).webp" 
+        src="/shopify-conversion-funnel-leak.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -927,7 +907,7 @@ export const blogPosts = [
 
         <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Social Proof & Trust Signals.webp" 
+        src="/shopify-social-proof-trust.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
@@ -991,7 +971,7 @@ export const blogPosts = [
 
         <div style="text-align: center; margin: 40px 0;">
       <img 
-        src="/Expert’s Redesign Workflow.webp" 
+        src="/shopify-redesign-workflow.webp" 
         alt="Shopify Design Reference" 
         style="height: auto; border-radius: 16px; display: inline-block; border: 1px solid rgba(255,255,255,0.1); max-width: 100%;" 
           />
