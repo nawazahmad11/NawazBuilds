@@ -306,38 +306,13 @@ const FunnelStep1 = () => {
       <section className="py-12 relative overflow-hidden z-20">
         <div className="section-container relative z-10 text-white">
           
-          {/* <motion.div
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-10 bg-white/[0.01] backdrop-blur-sm shadow-inner"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {[
-              { value: "150+", label: "Stores Launched" },
-              { value: "$2M+", label: "Client Revenue" },
-              { value: "150k+", label: "Orders Processed" },
-              { value: "15-Day", label: "Avg Delivery" },
-            ].map((stat, i) => (
-              <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group cursor-default">
-                <div className="text-4xl sm:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_10px_rgba(var(--primary),0.3)]">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div> */}
-
-
-      <motion.div
+        <motion.div
         className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-y border-white/5 py-10 bg-white/[0.01] backdrop-blur-sm shadow-inner"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-      >
+         >
         {[
           { value: 150, suffix: "+", label: "Stores Launched" },
           { value: 2, prefix: "$", suffix: "M+", label: "Client Revenue" },
@@ -355,9 +330,7 @@ const FunnelStep1 = () => {
             </div>
           </motion.div>
         ))}
-      </motion.div>
-
-
+        </motion.div>
 
           <motion.div
             initial="hidden"
@@ -366,11 +339,11 @@ const FunnelStep1 = () => {
             variants={staggerContainer}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
                 Trusted by Global Merchants
-              </h2>
+        </h2>
               <p className="text-white/40 max-w-[600px] mx-auto text-lg font-light">
-                Real feedback from 7-figure store owners who scaled their business with me.
+                Real feedback from happy store owners who scaled their business with me.
               </p>
           </motion.div>
         </div>
