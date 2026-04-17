@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
 
@@ -136,8 +136,10 @@ const PortfolioSection = () => {
       <div className="portfolio-container relative flex items-center overflow-hidden py-10 mb-7">
         <div className="animate-portfolio flex gap-8 whitespace-nowrap px-4">
           {duplicatedProjects.map((project, i) => (
-            <motion.div key={i} whileHover={{ y: -10, scale: 1.02 }} 
-            className="w-[350px] md:w-[450px] shrink-0 group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl transition-all duration-500 cursor-pointer">
+            <div
+              key={i}
+              className="w-[350px] md:w-[450px] shrink-0 group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl transition-transform duration-500 cursor-pointer hover:-translate-y-2 hover:scale-[1.02]"
+            >
               <div className="aspect-[16/11] overflow-hidden bg-white/5">
                 <img 
                   src={project.img} 
@@ -145,7 +147,7 @@ const PortfolioSection = () => {
                   loading="lazy" 
                   width="450"
                   height="310"
-                  decoding="async" // High performance decoding
+                  decoding="async"
                   className="w-full h-full object-cover transition-all duration-700 grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110" 
                 />
               </div>
@@ -165,7 +167,7 @@ const PortfolioSection = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         <div className="absolute inset-y-0 left-0 w-32 md:w-64 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />

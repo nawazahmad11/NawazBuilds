@@ -62,8 +62,11 @@ const Footer = () => {
                   src={websiteLogo} 
                   alt="Logo" 
                   width={40} 
-                  height={40} 
-                  className="h-10 w-auto object-contain rounded-full" 
+                  height={40}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  className="h-10 w-10 object-contain rounded-full" 
                 />
 
               <h3 className="text-xl font-bold tracking-tight text-white italic">Nawaz Ahmad</h3>

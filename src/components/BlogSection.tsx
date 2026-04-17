@@ -69,7 +69,11 @@ const BlogSection = () => {
                 <div className="aspect-video rounded-xl overflow-hidden mb-6 border border-white/10 relative group-card">
                   <img 
                     src={blog.image} 
-                    alt={blog.title} 
+                    alt={blog.title}
+                    width={640}
+                    height={360}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" 
                   />
                 </div>

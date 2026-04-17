@@ -79,7 +79,9 @@ const Header = () => {
             src={websiteLogo} 
             alt="Logo" 
             width={40} 
-            height={40} 
+            height={40}
+            decoding="async"
+            fetchPriority="high"
             className="w-10 h-10 object-contain rounded-full border border-white/10" 
           />
 
