@@ -69,7 +69,7 @@ const SocialProofSection = () => {
                 {stat.prefix && <span>{stat.prefix}</span>}
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
+              <div className="text-xs sm:text-sm font-medium text-white/55 uppercase tracking-[0.2em] group-hover:text-white/70 transition-colors">
                 {stat.label}
               </div>
             </motion.div>
@@ -86,7 +86,7 @@ const SocialProofSection = () => {
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
             Trusted by Global Merchants
           </h2>
-          <p className="text-white/40 max-w-[600px] mx-auto text-lg font-light">
+              <p className="text-white/55 max-w-[600px] mx-auto text-lg font-light">
             Real feedback from happy store owners who scaled their business with me.
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ const SocialProofSection = () => {
                         decoding="async"
                         className="w-4 h-4 opacity-70"
                       />
-                      <span className="text-[9px] font-bold text-white/40 uppercase tracking-widest">{t.platform}</span>
+                      <span className="text-[9px] font-bold text-white/55 uppercase tracking-widest">{t.platform}</span>
                     </div>
                     <div className="flex gap-0.5">
                       {[...Array(5)].map((_, j) => (
@@ -139,7 +139,7 @@ const SocialProofSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-xs text-white">{t.name}</div>
-                      <div className="text-[9px] text-white/40 uppercase tracking-wider">Merchant</div>
+                      <div className="text-[9px] text-white/55 uppercase tracking-wider">Merchant</div>
                     </div>
                   </div>
                 </div>

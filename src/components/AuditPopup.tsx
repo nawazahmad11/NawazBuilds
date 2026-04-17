@@ -1,58 +1,86 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const AuditPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasShown, setHasShown] = useState(false); // Task: Ensure it only shows once per refresh
   const [step, setStep] = useState<"form" | "success">("form");
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [loading, setLoading] = useState(false);
 
+  const hasShownRef = useRef(false);
+  const scrollableHRef = useRef(1);
+
   useEffect(() => {
-    // 1. Scroll Trigger (30% scroll hone pe show ho)
+    const updateScrollable = () => {
+      const el = document.documentElement;
+      scrollableHRef.current = Math.max(1, el.scrollHeight - window.innerHeight);
+    };
+
+    updateScrollable();
+    const ro = new ResizeObserver(updateScrollable);
+    ro.observe(document.documentElement);
+    window.addEventListener("resize", updateScrollable, { passive: true });
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateScrollable);
+    };
+  }, []);
+
+  useEffect(() => {
+    const openOnce = () => {
+      if (hasShownRef.current) return;
+      hasShownRef.current = true;
+      setIsOpen(true);
+    };
+
+    let scheduled = false;
     const handleScroll = () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      
-      if (scrollPercent > 40 && !hasShown) {
-        setIsOpen(true);
-        setHasShown(true); // Stop further triggers
-      }
+      if (hasShownRef.current) return;
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        scheduled = false;
+        if (hasShownRef.current) return;
+        const pct = (window.scrollY / scrollableHRef.current) * 100;
+        if (pct > 40) openOnce();
+      });
     };
 
-    // 2. Exit Intent Trigger (Jab user screen se bahar mouse le jaye)
     const handleExitIntent = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown) {
-        setIsOpen(true);
-        setHasShown(true); // Stop further triggers
+      if (e.clientY <= 0 && !hasShownRef.current) {
+        openOnce();
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("mouseleave", handleExitIntent);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mouseleave", handleExitIntent);
     };
-  }, [hasShown]);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      // Apka updated Google Script URL
-      await fetch("https://script.google.com/macros/s/AKfycbyMUlRY1rQYmA450Lf1t0lMp-C_WAwoCjBpjqDEigCy2fb58dNF4jD7muP2Vi5Ig2odAg/exec", {
-        method: "POST",
-        mode: "no-cors", // Aksar Google Scripts ke liye zaroori hota hai
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email,
-          name: formData.name,
-          type: "Free Audit" 
-        }),
-      });
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbyMUlRY1rQYmA450Lf1t0lMp-C_WAwoCjBpjqDEigCy2fb58dNF4jD7muP2Vi5Ig2odAg/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: formData.email,
+            name: formData.name,
+            type: "Free Audit",
+          }),
+        }
+      );
       setStep("success");
     } catch (error) {
       console.error("Error submitting lead:", error);
@@ -65,29 +93,32 @@ const AuditPopup = () => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* FULL BACKGROUND OVERLAY (Low Opacity) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)} // Overlay click pe band ho sake
+            onClick={() => setIsOpen(false)}
             className="fixed inset-0 z-[9998] bg-black/70 backdrop-blur-[2px]"
+            aria-hidden
           />
 
-          {/* POPUP CONTAINER */}
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="audit-popup-title"
               className="relative w-full max-w-md bg-[#0f1115] border border-white/10 rounded-[2.5rem] p-10 shadow-2xl pointer-events-auto overflow-hidden"
             >
-              {/* Close Button */}
-              <button 
-                onClick={() => setIsOpen(false)} 
-                className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-10"
+              <button
+                type="button"
+                onClick={() => setIsOpen(false)}
+                className="absolute top-6 right-6 text-white/55 hover:text-white transition-colors z-10"
+                aria-label="Close dialog"
               >
-                <X size={24} />
+                <X size={24} aria-hidden />
               </button>
 
               <AnimatePresence mode="wait">
@@ -98,46 +129,58 @@ const AuditPopup = () => {
                         Free Offer
                       </span>
                     </div>
-                    
-                    <h3 className="text-3xl font-black text-white text-center mb-4 leading-tight italic">
+
+                    <h3 id="audit-popup-title" className="text-3xl font-black text-white text-center mb-4 leading-tight italic">
                       Wait — before you go!
                     </h3>
-                    <p className="text-white/50 text-center mb-8 text-sm leading-relaxed">
-                      Get a <span className="text-primary font-bold">free 15-minute Shopify store audit</span> — I'll find the top 3 things killing your conversions.
+                    <p className="text-muted-foreground text-center mb-8 text-sm leading-relaxed">
+                      Get a <span className="text-primary font-bold">free 15-minute Shopify store audit</span> — I&apos;ll find
+                      the top 3 things killing your conversions.
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
-                      <input 
-                        type="text" required placeholder="Your name"
-                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:outline-none focus:border-primary/50 transition-all"
+                      <input
+                        type="text"
+                        required
+                        placeholder="Your name"
+                        name="name"
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/45 focus:outline-none focus:border-primary/50 transition-all"
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
-                      <input 
-                        type="email" required placeholder="Your email *"
-                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:outline-none focus:border-primary/50 transition-all"
+                      <input
+                        type="email"
+                        required
+                        placeholder="Your email *"
+                        name="email"
+                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder:text-white/45 focus:outline-none focus:border-primary/50 transition-all"
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
-                      <button 
+                      <button
+                        type="submit"
                         disabled={loading}
                         className="w-full py-5 bg-primary text-black font-black uppercase tracking-widest rounded-2xl hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(var(--primary-rgb),0.2)]"
                       >
-                        {loading ? "Processing..." : "Get My Free Audit"} <ArrowRight size={20} />
+                        {loading ? "Processing..." : "Get My Free Audit"} <ArrowRight size={20} aria-hidden />
                       </button>
                     </form>
-                    <p className="text-[10px] text-white/20 text-center mt-6 uppercase tracking-widest">No spam. Response within 24hrs.</p>
+                    <p className="text-[10px] text-muted-foreground text-center mt-6 uppercase tracking-widest">
+                      No spam. Response within 24hrs.
+                    </p>
                   </motion.div>
                 ) : (
                   <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-10">
                     <div className="flex justify-center mb-6 text-primary">
-                      <CheckCircle2 size={64} strokeWidth={1.5} />
+                      <CheckCircle2 size={64} strokeWidth={1.5} aria-hidden />
                     </div>
-                    <h3 className="text-3xl font-black text-white mb-4 italic tracking-tight">You're on the list!</h3>
-                    <p className="text-white/50 leading-relaxed text-sm">
-                      I've received your request. I'll review your store and send the audit report to your inbox within 24 hours.
+                    <h3 className="text-3xl font-black text-white mb-4 italic tracking-tight">You&apos;re on the list!</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">
+                      I&apos;ve received your request. I&apos;ll review your store and send the audit report to your inbox
+                      within 24 hours.
                     </p>
-                    <button 
-                      onClick={() => setIsOpen(false)} 
-                      className="mt-8 px-8 py-3 border border-white/10 rounded-xl text-white/60 text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all"
+                    <button
+                      type="button"
+                      onClick={() => setIsOpen(false)}
+                      className="mt-8 px-8 py-3 border border-white/10 rounded-xl text-muted-foreground text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all"
                     >
                       Close Window
                     </button>

@@ -1,8 +1,9 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Components
 import Header from "@/components/Header";
@@ -16,8 +17,9 @@ import NotFound from "./pages/NotFound";
 import BlogPage from "./pages/BlogPage";
 import BlogPostDetail from "./pages/BlogPostDetail";  
 import ToolsPage from "./pages/Tools";
-import AuditPopup from "./components/AuditPopup";
 import WhatsAppButton from "./components/WhatsAppButton";
+
+const AuditPopup = lazy(() => import("./components/AuditPopup"));
 
 const queryClient = new QueryClient();
 
@@ -51,7 +53,9 @@ const App = () => (
         </Routes>
         <Footer />
 
-        <AuditPopup />
+        <Suspense fallback={null}>
+          <AuditPopup />
+        </Suspense>
         <WhatsAppButton />
       </BrowserRouter>
     </TooltipProvider>

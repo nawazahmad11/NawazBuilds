@@ -1,5 +1,17 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
+import "./critical-shell.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+async function bootstrap() {
+  if (import.meta.env.DEV) {
+    await import("./index.css");
+  }
+
+  createRoot(document.getElementById("root")!).render(<App />);
+
+  if (import.meta.env.PROD) {
+    void import("./index.css");
+  }
+}
+
+void bootstrap();

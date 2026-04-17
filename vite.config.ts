@@ -18,4 +18,18 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules/framer-motion")) {
+            return "motion-vendor";
+          }
+          if (id.includes("node_modules/lucide-react")) {
+            return "icons-vendor";
+          }
+        },
+      },
+    },
+  },
 }));

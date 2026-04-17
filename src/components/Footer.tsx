@@ -71,8 +71,8 @@ const Footer = () => {
 
               <h3 className="text-xl font-bold tracking-tight text-white italic">Nawaz Ahmad</h3>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-md">Shopify Architect & Performance Expert. Helping e-commerce brands scale from $0 to 7-figures with high-performance stores.</p>
-            <div className="space-y-4 text-sm text-white/40">
+            <p className="text-white/55 text-sm leading-relaxed max-w-md">Shopify Architect & Performance Expert. Helping e-commerce brands scale from $0 to 7-figures with high-performance stores.</p>
+            <div className="space-y-4 text-sm text-white/55">
               <div className="flex items-center space-x-3 hover:text-[#f9a825] transition-colors cursor-pointer group">
                 <Mail size={16} />
                 <a href="mailto:hello@nawazahmad.com">hello@nawazahmad.com</a>
@@ -84,7 +84,7 @@ const Footer = () => {
           <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
             <div className="space-y-5">
               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Expertise</h4>
-              <ul className="space-y-3 text-sm text-white/40 font-medium">
+              <ul className="space-y-3 text-sm text-white/55 font-medium">
                 <li><button onClick={() => scrollToSection("services")} className="hover:text-[#f9a825] transition-colors">Development</button></li>
                 <li><button onClick={() => scrollToSection("performance")} className="hover:text-[#f9a825] transition-colors">Optimization</button></li>
                 <li><Link to="/blog" className="hover:text-[#f9a825] transition-colors">Case Studies</Link></li>
@@ -93,7 +93,7 @@ const Footer = () => {
 
             <div className="space-y-5">
               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Growth Tools</h4>
-              <ul className="space-y-3 text-sm text-white/40 font-medium">
+              <ul className="space-y-3 text-sm text-white/55 font-medium">
                 <li><Link to="/tools?tool=calculator" className="hover:text-[#f9a825] transition-colors">Profit Calculator</Link></li>
                 <li><Link to="/tools?tool=policy" className="hover:text-[#f9a825] transition-colors">Policy Generator</Link></li>
                 <li><Link to="/tools?tool=generator" className="hover:text-[#f9a825] transition-colors">Name Generator</Link></li>
@@ -103,15 +103,19 @@ const Footer = () => {
 
             <div className="space-y-5">
               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Resources</h4>
-              <ul className="space-y-3 text-sm text-white/40 font-medium">
+              <ul className="space-y-3 text-sm text-white/55 font-medium">
                 <li><Link to="/blog" className="hover:text-[#f9a825] transition-colors">Shopify Tips</Link></li>
-                <li><a href="#" className="hover:text-[#f9a825] transition-colors">WhatsApp Channel</a></li>
+                <li>
+                  <a href="https://wa.me/923059552222" rel="noopener noreferrer" className="hover:text-[#f9a825] transition-colors">
+                    WhatsApp Channel
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div className="space-y-5">
               <h4 className="text-[10px] font-black text-white uppercase tracking-widest">Connect</h4>
-              <ul className="space-y-3 text-sm text-white/40 font-medium">
+              <ul className="space-y-3 text-sm text-white/55 font-medium">
                 <li><a href="https://wa.me/923059552222" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><MessageCircle size={14} /> WhatsApp</a></li>
                 <li><a href="mailto:hello@nawazahmad.com" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><Mail size={14} /> Email Me</a></li>
               </ul>
@@ -122,7 +126,7 @@ const Footer = () => {
         <div className="py-12 border-t border-white/5 flex flex-col xl:flex-row items-center justify-between gap-10 text-center xl:text-left">
           <div>
             <h4 className="text-xl font-bold text-white mb-2 italic">Scale Your Shopify Store</h4>
-            <p className="text-sm text-white/40">Get conversion and speed tips directly to your inbox.</p>
+            <p className="text-sm text-white/55">Get conversion and speed tips directly to your inbox.</p>
           </div>
           {/* Form ko update kiya taake functions connect ho sakein */}
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 w-full xl:w-auto xl:min-w-[500px]">
@@ -151,21 +155,40 @@ const Footer = () => {
             <span className="text-[10px] font-black uppercase tracking-[3px] text-white/20">Socials:</span>
             <div className="flex items-center space-x-4">
               {[
-                { icon: <Youtube size={20} />, url: "" },
-                { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/" },
-                { icon: <Instagram size={20} />, url: "" },
-                { icon: <MessageCircle size={20} />, url: "https://wa.me/923394146447" }
-              ].map((social, i) => (
-                <a 
-                  key={i} 
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all"
-                >
-                  {social.icon}
-                </a>
-              ))}
+                { icon: <Youtube size={20} aria-hidden />, url: "", label: "YouTube — coming soon" },
+                {
+                  icon: <Linkedin size={20} aria-hidden />,
+                  url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/",
+                  label: "LinkedIn profile",
+                },
+                { icon: <Instagram size={20} aria-hidden />, url: "", label: "Instagram — coming soon" },
+                {
+                  icon: <MessageCircle size={20} aria-hidden />,
+                  url: "https://wa.me/923394146447",
+                  label: "WhatsApp chat",
+                },
+              ].map((social, i) =>
+                social.url ? (
+                  <a
+                    key={i}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/55 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all"
+                  >
+                    {social.icon}
+                  </a>
+                ) : (
+                  <span
+                    key={i}
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/35 cursor-default"
+                    aria-label={social.label}
+                  >
+                    {social.icon}
+                  </span>
+                )
+              )}
             </div>
           </div>
           <div className="text-[10px] font-bold text-white/20 uppercase tracking-[4px]">
