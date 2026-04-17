@@ -347,7 +347,7 @@ const FunnelStep1 = () => {
               </p>
           </motion.div>
         </div>
-
+        
         {/* MARQUEE TESTIMONIALS*/}
         <style>{`
           @keyframes marquee-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -389,6 +389,7 @@ const FunnelStep1 = () => {
               dataSet.slice(26, 39),
             ];
 
+            
             return rows.map((rowData, rowIndex) => (
               <div key={rowIndex} className="marquee-container relative flex overflow-hidden py-1">
                 <div className={`flex gap-4 whitespace-nowrap ${rowIndex === 1 ? 'animate-right' : 'animate-left'}`}>
