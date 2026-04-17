@@ -39,7 +39,7 @@ const BlogSection = () => {
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
               Recent <span className="text-gradient-gold">Blog Posts</span>
             </h2>
-            <p className="text-white/40 text-lg font-light">
+            <p className="text-white/60 text-lg font-light">
               Latest insights on Shopify development and e-commerce scaling.
             </p>
           </div>
@@ -77,10 +77,10 @@ const BlogSection = () => {
                 {blog.title}
                   
                 </h3>
-                <p className="text-white/40 text-sm font-light mb-6 flex-1 line-clamp-3">
+                <p className="text-white/60 text-sm font-light mb-6 flex-1 line-clamp-3">
                   {blog.excerpt}
                 </p>
-                <div className="text-[10px] text-white/20 font-black uppercase tracking-widest border-t border-white/5 pt-4 flex justify-between items-center">
+                <div className="text-[10px] text-white/40 font-black uppercase tracking-widest border-t border-white/5 pt-4 flex justify-between items-center">
                   <span>{blog.date}</span>
                   <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-primary" />
                 </div>

@@ -50,7 +50,7 @@ const FAQSection = () => {
               <h2 className="text-4xl font-black text-white leading-tight">
                 Frequently Asked <span className="text-gradient-gold">Questions</span>
               </h2>
-              <p className="text-white/40 mt-6 text-lg font-light">
+              <p className="text-white/60 mt-6 text-lg font-light">
                 Can't find what you're looking for? <br />
                 <a 
                   href="https://wa.me/923059552222" 
@@ -79,11 +79,11 @@ const FAQSection = () => {
                         </div>
                         <span className="text-white font-semibold text-lg">{faq.question}</span>
                       </div>
-                      <ChevronDown className="w-5 h-5 text-white/20 group-data-[state=open]:rotate-180 group-data-[state=open]:text-primary transition-transform" />
+                      <ChevronDown className="w-5 h-5 text-white/40 group-data-[state=open]:rotate-180 group-data-[state=open]:text-primary transition-transform" />
                     </Accordion.Trigger>
                   </Accordion.Header>
                   
-                  <Accordion.Content className="px-6 pb-6 text-white/50 font-light leading-relaxed animate-accordion-down">
+                  <Accordion.Content className="px-6 pb-6 text-white/60 font-light leading-relaxed animate-accordion-down">
                     <div className="pt-2 border-t border-white/5">
                       {faq.answer}
                     </div>

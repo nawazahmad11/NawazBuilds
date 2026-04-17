@@ -134,7 +134,7 @@ const PortfolioSection = () => {
           <h2 className="text-4xl md:text-6xl font-black mb-4 text-white tracking-tight">
             My <span className="text-gradient-gold">Work</span>
           </h2>
-          <p className="text-white/40 text-lg max-w-2xl mx-auto font-light">
+          <p className="text-white/60 text-lg max-w-2xl mx-auto font-light">
             Premium Shopify stores designed for high conversions and global scale.
           </p>
         </motion.div>

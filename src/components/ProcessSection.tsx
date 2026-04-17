@@ -64,12 +64,12 @@ const ProcessSection = () => {
               className="group relative p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-500 overflow-hidden"
             >
               {/* Step Number Background */}
-              <div className="absolute -top-4 -right-4 text-8xl font-black text-white/[0.02] group-hover:text-primary/5 transition-colors leading-none">
+              <div className="absolute -top-4 -right-4 text-8xl font-black text-white/[0.06] group-hover:text-primary/5 transition-colors leading-none">
                 {step.num}
               </div>
 
               <div className="relative z-10">
-                <div className="text-4xl font-black text-white/10 group-hover:text-primary/40 transition-colors mb-4">
+                <div className="text-4xl font-black text-white/40 group-hover:text-primary/40 transition-colors mb-4">
                   {step.num}
                 </div>
                 
@@ -81,7 +81,7 @@ const ProcessSection = () => {
                   {step.title}
                 </h3>
                 
-                <p className="text-white/40 text-sm leading-relaxed font-light">
+                <p className="text-white/70 text-sm leading-relaxed font-light">
                   {step.desc}
                 </p>
               </div>

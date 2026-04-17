@@ -50,7 +50,7 @@ const AboutSection = () => {
             {/* Experience Floating Badge */}
             <div className="absolute -bottom-6 -right-2 glass-card p-6 border-primary/20 hidden md:block">
               <div className="text-3xl font-black text-primary">10+</div>
-              <div className="text-[10px] text-white/40 uppercase tracking-widest font-bold font-sans">Years Exp.</div>
+              <div className="text-[10px] text-white/60 uppercase tracking-widest font-bold font-sans">Years Exp.</div>
             </div>
           </motion.div>
 
@@ -72,14 +72,14 @@ const AboutSection = () => {
                 <Trophy className="w-8 h-8 text-primary/60" />
                 <div>
                   <div className="text-xl font-bold text-white leading-none">150+</div>
-                  <div className="text-[10px] text-white/30 uppercase mt-1">Projects Done</div>
+                  <div className="text-[10px] text-white/60 uppercase mt-1">Projects Done</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Users className="w-8 h-8 text-primary/60" />
                 <div>
                   <div className="text-xl font-bold text-white leading-none">Global</div>
-                  <div className="text-[10px] text-white/30 uppercase mt-1">Client Base</div>
+                  <div className="text-[10px] text-white/60 uppercase mt-1">Client Base</div>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ const AboutSection = () => {
                   "Store Speed Optimization",
                   "SaaS Architecture"
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 text-sm text-white/50">
+                  <div key={i} className="flex items-center gap-3 text-sm text-white/80">
                     <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                     <span>{item}</span>
                   </div>

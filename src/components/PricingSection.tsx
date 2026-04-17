@@ -22,7 +22,7 @@ const PricingSection = () => {
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-tight">
             Ready to Scale Your <span className="text-gradient-gold">Business?</span>
           </h2>
-          <p className="text-white/40 max-w-xl mx-auto text-base font-light">
+          <p className="text-[19px] text-white/60 max-w-[600px] mx-auto text-lg font-light">
             Transparent pricing with no hidden developer fees.
           </p>
         </motion.div>
@@ -37,11 +37,11 @@ const PricingSection = () => {
             <div className="h-32 mb-6">
               <h3 className="text-lg font-bold text-white/70">Maintenance</h3>
               <div className="text-4xl font-black text-white mt-2">$99</div>
-              <p className="text-[10px] text-white/30 mt-1 italic uppercase tracking-wider">Store Refresh & Fixes</p>
+              <p className="text-[12px] text-white/55 mt-1 italic uppercase tracking-wider">Store Refresh & Fixes</p>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               {["Speed Optimization (90+)", "Bug Fixes & App Setup", "10 Product Listings", "Conversion Audit", "2-3 Days Delivery"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-white/60 font-light">
+                <li key={i} className="flex items-center gap-3 text-sm text-white/70 font-light">
                   <CheckCircle className="w-4 h-4 text-green-500/80 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
@@ -66,7 +66,7 @@ const PricingSection = () => {
             <div className="h-32 mb-6">
               <h3 className="text-xl font-bold text-primary">Full Store Design</h3>
               <div className="text-5xl font-black text-white mt-2 drop-shadow-sm">$299</div>
-              <p className="text-[10px] text-primary/70 mt-2 font-medium italic">*Premium theme license cost not included</p>
+              <p className="text-[12px] text-primary/70 mt-2 font-medium italic">*Premium theme license cost not included</p>
             </div>
             <ul className="space-y-4 mb-8 flex-1">
               {["High-Converting UI/UX Design", "Winning Product Research", "Custom Liquid Functionality", "13-15 Days Rapid Delivery", "Mobile-First Optimization", "Marketing Pixel Setup", "30 Days Support"].map((item, i) => (
@@ -92,11 +92,11 @@ const PricingSection = () => {
             <div className="h-32 mb-6">
               <h3 className="text-lg font-bold text-white/70">Enterprise</h3>
               <div className="text-4xl font-black text-white mt-2 italic tracking-tighter">Custom</div>
-              <p className="text-[10px] text-white/30 mt-1 italic uppercase tracking-wider">7-Figure Scalability</p>
+              <p className="text-[12px] text-white/55 mt-1 italic uppercase tracking-wider">7-Figure Scalability</p>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               {["Headless Shopify (Hydrogen)", "Custom App Development", "Advanced API Integration", "Unlimited Support", "Full Brand Strategy", "Priority 24/7 Support"].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-white/60 font-light">
+                <li key={i} className="flex items-center gap-3 text-sm text-white/70 font-light">
                   <CheckCircle className="w-4 h-4 text-green-500/80 flex-shrink-0" />
                   <span>{item}</span>
                 </li>

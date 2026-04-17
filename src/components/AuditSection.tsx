@@ -33,7 +33,7 @@ const AuditSection = () => {
                 Get a free <span className="text-primary">store audit.</span>
               </h3>
               
-              <p className="text-white/50 text-lg leading-relaxed max-w-2xl">
+              <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
                 I'll review your Shopify store and send you a personalised report 
                 covering speed, UX, mobile experience, and conversion rate — 
                 <span className="text-white"> completely free, no strings attached.</span>
@@ -41,7 +41,7 @@ const AuditSection = () => {
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-4">
                 {points.map((point, i) => (
-                  <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] text-[11px] font-bold text-white/40 uppercase tracking-wider">
+                  <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/2 bg-white/[0.1] text-[11px] font-bold text-white/65 uppercase tracking-wider">
                     <CheckCircle2 size={14} className="text-primary" />
                     {point}
                   </div>
@@ -69,7 +69,7 @@ const AuditSection = () => {
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
-              <p className="mt-4 text-[10px] font-mono text-white/20 uppercase tracking-[0.2em]">
+              <p className="mt-4 text-[11px] font-mono text-white/60 uppercase tracking-[0.2em]">
                 No obligation · Response within 48hrs
               </p>
             </div>

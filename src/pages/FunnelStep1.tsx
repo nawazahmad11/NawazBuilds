@@ -206,7 +206,7 @@ const FunnelStep1 = () => {
                   <item.icon className="w-7 h-7 text-destructive group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <h3 className="font-bold text-xl mb-3 text-white group-hover:text-destructive/90 transition-colors" style={{ transform: "translateZ(40px)" }}>{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed" style={{ transform: "translateZ(20px)" }}>{item.desc}</p>
+                <p className="text-m text-white/70 text-muted-foreground leading-relaxed" style={{ transform: "translateZ(20px)" }}>{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -279,10 +279,10 @@ const FunnelStep1 = () => {
                 </div>
 
                 <div className="flex flex-col z-10">
-                  <h4 className="text-sm font-semibold text-white group-hover:text-primary transition-colors duration-300">
+                  <h4 className="text-[16px] font-semibold text-white group-hover:text-primary transition-colors duration-300">
                     {item.label}
                   </h4>
-                  <p className="text-[10px] text-white/50 group-hover:text-white/80 transition-colors leading-tight">
+                  <p className="text-[15px] text-white/65 group-hover:text-white/80 transition-colors leading-tight">
                     {item.desc}
                   </p>
                 </div>
@@ -325,7 +325,7 @@ const FunnelStep1 = () => {
               {stat.prefix && <span>{stat.prefix}</span>}
               <AnimatedCounter value={stat.value} suffix={stat.suffix} />
             </div>
-            <div className="text-xs sm:text-sm font-medium text-white/40 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
+            <div className="text-xs sm:text-sm font-medium text-white/60 uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
               {stat.label}
             </div>
           </motion.div>
@@ -342,7 +342,7 @@ const FunnelStep1 = () => {
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
                 Trusted by Global Merchants
         </h2>
-              <p className="text-white/40 max-w-[600px] mx-auto text-lg font-light">
+              <p className="text-white/60 max-w-[600px] mx-auto text-lg font-light">
                 Real feedback from happy store owners who scaled their business with me.
               </p>
           </motion.div>
@@ -400,7 +400,7 @@ const FunnelStep1 = () => {
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                             <img src={t.logo} alt={t.platform} className="w-4 h-4 opacity-70" />
-                            <span className="text-[9px] font-bold text-white/40 uppercase tracking-widest">{t.platform}</span>
+                            <span className="text-[9.5px] font-bold text-white/60 uppercase tracking-widest">{t.platform}</span>
                         </div>
                         <div className="flex gap-0.5">
                             {[...Array(5)].map((_, j) => (
@@ -409,7 +409,7 @@ const FunnelStep1 = () => {
                         </div>
                       </div>
                       
-                      <p className="text-[12px] text-white/70 mb-4 italic leading-relaxed font-light">
+                      <p className="text-[12px] text-white/80 mb-4 italic leading-relaxed font-light">
                         "{t.text}"
                       </p>
                       
@@ -419,7 +419,7 @@ const FunnelStep1 = () => {
                         </div>
                         <div>
                           <div className="font-semibold text-xs text-white">{t.name}</div>
-                          <div className="text-[9px] text-white/40 uppercase tracking-wider">Merchant</div>
+                          <div className="text-[9px] text-white/60 uppercase tracking-wider">Merchant</div>
                         </div>
                       </div>
                     </div>
