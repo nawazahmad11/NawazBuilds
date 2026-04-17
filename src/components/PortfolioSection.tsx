@@ -1,14 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
 
-//import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
-
-
+// ✅ Optimized Icon Imports (Har icon alag import taake bundle size chota rahe)
 import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 import ExternalLink from "lucide-react/dist/esm/icons/external-link";
 import CheckCircle2 from "lucide-react/dist/esm/icons/check-circle-2";
-
-
-import { useState, useEffect, useMemo } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -92,11 +88,11 @@ const projects = [
   { name: "FitGears", cat: "Fitness Apparel", img: "/gym-couture-shopify-store.webp", link: "https://gymcouture.co.uk/" },
   { name: "Silk & Stone", cat: "Modern Fashion", img: "/ovrthnk-shopify-store.webp", link: "https://ovrthnk.us/" },
   { name: "Urban Fit", cat: "Clothing Store", img: "/urban-clothing-shopify-store.webp", link: "https://urbanfits.co.in/" },
-  { name: "Roasted Cherry", cat: "Coffee Shop", img: "/coffee-shopify-store.webp", link: "https://roastedcherry.ca/" },
-  { name: "Revoo Concept", cat: "Food Store", img: "/olive-oil-shopify-store.webp", link: "https://revooconcept.com/" },
-  { name: "Nura Fashion", cat: "Fashion", img: "/ladies-shopify-store.webp", link: "https://nurafashion.com/" },
-  { name: "Little Wren", cat: "Kids Accessories", img: "/little-wren-shopify-store.webp", link: "https://www.ohlittlewren.com/" },
-  { name: "Denim Den", cat: "Kids Wear", img: "/kids-wear-shopify-store.webp", link: "https://denimden.shop/" },
+  { name: "Roasted Cherry", cat: "Coffee Shop", img: "/roastedcherry.ca/" },
+  { name: "Revoo Concept", cat: "Food Store", img: "/revooconcept.com/" },
+  { name: "Nura Fashion", cat: "Fashion", img: "/nurafashion.com/" },
+  { name: "Little Wren", cat: "Kids Accessories", img: "/www.ohlittlewren.com/" },
+  { name: "Denim Den", cat: "Kids Wear", img: "/denimden.shop/" },
   { name: "Welevate club", cat: "Personal Accessories", img: "/breathe-freely-shopify-store.webp", link: "https://welevateclub.com/"}
 ];
 
@@ -153,7 +149,7 @@ const PortfolioSection = () => {
                   loading="lazy" 
                   width="450"
                   height="310"
-                  decoding="async" // High performance decoding
+                  decoding="async" 
                   className="w-full h-full object-cover transition-all duration-700 grayscale-[40%] group-hover:grayscale-0 group-hover:scale-110" 
                 />
               </div>
@@ -236,12 +232,12 @@ const PortfolioSection = () => {
                 >
                   <img
                     src={showcaseProjects[activeIndex].img}
-                    // FIRST IMAGE 'EAGER', OTHERS 'LAZY' for LCP Performance
-                    loading={activeIndex === 0 ? "eager" : "lazy"} 
-                    // fetchpriority ko remove kar dein ya aise likhein:
-                    {...({ fetchPriority: activeIndex === 0 ? "high" : "low" } as any)}
-                    width="600"
-                    height="580"
+                    // ✅ Fixed Dimensions (Exact display match for mobile)
+                    width="550"
+                    height="275"
+                    // ✅ Performance: Portfolio images ko hamesha 'lazy' load karein
+                    loading="lazy" 
+                    decoding="async"
                     className="w-full h-auto max-h-[450px] md:max-h-[580px] object-contain rounded-[2.5rem] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]" 
                     alt={showcaseProjects[activeIndex].title}
                   />
@@ -253,9 +249,6 @@ const PortfolioSection = () => {
           </div>
         </div>
       </div>
-
-
-
     </section>
   );
 };
