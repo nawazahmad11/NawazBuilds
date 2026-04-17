@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { Rocket, ChevronDown, Calculator, ShieldCheck, Layout, ShoppingBag } from "lucide-react";
+// import { Rocket, ChevronDown, Calculator, ShieldCheck, Layout, ShoppingBag } from "lucide-react";
+
+import Rocket from "lucide-react/dist/esm/icons/rocket";
+import ChevronDown from "lucide-react/dist/esm/icons/chevron-down";
+import Calculator from "lucide-react/dist/esm/icons/calculator";
+import ShieldCheck from "lucide-react/dist/esm/icons/shield-check";
+import Layout from "lucide-react/dist/esm/icons/layout";
+import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
 
 const Header = () => {
   const navigate = useNavigate();

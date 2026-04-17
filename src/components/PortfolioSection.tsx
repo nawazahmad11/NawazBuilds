@@ -1,5 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
+
+//import { ArrowRight, ExternalLink, CheckCircle2 } from "lucide-react";
+
+
+import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
+import ExternalLink from "lucide-react/dist/esm/icons/external-link";
+import CheckCircle2 from "lucide-react/dist/esm/icons/check-circle-2";
+
+
 import { useState, useEffect, useMemo } from "react";
 
 const fadeInUp = {
