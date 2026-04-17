@@ -20,71 +20,71 @@ const fadeInUp = {
 };
 
 // --- DATA SECTIONS (Unchanged as requested) ---
-// const showcaseProjects = [
-//   {
-//     title: "Forma Liv",
-//     description: "A minimalist furniture store designed for a premium feel. We kept the layout clean and warm, making it easy for customers to browse and shop for high-end home decor without any distractions.",
-//     features: ["45% Increase in Mobile CR", "Sub-1s Loading Time", "Custom Scent Finder" , "Clean & Minimal Design"],
-//     img: "/forma-liv.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "AeroTech Gear",
-//     description: "A sharp, modern tech store built for gadgets and drones. I focused on a professional look and a fast checkout flow to make buying electronics easy and reliable.",
-//     features: ["Flash Sale Optimization", "Advanced Inventory Sync", "3D Product Previews"],
-//     img: "/aerotech-gear-shopify-store.webp",
-//     color: "#ffffff"
-//   },
-//   {
-//     title: "Axeon Sport",
-//     description: "A high-performance store built for athletes. I combined a bold, technical look with a fast shopping flow to make sure the gear stands out and the checkout is effortless.",
-//     features: ["Rapid Peak Scaling", "UGC Integration", "Mobile Optimization"],
-//     img: "/axeon-sport-shopify-store.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "Haven Loom",
-//     description: "A high-end, bespoke furniture store designed for the thoughtful home. I combined a clean, natural palette with a seamless interface to make shopping for handcrafted luxury simple and incredibly intuitive.",
-//     features: ["Bespoke UI Design", "360° AR Visualization", "Mobile-First Luxury"],
-//     img: "/haven-loom-shopify-store.webp",
-//     color: "#facc15"
-//   },  
-//   {
-//     title: "Naturale Skincare",
-//     description: "Experience botanical luxury. I crafted this premium skincare store with a focus on natural elegance and modern functionality. The goal was to make high-end beauty shopping feel effortless and perfectly personalized for every customer.",
-//     features: ["Smart Skincare Funnel", "UGC Integration", "Skincare Quiz Funnel"],
-//     img: "/naturale-skincare-shopify-store.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "Sustainable Drops",
-//     description: "Modern streetwear with a conscious soul. I designed this store to bridge the gap between high-end fashion and eco-friendly practices. The layout is intentionally clean, allowing the `recycled` aesthetic and premium textures to take center stage.",
-//     features: ["Dynamic Drop Architecture", "Lookbook-Integrated UX", "Eco-Metric Visualization"],
-//     img: "/sustainable-drops-shopify-store.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "Gadget Array",
-//     description: "Premium tech meets effortless shopping. I designed this storefront for high-end electronics, focusing on a clean white-space aesthetic that highlights technical details. The goal was to create a trustworthy environment for gadget enthusiasts to explore and buy with ease.",
-//     features: ["High-Fidelity Product Previews", "Unified Accessory Ecosystem", "Sub-1s Interaction Speed"],
-//     img: "/gadget-array-shopify-store.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "Vitality Wellness",
-//     description: "A serene, botanical-inspired store built for the health-conscious consumer. I created a calm, organic atmosphere using earthy tones to make browsing for premium supplements feel like a natural extension of a wellness routine.",
-//     features: ["Smart Supplement Finder", "Subscription Model Ready", "Conversion-Optimized Flow"],
-//     img: "/vitality-wellness-shopify-store.webp",
-//     color: "#facc15"
-//   },
-//   {
-//     title: "Culinary Edge",
-//     description: "A sophisticated, high-end storefront built for professional chefs and home cooking enthusiasts. We designed this experience to reflect the precision of the tools it sells, using a bold, dark aesthetic that emphasizes quality, durability, and premium kitchen aesthetics.",
-//     features: ["Precision UI Design", "Conversion-Optimized Checkout", "Dynamic Sales Analytics"],
-//     img: "/culinary-edge-shopify-store.webp",
-//     color: "#facc15"
-//   }
-// ];
+const showcaseProjects = [
+  {
+    title: "Forma Liv",
+    description: "A minimalist furniture store designed for a premium feel. We kept the layout clean and warm, making it easy for customers to browse and shop for high-end home decor without any distractions.",
+    features: ["45% Increase in Mobile CR", "Sub-1s Loading Time", "Custom Scent Finder" , "Clean & Minimal Design"],
+    img: "/forma-liv.webp",
+    color: "#facc15"
+  },
+  {
+    title: "AeroTech Gear",
+    description: "A sharp, modern tech store built for gadgets and drones. I focused on a professional look and a fast checkout flow to make buying electronics easy and reliable.",
+    features: ["Flash Sale Optimization", "Advanced Inventory Sync", "3D Product Previews"],
+    img: "/aerotech-gear-shopify-store.webp",
+    color: "#ffffff"
+  },
+  {
+    title: "Axeon Sport",
+    description: "A high-performance store built for athletes. I combined a bold, technical look with a fast shopping flow to make sure the gear stands out and the checkout is effortless.",
+    features: ["Rapid Peak Scaling", "UGC Integration", "Mobile Optimization"],
+    img: "/axeon-sport-shopify-store.webp",
+    color: "#facc15"
+  },
+  {
+    title: "Haven Loom",
+    description: "A high-end, bespoke furniture store designed for the thoughtful home. I combined a clean, natural palette with a seamless interface to make shopping for handcrafted luxury simple and incredibly intuitive.",
+    features: ["Bespoke UI Design", "360° AR Visualization", "Mobile-First Luxury"],
+    img: "/haven-loom-shopify-store.webp",
+    color: "#facc15"
+  },  
+  {
+    title: "Naturale Skincare",
+    description: "Experience botanical luxury. I crafted this premium skincare store with a focus on natural elegance and modern functionality. The goal was to make high-end beauty shopping feel effortless and perfectly personalized for every customer.",
+    features: ["Smart Skincare Funnel", "UGC Integration", "Skincare Quiz Funnel"],
+    img: "/naturale-skincare-shopify-store.webp",
+    color: "#facc15"
+  },
+  {
+    title: "Sustainable Drops",
+    description: "Modern streetwear with a conscious soul. I designed this store to bridge the gap between high-end fashion and eco-friendly practices. The layout is intentionally clean, allowing the `recycled` aesthetic and premium textures to take center stage.",
+    features: ["Dynamic Drop Architecture", "Lookbook-Integrated UX", "Eco-Metric Visualization"],
+    img: "/sustainable-drops-shopify-store.webp",
+    color: "#facc15"
+  },
+  {
+    title: "Gadget Array",
+    description: "Premium tech meets effortless shopping. I designed this storefront for high-end electronics, focusing on a clean white-space aesthetic that highlights technical details. The goal was to create a trustworthy environment for gadget enthusiasts to explore and buy with ease.",
+    features: ["High-Fidelity Product Previews", "Unified Accessory Ecosystem", "Sub-1s Interaction Speed"],
+    img: "/gadget-array-shopify-store.webp",
+    color: "#facc15"
+  },
+  {
+    title: "Vitality Wellness",
+    description: "A serene, botanical-inspired store built for the health-conscious consumer. I created a calm, organic atmosphere using earthy tones to make browsing for premium supplements feel like a natural extension of a wellness routine.",
+    features: ["Smart Supplement Finder", "Subscription Model Ready", "Conversion-Optimized Flow"],
+    img: "/vitality-wellness-shopify-store.webp",
+    color: "#facc15"
+  },
+  {
+    title: "Culinary Edge",
+    description: "A sophisticated, high-end storefront built for professional chefs and home cooking enthusiasts. We designed this experience to reflect the precision of the tools it sells, using a bold, dark aesthetic that emphasizes quality, durability, and premium kitchen aesthetics.",
+    features: ["Precision UI Design", "Conversion-Optimized Checkout", "Dynamic Sales Analytics"],
+    img: "/culinary-edge-shopify-store.webp",
+    color: "#facc15"
+  }
+];
 
 const projects = [
   { name: "Luxe Fragrances", cat: "Luxury Perfumes", img: "/perfume-shopify-store.webp", link: "https://LuxeFragrancess.com" },
@@ -106,12 +106,12 @@ const PortfolioSection = () => {
   // Memoize duplicated projects to prevent re-renders on every scroll
   const duplicatedProjects = useMemo(() => [...projects, ...projects, ...projects], []);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setActiveIndex((prev) => (prev + 1) % showcaseProjects.length);
-  //   }, 5000);
-  //   return () => clearInterval(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % showcaseProjects.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section id="portfolio" className="py-20 bg-black/40 overflow-hidden relative">
@@ -181,7 +181,7 @@ const PortfolioSection = () => {
       </div>
 
       {/* --- FEATURE SHOWCASE (IMPROVED PERFORMANCE) --- */}
-      {/* <div className="section-container relative z-20">
+      <div className="section-container relative z-20">
         <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
 
@@ -252,9 +252,7 @@ const PortfolioSection = () => {
 
           </div>
         </div>
-
-
-      </div> */}
+      </div>
 
 
 
