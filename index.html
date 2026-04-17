@@ -1,6 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr" style="background-color: hsl(263 70% 8%);">
   <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="hsl(263 70% 8%)" />
+    
+    <title>Nawaz Builds — Premium Shopify Development Agency</title>
+    <meta name="description" content="I build high-converting, custom Shopify stores designed to scale. Custom Liquid development and conversion psychology for serious brands." />
+    <meta name="author" content="Nawaz Builds" />
+    <link rel="icon" type="image/webp" href="/nawaz-builds-icon.webp" />
 
     <link rel="preload" href="/fonts/Inter_28pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Inter_28pt-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
@@ -8,31 +17,38 @@
     <link rel="preload" href="/fonts/Inter_28pt-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="preload" href="/nawaz-build-portfolio-image.webp" as="image" type="image/webp" fetchpriority="high" />
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nawaz Builds — Premium Shopify Development Agency</title>
-    <meta name="description" content="I build high-converting, custom Shopify stores designed to scale. Custom Liquid development and conversion psychology for serious brands." />
-    <meta name="author" content="Nawaz Builds" />
-    <link rel="icon" type="image/webp" href="/nawaz-builds-icon.webp" />
+
+    <style id="critical-css-main">
+      :root { color-scheme: dark; }
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Using your exact brand color to prevent color flashing */
+        background-color: hsl(263 70% 8%) !important; 
+        color: hsl(0 0% 98%);
+        min-height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      #root { 
+        min-height: 100vh; 
+        display: flex; 
+        flex-direction: column; 
+      }
+      /* Optional: Smooth entry for the whole page */
+      body { animation: gentleFade 0.4s ease-out forwards; }
+      @keyframes gentleFade { from { opacity: 0.8; } to { opacity: 1; } }
+    </style>
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nawaz Builds — Premium Shopify Development Agency" />
     <meta property="og:description" content="Custom Liquid development, conversion psychology, and growth-ready integrations for serious brands." />
-
     <meta property="og:image" content="/og-image.webp" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nawaz Ahmad — Premium Shopify Development Agency" />
     <meta name="twitter:description" content="I build high-converting, custom Shopify stores designed to scale." />
-    <!-- <meta name="twitter:site" content="@NawazBuilds" /> -->
     <meta name="twitter:image" content="og-image.webp" />
-
-    <!-- Minimal above-the-fold fallback (full hero/header tokens: src/critical-shell.css) -->
-    <style id="critical-css-fallback">
-      html { color-scheme: dark; }
-      body { margin: 0; min-height: 100vh; background: hsl(263 70% 8%); color: hsl(0 0% 98%); }
-      #root { min-height: 100vh; }
-    </style>
   </head>
 
   <body>
