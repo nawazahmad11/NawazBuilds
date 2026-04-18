@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { 
   CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, 
-  Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, 
+  Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, Play,
   CreditCard, LineChart 
 } from "lucide-react";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -17,6 +18,14 @@ import ProcessSection from "@/components/ProcessSection";
 
 // import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 // import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+
+
+
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
+// const [playVideo, setPlayVideo] = useState(false);
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -35,6 +44,8 @@ const staggerContainer = {
 const FunnelStep1 = () => {
   const navigate = useNavigate();
   const handleCTA = () => navigate("/thank-you");
+
+  const [playVideo, setPlayVideo] = useState(false);
 
   const scrollToServices = () => {
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
@@ -176,6 +187,10 @@ const FunnelStep1 = () => {
         </div>
       </section>
 
+
+
+      
+
       {/* 3. Video*/}
       {/* <section className="py-0 z-20 relative">
         <div className="section-container">
@@ -247,6 +262,44 @@ const FunnelStep1 = () => {
               </div>
             </div>
           </section> */}
+
+
+{/* 3. YouTube Video Section - Performance Optimized */}
+                <section className="py-12 z-20 relative">
+                  <div className="section-container">
+                    <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group overflow-hidden">
+                      
+                      <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+
+                      <div 
+                        className="relative aspect-video rounded-[2.2rem] overflow-hidden cursor-pointer bg-black/80"
+                        onClick={() => setPlayVideo(true)}
+                      >
+                        {!playVideo ? (
+                          <div className="relative w-full h-full group/play">
+                            <img 
+                              src="/yt-poster.webp" 
+                              alt="Shopify Expert Video" 
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover/play:scale-105" 
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/play:bg-black/40 transition-colors">
+                              <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center shadow-2xl transform transition-all group-hover/play:scale-110">
+                                <Play size={40} className="text-white fill-white ml-1" />
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <LiteYouTubeEmbed 
+                            id="3yt-kojnojk" 
+                            title="Shopify Pros - Watch How We Build"
+                            noCookie={true}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
 
 
 
