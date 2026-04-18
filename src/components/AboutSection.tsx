@@ -37,11 +37,25 @@ const AboutSection = () => {
             className="w-full h-[450px] md:h-[680px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
             /> */}
 
-            <img 
+            {/* <img 
               src="/NawazCartMyPortfolio.webp" 
               alt="Nawaz Ahmad" 
               width="512"
               height="512"
+              className="w-full h-[450px] md:h-[512px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+            /> */}
+
+            <img 
+              src="/NawazCartMyPortfolio.webp" 
+              alt="Nawaz Ahmad" 
+              // ✅ Report ke mutabiq actual display size se match kiya (Lighthouse Fix)
+              width="400" 
+              height="533"
+              // ✅ Browser ko batayein ke ye hero image hai, foran load kare (LCP Fix)
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              // Aapki existing classes
               className="w-full h-[450px] md:h-[512px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
             />
 

@@ -116,13 +116,17 @@ const FunnelStep1 = () => {
               </span>
             </motion.h1>
 
-            <motion.p 
+            {/* <motion.p 
               variants={fadeInUp} 
               custom={3} 
               className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed"
-            >
+              >
               I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
-            </motion.p>
+            </motion.p> */}
+
+              <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
+                I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
+              </p>
 
             <motion.div variants={fadeInUp} custom={5} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button 
