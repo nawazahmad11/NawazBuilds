@@ -82,19 +82,92 @@ const showcaseProjects = [
   }
 ];
 
+// const projects = [
+//   { name: "Luxe Fragrances", 
+//     cat: "Luxury Perfumes", 
+//     img: "/perfume-shopify-store.webp", 
+//     link: "https://LuxeFragrancess.com" 
+//   },
+//   { name: "Gala Tea", cat: "Fictional Novels", img: "/fictional-books-shopify-store.webp", link: "https://shop.galatea.com/" },
+//   { name: "FitGears", cat: "Fitness Apparel", img: "/gym-couture-shopify-store.webp", link: "https://gymcouture.co.uk/" },
+//   { name: "Silk & Stone", cat: "Modern Fashion", img: "/ovrthnk-shopify-store.webp", link: "https://ovrthnk.us/" },
+//   { name: "Urban Fit", cat: "Clothing Store", img: "/urban-clothing-shopify-store.webp", link: "https://urbanfits.co.in/" },
+//   { name: "Roasted Cherry", cat: "Coffee Shop", img: "/roastedcherry.ca/" },
+//   { name: "Revoo Concept", cat: "Food Store", img: "/revooconcept.com/" },
+//   { name: "Nura Fashion", cat: "Fashion", img: "/nurafashion.com/" },
+//   { name: "Little Wren", cat: "Kids Accessories", img: "/www.ohlittlewren.com/" },
+//   { name: "Denim Den", cat: "Kids Wear", img: "/denimden.shop/" },
+//   { name: "Welevate club", cat: "Personal Accessories", img: "/breathe-freely-shopify-store.webp", link: "https://welevateclub.com/"}
+// ];
+
 const projects = [
-  { name: "Luxe Fragrances", cat: "Luxury Perfumes", img: "/perfume-shopify-store.webp", link: "https://LuxeFragrancess.com" },
-  { name: "Gala Tea", cat: "Fictional Novels", img: "/fictional-books-shopify-store.webp", link: "https://shop.galatea.com/" },
-  { name: "FitGears", cat: "Fitness Apparel", img: "/gym-couture-shopify-store.webp", link: "https://gymcouture.co.uk/" },
-  { name: "Silk & Stone", cat: "Modern Fashion", img: "/ovrthnk-shopify-store.webp", link: "https://ovrthnk.us/" },
-  { name: "Urban Fit", cat: "Clothing Store", img: "/urban-clothing-shopify-store.webp", link: "https://urbanfits.co.in/" },
-  { name: "Roasted Cherry", cat: "Coffee Shop", img: "/roastedcherry.ca/" },
-  { name: "Revoo Concept", cat: "Food Store", img: "/revooconcept.com/" },
-  { name: "Nura Fashion", cat: "Fashion", img: "/nurafashion.com/" },
-  { name: "Little Wren", cat: "Kids Accessories", img: "/www.ohlittlewren.com/" },
-  { name: "Denim Den", cat: "Kids Wear", img: "/denimden.shop/" },
-  { name: "Welevate club", cat: "Personal Accessories", img: "/breathe-freely-shopify-store.webp", link: "https://welevateclub.com/"}
+  { name: "Luxe Fragrances", 
+    cat: "Luxury Perfumes", 
+    img: "/perfume-shopify-store.webp",
+    link: "https://LuxeFragrancess.com" 
+  },
+    
+  { name: "Gala Tea", 
+    cat: "Fictional Novels", 
+    img: "/fictional-books-shopify-store.webp", 
+    link: "https://shop.galatea.com/"
+  },
+
+  { name: "FitGears", 
+    cat: "Fitness Apparel", 
+    img: "/gym-couture-shopify-store.webp",
+    link: "https://gymcouture.co.uk/"
+  },
+
+  { name: "Silk & Stone", 
+    cat: "Modern Fashion", 
+    img: "/ovrthnk-shopify-store.webp",
+    link: "https://ovrthnk.us/"
+  },
+
+  { name: "Urban Fit", 
+    cat: "Clothing Store", 
+    img: "/urban-clothing-shopify-store.webp",
+    link: "https://urbanfits.co.in/"  
+  },
+  
+  { name: "Roasted Cherry", 
+    cat: "Coffee Shop", 
+    img: "/coffee-shopify-store.webp",
+    link: "https://roastedcherry.ca/"
+  },
+
+  { name: "Revoo Concept", 
+    cat: "Food Store", 
+    img: "/olive-oil-shopify-store.webp",
+    link: "https://revooconcept.com/"  
+  },
+
+  { name: "Nura Fashion", 
+    cat: "Fashion", 
+    img: "/ladies-shopify-store.webp",
+    link: "https://nurafashion.com/"  
+  },
+
+  { name: "Little Wren", 
+    cat: "Kids Accessories", 
+    img: "/little-wren-shopify-store.webp",
+    link: "https://www.ohlittlewren.com/" 
+  },
+
+  { name: "Denim Den", 
+    cat: "Kids Wear", 
+    img: "/kids-wear-shopify-store.webp",
+    link: "https://denimden.shop/"
+  },
+
+  { name: "Welevate club", 
+    cat: "Personal Accessories", 
+    img: "/breathe-freely-shopify-store.webp", 
+    link: "https://welevateclub.com/"}
 ];
+
+
 
 const PortfolioSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -244,13 +317,8 @@ const PortfolioSection = () => {
                     src={showcaseProjects[activeIndex].img}
                     width="550"
                     height="275"
-
-                    // ✅ Solution: Agar index 0 hai toh High Priority do (LCP fix)
                     fetchPriority={activeIndex === 0 ? "high" : "low"}
-
-                    // ✅ Solution: Pehli image ko foran (eager) load karo, baki ko lazy
-                    loading={activeIndex === 0 ? "eager" : "lazy"} 
-
+                    loading={activeIndex === 0 ? "eager" : "lazy"}
                     decoding="async"
                     className="..." 
                     alt={showcaseProjects[activeIndex].title}
