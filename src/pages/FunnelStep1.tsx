@@ -171,15 +171,15 @@ const FunnelStep1 = () => {
       </section> */}
 
         {/* 3. YouTube Video Section - Performance Optimized */}
-      <section className="py-12 z-20 relative">
+      {/* <section className="py-12 z-20 relative">
         <div className="section-container">
-          {/* <motion.div
+          <motion.div
             className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-          > */}
+          >
 
             <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             
@@ -192,9 +192,9 @@ const FunnelStep1 = () => {
                   style={{ backgroundImage: `url(/yt-poster.webp)` }} 
                 />
             </div>
-         {/* </motion.div> */}
+         </motion.div>
         </div>
-      </section>
+      </section> */}
 
 
 
