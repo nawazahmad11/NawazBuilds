@@ -14,9 +14,9 @@ import { AnimatedCounter } from "@/components/Tools/AnimatedCounter";
 import AuditSection from "@/components/AuditSection";
 import ProcessSection from "@/components/ProcessSection";
 
-//import { motion } from "framer-motion";
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+
+// import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+// import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -228,12 +228,11 @@ const FunnelStep1 = () => {
 
 
 
-          <section className="py-12 z-20 relative">
+          {/* <section className="py-12 z-20 relative">
             <div className="section-container">
-              {/* ✅ motion.div ko simple div bana diya taake render delay khatam ho */}
               <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group">
                 
-                {/* Design Elements: Glow aur Hover effects ko nahi chera */}
+        
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                 
                 <div className="relative aspect-video rounded-[2.2rem] overflow-hidden bg-black/80">
@@ -247,7 +246,7 @@ const FunnelStep1 = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
 
 
