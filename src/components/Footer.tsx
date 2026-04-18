@@ -144,33 +144,33 @@ const Footer = () => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center space-x-6">
-            <span className="text-[10px] font-black uppercase tracking-[3px] text-white/60">Socials:</span>
-            <div className="flex items-center space-x-4">
-              {[
-                { icon: <Youtube size={20} />, url: "" },
-                { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/" },
-                { icon: <Instagram size={20} />, url: "" },
-                { icon: <MessageCircle size={20} />, url: "https://wa.me/923394146447" }
-              ].map((social, i) => (
-                <a 
-                  key={i} 
-                  href={social.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all"
-                >
-                  {social.icon}
-                </a>
-              ))}
+            <div className="flex items-center space-x-6">
+              <span className="text-[10px] font-black uppercase tracking-[3px] text-white/60">Socials:</span>
+              <div className="flex items-center space-x-4">
+                {[
+                  { icon: <Youtube size={20} />, url: "", label: "Visit YouTube" },
+                  { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/", label: "Visit LinkedIn" },
+                  { icon: <Instagram size={20} />, url: "", label: "Visit Instagram" },
+                  { icon: <MessageCircle size={20} />, url: "https://wa.me/923394146447", label: "Chat on WhatsApp" }
+                ].map((social, i) => (
+                  <a 
+                    key={i} 
+                    href={social.url || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label={social.label} // Ye line Google PageSpeed score fix karegi
+                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-white/40 hover:text-[#f9a825] hover:border-[#f9a825]/40 transition-all"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="text-[11px] font-bold text-white/60 uppercase tracking-[6px]">
+              © {new Date().getFullYear()} NAWAZ AHMAD. ALL RIGHTS RESERVED.
             </div>
           </div>
-          <div className="text-[11px] font-bold text-white/60 uppercase tracking-[6px]">
-           © {new Date().getFullYear()} NAWAZ AHMAD. ALL RIGHTS RESERVED.
-          </div>
         </div>
-
-      </div>
 
 
 

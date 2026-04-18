@@ -230,17 +230,32 @@ const PortfolioSection = () => {
                   transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.8 }}
                   className="w-full flex justify-center absolute inset-0 items-center"
                 >
-                  <img
+                  {/* <img
                     src={showcaseProjects[activeIndex].img}
-                    // ✅ Fixed Dimensions (Exact display match for mobile)
                     width="550"
                     height="275"
-                    // ✅ Performance: Portfolio images ko hamesha 'lazy' load karein
                     loading="lazy" 
                     decoding="async"
                     className="w-full h-auto max-h-[450px] md:max-h-[580px] object-contain rounded-[2.5rem] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]" 
                     alt={showcaseProjects[activeIndex].title}
+                  /> */}
+
+                  <img
+                    src={showcaseProjects[activeIndex].img}
+                    width="550"
+                    height="275"
+
+                    // ✅ Solution: Agar index 0 hai toh High Priority do (LCP fix)
+                    fetchPriority={activeIndex === 0 ? "high" : "low"}
+
+                    // ✅ Solution: Pehli image ko foran (eager) load karo, baki ko lazy
+                    loading={activeIndex === 0 ? "eager" : "lazy"} 
+
+                    decoding="async"
+                    className="..." 
+                    alt={showcaseProjects[activeIndex].title}
                   />
+                  
                 </motion.div>
               </AnimatePresence>
               <div className="absolute -z-10 w-[80%] h-[80%] bg-primary/10 blur-[120px] rounded-full" />

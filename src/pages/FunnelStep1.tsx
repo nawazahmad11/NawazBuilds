@@ -180,14 +180,16 @@ const FunnelStep1 = () => {
             <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             
             <div className="relative aspect-video rounded-[2.2rem] overflow-hidden bg-black/80">
-              <LiteYouTubeEmbed 
-                id="3yt-kojnojk" 
-                title="Shopify Pros - Watch How We Build"
-                poster="maxresdefault" 
-                noCookie={true}
-              />
+                <LiteYouTubeEmbed 
+                  id="3yt-kojnojk" 
+                  title="Shopify Pros - Watch How We Build"
+                  poster="maxresdefault" 
+                  noCookie={true}
+                  // @ts-ignore - Is se local image force hogi aur error khatam ho jayega
+                  style={{ backgroundImage: `url(/yt-poster.webp)` }} 
+                />
             </div>
-          </motion.div>
+                        </motion.div>
         </div>
       </section>
 
