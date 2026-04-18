@@ -70,7 +70,7 @@ const FunnelStep1 = () => {
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.div variants={fadeInUp} custom={0} className="mb-8 flex justify-center">
+            {/* <motion.div variants={fadeInUp} custom={0} className="mb-8 flex justify-center">
               <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                 <a 
                   className="hover:bg-white/10 bg-muted/30 group flex w-fit items-center gap-4 rounded-full p-1.5 pl-5 transition-all duration-300 cursor-pointer" 
@@ -93,7 +93,37 @@ const FunnelStep1 = () => {
                   </div>
                 </a>
               </div>
-            </motion.div>
+            </motion.div> */}
+
+              <div className="mb-8 flex justify-center">
+                <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                  <a 
+                    href="#services" // SEO fix: Crawlers ke liye anchor link add kiya
+                    className="hover:bg-white/10 bg-muted/30 group flex w-fit items-center gap-4 rounded-full p-1.5 pl-5 transition-all duration-300 cursor-pointer" 
+                    onClick={(e) => { 
+                      e.preventDefault(); 
+                      scrollToServices(); 
+                    }}
+                    aria-label="Available for New Opportunities, scroll to services"
+                  >
+                    <span className="shimmer-text-effect text-sm font-semibold tracking-wide">
+                      Available for New Opportunities
+                    </span>
+                    <span className="h-4 w-0.5 border-l border-white/20"></span>
+                    <div className="bg-background group-hover:bg-white/20 size-6 overflow-hidden rounded-full duration-500">
+                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                        <span className="flex size-6">
+                          <ArrowRight className="m-auto size-3 text-white" />
+                        </span>
+                        <span className="flex size-6">
+                          <ArrowRight className="m-auto size-3 text-white" />
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
 
             {/* <motion.h1 
               variants={fadeInUp} 

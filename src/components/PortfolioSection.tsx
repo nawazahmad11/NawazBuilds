@@ -83,11 +83,7 @@ const showcaseProjects = [
 ];
 
 // const projects = [
-//   { name: "Luxe Fragrances", 
-//     cat: "Luxury Perfumes", 
-//     img: "/perfume-shopify-store.webp", 
-//     link: "https://LuxeFragrancess.com" 
-//   },
+//   { name: "Luxe Fragrances",cat: "Luxury Perfumes", img: "/perfume-shopify-store.webp", link: "https://LuxeFragrancess.com"},
 //   { name: "Gala Tea", cat: "Fictional Novels", img: "/fictional-books-shopify-store.webp", link: "https://shop.galatea.com/" },
 //   { name: "FitGears", cat: "Fitness Apparel", img: "/gym-couture-shopify-store.webp", link: "https://gymcouture.co.uk/" },
 //   { name: "Silk & Stone", cat: "Modern Fashion", img: "/ovrthnk-shopify-store.webp", link: "https://ovrthnk.us/" },

@@ -4,27 +4,28 @@ import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const AuditPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasShown, setHasShown] = useState(false); // Task: Ensure it only shows once per refresh
+  const [hasShown, setHasShown] = useState(false); 
   const [step, setStep] = useState<"form" | "success">("form");
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // 1. Scroll Trigger (30% scroll hone pe show ho)
+    // 1. Scroll Trigger (40% scroll hone pe show ho)
     const handleScroll = () => {
       const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
       
       if (scrollPercent > 40 && !hasShown) {
         setIsOpen(true);
-        setHasShown(true); // Stop further triggers
+        setHasShown(true); 
       }
     };
 
-    // 2. Exit Intent Trigger (Jab user screen se bahar mouse le jaye)
+    // 2. Exit Intent Trigger - Isay tabhi enable rakha hai jab scroll thora sa ho chuka ho
+    // Taake refresh pe foran mouse move hone se popup na khul jaye
     const handleExitIntent = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown) {
+      if (e.clientY <= 0 && !hasShown && window.scrollY > 100) {
         setIsOpen(true);
-        setHasShown(true); // Stop further triggers
+        setHasShown(true); 
       }
     };
 
@@ -42,10 +43,9 @@ const AuditPopup = () => {
     setLoading(true);
 
     try {
-      // Apka updated Google Script URL
       await fetch("https://script.google.com/macros/s/AKfycbyMUlRY1rQYmA450Lf1t0lMp-C_WAwoCjBpjqDEigCy2fb58dNF4jD7muP2Vi5Ig2odAg/exec", {
         method: "POST",
-        mode: "no-cors", // Aksar Google Scripts ke liye zaroori hota hai
+        mode: "no-cors", 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: formData.email,
@@ -65,12 +65,11 @@ const AuditPopup = () => {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* FULL BACKGROUND OVERLAY (Low Opacity) */}
+          {/* ✅ FIX: onClick={null} kar diya taake background click pe popup band na ho */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)} // Overlay click pe band ho sake
             className="fixed inset-0 z-[9998] bg-black/70 backdrop-blur-[2px]"
           />
 
@@ -82,7 +81,7 @@ const AuditPopup = () => {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="relative w-full max-w-md bg-[#0f1115] border border-white/10 rounded-[2.5rem] p-10 shadow-2xl pointer-events-auto overflow-hidden"
             >
-              {/* Close Button */}
+              {/* ✅ CLOSE BUTTON: Ab sirf yehi button popup band karega */}
               <button 
                 onClick={() => setIsOpen(false)} 
                 className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-10"
