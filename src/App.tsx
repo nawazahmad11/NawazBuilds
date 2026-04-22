@@ -4,8 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-
-
 // Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
@@ -27,12 +25,24 @@ const queryClient = new QueryClient();
 // Pixel Tracking
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-const location = useLocation();
-useEffect(() => {
-  if (window.fbq) {
-    window.fbq('track', 'PageView');
-  }
-}, [location]);
+
+// const location = useLocation();
+// useEffect(() => {
+//   if (window.fbq) {
+//     window.fbq('track', 'PageView');
+//   }
+// }, [location]);
+
+
+const PixelTracker = () => {
+  const location = useLocation(); 
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, [location]);
+  return null; 
+};
 
 
 const App = () => (
@@ -41,6 +51,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+
+      <PixelTracker />
+
         <ScrollToTop />
         <Header />
         <Routes>
