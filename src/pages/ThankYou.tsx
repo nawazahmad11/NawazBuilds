@@ -79,6 +79,13 @@ const ThankYou = () => {
       return;
     }
 
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: selectedPlan,
+        status: 'Strategy Call Booked'
+      });
+    }
+
     toast({
       title: "Strategy call booked! 🎉",
       description: "We'll reach out via WhatsApp within 24 hours.",

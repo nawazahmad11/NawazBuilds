@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+
+
 // Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"; 
@@ -20,6 +22,18 @@ import AuditPopup from "./components/AuditPopup";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
+
+
+// Pixel Tracking
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+const location = useLocation();
+useEffect(() => {
+  if (window.fbq) {
+    window.fbq('track', 'PageView');
+  }
+}, [location]);
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

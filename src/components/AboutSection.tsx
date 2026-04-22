@@ -47,18 +47,14 @@ const AboutSection = () => {
 
             <img 
               src="/NawazCartMyPortfolio.webp" 
-              alt="Nawaz Ahmad" 
-              // ✅ Report ke mutabiq actual display size se match kiya (Lighthouse Fix)
+              alt="Nawaz Ahmad"
               width="400" 
               height="533"
-              // ✅ Browser ko batayein ke ye hero image hai, foran load kare (LCP Fix)
               fetchPriority="high"
               loading="eager"
               decoding="async"
-              // Aapki existing classes
               className="w-full h-[450px] md:h-[512px] object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
             />
-
 
             </div>
             {/* Experience Floating Badge */}
