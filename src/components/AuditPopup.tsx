@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom"; 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -8,22 +9,28 @@ const AuditPopup = () => {
   const [step, setStep] = useState<"form" | "success">("form");
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [loading, setLoading] = useState(false);
+  
+  const location = useLocation(); 
 
   useEffect(() => {
-    // 1. Scroll Trigger (40% scroll hone pe show ho)
+    // Sirf Home page par popup trigger hoga
+    if (location.pathname !== "/") return;
+
     const handleScroll = () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
       
-      if (scrollPercent > 40 && !hasShown) {
+      // 40% scroll + top reload protection
+      if (scrolled > 40 && !hasShown && winScroll > 300) {
         setIsOpen(true);
         setHasShown(true); 
       }
     };
 
-    // 2. Exit Intent Trigger - Isay tabhi enable rakha hai jab scroll thora sa ho chuka ho
-    // Taake refresh pe foran mouse move hone se popup na khul jaye
     const handleExitIntent = (e: MouseEvent) => {
-      if (e.clientY <= 0 && !hasShown && window.scrollY > 100) {
+      // Exit intent trigger after 500px scroll
+      if (e.clientY <= 0 && !hasShown && window.scrollY > 500) {
         setIsOpen(true);
         setHasShown(true); 
       }
@@ -36,13 +43,14 @@ const AuditPopup = () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mouseleave", handleExitIntent);
     };
-  }, [hasShown]);
+  }, [hasShown, location.pathname]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      // Same endpoint and mode as your original script
       await fetch("https://script.google.com/macros/s/AKfycbyMUlRY1rQYmA450Lf1t0lMp-C_WAwoCjBpjqDEigCy2fb58dNF4jD7muP2Vi5Ig2odAg/exec", {
         method: "POST",
         mode: "no-cors", 
@@ -63,9 +71,8 @@ const AuditPopup = () => {
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {isOpen && location.pathname === "/" && (
         <>
-          {/* ✅ FIX: onClick={null} kar diya taake background click pe popup band na ho */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -73,7 +80,6 @@ const AuditPopup = () => {
             className="fixed inset-0 z-[9998] bg-black/70 backdrop-blur-[2px]"
           />
 
-          {/* POPUP CONTAINER */}
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -81,7 +87,6 @@ const AuditPopup = () => {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               className="relative w-full max-w-md bg-[#0f1115] border border-white/10 rounded-[2.5rem] p-10 shadow-2xl pointer-events-auto overflow-hidden"
             >
-              {/* ✅ CLOSE BUTTON: Ab sirf yehi button popup band karega */}
               <button 
                 onClick={() => setIsOpen(false)} 
                 className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-10"
