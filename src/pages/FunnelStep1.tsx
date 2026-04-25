@@ -152,54 +152,54 @@ const FunnelStep1 = () => {
               </span>
             </h1>
 
-        {/* <motion.h1 
-          className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ 
-            duration: 0.5, 
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          style={{ 
-            willChange: "transform, opacity", 
-            transform: "translateZ(0)",
-            contain: "layout" 
-          }}
-        >
-          Shopify <span className="relative inline-block">
-            <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
+                {/* <motion.h1 
+                  className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                   style={{ 
-                    backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-                    WebkitBackgroundClip: "text",
-                    animation: "aurora 4s linear infinite", // Speed slow ki hai performance ke liye
-                    willChange: "background-position"
-                  }}>
-              Expert
-            </span>
-          </span> 
-          <br />
-          <span className="flex flex-wrap items-center justify-center gap-x-4">
-            <span className="font-light text-white/90">&</span>
-            <span className="relative inline-block">
-              <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
-                    style={{ 
-                      backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-                      WebkitBackgroundClip: "text",
-                      animation: "aurora 6s linear infinite",
-                      willChange: "background-position"
-                    }}>
-                Growth
-              </span>
-            </span>
-            <span className="text-white font-medium">Partner</span>
-          </span>
-        </motion.h1> */}
+                    willChange: "transform, opacity", 
+                    transform: "translateZ(0)",
+                    contain: "layout" 
+                  }}
+                >
+                  Shopify <span className="relative inline-block">
+                    <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
+                          style={{ 
+                            backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                            WebkitBackgroundClip: "text",
+                            animation: "aurora 4s linear infinite", // Speed slow ki hai performance ke liye
+                            willChange: "background-position"
+                          }}>
+                      Expert
+                    </span>
+                  </span> 
+                  <br />
+                  <span className="flex flex-wrap items-center justify-center gap-x-4">
+                    <span className="font-light text-white/90">&</span>
+                    <span className="relative inline-block">
+                      <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
+                            style={{ 
+                              backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                              WebkitBackgroundClip: "text",
+                              animation: "aurora 6s linear infinite",
+                              willChange: "background-position"
+                            }}>
+                        Growth
+                      </span>
+                    </span>
+                    <span className="text-white font-medium">Partner</span>
+                  </span>
+                    </motion.h1> */}
 
               <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
                 I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
               </p>
 
-            <motion.div variants={fadeInUp} custom={5} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* <motion.div variants={fadeInUp} custom={5} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <button 
                 onClick={handleCTA} 
                 className="gradient-cta px-8 py-4 rounded-lg text-lg animate-pulse-glow flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-xl shadow-primary/20"
@@ -213,8 +213,30 @@ const FunnelStep1 = () => {
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Free consultation</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Limited monthly slots</span>
             </motion.div>
-          </motion.div>
-          </div>
+            </motion.div> */}
+
+              </motion.div>
+
+              {/* --- Static Version (No Animations) --- */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <button 
+                  onClick={handleCTA} 
+                  // 'animate-pulse-glow' aur 'hover:scale-105' hata diya hai
+                  className="gradient-cta px-8 py-4 rounded-lg text-lg flex items-center gap-2 shadow-xl shadow-primary/20"
+                  aria-label="Book Free Strategy Call"
+                >
+                  <Target className="w-5 h-5" /> Book Free Strategy Call
+                </button>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-6 text-[16px] text-muted-foreground">
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No obligation</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Free consultation</span>
+                <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Limited monthly slots</span>
+              </div>
+
+            </div>
+
           </section>
 
                 {/* 3. YouTube Video Section - Performance Optimized */}
