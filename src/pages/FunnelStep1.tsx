@@ -132,7 +132,7 @@ const FunnelStep1 = () => {
                 </div>
               </div>
 
-            <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
+            {/* <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
               Shopify <span className="relative inline-block">
                 <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
                       style={{ 
@@ -158,7 +158,55 @@ const FunnelStep1 = () => {
                 </span>
                 <span className="text-white font-medium">Partner</span>
               </span>
-            </h1>
+            </h1> */}
+
+        <motion.h1 
+          className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.5, 
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          style={{ 
+            willChange: "transform, opacity", 
+            transform: "translateZ(0)",
+            contain: "layout" 
+          }}
+        >
+          Shopify <span className="relative inline-block">
+            <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
+                  style={{ 
+                    backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                    WebkitBackgroundClip: "text",
+                    animation: "aurora 4s linear infinite", // Speed slow ki hai performance ke liye
+                    willChange: "background-position"
+                  }}>
+              Expert
+            </span>
+          </span> 
+          <br />
+          <span className="flex flex-wrap items-center justify-center gap-x-4">
+            <span className="font-light text-white/90">&</span>
+            <span className="relative inline-block">
+              <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
+                    style={{ 
+                      backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                      WebkitBackgroundClip: "text",
+                      animation: "aurora 6s linear infinite",
+                      willChange: "background-position"
+                    }}>
+                Growth
+              </span>
+            </span>
+            <span className="text-white font-medium">Partner</span>
+          </span>
+        </motion.h1>
+
+
+
+
+
 
 
               <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
@@ -184,7 +232,7 @@ const FunnelStep1 = () => {
           </section>
 
                 {/* 3. YouTube Video Section - Performance Optimized */}
-                <section className="py-12 z-20 relative">
+                {/* <section className="py-12 z-20 relative">
                   <div className="section-container">
                     <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group overflow-hidden">
                       
@@ -217,7 +265,49 @@ const FunnelStep1 = () => {
                       </div>
                     </div>
                   </div>
-                </section>
+                </section> */}
+
+
+              <section className="py-12 z-20 relative">
+                <div className="section-container">
+                  <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group overflow-hidden">
+                    
+                    <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+
+                    <div 
+                      className="relative aspect-video rounded-[2.2rem] overflow-hidden cursor-pointer bg-black/80"
+                      onClick={() => setPlayVideo(true)}
+                    >
+                      {!playVideo ? (
+                        <div className="relative w-full h-full group/play">
+                          <img 
+                            src="/yt-poster.webp" 
+                            alt="Shopify Expert Video" 
+                            // --- CRITICAL LCP OPTIMIZATIONS ---
+                            loading="eager"           // Is image ko wait mat karwao
+                            fetchPriority="high"      // Browser ko batao ye priority image hai
+                            decoding="async"          // Image decoding ko parallel chalao
+                            // ---------------------------------
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover/play:scale-105" 
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover/play:bg-black/40 transition-colors">
+                            <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center shadow-2xl transform transition-all group-hover/play:scale-110">
+                              <Play size={40} className="text-white fill-white ml-1" />
+                            </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <LiteYouTubeEmbed 
+                          id="3yt-kojnojk" 
+                          title="Shopify Pros - Watch How We Build"
+                          noCookie={true}
+                        />
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </section>
+
 
             {/* 4. Problem → Solution */}
             <section className="py-20 relative z-20">

@@ -3,46 +3,42 @@ import React from 'react';
 interface FloatingIconProps {
   iconUrl: string;
   altText: string;
-  positionClass: string; // Tailwind coordinates like "top-[10%] left-[8%]"
-  delay?: string;        // Animation delay like "0s"
+  positionClass: string; 
+  delay?: string;        
 }
 
 const FloatingIcon: React.FC<FloatingIconProps> = ({ iconUrl, altText, positionClass, delay = "0s" }) => {
   return (
-    // Z-INDEX & CONTAINMENT: Keeps the blurry element positioned correctly.
-    <div className={`absolute pointer-events-auto z-10 ${positionClass}`}>
+    // 'contain-layout' browser ko batata hai ke ye element bahar ke layout ko disturb nahi karega (Performance boost)
+    <div className={`absolute pointer-events-none z-10 ${positionClass}`} style={{ contain: 'layout style' }}>
       <div 
-        className="relative group animate-float"
-        style={{ animationDelay: delay }}
+        className="relative group animate-float will-change-transform" // 'will-change' GPU ko active karta hai
+        style={{ 
+          animationDelay: delay,
+          backfaceVisibility: 'hidden', // Flicker khatam karne ke liye
+          transform: 'translateZ(0)'    // Hardware acceleration force karne ke liye
+        }}
       >
-        {/* --- THE DIFFUSED BLUR MIST CONTAINER --- */}
-        {/*
-          1. overall look: Is container ko hum white color aur blur effect dete hain.
-          2. size: Responsive sizes (w-12 aur md:w-20).
-          3. transition: Hover par smooth tabdeeli ke liye.
-        */}
-        <div className="relative aspect-square flex items-center justify-center p-2.5 md:p-4 overflow-visible transition-all duration-500
+        {/* --- OPTIMIZED MIST CONTAINER --- */}
+        <div className="relative aspect-square flex items-center justify-center p-2.5 md:p-4 overflow-visible transition-transform duration-500
                         rounded-full 
-                        /* Main white diffused core: semi-transparent, strong blur, and a soft outer glow */
-                        bg-white/20 backdrop-blur-xl 
-                        /* Creates the 'cloud' effect blending into the background */
-                        shadow-[0_0_80px_60px_rgba(255,255,255,0.1),inset_0_0_30px_10px_rgba(255,255,255,0.1)]
-                        /* Small initial size */
+                        /* 1. Blur intensity 'xl' se 'md' kar di (Mobile friendly) */
+                        bg-white/10 backdrop-blur-md 
+                        /* 2. Shadow spread ko optimized kiya (80px -> 40px) taake painting load kam ho */
+                        shadow-[0_0_40px_20px_rgba(255,255,255,0.08),inset_0_0_15px_5px_rgba(255,255,255,0.05)]
                         w-12 h-12 md:w-20 md:h-20
                         
-                        /* --- Hover State Modifications --- */
-                        /* Expand and darken the outer mist on hover for an intense, defined look */
-                        group-hover:shadow-[0_0_120px_90px_rgba(255,255,255,0.2)] 
-                        group-hover:scale-105"
+                        /* Hover par scale use kiya hai (Box-shadow expansion ki jagah, jo fast hai) */
+                        group-hover:scale-110 group-hover:bg-white/20"
         >
           
-          {/* Inner masking shadow for depth */}
-          <div className="absolute inset-0 rounded-full shadow-[inset_0_5px_10px_rgba(255,255,255,0.1)] pointer-events-none"></div>
+          <div className="absolute inset-0 rounded-full shadow-[inset_0_2px_5px_rgba(255,255,255,0.05)] pointer-events-none"></div>
           
-          {/* logo image: Remains sharp for contrast against the blurry background */}
           <img 
             alt={altText} 
-            className="w-full h-full object-contain filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)] transition-all duration-700 group-hover:scale-110 group-hover:drop-shadow-[0_8px_12px_rgba(0,0,0,0.3)]" 
+            loading="lazy" // SEO/Performance optimization
+            decoding="async" // Parallel decoding
+            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
             src={iconUrl}
             referrerPolicy="no-referrer"
           />
