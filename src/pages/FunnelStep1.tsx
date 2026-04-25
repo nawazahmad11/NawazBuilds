@@ -53,14 +53,12 @@ const FunnelStep1 = () => {
       <div className="vignette-overlay" />
 
 
-
-
 {/* --- FLOATING ICONS LAYER --- */}
 <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
         
         {/* Shopify Icon - Top Left */}
         <FloatingIcon 
-          iconUrl="https://cdn.simpleicons.org/shopify/95BF47" 
+          iconUrl="/nawaz-builds-icon-shopify.webp" 
           altText="Shopify"
           positionClass="top-[10%] left-[4%] md:left-[8%] md:top-[15%]"
           delay="0s"
@@ -68,14 +66,14 @@ const FunnelStep1 = () => {
 
         {/* Google Icon (Replacing WordPress) - Top Right */}
         <FloatingIcon 
-          iconUrl="https://cdn.simpleicons.org/google/4285F4" 
+          iconUrl="/nawaz-builds-icon-google.webp" 
           altText="Google"
           positionClass="top-[15%] right-[4%] md:right-[8%] md:top-[22%]"
           delay="2.5s"
         />
       {/* React Icon - Bottom Left, balanced with content */}
       <FloatingIcon 
-          iconUrl="https://cdn.simpleicons.org/react/61DAFB" 
+          iconUrl="/nawaz-builds-icon-react.webp" 
           altText="React"
           positionClass="bottom-[20%] left-[5%] md:bottom-[28%] md:left-[8%]"
           delay="1.2s" 
@@ -83,16 +81,13 @@ const FunnelStep1 = () => {
 
          {/* Meta Icon - Bottom Right */}
         <FloatingIcon 
-          iconUrl="https://cdn.simpleicons.org/meta/0081FB" 
+          iconUrl="/nawaz-builds-icon-meta.webp" 
           altText="Meta"
           positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
           delay="3.8s" 
         />
 
       </div>
-
-
-
 
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
