@@ -98,7 +98,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
         <nav className="hidden md:flex items-center gap-7">
           {/* Services */}
           <div className="relative py-1 group">
-            <button onClick={() => handleNavClick("services")} className={`text-[13px] font-medium transition-all ${activeSection === "services" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
+            <button onClick={() => handleNavClick("services")} className={`text-[17px] font-medium transition-all ${activeSection === "services" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
               Services
             </button>
             <NavUnderline active={activeSection === "services"} />
@@ -106,7 +106,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
 
           {/* Portfolio */}
           <div className="relative py-1 group">
-            <button onClick={() => handleNavClick("portfolio")} className={`text-[13px] font-medium transition-all ${activeSection === "portfolio" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
+            <button onClick={() => handleNavClick("portfolio")} className={`text-[17px] font-medium transition-all ${activeSection === "portfolio" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
               Portfolio
             </button>
             <NavUnderline active={activeSection === "portfolio"} />
@@ -118,7 +118,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
             onMouseEnter={() => setIsToolsOpen(true)}
             onMouseLeave={() => setIsToolsOpen(false)}
           >
-            <div className={`flex items-center gap-1 text-[13px] font-medium transition-all ${activeSection === "tools" ? "text-[#f9a825]" : "text-white/50 group-hover:text-[#f9a825]"}`}>
+            <div className={`flex items-center gap-1 text-[17px] font-medium transition-all ${activeSection === "tools" ? "text-[#f9a825]" : "text-white/50 group-hover:text-[#f9a825]"}`}>
               Tools <ChevronDown size={14} className={`transition-transform duration-300 ${isToolsOpen ? 'rotate-180' : ''}`} />
             </div>
             
@@ -144,7 +144,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
 
           {/* Blog */}
           <div className="relative py-1 group">
-            <Link to="/blog" className={`text-[13px] font-medium transition-all ${activeSection === "blog" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
+            <Link to="/blog" className={`text-[17px] font-medium transition-all ${activeSection === "blog" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
               Blog
             </Link>
             <NavUnderline active={activeSection === "blog"} />
@@ -154,7 +154,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
         <div className="relative py-1 group">
           <Link 
             to="/case-studies" 
-            className={`text-[13px] font-medium transition-all ${
+            className={`text-[17px] font-medium transition-all ${
               activeSection === "case-studies" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"
             }`}
             // Click karne par active state set karne ke liye (agar aap manual state use kar rahe hain)
@@ -168,7 +168,7 @@ import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
 
           {/* FAQ */}
           <div className="relative py-1 group">
-            <button onClick={() => handleNavClick("faq")} className={`text-[13px] font-medium transition-all ${activeSection === "faq" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
+            <button onClick={() => handleNavClick("faq")} className={`text-[17px] font-medium transition-all ${activeSection === "faq" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>
               FAQ
             </button>
             <NavUnderline active={activeSection === "faq"} />

@@ -124,7 +124,7 @@ const FunnelStep1 = () => {
                 </div>
               </div>
 
-            {/* <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
+            <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
               Shopify <span className="relative inline-block">
                 <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
                       style={{ 
@@ -150,9 +150,9 @@ const FunnelStep1 = () => {
                 </span>
                 <span className="text-white font-medium">Partner</span>
               </span>
-            </h1> */}
+            </h1>
 
-        <motion.h1 
+        {/* <motion.h1 
           className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -193,13 +193,7 @@ const FunnelStep1 = () => {
             </span>
             <span className="text-white font-medium">Partner</span>
           </span>
-        </motion.h1>
-
-
-
-
-
-
+        </motion.h1> */}
 
               <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
                 I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
@@ -214,7 +208,7 @@ const FunnelStep1 = () => {
                 <Target className="w-5 h-5" /> Book Free Strategy Call
               </button>
             </motion.div>
-            <motion.div variants={fadeInUp} custom={6} className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+            <motion.div variants={fadeInUp} custom={6} className="flex flex-wrap items-center justify-center gap-6 text-[16px] text-muted-foreground">
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> No obligation</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Free consultation</span>
               <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-green-400" /> Limited monthly slots</span>
