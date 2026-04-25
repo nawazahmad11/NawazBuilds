@@ -19,6 +19,9 @@ import ToolsPage from "./pages/Tools";
 import AuditPopup from "./components/AuditPopup";
 import WhatsAppButton from "./components/WhatsAppButton";
 
+import CaseStudyDetail from "./pages/CaseStudyDetail";
+
+
 const queryClient = new QueryClient();
 
 
@@ -75,6 +78,16 @@ const App = () => (
           
           {/* 404 - Always keep this at the very bottom */}
           <Route path="*" element={<NotFound />} />
+
+          {/* PEHLA ROUTE: Jab koi sirf /case-studies par jaye (404/Not Found khatam karne ke liye) */}
+          <Route path="/case-studies" element={<CaseStudyDetail />} />
+
+          {/* DOOSRA ROUTE: Jab specific project khule (Aurex, Bloom etc.) */}
+          <Route path="/case-studies" element={<CaseStudyDetail />} />
+          <Route path="/case-studies/:projectId" element={<CaseStudyDetail />} />
+
+
+          
         </Routes>
         <Footer />
 

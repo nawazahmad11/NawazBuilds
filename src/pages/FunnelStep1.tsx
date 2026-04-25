@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { 
   CheckCircle, Zap, Smartphone, TrendingDown, Package, Star, ArrowRight, 
-  Rocket, Target, Shield, Clock, BarChart3, Code, Palette, Globe, Play,
-  CreditCard, LineChart 
+  Rocket, Target, Shield, Play
 } from "lucide-react";
+
 import PortfolioSection from "@/components/PortfolioSection";
 import AboutSection from "@/components/AboutSection";
 import FAQSection from "@/components/FAQSection";
@@ -15,15 +15,11 @@ import { AnimatedCounter } from "@/components/Tools/AnimatedCounter";
 import AuditSection from "@/components/AuditSection";
 import ProcessSection from "@/components/ProcessSection";
 
-
-// import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-// import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-
-
-
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
+
+import FloatingIcon from "@/components/FloatingIcon";
 // const [playVideo, setPlayVideo] = useState(false);
 
 
@@ -56,6 +52,48 @@ const FunnelStep1 = () => {
       {/* 1. Vignette Effect Overlay */}
       <div className="vignette-overlay" />
 
+
+
+
+{/* --- FLOATING ICONS LAYER --- */}
+<div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
+        
+        {/* Shopify Icon - Top Left */}
+        <FloatingIcon 
+          iconUrl="https://cdn.simpleicons.org/shopify/95BF47" 
+          altText="Shopify"
+          positionClass="top-[10%] left-[4%] md:left-[8%] md:top-[15%]"
+          delay="0s"
+        />
+
+        {/* Google Icon (Replacing WordPress) - Top Right */}
+        <FloatingIcon 
+          iconUrl="https://cdn.simpleicons.org/google/4285F4" 
+          altText="Google"
+          positionClass="top-[15%] right-[4%] md:right-[8%] md:top-[22%]"
+          delay="2.5s"
+        />
+      {/* React Icon - Bottom Left, balanced with content */}
+      <FloatingIcon 
+          iconUrl="https://cdn.simpleicons.org/react/61DAFB" 
+          altText="React"
+          positionClass="bottom-[20%] left-[5%] md:bottom-[28%] md:left-[8%]"
+          delay="1.2s" 
+        />
+
+         {/* Meta Icon - Bottom Right */}
+        <FloatingIcon 
+          iconUrl="https://cdn.simpleicons.org/meta/0081FB" 
+          altText="Meta"
+          positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
+          delay="3.8s" 
+        />
+
+      </div>
+
+
+
+
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
         <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -70,33 +108,6 @@ const FunnelStep1 = () => {
             animate="visible"
             variants={staggerContainer}
           >
-
-            
-            {/* <motion.div variants={fadeInUp} custom={0} className="mb-8 flex justify-center">
-              <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <a 
-                  className="hover:bg-white/10 bg-muted/30 group flex w-fit items-center gap-4 rounded-full p-1.5 pl-5 transition-all duration-300 cursor-pointer" 
-                  onClick={(e) => { e.preventDefault(); scrollToServices(); }}
-                  aria-label="Available for New Opportunities, scroll to services"
-                >
-                  <span className="shimmer-text-effect text-sm font-semibold tracking-wide">
-                    Available for New Opportunities
-                  </span>
-                  <span className="h-4 w-0.5 border-l border-white/20"></span>
-                  <div className="bg-background group-hover:bg-white/20 size-6 overflow-hidden rounded-full duration-500">
-                    <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                      <span className="flex size-6">
-                        <ArrowRight className="m-auto size-3 text-white" />
-                      </span>
-                      <span className="flex size-6">
-                        <ArrowRight className="m-auto size-3 text-white" />
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </motion.div> */}
-
               <div className="mb-8 flex justify-center">
                 <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                   <a 
@@ -125,39 +136,6 @@ const FunnelStep1 = () => {
                   </a>
                 </div>
               </div>
-
-
-            {/* <motion.h1 
-              variants={fadeInUp} 
-              custom={2} 
-              className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
-               >
-              Shopify <span className="relative inline-block">
-                <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
-                      style={{ 
-                        backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-                        WebkitBackgroundClip: "text",
-                        animation: "aurora 2s linear infinite"
-                      }}>
-                  Expert
-                </span>
-              </span> 
-              <br />
-              <span className="flex flex-wrap items-center justify-center gap-x-4">
-                <span className="font-light text-white/90">&</span>
-                <span className="relative inline-block">
-                  <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
-                        style={{ 
-                          backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-                          WebkitBackgroundClip: "text",
-                          animation: "aurora 6s linear infinite"
-                        }}>
-                    Growth
-                  </span>
-                </span>
-                <span className="text-white font-medium">Partner</span>
-              </span>
-            </motion.h1> */}
 
             <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
               Shopify <span className="relative inline-block">
@@ -188,15 +166,6 @@ const FunnelStep1 = () => {
             </h1>
 
 
-
-            {/* <motion.p 
-              variants={fadeInUp} 
-              custom={3} 
-              className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed"
-              >
-              I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
-            </motion.p> */}
-
               <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
                 I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
               </p>
@@ -218,83 +187,6 @@ const FunnelStep1 = () => {
           </motion.div>
           </div>
           </section>
-
-
-
-      
-
-              {/* 3. Video*/}
-              {/* <section className="py-0 z-20 relative">
-                <div className="section-container">
-                  <motion.div
-                    className="max-w-3xl mx-auto glass-card p-2 rounded-xl shadow-2xl shadow-primary/10 border border-white/10"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1.12 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.6 }}
-                      >
-                    <div className="relative aspect-video rounded-lg overflow-hidden bg-black/50">
-                      <iframe
-                        // src="https://www.youtube.com/embed/3yt-kojnojk"
-                        title="Shopify Pros - Watch How We Build"
-                        className="absolute inset-0 w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        loading="lazy"
-                      />
-                    </div>
-                  </motion.div>
-                </div>
-              </section> */}
-
-                {/* 3. YouTube Video Section - Performance Optimized */}
-              {/* <section className="py-12 z-20 relative">
-                <div className="section-container">
-                  <motion.div
-                    className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  >
-
-                    <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                    
-                    <div className="relative aspect-video rounded-[2.2rem] overflow-hidden bg-black/80">
-                        <LiteYouTubeEmbed 
-                          id="3yt-kojnojk" 
-                          title="Shopify Pros - Watch How We Build"
-                          //poster="maxresdefault" 
-                          noCookie={true}
-                          style={{ backgroundImage: `url(/yt-poster.webp)` }} 
-                        />
-                    </div>
-                </motion.div>
-                </div>
-              </section> */}
-
-
-
-                  {/* <section className="py-12 z-20 relative">
-                    <div className="section-container">
-                      <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group">
-                        
-                
-                        <div className="absolute -inset-[1px] bg-gradient-to-r from-primary/20 via-purple-500/20 to-primary/20 rounded-[2.6rem] blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                        
-                        <div className="relative aspect-video rounded-[2.2rem] overflow-hidden bg-black/80">
-                            <LiteYouTubeEmbed 
-                              id="3yt-kojnojk" 
-                              title="Shopify Pros - Watch How We Build"
-                              noCookie={true}
-                              // @ts-ignore - Performance optimized poster
-                              style={{ backgroundImage: `url(/yt-poster.webp)` }} 
-                            />
-                        </div>
-                      </div>
-                    </div>
-                  </section> */}
-
 
                 {/* 3. YouTube Video Section - Performance Optimized */}
                 <section className="py-12 z-20 relative">

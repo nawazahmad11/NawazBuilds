@@ -9,7 +9,7 @@ import ShieldCheck from "lucide-react/dist/esm/icons/shield-check";
 import Layout from "lucide-react/dist/esm/icons/layout";
 import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
 
-const Header = () => {
+  const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +41,7 @@ const Header = () => {
       if (current) setActiveSection(current);
       else if (location.pathname === "/blog") setActiveSection("blog");
       else if (location.pathname.includes("/tools")) setActiveSection("tools");
+      else if (location.pathname.includes("/case-studies")) setActiveSection("case-studies");
       else setActiveSection("");
     };
 
@@ -148,6 +149,22 @@ const Header = () => {
             </Link>
             <NavUnderline active={activeSection === "blog"} />
           </div>
+
+        {/* Case Studies Link */}
+        <div className="relative py-1 group">
+          <Link 
+            to="/case-studies" 
+            className={`text-[13px] font-medium transition-all ${
+              activeSection === "case-studies" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"
+            }`}
+            // Click karne par active state set karne ke liye (agar aap manual state use kar rahe hain)
+            onClick={() => setActiveSection("case-studies")} 
+          >
+            Case Studies
+          </Link>
+          <NavUnderline active={activeSection === "case-studies"} />
+        </div>
+
 
           {/* FAQ */}
           <div className="relative py-1 group">

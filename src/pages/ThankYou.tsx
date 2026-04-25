@@ -112,7 +112,7 @@ const ThankYou = () => {
           <div className="glass-card p-4 text-left text-sm">
             <p className="text-muted-foreground">
               <MessageSquare className="w-4 h-4 inline mr-1.5 check-green" />
-              Expect a WhatsApp message from our growth strategist to finalize your call time.
+              Expect a WhatsApp message from me personally to finalize your call time.
             </p>
           </div>
         </motion.div>

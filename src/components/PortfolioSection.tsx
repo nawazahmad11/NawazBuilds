@@ -82,20 +82,6 @@ const showcaseProjects = [
   }
 ];
 
-// const projects = [
-//   { name: "Luxe Fragrances",cat: "Luxury Perfumes", img: "/perfume-shopify-store.webp", link: "https://LuxeFragrancess.com"},
-//   { name: "Gala Tea", cat: "Fictional Novels", img: "/fictional-books-shopify-store.webp", link: "https://shop.galatea.com/" },
-//   { name: "FitGears", cat: "Fitness Apparel", img: "/gym-couture-shopify-store.webp", link: "https://gymcouture.co.uk/" },
-//   { name: "Silk & Stone", cat: "Modern Fashion", img: "/ovrthnk-shopify-store.webp", link: "https://ovrthnk.us/" },
-//   { name: "Urban Fit", cat: "Clothing Store", img: "/urban-clothing-shopify-store.webp", link: "https://urbanfits.co.in/" },
-//   { name: "Roasted Cherry", cat: "Coffee Shop", img: "/roastedcherry.ca/" },
-//   { name: "Revoo Concept", cat: "Food Store", img: "/revooconcept.com/" },
-//   { name: "Nura Fashion", cat: "Fashion", img: "/nurafashion.com/" },
-//   { name: "Little Wren", cat: "Kids Accessories", img: "/www.ohlittlewren.com/" },
-//   { name: "Denim Den", cat: "Kids Wear", img: "/denimden.shop/" },
-//   { name: "Welevate club", cat: "Personal Accessories", img: "/breathe-freely-shopify-store.webp", link: "https://welevateclub.com/"}
-// ];
-
 const projects = [
   { name: "Luxe Fragrances", 
     cat: "Luxury Perfumes", 
@@ -247,10 +233,11 @@ const PortfolioSection = () => {
 
       {/* --- FEATURE SHOWCASE (IMPROVED PERFORMANCE) --- */}
       <div className="section-container relative z-20">
-        <div className="bg-white/[0.03] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
+        <div className="bg-white/[0.04] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
 
             <div className="order-2 lg:order-1 min-h-[450px] md:min-h-[400px] flex flex-col justify-center relative">
+              
               <AnimatePresence mode="popLayout"> 
                 <motion.div
                   key={activeIndex}
@@ -287,9 +274,9 @@ const PortfolioSection = () => {
                   />
                 ))}
               </div>
-            </div>
+               </div>
 
-            <div className="order-1 lg:order-2 relative flex items-center justify-center min-h-[300px] md:min-h-[580px]">
+              <div className="order-1 lg:order-2 relative flex items-center justify-center min-h-[300px] md:min-h-[580px]">
               <AnimatePresence mode="popLayout">
                 <motion.div
                   key={activeIndex}
@@ -316,16 +303,18 @@ const PortfolioSection = () => {
                     fetchPriority={activeIndex === 0 ? "high" : "low"}
                     loading={activeIndex === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    className="..." 
+                    className=" rounded-[1.2rem]" 
                     alt={showcaseProjects[activeIndex].title}
                   />
                   
                 </motion.div>
               </AnimatePresence>
               <div className="absolute -z-10 w-[80%] h-[80%] bg-primary/10 blur-[120px] rounded-full" />
+            
             </div>
 
           </div>
+        
         </div>
       </div>
     </section>

@@ -41,7 +41,7 @@ const BlogPage = () => {
                 <span className="text-[10px] font-black uppercase tracking-widest text-white/50">Digital Journal</span>
               </div>
               
-              <h1 className="text-6xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.85] italic uppercase">
+              <h1 className="text-6xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.85]  uppercase">
                 Shopify <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f9a825] to-[#ffe066]">Titans.</span>
               </h1>
