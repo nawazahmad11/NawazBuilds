@@ -19,7 +19,7 @@ import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 
-// import FloatingIcon from "@/components/FloatingIcon";
+import FloatingIcon from "@/components/FloatingIcon";
 
 
 
@@ -54,7 +54,7 @@ const FunnelStep1 = () => {
 
 
 {/* --- FLOATING ICONS LAYER --- */}
-{/* <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
+<div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
         <FloatingIcon 
           iconUrl="/nawaz-builds-icon-shopify.webp" 
           altText="Shopify"
@@ -79,7 +79,7 @@ const FunnelStep1 = () => {
           positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
           delay="3.8s" 
         />
-      </div> */}
+      </div>
 
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
@@ -254,7 +254,7 @@ const FunnelStep1 = () => {
                 </section> */}
 
 
-              {/* <section className="py-12 z-20 relative">
+              <section className="py-12 z-20 relative">
                 <div className="section-container">
                   <div className="max-w-4xl mx-auto glass-card p-1.5 rounded-[2.5rem] shadow-[0_0_50px_-12px_rgba(59,130,246,0.3)] border border-white/10 bg-[#050505]/60 backdrop-blur-xl relative group overflow-hidden">
                     
@@ -292,7 +292,7 @@ const FunnelStep1 = () => {
                     </div>
                   </div>
                 </div>
-              </section> */}
+              </section>
 
 
             {/* 4. Problem → Solution */}
