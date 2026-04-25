@@ -124,7 +124,7 @@ const FunnelStep1 = () => {
                 </div>
               </div>
 
-            <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
+            {/* <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
               Shopify <span className="relative inline-block">
                 <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
                       style={{ 
@@ -150,7 +150,7 @@ const FunnelStep1 = () => {
                 </span>
                 <span className="text-white font-medium">Partner</span>
               </span>
-            </h1>
+            </h1> */}
 
         {/* <motion.h1 
           className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center"
