@@ -19,8 +19,8 @@ import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 
-import FloatingIcon from "@/components/FloatingIcon";
-// const [playVideo, setPlayVideo] = useState(false);
+// import FloatingIcon from "@/components/FloatingIcon";
+
 
 
 const fadeInUp = {
@@ -54,40 +54,32 @@ const FunnelStep1 = () => {
 
 
 {/* --- FLOATING ICONS LAYER --- */}
-<div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
-        
-        {/* Shopify Icon - Top Left */}
+{/* <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
         <FloatingIcon 
           iconUrl="/nawaz-builds-icon-shopify.webp" 
           altText="Shopify"
           positionClass="top-[10%] left-[4%] md:left-[8%] md:top-[15%]"
           delay="0s"
         />
-
-        {/* Google Icon (Replacing WordPress) - Top Right */}
         <FloatingIcon 
           iconUrl="/nawaz-builds-icon-google.webp" 
           altText="Google"
           positionClass="top-[15%] right-[4%] md:right-[8%] md:top-[22%]"
           delay="2.5s"
         />
-      {/* React Icon - Bottom Left, balanced with content */}
       <FloatingIcon 
           iconUrl="/nawaz-builds-icon-react.webp" 
           altText="React"
           positionClass="bottom-[20%] left-[5%] md:bottom-[28%] md:left-[8%]"
           delay="1.2s" 
         />
-
-         {/* Meta Icon - Bottom Right */}
         <FloatingIcon 
           iconUrl="/nawaz-builds-icon-meta.webp" 
           altText="Meta"
           positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
           delay="3.8s" 
         />
-
-      </div>
+      </div> */}
 
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
