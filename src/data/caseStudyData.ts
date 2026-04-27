@@ -73,21 +73,36 @@ export const caseStudies: CaseStudy[] = [
         category: "Streetwear",
         // longDescription: "District 99 had a really cool brand and great clothes, but their website was a mess. They were getting a lot of clicks from Instagram and TikTok, but nobody was actually buying anything.",
         
-        problem: [ "District 99 had a really cool brand and great clothes, but their website was a mess. They were getting a lot of clicks from Instagram and TikTok, but nobody was actually buying anything. The site felt slow and looked a bit 'cheap' because of low-quality visuals, making people lose trust.",
+        problem: [ "District 99 was getting good traffic from Instagram and TikTok. But the website was not turning visitors into buyers. People were landing on the store and leaving quickly. The site did not feel trustworthy or smooth to use.",
+                    ">The website was slow because of heavy images",
+                    "> Product visuals looked low quality",
+                    ">The design felt messy and confusing",
+                    ">It was not optimized for mobile users"
         ],
-        solution: ["I decided to strip everything back and go for a clean, 'dark mode' aesthetic. I rebuilt the mobile version from scratch, optimized all heavy images so the site would load in under two seconds, and made the 'Add to Cart' button prominent and easy to find."
+        solution: ["The goal was simple. Make the store clean, fast, and easy to use. Everything was redesigned with the user in mind.",
+                    ">A clean dark design was used to give a premium feel",
+                    ">The mobile version was fully improved",
+                    ">Images were optimized to make the site faster",
+                    ">The “Add to Cart” button was made clear and easy to find",
+                    ">The buying process was kept simple and smooth",
+
         ],
-        result:[ "Once we launched the new version, the numbers changed fast. The conversion rate went from 0.9% to 2.8% in just a few weeks. Customers started buying more than one item per order because the site felt professional and trustworthy."
+        result:[ "After the changes, the store started performing much better. Users felt more comfortable and started taking action.",
+                ">Conversion rate increased from 0.9% to 2.8%",
+                 ">Visitors stayed longer on the website",
+                ">Fewer people left without interacting",
+                ">Customers started buying more than one product",
+                ">Overall sales and trust improved",
         ],
 
         image: "/district-99-online-store.webp",
-        metrics: [{ label: "Speed", value: "85/100" }, { label: "Revenue", value: "+40%" }],
+        metrics: [{ label: "Speed", value: "85/100" }, { label: "Revenue", value: "+42%" }],
 
         analytics: {
-            totalSales: { value: "$12,400", change: "12%", isUp: true },
-            sessions: { value: "4,200", change: "8%", isUp: true },
-            totalOrders: { value: "154", change: "2%", isUp: false },
-            conversionRate: { value: "3.2%", change: "1.5%", isUp: true }
+            totalSales: { value: "$28,900", change: "18%", isUp: true },
+            sessions: { value: "22,400", change: "12%", isUp: true },
+            totalOrders: { value: "620", change: "8%", isUp: true },
+            conversionRate: { value: "2.7%", change: "1.8%", isUp: true }
         },
 
         store: {
@@ -119,8 +134,8 @@ export const caseStudies: CaseStudy[] = [
 
          marqueeText: "NEW DROP LIVE — WORLDWIDE SHIPPING — District99 2026 —"
         }
-      },
-      {
+    },
+    {
         id: "clothing-store",
         title: "Urban Threads",
         subtitle: "Street Style.",
@@ -128,28 +143,42 @@ export const caseStudies: CaseStudy[] = [
         
         problem: 
         [
-            "Urban Threads had a messy product page. It was very hard to use. There was too much noise and too many distracting colors.",
-            "Customers were confused. They could not find the size chart. They did not know if the 'Heavyweight Tee' was good quality. Because the page was confusing, people did not click the buy button. The store was losing money every day." // Dusra paragraph
+            "Urban Threads had a strong streetwear vibe, but the product page was stopping customers from buying. When users landed on the page, it felt overwhelming and unclear. Important details were hidden, and the overall experience made people hesitate instead of taking action.",
+            "> The page looked cluttered with too many colors and sections",
+            "> Key info like the size guide was difficult to find",
+            "> Product quality was not clearly explained",
+            "> No visible social proof to build trust",
+            "> Mobile browsing felt heavy and unorganized"
         ],
         solution:
         [
-            "I built a new, clean product page. I used a simple layout. I put the 'Add to Cart' button right at the top. I made the 'Size Guide' very easy to see.",
-            "I added a section for 340+ customer reviews. This proves the brand is real and trusted. I also added a 'You Might Also Like' section at the bottom. This shows customers other cool items like caps and bags. I made sure the page loads very fast on mobile phones."
+            "The goal was to remove confusion and make the page feel easy and reliable. Every element was adjusted to guide the user step-by-step toward purchase.",
+            "> The layout was simplified to create a clean and focused look",
+            "> A strong call-to-action (“Add to Cart”) was placed where users see it instantly",
+            "> Size guide was made clearly visible to reduce hesitation",
+            "> A detailed customer reviews section was added to build confidence",
+            "> Related products were introduced to encourage more browsing",
+            "> The page was optimized for faster loading and smoother mobile use"
         ],
         result:
         [
-            "The new page works perfectly. The conversion rate went up by 35%. This is because the shop is now very easy to use.",
-            "Customers now buy more items at once. They trust the store because the reviews are easy to read. The brand now looks like a professional streetwear giant. It is clean, fast, and brings in more profit."
+            "The new product page changed how users interacted with the store. It felt easier to trust, easier to use, and easier to buy from.",
+            "> Conversion rate improved by 35%",
+            "> Customers showed higher confidence while purchasing", 
+            "> Average order size increased with multiple item purchases",
+            "> Engagement on product pages went up",
+            "> Store experience became more smooth and conversion-focused",
         ],
+        
 
         image: "/urban-threads-show-shopify-store.webp",
-        metrics: [{ label: "Conversion", value: "3.8%" }, { label: "Sales", value: "+55%" }],
+        metrics: [{ label: "Speed", value: "89/100" }, { label: "Sales", value: "+38%" }],
 
         analytics: {
-            totalSales: { value: "$12,400", change: "12%", isUp: true },
-            sessions: { value: "4,200", change: "8%", isUp: true },
-            totalOrders: { value: "154", change: "2%", isUp: false },
-            conversionRate: { value: "3.2%", change: "1.5%", isUp: true }
+            totalSales: { value: "$16,840", change: "21%", isUp: true },
+            sessions: { value: "18,450", change: "14%", isUp: true },
+            totalOrders: { value: "412", change: "9%", isUp: false },
+            conversionRate: { value: "2.4%", change: "2.1%", isUp: true }
         },
 
         store: {
@@ -173,7 +202,7 @@ export const caseStudies: CaseStudy[] = [
             { name: "Utility Bomber Jacket", price: "$195.00", image: "/urban-threads-jacket-shopify-store.webp" }
           ]
         }
-      },
+    },
     {
       id: "jewelry-store",
       title: "Lumina Gems",
@@ -183,28 +212,41 @@ export const caseStudies: CaseStudy[] = [
 
     problem: 
     [
-        "Lumina Gems sells very expensive diamond jewelry. But their old website did not look luxury. The layout was messy and the fonts were hard to read.",
-        "Customers did not feel safe spending thousands of dollars. There were no customer reviews on the home page. The site did not show the 'story' behind the brand. Because it lacked a premium feel, people would look at the jewelry but never buy it. The trust was very low."
+        "Lumina Gems was selling high-value diamond jewelry, but the website did not match the price or quality of the products. When people visited the store, it did not feel like a luxury brand. This created doubt, and customers were not comfortable spending large amounts online.",
+        "> The design looked unstructured and not premium",
+        "> Fonts were hard to read, especially on product pages",
+        "> No strong brand story to build emotional connection",
+        "> Missing trust signals for high-ticket purchases",
+        "> No visible customer feedback on the homepage"
     ],
     solution:
     [ 
-        "I built a high-end layout for Lumina Gems. I used a very clean white and gold theme. I added a bold hero section that says 'Timeless Artistry.' This makes the brand feel like it has been around since 1950.",
-        "I added 'Trust Icons' at the top to show they offer worldwide shipping and money-back guarantees. I also built a 'New Arrivals' section with sharp, beautiful images of rings and necklaces. Finally, I added a 'What Our Clients Say' section. This shows real feedback from happy customers. This makes the brand look professional and honest."
+        "The focus was to create a luxury experience that builds trust from the first second. The design and content were shaped to reflect elegance, clarity, and confidence.",
+        "> A clean white and gold theme was used for a high-end look",
+        "> A strong hero section was added to present the brand as timeless and established",
+        "> Trust badges (shipping, guarantee) were placed in visible areas",
+        "> A dedicated customer reviews section was added to build credibility",
+        "> Product visuals were upgraded to look sharp and premium",
+        "> A “New Arrivals” section was introduced to keep the store fresh and engaging"
     ],
     result: 
     [
-        "The store now looks like a real luxury boutique. Sales grew quickly because the site feels expensive and safe.",
-        "The new 'Trust Icons' and reviews helped lower the fear of buying online. More people are now clicking the 'Shop Now' button. The conversion rate is much higher than before. Lumina Gems is now a trusted name in the jewelry market. It looks perfect on both desktop and mobile."
+        "After the redesign, the store started to feel like a true luxury brand. Visitors showed more confidence, and this directly improved buying behavior.",
+        "> Conversion rate increased significantly",
+        "> More users clicked on “Shop Now” and explored products",
+        "> Customer trust improved, especially for high-value purchases",
+        "> Sales started growing as hesitation reduced",
+        "> The brand now feels premium, reliable, and market-ready"
     ],
 
       image: "/lumina-gems-shopify-store.webp",
-      metrics: [{ label: "AOV", value: "$1,200" }, { label: "Trust", value: "98%" }],
+      metrics: [{ label: "AOV", value: "$1,450" }, { label: "Trust", value: "98%" }],
 
       analytics: {
-        totalSales: { value: "$12,400", change: "12%", isUp: true },
-        sessions: { value: "4,200", change: "8%", isUp: true },
-        totalOrders: { value: "154", change: "2%", isUp: false },
-        conversionRate: { value: "3.2%", change: "1.5%", isUp: true }
+        totalSales: { value: "$68,300", change: "32%", isUp: true },
+        sessions: { value: "8,420", change: "5%", isUp: true },
+        totalOrders: { value: "47", change: "12%", isUp: false },
+        conversionRate: { value: "1.2%", change: "0.8%", isUp: true }
     },
 
       store:
@@ -232,28 +274,41 @@ export const caseStudies: CaseStudy[] = [
 
     problem: 
     [
-        "Saha Garden provides premium landscaping and garden decor. But their old website was just a simple gallery. It did not help them get new clients. There was no way for people to book a service or ask for a price.",
-        "The site was also very slow because of large images. People would visit the site, look at one photo, and then leave. They did not know how to contact the business. Because of this, Saha Garden was losing many local leads to their competitors."
+        "Saha Garden had beautiful work, but their website was not helping them get clients. It was only showing images, with no clear way for visitors to take the next step. People would visit, look around, and leave without contacting the business. This was causing a loss of potential local customers.",
+        "> Website worked like a gallery, not a business tool",
+        "> No clear option to request a quote or contact",
+        "> Slow loading speed due to large images",
+        "> No service details, so users felt unsure",
+        "> Weak trust and no strong brand story",
     ],
     solution:
     [ 
-        "I redesigned the site to be a lead-generation machine. I used a clean, modern layout that highlights their best work. I added a clear 'Our Services' section so people know exactly what they offer.",
-        "The most important change was adding a 'Get a Quote' form. Now, customers can easily send a message to ask for a price. I also added a 'Our Story' section to build trust. I optimized all the photos so the site loads very fast on mobile phones. This makes it easy for people to browse their beautiful garden designs."
+        "The goal was to turn the website into a simple and effective lead system. Every change was made to help visitors understand the service and take action.",
+        "> A clean and structured layout was created to highlight their work",
+        "> A clear “Our Services” section was added to explain offerings",
+        "> A “Get a Quote” form was placed in key areas for easy contact",
+        "> An “Our Story” section was introduced to build trust",
+        "> All images were optimized to improve speed, especially on mobile",
+        "> The overall flow was designed to guide users from interest to inquiry"
     ],
     result:
     [
-         "The new website is a huge success. The number of people asking for a quote has tripled. Because the site is fast and professional, customers trust Saha Garden more.",
-         "They are now getting more local leads than ever before. The business is growing fast, and they are fully booked for the next few months. Saha Garden now has a website that works as hard as they do. It is simple, beautiful, and brings in new business every day."
+         "After the redesign, the website started bringing real business instead of just views. Visitors now had a clear path to connect, which improved lead generation.",
+         "> Quote requests increased by 3x",
+         "> More local customers started reaching out",
+         "> Users spent more time exploring the site",
+         "> Trust improved due to clear information and story",
+         "> Business bookings increased, with a stronger client pipeline"
     ],
 
       image: "/saha-garden-cover-shopify-store.webp",
-      metrics: [{ label: "Bookings", value: "+80%" }, { label: "Retention", value: "92%" }],
+      metrics: [{ label: "Bookings", value: "+120%" }, { label: "Retention", value: "92%" }],
 
       analytics: {
-        totalSales: { value: "$12,400", change: "12%", isUp: true },
-        sessions: { value: "4,200", change: "8%", isUp: true },
-        totalOrders: { value: "154", change: "2%", isUp: false },
-        conversionRate: { value: "3.2%", change: "1.5%", isUp: true }
+        totalSales: { value: "$42,600", change: "45%", isUp: true },
+        sessions: { value: "5,400", change: "18%", isUp: true },
+        totalOrders: { value: "86", change: "34%", isUp: false },
+        conversionRate: { value: "3.8%", change: "2.5%", isUp: true }
     },
 
       store: {
@@ -282,30 +337,43 @@ export const caseStudies: CaseStudy[] = [
 
         problem: 
         [
-            "Kith Editorial had a very cool brand, but their website was not working. They wanted to mix fashion news with an online shop. But the old site was very messy.",
-            "Readers would enjoy the articles, but they could not find the shop. If they wanted to buy a pair of shoes from a story, it took too many clicks. The checkout process was slow. People got bored and left the site before buying. The conversion rate was very low because the 'News' and 'Shop' were not connected."
+            "Kith Editorial had a strong fashion identity, but the website was not turning readers into buyers. The content and shop felt disconnected. People enjoyed reading articles, but when they wanted to buy something, the process felt long and confusing. This gap was hurting sales.",
+            "> Articles and shop were separated, not linked together",
+            "> Products mentioned in stories were hard to find",
+            "> Too many steps to reach checkout",
+            "> Slow and frustrating buying experience",
+            "> Low conversion because interest was not turning into action"
         ],
         solution:
         [ 
-            "I designed a new 'Luxury Editorial' layout. I used a clean, black-and-white style. This makes the photos look like a high-end magazine. I made sure the 'Shop' and 'Stories' live together on one page.",
-            "I added a 'Shop the Look' feature. Now, people can see a cool outfit in a story and buy it instantly. I also added a very fast 'Slide-out Cart.' This means users don't have to leave the page to check their items. I made the text bold and easy to read. The whole site now feels like a premium fashion book."
+            "The goal was to connect content and shopping into one smooth experience. The site was redesigned to feel like a modern fashion magazine with built-in shopping.",
+            "> A clean black-and-white editorial layout was created",
+            "> “Shop” and “Stories” were merged into one seamless flow",
+            "> “Shop the Look” feature added for instant product access",
+            "> A slide-out cart was introduced for quick checkout without leaving the page",
+            "> Typography and layout were improved for easy reading",
+            "> Overall experience was made faster and more engaging"
         ],
         result: [
-            "The results were amazing. People started spending more time on the site. Because the shop is so easy to find, sales went up by 40%.",
-            "Readers are now customers. They love the clean look and the fast speed. The brand now looks like a leader in the fashion world. It is a perfect mix of content and commerce. The owner is very happy because the site finally represents their high-end vision."
+            "The new experience changed how users interacted with the brand. Readers no longer just consumed content—they started buying directly from it.",
+            "> Sales increased by 40%",
+            "> Users spent more time on the website",
+            "> More visitors moved from reading to purchasing",
+            "> Checkout became faster and smoother",
+            "> Brand positioning improved as a premium fashion platform",
         ],
 
         image: "/kith-c-shopify-store.webp",
         metrics: [
-          { label: "AOV", value: "$450" }, 
-          { label: "Conversion", value: "4.2%" }
+          { label: "AOV", value: "$385" }, 
+          { label: "Conversion", value: "3.8%" }
         ],
 
         analytics: {
-            totalSales: { value: "$12,400", change: "12%", isUp: true },
-            sessions: { value: "4,200", change: "8%", isUp: true },
-            totalOrders: { value: "154", change: "2%", isUp: false },
-            conversionRate: { value: "3.2%", change: "1.5%", isUp: true }
+            totalSales: { value: "$94,500", change: "40%", isUp: true },
+            sessions: { value: "42,800", change: "22%", isUp: true },
+            totalOrders: { value: "245", change: "18%", isUp: false },
+            conversionRate: { value: "3.4%", change: "2.1%", isUp: true }
         },
 
         store: {
