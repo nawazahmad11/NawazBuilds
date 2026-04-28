@@ -1462,195 +1462,6 @@ import React, { useState, useEffect } from 'react';
         );
     };
 
-
-// --- MAIN PAGE COMPONENT ---
-        // const CaseStudyDetail = () => {
-        //     const { projectId } = useParams();
-        
-        //     // A. Listing View (Same as before)
-        //     if (!projectId) {
-        //     return (
-        //         <div className="min-h-screen bg-[#050505] text-white pt-40 pb-20 px-6">
-        //         <div className="max-w-[1400px] mx-auto">
-        //             <span className="text-[#f9a825] text-xs font-black uppercase tracking-[0.4em] mb-4 block">Selected Works</span>
-        //             <h1 className="text-7xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
-        //             Case <span className="text-white/10">Studies.</span>
-        //             </h1>
-        //             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        //             {caseStudies.map((p) => (
-        //                 <Link key={p.id} to={`/case-studies/${p.id}`} className="group p-4 bg-white/5 border border-white/5 rounded-[2rem] hover:border-[#f9a825]/30 transition-all">
-        //                 <img src={p.image} className="w-full aspect-video object-cover rounded-2xl mb-6 grayscale group-hover:grayscale-0 transition-all" alt={p.title} />
-        //                 <h2 className="text-3xl font-black uppercase tracking-tighter">{p.title}</h2>
-        //                 <p className="text-[10px] font-black uppercase tracking-widest text-[#f9a825] mt-2">{p.category}</p>
-        //                 </Link>
-        //             ))}
-        //             </div>
-        //         </div>
-        //         </div>
-        //     );
-        //     }
-        
-        //     // B. Detail View
-        //     const project = caseStudies.find(p => p.id === projectId);
-        //     if (!project) return <div className="text-white text-center mt-40 font-black">404 - NOT FOUND</div>;
-        
-        //     return (
-        //     <div className="min-h-screen bg-[#050505] text-white pt-32 pb-20 px-6 lg:px-16">
-        //         <div className="max-w-[1500px] mx-auto">
-        //         <Link to="/case-studies" className="inline-flex items-center gap-2 text-white/60 hover:text-[#f9a825] mb-12 uppercase text-[11px] font-black tracking-[0.2em] transition-colors">
-        //             <ArrowLeft size={16} /> Close Preview
-        //         </Link>
-                
-        //         <div className="grid lg:grid-cols-12 gap-16 items-start">
-        //             {/* Left Info Column */}
-        //             <div className="lg:col-span-5 lg:sticky lg:top-32">
-        //             <span className="text-[#f9a825] text-[12px] font-black uppercase tracking-[0.4em] mb-6 block ">{project.category}</span>
-        //             <h1 className="text-7xl md:text-8xl font-black uppercase leading-[0.85] mb-16 tracking-tighter">{project.title}.</h1>
-                    
-        //             {/* Structured Content: Problem, Solution, Result */}
-        //             <div className="space-y-14 mb-20">
-        //                 {/* 01. Problem Section */}
-        //                 <div>
-        //                     <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Problem</h3>
-        //                     <div className="space-y-5">
-        //                     {project.problem.map((para, i) => (
-        //                         <p key={i} className="text-white/70 text-[18px] leading-relaxed font-light">{para}</p>
-        //                     ))}
-        //                     </div>
-        //                 </div>
-        
-        //                 {/* 02. Solution Section */}
-        //                 <div>
-        //                     <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Solution</h3>
-        //                     <div className="space-y-5">
-        //                     {project.solution.map((para, i) => (
-        //                         <p key={i} className="text-white/70 text-[18px] leading-relaxed font-light">{para}</p>
-        //                     ))}
-        //                     </div>
-        //                 </div>
-                        
-        //                 {/* 03. Result Section */}
-        //                 <div>
-        //                     <h3 className="text-[#f9a825] text-[20px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Result</h3>
-        //                     <div className="space-y-5">
-        //                     {project.result.map((para, i) => (
-        //                         <p key={i} className="text-white font-medium text-[20px] leading-relaxed">{para}</p>
-        //                     ))}
-        //                     </div>
-        //                 </div>
-        //             </div>
-                        
-        //             {/* Metrics */}
-        //             <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-12">
-        //                 {project.metrics.map((m, i) => (
-        //                 <div key={i} className="p-10 rounded-[2.5rem] bg-white/[0.03] border border-white/10 hover:bg-white/[0.06] transition-all group">
-        //                     <p className="text-[12px] font-black text-white/50 group-hover:text-white/80 uppercase tracking-[0.2em] mb-3 transition-colors">
-        //                         {m.label}
-        //                     </p>
-        //                     <p className="text-5xl font-black text-[#f9a825] tracking-tighter">{m.value}</p>
-        //             </div>
-        //                 ))}
-        //             </div>
-        //             </div>
-
-        //             {/* Right Store Preview Column */}
-        //                         <div className="lg:col-span-7">
-        //                             <div className="rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.5)] bg-[#0a0a0a]">
-        //                                 <StorePreview project={project} />
-        //                             </div>
-        //                         </div>
-        //         </div>                                                   
-
-
-        //         {project.analytics && (
-        //             <div className="mt-20 w-full font-sans antialiased">
-        //                 {/* Is 'p-8' ko kam ya zada kar ke aap white area adjust kar sakte hain */}
-        //                 <div className="p-8 bg-white rounded-[1rem] text-[#1a1a1a] shadow-sm border border-gray-200 overflow-hidden">
-        //                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                                
-        //                         {/* Card 1: Sessions (Grey Background) */}
-        //                         {/* 'p-4' card ke andar ki space control karta hai */}
-        //                         <div className="flex flex-col bg-[#f6f6f7] rounded-lg p-4 relative border border-gray-200">
-        //                             <div className="absolute top-4 right-4 text-gray-400">
-        //                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-        //                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-        //                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-        //                                 </svg>
-        //                             </div>
-                                    
-        //                             <div className="flex items-center text-[12px] font-bold text-[#303030] mb-3">
-        //                                 <span className="border-b border-dotted border-gray-400 pb-0.5 leading-none">Sessions</span>
-        //                             </div>
-                                    
-        //                             <div className="flex items-baseline gap-1">
-        //                                 {/* 'text-2xl' ya 'text-3xl' se font size change hoga */}
-        //                                 <span className="text-2xl font-[900] tracking-tighter text-black leading-none">
-        //                                     {project.analytics.sessions.value}
-        //                                 </span>
-        //                                 <div className="flex items-center text-[11px] font-black text-[#008060] leading-none mb-0.5">
-        //                                     <ArrowUpRight size={12} strokeWidth={4} />
-        //                                     <span>{project.analytics.sessions.change}</span>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-
-        //                         {/* Baaki Cards bhi isi pattern par hain */}
-        //                         <div className="flex flex-col p-4 bg-white border border-transparent">
-        //                             <div className="flex items-center text-[12px] font-bold text-[#303030] mb-3">
-        //                                 <span className="border-b border-dotted border-gray-400 pb-0.5 leading-none">Total sales</span>
-        //                             </div>
-        //                             <div className="flex items-baseline gap-1">
-        //                                 <span className="text-2xl font-[900] tracking-tighter text-black leading-none">{project.analytics.totalSales.value}</span>
-        //                                 <div className="flex items-center text-[11px] font-black text-[#008060] leading-none mb-0.5">
-        //                                     <ArrowUpRight size={12} strokeWidth={4} />
-        //                                     <span>{project.analytics.totalSales.change}</span>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-
-        //                         <div className="flex flex-col p-4 bg-white border border-transparent">
-        //                             <div className="flex items-center text-[12px] font-bold text-[#303030] mb-3">
-        //                                 <span className="border-b border-dotted border-gray-400 pb-0.5 leading-none">Orders</span>
-        //                             </div>
-        //                             <div className="flex items-baseline gap-1">
-        //                                 <span className="text-2xl font-[900] tracking-tighter text-black leading-none">{project.analytics.totalOrders.value}</span>
-        //                                 <div className="flex items-center text-[11px] font-black text-[#008060] leading-none mb-0.5">
-        //                                     <ArrowUpRight size={12} strokeWidth={4} />
-        //                                     <span>{project.analytics.totalOrders.change}</span>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-
-        //                         <div className="flex flex-col p-4 bg-white relative border border-transparent">
-        //                             <div className="absolute top-5 right-5 text-gray-500">
-        //                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-        //                                     {/* <path d="M9 18l6-6-6-6"></path> */}
-        //                                     <path d="M18 15l-6-6-6 6"></path>
-        //                                 </svg>
-        //                             </div>
-        //                             <div className="flex items-center text-[12px] font-bold text-[#303030] mb-3">
-        //                                 <span className="border-b border-dotted border-gray-400 pb-0.5 leading-none">Conversion rate</span>
-        //                             </div>
-        //                             <div className="flex items-baseline gap-1">
-        //                                 <span className="text-2xl font-[900] tracking-tighter text-black leading-none">{project.analytics.conversionRate.value}</span>
-        //                                 <div className="flex items-center text-[11px] font-black text-[#008060] leading-none mb-0.5">
-        //                                     <ArrowUpRight size={12} strokeWidth={4} />
-        //                                     <span>{project.analytics.conversionRate.change}</span>
-        //                                 </div>
-        //                             </div>
-        //                         </div>
-
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             )}
-
-        //         </div>
-        //     </div>
-        //     );
-        // };
-
-
         const CaseStudyDetail = () => {
             const { projectId } = useParams();
           
@@ -1660,9 +1471,15 @@ import React, { useState, useEffect } from 'react';
                 <div className="min-h-screen bg-[#050505] text-white pt-40 pb-20 px-6">
                   <div className="max-w-[1400px] mx-auto">
                     <span className="text-[#f9a825] text-xs font-black uppercase tracking-[0.4em] mb-4 block">Selected Works</span>
-                    <h1 className="text-7xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
-                      Case <span className="text-white/10">Studies.</span>
+                    <h1 className="text-7xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8] mb-16">
+                    Case <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f9a825] to-[#ffe066]">Studies.</span>
                     </h1>
+
+                    {/* <h1 className="text-6xl md:text-7xl font-black tracking-tighter mb-6 leading-[0.85]  uppercase">
+                Shopify <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f9a825] to-[#ffe066]">Titans.</span>
+              </h1> */}
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                       {caseStudies.map((p) => (
                         <Link key={p.id} to={`/case-studies/${p.id}`} className="group p-4 bg-white/5 border border-white/5 rounded-[2rem] hover:border-[#f9a825]/30 transition-all">
