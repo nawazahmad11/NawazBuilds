@@ -244,16 +244,25 @@ const PortfolioSection = () => {
         <div className="bg-white/[0.04] border border-white/6 rounded-[2rem] p-6 md:p-8 backdrop-blur-xl"> {/* p-8 ko md:p-8 rakha magar mobile pe p-6 kiya */}
             
        {/* --- View All Button (Top Right Position) --- */}
-        <Link 
-          to="/case-studies" 
-          className="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-2.5 px-6 py-2 border border-[#f9a825]/40 rounded-full transition-all bg-white/5 hover:bg-[#f9a825]/10 hover:border-[#f9a825] group"
-        >
-          <span className="text-[13px] font-bold text-[#f9a825]">
-            View all Case Studies
-          </span>
-          {/* Arrow Icon - Ensure ArrowRight is imported from lucide-react */}
-          <ArrowRight size={15} className="text-[#f9a825] group-hover:translate-x-1 transition-transform" />
-        </Link>
+        {/* --- View All Button --- */}
+        <div className="flex justify-start md:block mb-6 md:mb-0"> 
+          <Link 
+            to="/case-studies" 
+            className="
+              /* Mobile par simple relative position, Desktop par absolute */
+              relative md:absolute 
+              top-0 right-0 md:top-10 md:right-10 
+              z-30 flex items-center gap-2.5 px-5 py-2 
+              border border-[#f9a825]/40 rounded-full transition-all 
+              bg-white/5 hover:bg-[#f9a825]/10 hover:border-[#f9a825] group
+            "
+          >
+            <span className="text-[12px] md:text-[13px] font-bold text-[#f9a825]">
+              View all Case Studies
+            </span>
+            <ArrowRight size={14} className="text-[#f9a825] group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
