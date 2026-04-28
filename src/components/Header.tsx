@@ -241,7 +241,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion"; // Mobile menu animation ke liye
+import { motion, AnimatePresence } from "framer-motion";
 
 import Rocket from "lucide-react/dist/esm/icons/rocket";
 import ChevronDown from "lucide-react/dist/esm/icons/chevron-down";
@@ -249,8 +249,8 @@ import Calculator from "lucide-react/dist/esm/icons/calculator";
 import ShieldCheck from "lucide-react/dist/esm/icons/shield-check";
 import Layout from "lucide-react/dist/esm/icons/layout";
 import ShoppingBag from "lucide-react/dist/esm/icons/shopping-bag";
-import Menu from "lucide-react/dist/esm/icons/menu"; // Naya icon
-import X from "lucide-react/dist/esm/icons/x";       // Naya icon
+import Menu from "lucide-react/dist/esm/icons/menu";
+import X from "lucide-react/dist/esm/icons/x";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -258,7 +258,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isToolsOpen, setIsToolsOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const websiteLogo = "/NawazCart.webp"; 
 
@@ -295,7 +295,7 @@ const Header = () => {
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
-    setIsMobileMenuOpen(false); // Mobile menu band karne ke liye
+    setIsMobileMenuOpen(false);
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
@@ -373,8 +373,8 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Right Section: Button + Hamburger */}
-        <div className="flex items-center gap-3">
+        {/* Right Section: Button + Hamburger (Higher Z-Index) */}
+        <div className="flex items-center gap-3 relative z-[110]">
           <button
             onClick={() => handleNavClick("pricing")}
             className={`bg-gradient-to-r from-[#ffb347] via-[#f9a825] to-[#f57c00] text-[#0a0a0a] rounded-full font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(249,168,37,0.4)] ${isScrolled ? "px-5 py-2 text-[11px]" : "px-7 py-2.5 text-xs"}`}>
@@ -382,12 +382,22 @@ const Header = () => {
             <span className="uppercase tracking-wider hidden sm:inline">Get Started</span>
           </button>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Toggle with smooth Icon Switch */}
           <button 
-            className="md:hidden p-2 text-white/70 hover:text-[#f9a825] transition-colors"
+            className="md:hidden p-2 text-white/70 hover:text-[#f9a825] transition-colors relative z-[110]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={isMobileMenuOpen ? "close" : "menu"}
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </motion.div>
+            </AnimatePresence>
           </button>
         </div>
       </div>
@@ -399,7 +409,7 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-[90] flex flex-col p-8 pt-24 pointer-events-auto"
+            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-[90] flex flex-col p-8 pt-32 pointer-events-auto"
           >
             <div className="flex flex-col gap-6 text-center">
               {["services", "portfolio", "faq"].map((item) => (
