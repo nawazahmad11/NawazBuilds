@@ -373,16 +373,19 @@ const Header = () => {
           </div>
         </nav>
 
-        {/* Right Section: Button + Hamburger (Higher Z-Index) */}
+        {/* Right Section: Button + Hamburger */}
         <div className="flex items-center gap-3 relative z-[110]">
-          <button
-            onClick={() => handleNavClick("pricing")}
-            className={`bg-gradient-to-r from-[#ffb347] via-[#f9a825] to-[#f57c00] text-[#0a0a0a] rounded-full font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(249,168,37,0.4)] ${isScrolled ? "px-5 py-2 text-[11px]" : "px-7 py-2.5 text-xs"}`}>
-            <Rocket className="w-3.5 h-3.5 fill-black/20" /> 
-            <span className="uppercase tracking-wider hidden sm:inline">Get Started</span>
-          </button>
+          {/* Menu open ho to Get Started button hide ho jaye taake clean look aaye */}
+          {!isMobileMenuOpen && (
+            <button
+              onClick={() => handleNavClick("pricing")}
+              className={`bg-gradient-to-r from-[#ffb347] via-[#f9a825] to-[#f57c00] text-[#0a0a0a] rounded-full font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(249,168,37,0.4)] ${isScrolled ? "px-5 py-2 text-[11px]" : "px-7 py-2.5 text-xs"}`}>
+              <Rocket className="w-3.5 h-3.5 fill-black/20" /> 
+              <span className="uppercase tracking-wider hidden sm:inline">Get Started</span>
+            </button>
+          )}
 
-          {/* Mobile Toggle with smooth Icon Switch */}
+          {/* Mobile Toggle Button */}
           <button 
             className="md:hidden p-2 text-white/70 hover:text-[#f9a825] transition-colors relative z-[110]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -409,29 +412,34 @@ const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-2xl z-[90] flex flex-col p-8 pt-32 pointer-events-auto"
+            className="fixed inset-0 top-0 left-0 w-full h-screen bg-black/98 backdrop-blur-2xl z-[105] flex flex-col p-8 pt-32 pointer-events-auto overflow-y-auto"
           >
-            <div className="flex flex-col gap-6 text-center">
+            <div className="flex flex-col gap-6 text-center max-w-sm mx-auto w-full">
               {["services", "portfolio", "faq"].map((item) => (
                 <button 
                   key={item}
                   onClick={() => handleNavClick(item)}
-                  className="text-2xl font-bold text-white capitalize hover:text-[#f9a825]"
+                  className="text-3xl font-bold text-white capitalize hover:text-[#f9a825] transition-colors"
                 >
                   {item}
                 </button>
               ))}
-              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white hover:text-[#f9a825]">Blog</Link>
-              <Link to="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-bold text-white hover:text-[#f9a825]">Case Studies</Link>
+              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-bold text-white hover:text-[#f9a825] transition-colors">Blog</Link>
+              <Link to="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-bold text-white hover:text-[#f9a825] transition-colors">Case Studies</Link>
               
-              <div className="h-[1px] bg-white/10 my-4" />
+              <div className="h-[1px] bg-white/10 my-6 w-full" />
               
-              <span className="text-primary uppercase tracking-widest text-xs font-black">Tools</span>
+              <span className="text-[#f9a825] uppercase tracking-[0.3em] text-[11px] font-black block mb-4">Tools</span>
               <div className="grid grid-cols-2 gap-4">
                 {tools.map((tool) => (
-                  <Link key={tool.name} to={tool.path} onClick={() => setIsMobileMenuOpen(false)} className="flex flex-col items-center gap-2 p-4 bg-white/5 rounded-2xl">
-                    <span className="text-[#f9a825]">{tool.icon}</span>
-                    <span className="text-[10px] text-white/70">{tool.name}</span>
+                  <Link 
+                    key={tool.name} 
+                    to={tool.path} 
+                    onClick={() => setIsMobileMenuOpen(false)} 
+                    className="flex flex-col items-center justify-center gap-3 p-5 bg-white/5 rounded-3xl border border-white/5 hover:bg-white/10 active:scale-95 transition-all"
+                  >
+                    <span className="text-[#f9a825] bg-[#f9a825]/10 p-2 rounded-full">{tool.icon}</span>
+                    <span className="text-[12px] font-medium text-white/90">{tool.name}</span>
                   </Link>
                 ))}
               </div>
