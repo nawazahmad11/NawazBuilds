@@ -6,6 +6,9 @@ import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
 import ExternalLink from "lucide-react/dist/esm/icons/external-link";
 import CheckCircle2 from "lucide-react/dist/esm/icons/check-circle-2";
 
+import { Link } from "react-router-dom";
+import ChevronDown from "lucide-react/dist/esm/icons/chevron-down";
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
@@ -166,6 +169,8 @@ const PortfolioSection = () => {
 
   return (
     <section id="portfolio" className="py-20 bg-black/40 overflow-hidden relative">
+
+   {/* <section id="portfolio" className="pt-1 pb-5 bg-black/40 overflow-hidden relative"> */}
       <style>{`
         @keyframes scroll-portfolio {
           0% { transform: translateX(0); }
@@ -194,6 +199,9 @@ const PortfolioSection = () => {
       {/* --- INFINITE SLIDER (IMPROVED LAZY LOADING) --- */}
       <div className="portfolio-container relative flex items-center overflow-hidden py-10 mb-7">
         <div className="animate-portfolio flex gap-8 whitespace-nowrap px-4">
+
+          {/* <div className="portfolio-container relative flex items-center overflow-hidden py-2 mb-2">
+          <div className="animate-portfolio flex gap-8 whitespace-nowrap px-4"> */}
           {duplicatedProjects.map((project, i) => (
             <motion.div key={i} whileHover={{ y: -10, scale: 1.02 }} 
             className="w-[350px] md:w-[450px] shrink-0 group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-2xl transition-all duration-500 cursor-pointer">
@@ -232,93 +240,103 @@ const PortfolioSection = () => {
       </div>
 
       {/* --- FEATURE SHOWCASE (IMPROVED PERFORMANCE) --- */}
-      <div className="section-container relative z-20">
-        <div className="bg-white/[0.04] border border-white/6 rounded-[2rem] p-8 md:p-7 backdrop-blur-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 items-center">
-
-            <div className="order-2 lg:order-1 min-h-[450px] md:min-h-[400px] flex flex-col justify-center relative">
-              
-              <AnimatePresence mode="popLayout"> 
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <span className="text-primary font-black tracking-widest text-xs uppercase mb-2 block">Project Spotlight</span>
-                  <h2 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">
-                    {showcaseProjects[activeIndex].title}
-                  </h2>
-                  <p className="text-white/50 text-lg mb-5 font-light leading-relaxed">
-                    {showcaseProjects[activeIndex].description}
-                  </p>
-                  
-                  <div className="space-y-4 mb-2">
-                    {showcaseProjects[activeIndex].features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3 text-white/80">
-                        <CheckCircle2 size={20} className="text-primary" />
-                        <span className="font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="flex gap-3 mt-12">
-                {showcaseProjects.map((_, i) => (
-                  <div 
-                    key={i} 
-                    onClick={() => setActiveIndex(i)}
-                    className={`h-1 transition-all duration-500 cursor-pointer rounded-full ${activeIndex === i ? 'w-12 bg-primary' : 'w-4 bg-white/10'}`}
-                  />
-                ))}
-              </div>
-               </div>
-
-              <div className="order-1 lg:order-2 relative flex items-center justify-center min-h-[300px] md:min-h-[580px]">
-              <AnimatePresence mode="popLayout">
-                <motion.div
-                  key={activeIndex}
-                  initial={{ opacity: 0, x: 50, filter: "blur(10px)", scale: 0.95 }}
-                  animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
-                  exit={{ opacity: 0, x: -50, filter: "blur(10px)", scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.8 }}
-                  className="w-full flex justify-center absolute inset-0 items-center"
-                >
-                  {/* <img
-                    src={showcaseProjects[activeIndex].img}
-                    width="550"
-                    height="275"
-                    loading="lazy" 
-                    decoding="async"
-                    className="w-full h-auto max-h-[450px] md:max-h-[580px] object-contain rounded-[2.5rem] drop-shadow-[0_30px_70px_rgba(0,0,0,0.7)]" 
-                    alt={showcaseProjects[activeIndex].title}
-                  /> */}
-
-                  <img
-                    src={showcaseProjects[activeIndex].img}
-                    width="550"
-                    height="275"
-                    fetchPriority={activeIndex === 0 ? "high" : "low"}
-                    loading={activeIndex === 0 ? "eager" : "lazy"}
-                    decoding="async"
-                    className=" rounded-[1.2rem]" 
-                    alt={showcaseProjects[activeIndex].title}
-                  />
-                  
-                </motion.div>
-              </AnimatePresence>
-              <div className="absolute -z-10 w-[80%] h-[80%] bg-primary/10 blur-[120px] rounded-full" />
+      <div className="section-container relative z-20 mt-[-20px]"> {/* Slider ke mazeed kareeb karne ke liye negative margin */}
+        <div className="bg-white/[0.04] border border-white/6 rounded-[2rem] p-6 md:p-8 backdrop-blur-xl"> {/* p-8 ko md:p-8 rakha magar mobile pe p-6 kiya */}
             
-            </div>
+       {/* --- View All Button (Top Right Position) --- */}
+        <Link 
+          to="/case-studies" 
+          className="absolute top-6 right-6 md:top-10 md:right-10 z-30 flex items-center gap-2.5 px-6 py-2 border border-[#f9a825]/40 rounded-full transition-all bg-white/5 hover:bg-[#f9a825]/10 hover:border-[#f9a825] group"
+        >
+          <span className="text-[13px] font-bold text-[#f9a825]">
+            View all Case Studies
+          </span>
+          {/* Arrow Icon - Ensure ArrowRight is imported from lucide-react */}
+          <ArrowRight size={15} className="text-[#f9a825] group-hover:translate-x-1 transition-transform" />
+        </Link>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
-          </div>
-        
+                {/* Left Content: min-h ko kam kar ke content ke mutabiq kiya */}
+                <div className="order-2 lg:order-1 min-h-fit py-4 flex flex-col justify-center relative">
+
+                    <AnimatePresence mode="popLayout"> 
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 20 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <span className="text-primary font-black tracking-widest text-xs uppercase mb-2 block">Project Spotlight</span>
+                            <h2 className="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">
+                                {showcaseProjects[activeIndex].title}
+                            </h2>
+                            <p className="text-white/50 text-lg mb-5 font-light leading-relaxed">
+                                {showcaseProjects[activeIndex].description}
+                            </p>
+                            
+                            <div className="space-y-4 mb-2">
+                                {showcaseProjects[activeIndex].features.map((feature, idx) => (
+                                    <div key={idx} className="flex items-center gap-3 text-white/80">
+                                        <CheckCircle2 size={20} className="text-primary" />
+                                        <span className="font-medium">{feature}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    <div className="flex gap-3 mt-8"> {/* mt-12 ko kam kar ke mt-8 kiya */}
+                        {showcaseProjects.map((_, i) => (
+                            <div 
+                                key={i} 
+                                onClick={() => setActiveIndex(i)}
+                                className={`h-1 transition-all duration-500 cursor-pointer rounded-full ${activeIndex === i ? 'w-12 bg-primary' : 'w-4 bg-white/10'}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right Image: min-h ko content ke sath align kiya */}
+                <div className="order-1 lg:order-2 relative flex items-center justify-center min-h-fit lg:min-h-[400px]">
+                    <AnimatePresence mode="popLayout">
+                        <motion.div
+                            key={activeIndex}
+                            initial={{ opacity: 0, x: 50, filter: "blur(10px)", scale: 0.95 }}
+                            animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
+                            exit={{ opacity: 0, x: -50, filter: "blur(10px)", scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.8 }}
+                            className="w-full flex justify-center relative items-center py-4"
+                        >
+                           <img
+                            src={showcaseProjects[activeIndex].img}
+                            width="550"
+                            height="275"
+                            // Isse performance mazeed behtar hogi
+                            fetchPriority={activeIndex === 0 ? "high" : "auto"} 
+                            loading={activeIndex === 0 ? "eager" : "lazy"}
+                            decoding="async"
+                            className="rounded-[1.2rem] w-full h-auto object-contain shadow-2xl" 
+                            alt={showcaseProjects[activeIndex].title}
+                        />
+
+                        {/* --- Hidden Preloader: Ye agli images ko background mein load rakhe ga baghair speed slow kiye --- */}
+                        <div className="hidden">
+                          {showcaseProjects.map((project, index) => (
+                            <link key={index} rel="preload" as="image" href={project.img} />
+                          ))}
+                        </div>
+                        </motion.div>
+                    </AnimatePresence>
+                    {/* Glow effect ko thora tight kiya */}
+                    <div className="absolute -z-10 w-[70%] h-[70%] bg-primary/5 blur-[100px] rounded-full" />
+                </div>
+            </div>
         </div>
       </div>
-    </section>
-  );
-};
+        </section>
+      );
+    };
 
 export default PortfolioSection;
