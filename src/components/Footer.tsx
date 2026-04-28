@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="space-y-4 text-sm text-white/70">
               <div className="flex items-center space-x-3 hover:text-[#f9a825] transition-colors cursor-pointer group">
                 <Mail size={16} />
-                <a href="mailto:hello@nawazahmad.com">hello@nawazahmad.com</a>
+                <a href="mailto:hello@nawazahmad.com">hello@nawazbuilds.com</a>
               </div>
               <div className="flex items-center space-x-3"><MapPin size={16} /><span>Lahore, Dubai & Remote</span></div>
             </div>
