@@ -321,11 +321,24 @@ const Header = () => {
           }
         `}
       >
+        
         {/* Logo Section */}
-        <div onClick={() => navigate("/")} className="flex items-center gap-3 cursor-pointer shrink-0">
-          <img src={websiteLogo} alt="Logo" width={40} height={40} className="w-10 h-10 object-contain rounded-full border border-white/10" />
-          <span className="text-xl font-black tracking-tight text-white italic">Nawaz Ahmad</span>
-        </div>
+          <div 
+            onClick={() => {
+              if (location.pathname === "/") {
+                // Agar pehle se home par hain to smooth scroll up karein
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                // Agar kisi aur page (blog/tools) par hain to home par navigate karein
+                navigate("/");
+              }
+            }} 
+            className="flex items-center gap-3 cursor-pointer shrink-0"
+          >
+            <img src={websiteLogo} alt="Logo" width={40} height={40} className="w-10 h-10 object-contain rounded-full border border-white/10" />
+            <span className="text-xl font-black tracking-tight text-white italic">Nawaz Ahmad</span>
+          </div>
+
 
         {/* Navigation (Desktop) */}
         <nav className="hidden md:flex items-center gap-7">

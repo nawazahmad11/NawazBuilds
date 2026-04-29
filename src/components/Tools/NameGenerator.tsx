@@ -105,7 +105,7 @@ const NameGenerator = () => {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-300 border ${
                 category === cat 
                 ? "bg-[#f9a825] text-black border-[#f9a825] shadow-[0_0_15px_rgba(249,168,37,0.3)]" 
-                : "bg-white/5 text-white/30 border-white/10 hover:border-white/20 hover:text-white"
+                : "bg-white/5 text-white/55 border-white/10 hover:border-white/20 hover:text-white"
               }`}
             >
               {data[cat].icon} {cat}
@@ -114,7 +114,7 @@ const NameGenerator = () => {
         </div>
 
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-6xl font-black text-white italic tracking-tighter uppercase leading-none">
+          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
             {category} <span className="text-[#f9a825]">Generator</span>
           </h2>
         </div>
@@ -146,7 +146,7 @@ const NameGenerator = () => {
             {results.map((name, index) => (
               <div key={index} className="group bg-white/[0.03] border border-white/5 px-6 py-5 rounded-2xl flex items-center justify-between hover:border-[#f9a825]/40 transition-all">
                 <span className="text-white font-black italic uppercase tracking-tight text-sm truncate">{name}</span>
-                <button onClick={() => copyToClipboard(name, index)} className="text-white/20 group-hover:text-[#f9a825] transition-all">
+                <button onClick={() => copyToClipboard(name, index)} className="text-white/60 group-hover:text-[#f9a825] transition-all">
                   {copiedIndex === index ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
                 </button>
               </div>
@@ -160,7 +160,7 @@ const NameGenerator = () => {
         <div className="max-w-4xl mx-auto mt-24 px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
             <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
-            <p className="text-white/40 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
+            <p className="text-white/70 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -169,7 +169,7 @@ const NameGenerator = () => {
                 <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic flex items-center gap-2">
                   <Sparkle size={12} /> {f.title}
                 </h3>
-                <p className="text-white/30 text-sm leading-relaxed">{f.detail}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
               </div>
             ))}
           </div>
@@ -187,7 +187,7 @@ const NameGenerator = () => {
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
-                    <p className="text-white/30 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
+                    <p className="text-white/70 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
                   </div>
                 </div>
               ))}

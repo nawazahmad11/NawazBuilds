@@ -38,7 +38,7 @@ const ProfitCalculator = () => {
           <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight uppercase">
             Profit <span className="text-[#f9a825]">Margin</span> Calculator
           </h2>
-          <p className="text-white/20 text-[10px] font-black uppercase tracking-[4px]">Financial Intelligence Suite</p>
+          <p className="text-white/70 text-[10px] font-black uppercase tracking-[4px]">Financial Intelligence Suite</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
@@ -50,25 +50,25 @@ const ProfitCalculator = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Selling Price ($)</label>
-                <input type="number" onChange={(e) => setSellingPrice(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
+                <label className="text-white/60 text-[10px] font-bold uppercase ml-2 tracking-widest">Selling Price ($)</label>
+                <input type="number" onChange={(e) => setSellingPrice(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/25" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Product Cost ($)</label>
-                <input type="number" onChange={(e) => setProductCost(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
+                <label className="text-white/60 text-[10px] font-bold uppercase ml-2 tracking-widest">Product Cost ($)</label>
+                <input type="number" onChange={(e) => setProductCost(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/25" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Ad Spend ($)</label>
-                <input type="number" onChange={(e) => setAdSpend(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
+                <label className="text-white/60 text-[10px] font-bold uppercase ml-2 tracking-widest">Ad Spend ($)</label>
+                <input type="number" onChange={(e) => setAdSpend(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/25" placeholder="0.00" />
               </div>
               <div className="space-y-2">
-                <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Shipping ($)</label>
-                <input type="number" onChange={(e) => setShipping(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="0.00" />
+                <label className="text-white/60 text-[10px] font-bold uppercase ml-2 tracking-widest">Shipping ($)</label>
+                <input type="number" onChange={(e) => setShipping(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/25" placeholder="0.00" />
               </div>
             </div>
             <div className="space-y-2 pt-2">
-              <label className="text-white/40 text-[10px] font-bold uppercase ml-2 tracking-widest">Other Costs ($)</label>
-              <input type="number" onChange={(e) => setOther(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/5" placeholder="Apps, Fees, Taxes..." />
+              <label className="text-white/60 text-[10px] font-bold uppercase ml-2 tracking-widest">Other Costs ($)</label>
+              <input type="number" onChange={(e) => setOther(Number(e.target.value))} className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white focus:border-[#f9a825] outline-none transition-all placeholder:text-white/25" placeholder="Apps, Fees, Taxes..." />
             </div>
           </div>
 
@@ -83,7 +83,7 @@ const ProfitCalculator = () => {
                 <div className="space-y-8">
                   <div>
                     <div className="flex justify-between text-[10px] font-black uppercase mb-3">
-                      <span className="text-white/40 tracking-widest">Profit vs Expenses</span>
+                      <span className="text-white/70 tracking-widest">Profit vs Expenses</span>
                       <span className="text-[#f9a825]">{profitPercentage.toFixed(0)}% Margin</span>
                     </div>
                     <div className="h-5 w-full bg-white/5 rounded-full overflow-hidden flex border border-white/5 p-0.5">
@@ -97,8 +97,8 @@ const ProfitCalculator = () => {
                       ></div>
                     </div>
                     <div className="flex gap-6 mt-4">
-                      <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-red-600/40"></div><span className="text-[9px] text-white/40 uppercase font-black tracking-widest">Total Costs</span></div>
-                      <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#f9a825]"></div><span className="text-[9px] text-white/40 uppercase font-black tracking-widest">Net Profit</span></div>
+                      <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-red-600/40"></div><span className="text-[9px] text-white/70 uppercase font-black tracking-widest">Total Costs</span></div>
+                      <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-[#f9a825]"></div><span className="text-[9px] text-white/70 uppercase font-black tracking-widest">Net Profit</span></div>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ const ProfitCalculator = () => {
                     </h5>
                  </div>
                  <div className="bg-black/40 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
-                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest mb-1">Net ROI %</p>
+                    <p className="text-[9px] font-black text-white/70 uppercase tracking-widest mb-1">Net ROI %</p>
                     <h5 className={`text-3xl font-black tracking-tighter ${roi >= 0 ? 'text-white' : 'text-red-500'}`}>
                       {roi.toFixed(1)}%
                     </h5>
@@ -128,24 +128,24 @@ const ProfitCalculator = () => {
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-[24px] flex items-center gap-4 hover:bg-white/[0.04] transition-colors">
                 <div className="w-10 h-10 rounded-xl bg-[#f9a825]/10 flex items-center justify-center text-[#f9a825]"><Info size={20}/></div>
                 <div>
-                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Net Profit ($)</p>
-                    <p className={`text-xl font-black tracking-tighter ${profit >= 0 ? 'text-white' : 'text-red-500'}`}>
+                    <p className="text-[9px] font-black text-white/88 uppercase tracking-widest">Net Profit ($)</p>
+                    <p className={`text-xl font-black text-white/60 tracking-tighter ${profit >= 0 ? 'text-white' : 'text-red-500'}`}>
                       ${profit.toFixed(2)}
                     </p>
                 </div>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-[24px] flex items-center gap-4 hover:bg-white/[0.04] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40"><BarChart3 size={20}/></div>
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/60"><BarChart3 size={20}/></div>
                 <div>
-                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Break-Even Point</p>
+                    <p className="text-[9px] font-black text-white/80 uppercase tracking-widest">Break-Even Point</p>
                     <p className="text-xl font-black text-white/60 tracking-tighter">${totalCost.toFixed(2)}</p>
                 </div>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-[24px] flex items-center gap-4 hover:bg-white/[0.04] transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/40"><TrendingUp size={20}/></div>
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/60"><TrendingUp size={20}/></div>
                 <div>
-                    <p className="text-[9px] font-black text-white/20 uppercase tracking-widest">Margin Efficiency</p>
-                    <p className="text-xl font-black text-white tracking-tighter">{margin.toFixed(1)}%</p>
+                    <p className="text-[9px] font-black text-white/88 uppercase tracking-widest">Margin Efficiency</p>
+                    <p className="text-xl font-black text-white/60 tracking-tighter">{margin.toFixed(1)}%</p>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@ const ProfitCalculator = () => {
         <div className="max-w-4xl mx-auto mt-24 px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
             <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
-            <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">{content.description}</p>
+            <p className="text-white/60 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -165,7 +165,7 @@ const ProfitCalculator = () => {
                 <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 flex items-center gap-2">
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /> {f.title}
                 </h3>
-                <p className="text-white/30 text-sm leading-relaxed">{f.detail}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
               </div>
             ))}
           </div>
@@ -183,7 +183,7 @@ const ProfitCalculator = () => {
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
-                    <p className="text-white/30 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
+                    <p className="text-white/70 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
                   </div>
                 </div>
               ))}

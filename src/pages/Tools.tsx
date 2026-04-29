@@ -94,7 +94,7 @@ const ToolsPage = () => {
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase">
             E-commerce <span className="text-[#f9a825]">Growth Engine</span>
           </h1>
-          <p className="text-white/40 max-w-2xl text-lg leading-relaxed font-medium">
+          <p className="text-white/60 max-w-2xl text-lg leading-relaxed font-medium">
             Professional tools designed for Shopify architects and brand owners. 
             Analyze margins, detect themes, and generate viral brand names.
           </p>

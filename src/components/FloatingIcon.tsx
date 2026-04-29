@@ -10,7 +10,7 @@ interface FloatingIconProps {
 const FloatingIcon: React.FC<FloatingIconProps> = ({ iconUrl, altText, positionClass, delay = "0s" }) => {
   return (
     // 'contain-layout' browser ko batata hai ke ye element bahar ke layout ko disturb nahi karega (Performance boost)
-    <div className={`absolute pointer-events-none z-10 ${positionClass}`} style={{ contain: 'layout style' }}>
+    <div className={`absolute pointer-events-none z-10 translate-y-14 ${positionClass}`} style={{ contain: 'layout style' }}>
       <div 
         className="relative group animate-float will-change-transform" // 'will-change' GPU ko active karta hai
         style={{ 

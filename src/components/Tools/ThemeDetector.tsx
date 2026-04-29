@@ -100,7 +100,7 @@ const ThemeDetector = () => {
           <h2 className="text-3xl md:text-4xl font-black text-white mb-3 italic tracking-tight uppercase">
             Shopify <span className="text-[#f9a825]">Theme Spy</span>
           </h2>
-          <p className="text-white/40 text-[10px] font-black uppercase tracking-[4px]">Advanced OSINT Intelligence</p>
+          <p className="text-white/70 text-[10px] font-black uppercase tracking-[4px]">Advanced OSINT Intelligence</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-8 relative">
@@ -131,7 +131,7 @@ const ThemeDetector = () => {
             </div>
             <div className="space-y-3 w-full max-w-xs">
               {loadingMessages.map((msg, idx) => (
-                <div key={idx} className={`flex items-center gap-3 transition-all duration-500 ${idx === loadingStep ? "text-white" : idx < loadingStep ? "text-[#f9a825] opacity-50" : "text-white/10"}`}>
+                <div key={idx} className={`flex items-center gap-3 transition-all duration-500 ${idx === loadingStep ? "text-white" : idx < loadingStep ? "text-[#f9a825] opacity-50" : "text-white/40"}`}>
                   {idx < loadingStep ? <CheckCircle2 size={14} /> : msg.icon}
                   <span className="text-[10px] font-black uppercase tracking-widest">{msg.text}</span>
                 </div>
@@ -169,7 +169,7 @@ const ThemeDetector = () => {
             <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-tight">
               {content.title}
             </h2>
-            <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
+            <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
               {content.description}
             </p>
           </div>
@@ -179,7 +179,7 @@ const ThemeDetector = () => {
             {content.features?.map((f: any, i: number) => (
               <div key={i} className="p-8 bg-[#0d0d0d] border border-white/5 rounded-[32px] hover:border-[#f9a825]/30 transition-all">
                 <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic">{f.title}</h3>
-                <p className="text-white/30 text-sm leading-relaxed">{f.detail}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
               </div>
             ))}
           </div>
@@ -205,7 +205,7 @@ const ThemeDetector = () => {
                   </button>
                   
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
-                    <p className="text-white/30 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">
+                    <p className="text-white/70 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">
                       A: {faq.a}
                     </p>
                   </div>

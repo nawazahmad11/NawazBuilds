@@ -86,7 +86,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
               <h2 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-2">
                 Policy <span className="text-[#f9a825]">Customizer</span>
               </h2>
-              <p className="text-white/40 text-[10px] font-black uppercase tracking-[3px]">Tailor-made Legal Documents</p>
+              <p className="text-white/65 text-[10px] font-black uppercase tracking-[3px]">Tailor-made Legal Documents</p>
             </div>
 
             <div className="space-y-6">
@@ -137,7 +137,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all
-                    ${activeTab === tab ? "bg-[#f9a825] text-black shadow-[0_0_20px_rgba(249,168,37,0.3)]" : "bg-white/5 text-white/40 hover:bg-white/10"}`}
+                    ${activeTab === tab ? "bg-[#f9a825] text-black shadow-[0_0_20px_rgba(249,168,37,0.3)]" : "bg-white/5 text-white/70 hover:bg-white/10"}`}
                 >
                   {tab === "privacy" ? "Privacy" : tab === "refund" ? "Refunds" : "Terms"}
                 </button>
@@ -165,7 +165,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
         <div className="max-w-4xl mx-auto px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
             <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
-            <p className="text-white/40 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
+            <p className="text-white/65 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
@@ -174,7 +174,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
                 <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic flex items-center gap-2">
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /> {f.title}
                 </h3>
-                <p className="text-white/30 text-sm leading-relaxed">{f.detail}</p>
+                <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
               </div>
             ))}
           </div>
@@ -192,7 +192,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>
-                    <p className="text-white/30 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
+                    <p className="text-white/70 text-sm leading-relaxed border-l-2 border-[#f9a825]/20 pl-4">A: {faq.a}</p>
                   </div>
                 </div>
               ))}
