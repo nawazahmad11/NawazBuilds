@@ -324,7 +324,7 @@ import React, { useState, useEffect } from 'react';
                                 <div className="flex gap-1 mb-2">
                                     {[1, 2, 3, 4, 5].map((s) => <Star key={s} size={10} fill="black" />)}
                                 </div>
-                                <p className="text-sm font-bold uppercase tracking-tight mb-2 italic">"{review.text}"</p>
+                                <p className="text-sm font-bold uppercase tracking-tight mb-2">"{review.text}"</p>
                                 <span className="text-[10px] font-black opacity-40">— {review.name}</span>
                             </div>
                         ))}
@@ -586,7 +586,7 @@ import React, { useState, useEffect } from 'react';
 //                             {/* LUXURY STORY SECTION */}
 //             <section className="py-28 text-center bg-[#fdfaf7] border-y border-gray-100">
 //             <h2 className="text-4xl md:text-5xl font-light tracking-tighter mb-6">
-//                 Jewelry that defines <span className="text-[#c4a484] italic font-serif">your identity</span>
+//                 Jewelry that defines <span className="text-[#c4a484] font-serif">your identity</span>
 //             </h2>
 //             <p className="max-w-xl mx-auto text-[12px] uppercase tracking-[0.4em] text-gray-600 leading-relaxed">
 //                 Each piece is designed to capture emotion, elegance, and timeless beauty.
@@ -670,7 +670,7 @@ import React, { useState, useEffect } from 'react';
 
 //             <div className="relative py-40 px-10 flex flex-col items-center justify-center text-center z-20">
 //                 <h2 className="text-5xl md:text-7xl font-light uppercase tracking-tighter mb-6">
-//                     Timeless <span className="font-serif italic text-[#c4a484]">Artistry</span>
+//                     Timeless <span className="font-serif text-[#c4a484]">Artistry</span>
 //                 </h2>
 //                 <p className="max-w-md text-[13px] font-bold uppercase tracking-[0.4em] opacity-40">
 //                     Defining luxury since 1950
@@ -931,7 +931,7 @@ import React, { useState, useEffect } from 'react';
                     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-700 via-transparent to-transparent"></div>
                 </div>
                 <div className="relative z-10 px-10">
-                    <h2 className="text-7xl font-light italic font-serif mb-10 text-[#c4a484]">Timeless Artistry</h2>
+                    <h2 className="text-7xl font-light font-serif mb-10 text-[#c4a484]">Timeless Artistry</h2>
                     <p className="max-w-2xl mx-auto text-[14px] uppercase tracking-[0.6em] leading-relaxed opacity-60">
                     Crafting Legacy Since 1950. Every Diamond tells a story of love, endurance, and unmatched beauty.
                     </p>
@@ -990,7 +990,7 @@ import React, { useState, useEffect } from 'react';
                     {[1,2,3].map(i => (
                         <div key={i} className="space-y-4">
                         <div className="flex gap-1 text-[#c4a484]"><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/><Star size={10} fill="currentColor"/></div>
-                        <p className="text-sm italic text-zinc-500">"The quality surpassed my expectations. It's not just jewelry, it's an investment in beauty."</p>
+                        <p className="text-sm text-zinc-500">"The quality surpassed my expectations. It's not just jewelry, it's an investment in beauty."</p>
                         <p className="text-[10px] font-bold uppercase tracking-widest">— Client Review</p>
                         </div>
                     ))}
@@ -1515,7 +1515,7 @@ import React, { useState, useEffect } from 'react';
                       <div className="space-y-14 mb-20">
                         {/* 01. Problem Section */}
                         <div>
-                            <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Problem</h3>
+                            <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 border-l-2 border-[#f9a825] pl-4">The Problem</h3>
                             <div className="space-y-5">
                             {project.problem.map((para, i) => {
                                 const isBullet = para.trim().startsWith(">");
@@ -1533,7 +1533,7 @@ import React, { useState, useEffect } from 'react';
           
                         {/* 02. Solution Section */}
                         <div>
-                            <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Solution</h3>
+                            <h3 className="text-[#f9a825] text-[18px] font-black uppercase tracking-[0.2em] mb-5 border-l-2 border-[#f9a825] pl-4">The Solution</h3>
                             <div className="space-y-5">
                             {project.solution.map((para, i) => {
                                 const isBullet = para.trim().startsWith(">");
@@ -1551,7 +1551,7 @@ import React, { useState, useEffect } from 'react';
                         
                         {/* 03. Result Section */}
                         <div>
-                            <h3 className="text-[#f9a825] text-[20px] font-black uppercase tracking-[0.2em] mb-5 italic border-l-2 border-[#f9a825] pl-4">The Result</h3>
+                            <h3 className="text-[#f9a825] text-[20px] font-black uppercase tracking-[0.2em] mb-5 border-l-2 border-[#f9a825] pl-4">The Result</h3>
                             <div className="space-y-5">
                             {project.result.map((para, i) => {
                                 const isBullet = para.trim().startsWith(">");

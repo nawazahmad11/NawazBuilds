@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="space-y-4 text-sm text-white/70">
               <div className="flex items-center space-x-3 hover:text-[#f9a825] transition-colors cursor-pointer group">
                 <Mail size={16} />
-                <a href="mailto:hello@nawazahmad.com">hello@nawazbuilds.com</a>
+                <a href="mailto:info@nawazahmad.com">info@nawazbuilds.com</a>
               </div>
               <div className="flex items-center space-x-3"><MapPin size={16} /><span>Lahore, Dubai & Remote</span></div>
             </div>
@@ -140,8 +140,8 @@ const Footer = () => {
             <div className="space-y-5">
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Connect</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
-                <li><a href="https://wa.me/923059552222" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><MessageCircle size={14} /> WhatsApp</a></li>
-                <li><a href="mailto:hello@nawazahmad.com" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><Mail size={14} /> Email Me</a></li>
+                <li><a href="https://wa.me/923244146447" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><MessageCircle size={14} /> WhatsApp</a></li>
+                <li><a href="mailto:info@nawazahmad.com" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><Mail size={14} /> Email Me</a></li>
               </ul>
             </div>
           </div>

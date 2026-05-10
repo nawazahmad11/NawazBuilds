@@ -354,12 +354,12 @@ const FunnelStep1 = () => {
             </section>
 
             {/* About Section*/}
-            <div className="z-20 relative">
+            <div id="about-me" className="z-20 relative">
               <AboutSection />
             </div>
 
             {/* 7. Portfolio Section */}
-            <div className="z-20 relative">
+            <div id="portfolio" className="z-20 relative">
               <PortfolioSection />
             </div>
 

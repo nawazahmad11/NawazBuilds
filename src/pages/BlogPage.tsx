@@ -91,7 +91,7 @@ const BlogPage = () => {
                         <span className="px-4 py-1 bg-[#f9a825] text-black text-[10px] font-black uppercase tracking-widest rounded-full mb-4 inline-block">
                           Featured Article
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter text-white group-hover:text-[#f9a825] transition-colors">
+                        <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-white group-hover:text-[#f9a825] transition-colors">
                           {featuredPost.title}
                         </h2>
                       </div>
@@ -136,7 +136,7 @@ const BlogPage = () => {
                             </div>
                           </div>
                           
-                          <h3 className="text-xl font-black tracking-tight leading-tight group-hover:text-[#f9a825] transition-colors uppercase italic line-clamp-2">
+                          <h3 className="text-xl font-black tracking-tight leading-tight group-hover:text-[#f9a825] transition-colors uppercase line-clamp-2">
                             {post.title}
                           </h3>
                         </div>
@@ -165,7 +165,7 @@ const BlogPage = () => {
                     <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                       <Search size={24} className="text-white/20" />
                     </div>
-                    <p className="text-white/20 uppercase tracking-widest text-sm font-black italic">The hunt yielded no results.</p>
+                    <p className="text-white/20 uppercase tracking-widest text-sm font-black">The hunt yielded no results.</p>
                   </motion.div>
                 )}
               </motion.div>

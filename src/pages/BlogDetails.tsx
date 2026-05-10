@@ -129,7 +129,7 @@ const BlogDetails = () => {
                     <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
                         <div className="flex-1">
                             <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 leading-tight">
-                                Need help wiring <br /> these <span className="text-primary italic">into your store?</span>
+                                Need help wiring <br /> these <span className="text-primary">into your store?</span>
                             </h3>
                             <div className="flex flex-col sm:flex-row gap-4 mt-8">
                                 <button onClick={() => navigate('/schedule')} className="bg-primary text-black px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">

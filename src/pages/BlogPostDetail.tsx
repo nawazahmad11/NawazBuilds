@@ -109,7 +109,7 @@ const BlogPostDetail = () => {
             {/* Styles are kept here or in index.css */}
             <style>{`
               .custom-content-styles p { color: rgba(255, 255, 255, 0.6); font-size: 1.13rem; line-height: 1.3; margin-bottom: 1.0rem; }
-              .custom-content-styles h2 { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; italic; word-spacing: 0.1em; letter-spacing: -0.05em; margin-top: 3.5rem; margin-bottom: 1.3rem; line-height: 1.1; scroll-margin-top: 100px; }
+              .custom-content-styles h2 { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; word-spacing: 0.1em; letter-spacing: -0.05em; margin-top: 3.5rem; margin-bottom: 1.3rem; line-height: 1.1; scroll-margin-top: 100px; }
               .custom-content-styles h3 { color: white; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-top: 1.0rem; margin-bottom: 0.5rem; }
               .custom-content-styles ul { margin-bottom: 3rem; padding-left: 1.5rem; list-style-type: none; }
               .custom-content-styles li { margin-bottom: 1rem; font-size: 1.15rem; color: rgba(255, 255, 255, 0.6); position: relative; }
@@ -219,7 +219,7 @@ const BlogPostDetail = () => {
               {/* Author Info Box */}
               <div className="p-8 rounded-[2rem] bg-white/[0.02] border border-white/5">
                 <div className="w-12 h-12 rounded-full bg-[#f9a825] flex items-center justify-center text-black font-black mb-4">NA</div>
-                <h4 className="text-white font-black uppercase italic tracking-tighter text-lg">{post.author}</h4>
+                <h4 className="text-white font-black uppercase tracking-tighter text-lg">{post.author}</h4>
                 <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Shopify Architect</p>
                 <div className="mt-6 pt-6 border-t border-white/5">
                   <button className="flex items-center gap-3 text-white/20 hover:text-[#f9a825] transition-all text-[10px] font-black uppercase tracking-widest">

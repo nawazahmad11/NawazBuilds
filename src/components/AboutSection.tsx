@@ -69,7 +69,7 @@ const AboutSection = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Hi, I'm Nawaz Ahmad — <br />
-                <span className="text-primary italic">Shopify Expert & Developer</span>
+                <span className="text-primary">Shopify Expert & Developer</span>
               </h3>
               <p className="text-white/60 text-lg leading-relaxed font-light">
                 I'm a Full-Stack Developer with <span className="text-white font-medium">10+ years of experience</span>. I specialize in building high-converting Shopify stores and custom Liquid solutions that help brands scale globally. Based in Lahore & Dubai, I bring a mix of technical skill and business strategy to every project.

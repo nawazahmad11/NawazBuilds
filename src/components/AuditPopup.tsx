@@ -103,7 +103,7 @@ const AuditPopup = () => {
                       </span>
                     </div>
                     
-                    <h3 className="text-3xl font-black text-white text-center mb-4 leading-tight italic">
+                    <h3 className="text-3xl font-black text-white text-center mb-4 leading-tight">
                       Wait — before you go!
                     </h3>
                     <p className="text-white/50 text-center mb-8 text-sm leading-relaxed">
