@@ -116,7 +116,7 @@ const AboutSection = () => {
 
             {/* Action Buttons */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="flex flex-wrap gap-4 pt-4">
-              <a href="https://wa.me/923059552222" target="_blank" className="gradient-cta px-8 py-3 rounded-xl text-black font-black text-sm uppercase tracking-wider flex items-center gap-2">
+              <a href="https://wa.me/923244146447" target="_blank" className="gradient-cta px-8 py-3 rounded-xl text-black font-black text-sm uppercase tracking-wider flex items-center gap-2">
                 <Briefcase className="w-4 h-4" /> Hire Me Now
               </a>
               <a href="#portfolio" className="bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-3 rounded-xl text-white font-bold text-sm transition-all">

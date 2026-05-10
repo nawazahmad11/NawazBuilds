@@ -180,7 +180,7 @@ const FunnelStep1 = () => {
 
             </div>
 
-          </section>
+      </section>
 
               <section className="py-12 z-20 relative">
                 <div className="section-container">
@@ -364,7 +364,7 @@ const FunnelStep1 = () => {
             </div>
 
               {/* 8. Social Proof & Testimonials */}
-            <section className="py-12 relative overflow-hidden z-20">
+        <section className="py-12 relative overflow-hidden z-20">
         <div className="section-container relative z-10 text-white">
           
         <motion.div

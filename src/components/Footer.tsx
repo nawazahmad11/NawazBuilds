@@ -88,6 +88,9 @@ const Footer = () => {
               </ul>
             </div>
 
+
+
+
             <div className="space-y-5">
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Growth Tools</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
@@ -97,6 +100,34 @@ const Footer = () => {
                 <li><Link to="/tools?tool=detector" className="hover:text-[#f9a825] transition-colors">Theme Detector</Link></li>
               </ul>
             </div>
+
+
+            {/* --- Naya Legal Section --- */}
+            <div className="space-y-5">
+              <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Legal</h4>
+              <ul className="space-y-3 text-sm text-white/70 font-medium">
+                <li>
+                  <Link to="/privacy-policy" className="hover:text-[#f9a825] transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/refund-policy" className="hover:text-[#f9a825] transition-colors">
+                    Refund Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms-of-service" className="hover:text-[#f9a825] transition-colors">
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+
+
+
+
 
             <div className="space-y-5">
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Resources</h4>
@@ -151,7 +182,7 @@ const Footer = () => {
                   { icon: <Youtube size={20} />, url: "", label: "Visit YouTube" },
                   { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/", label: "Visit LinkedIn" },
                   { icon: <Instagram size={20} />, url: "", label: "Visit Instagram" },
-                  { icon: <MessageCircle size={20} />, url: "https://wa.me/923394146447", label: "Chat on WhatsApp" }
+                  { icon: <MessageCircle size={20} />, url: "https://wa.me/923244146447", label: "Chat on WhatsApp" }
                 ].map((social, i) => (
                   <a 
                     key={i} 

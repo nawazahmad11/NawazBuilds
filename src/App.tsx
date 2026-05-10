@@ -21,6 +21,8 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+
 
 const queryClient = new QueryClient();
 
@@ -86,7 +88,7 @@ const App = () => (
           <Route path="/case-studies" element={<CaseStudyDetail />} />
           <Route path="/case-studies/:projectId" element={<CaseStudyDetail />} />
 
-
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           
         </Routes>
         <Footer />

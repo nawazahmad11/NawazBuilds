@@ -387,8 +387,8 @@ const Header = () => {
         </nav>
 
         {/* Right Section: Button + Hamburger */}
-        <div className="flex items-center gap-3 relative z-[110]">
-          {/* Menu open ho to Get Started button hide ho jaye taake clean look aaye */}
+        {/* <div className="flex items-center gap-3 relative z-[110]">
+
           {!isMobileMenuOpen && (
             <button
               onClick={() => handleNavClick("pricing")}
@@ -398,7 +398,6 @@ const Header = () => {
             </button>
           )}
 
-          {/* Mobile Toggle Button */}
           <button 
             className="md:hidden p-2 text-white/70 hover:text-[#f9a825] transition-colors relative z-[110]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -415,7 +414,45 @@ const Header = () => {
               </motion.div>
             </AnimatePresence>
           </button>
-        </div>
+        </div> */}
+
+
+        {/* Right Section: Button + Hamburger */}
+        <div className="flex items-center gap-3 relative z-[110]">
+          {!isMobileMenuOpen && (
+            <button
+              onClick={() => handleNavClick("pricing")}
+              // Fix 1: aria-label add kiya taake screen reader ko pata chale ye kya hai
+              aria-label="Get Started and view pricing"
+              className={`bg-gradient-to-r from-[#ffb347] via-[#f9a825] to-[#f57c00] text-[#0a0a0a] rounded-full font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 active:scale-95 hover:shadow-[0_0_20px_rgba(249,168,37,0.4)] ${isScrolled ? "px-5 py-2 text-[11px]" : "px-7 py-2.5 text-xs"}`}>
+              <Rocket className="w-3.5 h-3.5 fill-black/20" aria-hidden="true" /> 
+              <span className="uppercase tracking-wider hidden sm:inline">Get Started</span>
+            </button>
+          )}
+
+          {/* Mobile Toggle Button */}
+          <button 
+            className="md:hidden p-2 text-white/70 hover:text-[#f9a825] transition-colors relative z-[110]"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            // Fix 2: Dynamic aria-label menu open/close status ke mutabiq
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={isMobileMenuOpen ? "close" : "menu"}
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isMobileMenuOpen ? <X size={28} aria-hidden="true" /> : <Menu size={28} aria-hidden="true" />}
+              </motion.div>
+            </AnimatePresence>
+          </button>
+        </div>  
+
+        
       </div>
 
       {/* Mobile Menu Overlay */}

@@ -53,7 +53,7 @@ const FAQSection = () => {
               <p className="text-white/60 mt-6 text-lg font-light">
                 Can't find what you're looking for? <br />
                 <a 
-                  href="https://wa.me/923059552222" 
+                  href="https://wa.me/923244146447" 
                   className="text-primary font-bold hover:underline decoration-primary/30"
                 >
                   Contact me directly
