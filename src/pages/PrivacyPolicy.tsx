@@ -1,9 +1,34 @@
 import { motion } from "framer-motion";
 import LegalLayout from "../components/LegalLayout"; 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Link ki jagah useNavigate use kia
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
   const lastUpdated = "May, 2026";
+
+  // Professional Scroll Logic (Same as Header & other Legal Pages)
+  const handleInternalLink = (id: string) => {
+    // 1. Pehle home page par navigate karein
+    navigate("/");
+
+    // 2. Thora delay dein taake page load ho jaye phir scroll karein
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 100; // Header height adjustment
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        // 3. URL ko clean rakhein (# hash remove karein)
+        window.history.pushState(null, "", "/");
+      }
+    }, 400); 
+  };
 
   return (
     <LegalLayout title="Privacy Policy">
@@ -17,14 +42,14 @@ const PrivacyPolicy = () => {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
           <p className="text-white/60 leading-relaxed">
-            Welcome to <span className="text-primary font-bold">Nawaz Builds</span>. I care about your privacy. This page tells you how I collect and use your data when you visit <span className="text-white border-b border-white/20">nawazbuilds.com</span>. Our goal is to provide the best Shopify store design and development services while keeping your information safe.
+            Welcome to <span className="text-primary font-bold">Nawaz Builds</span>. I care about your privacy. This page tells you how I collect and use your data when you visit <span className="text-white border-b border-white/20">nawazbuilds.com</span>. My goal is to provide the best Shopify store design and development services while keeping your information safe.
           </p>
         </section>
 
         {/* Information I Collect */}
         <section className="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
           <h2 className="text-xl font-bold text-white mb-6 uppercase tracking-wider">Information I Collect</h2>
-          <p className="text-white/60 mb-6 font-light">I only collect info that helps us work with you. This includes:</p>
+          <p className="text-white/60 mb-6 font-light">I only collect info that helps me work with you. This includes:</p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               "Your Name.",
@@ -48,7 +73,7 @@ const PrivacyPolicy = () => {
             <ul className="space-y-4 border-l border-primary/20 pl-6">
               {[
                 "Talk to you about your project.",
-                "Improve our Shopify development services.",
+                "Improve my Shopify development services.",
                 "Send you updates about your store design.",
                 "Answer your questions quickly."
               ].map((text, i) => (
@@ -65,7 +90,7 @@ const PrivacyPolicy = () => {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Cookies and Tracking</h2>
           <p className="text-white/60 leading-relaxed">
-            I use "cookies" to make your experience better. Cookies help us see which parts of our website you like the most. This helps us improve our site’s speed and design.
+            I use "cookies" to make your experience better. Cookies help me to see which parts of my website you like the most. This helps me improve my site’s speed and design.
           </p>
         </section>
 
@@ -73,7 +98,7 @@ const PrivacyPolicy = () => {
         <section className="relative overflow-hidden p-8 border border-primary/20 bg-primary/5 rounded-[2rem]">
           <h2 className="text-2xl font-bold text-white mb-4">Data Security</h2>
           <p className="text-white/60 relative z-10 leading-relaxed">
-            Your trust is part of our <span className="text-primary font-black tracking-widest uppercase">E-E-A-T</span> (Expertise, Authoritativeness, Trustworthiness). I use high-security tools to protect your data. I never sell your personal info to other people.
+            Your trust is part of my <span className="text-primary font-black tracking-widest uppercase">E-E-A-T</span> (Expertise, Authoritativeness, Trustworthiness). I use high-security tools to protect your data. I never sell your personal info to other people.
           </p>
           <div className="absolute top-[-20px] right-[-20px] text-primary/5 font-black text-8xl pointer-events-none select-none">
             EEAT
@@ -84,21 +109,24 @@ const PrivacyPolicy = () => {
         <section>
           <h2 className="text-2xl font-bold text-white mb-4">Your Rights</h2>
           <p className="text-white/60 leading-relaxed">
-            You can ask us to delete your data at any time. Just send us an email. I am here to help you feel safe while I build your professional Shopify store.
+            You can ask me to delete your data at any time. Just send me an email. I am here to help you feel safe while I build your professional Shopify store.
           </p>
         </section>
 
-        {/* Contact Us */}
+        {/* Get In Touch - FIXED LINK */}
         <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Get In Touch</h2>
-        <p className="text-white/60 leading-relaxed">
+          <h2 className="text-2xl font-bold text-white mb-4">Get In Touch</h2>
+          <p className="text-white/60 leading-relaxed">
             If you have any questions regarding these policies or want to discuss a project, 
             you can learn more about my work and find my direct contact details in the {" "}
-            <Link to="/#about-me" className="text-primary hover:underline font-bold">
-            About Me
-            </Link>{" "}
+            <button 
+              onClick={() => handleInternalLink("about-me")} 
+              className="text-primary hover:underline font-bold cursor-pointer bg-transparent border-none p-0 inline decoration-primary/30 underline-offset-4"
+            >
+              About Me
+            </button>{" "}
             section on the home page, or email me directly at <span className="text-white">info@nawazbuilds.com</span>.
-        </p>
+          </p>
         </section>
 
         {/* Page Footer */}

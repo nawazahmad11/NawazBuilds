@@ -1,9 +1,34 @@
 import { motion } from "framer-motion";
 import LegalLayout from "../components/LegalLayout"; 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Link ki jagah useNavigate use kia
 
 const RefundPolicy = () => {
+  const navigate = useNavigate();
   const lastUpdated = "May, 2026";
+
+  // Professional Scroll Logic (Same as Header)
+  const handleInternalLink = (id: string) => {
+    // 1. Pehle home page par navigate karein
+    navigate("/");
+
+    // 2. Thora delay dein taake page load ho jaye phir scroll karein
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 100; // Header height adjustment
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        // 3. URL se hash (#) saaf karein taake layout jump na kare
+        window.history.pushState(null, "", "/");
+      }
+    }, 400); 
+  };
 
   return (
     <LegalLayout title="Refund and Cancellation Policy">
@@ -65,17 +90,20 @@ const RefundPolicy = () => {
           </p>
         </section>
 
-        {/* How to Request */}
+        {/* Get In Touch - Fixed Section */}
         <section>
-        <h2 className="text-2xl font-bold text-white mb-4">Get In Touch</h2>
-        <p className="text-white/60 leading-relaxed">
+          <h2 className="text-2xl font-bold text-white mb-4">Get In Touch</h2>
+          <p className="text-white/60 leading-relaxed">
             If you have any questions regarding these policies or want to discuss a project, 
             you can learn more about my work and find my direct contact details in the {" "}
-            <Link to="/#about-me" className="text-primary hover:underline font-bold">
-            About Me
-            </Link>{" "}
+            <button 
+              onClick={() => handleInternalLink("about-me")} 
+              className="text-primary hover:underline font-bold cursor-pointer bg-transparent border-none p-0 inline decoration-primary/30 underline-offset-4"
+            >
+              About Me
+            </button>{" "}
             section on the home page, or email me directly at <span className="text-white">info@nawazbuilds.com</span>.
-        </p>
+          </p>
         </section>
 
         {/* Revisions and Fixes */}
