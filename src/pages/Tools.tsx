@@ -176,7 +176,7 @@ const ToolsPage = () => {
   const toolMapping: Record<string, string> = {
     "profit-margin-calculator": "calculator",
     "legal-policy-generator": "policy",
-    "theme-detector": "detector",
+    "shopify-theme-detector": "detector",
     "business-name-generator": "generator",
     // Purani support ke liye (Agar koi purane ?tool=calculator link se aaye)
     "calculator": "calculator",
@@ -258,15 +258,20 @@ const ToolsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] pt-32 pb-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    // <div className="min-h-screen bg-[#050505] items-center justify-center pt-40 pb-20 px-6">
+    //   <div className="max-w-7xl mx-auto">
+
+      <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center px-6">
+      <div className="max-w-7xl w-full text-center">
         
-        {/* Header Section */}
-        <div className="mb-16 text-center lg:text-left">
+        {/* Header Section - mt-20 ya mt-32 se ye thora nichay ho jayega */}
+        <div className="mb-12 text-center mt-48"> 
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase">
             E-commerce <span className="text-[#f9a825]">Growth Engine</span>
           </h1>
-          <p className="text-white/60 max-w-2xl text-lg leading-relaxed font-medium">
+          
+          {/* mx-auto add kiya hai taake paragraph center ho jaye */}
+          <p className="text-white/60 max-w-2xl text-lg leading-relaxed font-medium mx-auto">
             Professional tools designed for Shopify architects and brand owners. 
             Analyze margins, detect themes, and generate viral brand names.
           </p>

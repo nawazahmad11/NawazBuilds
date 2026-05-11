@@ -83,7 +83,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
           {/* Left Side: Configuration */}
           <div className="lg:col-span-5 p-8 border-r border-white/5 bg-white/[0.01]">
             <div className="mb-8 text-center lg:text-left">
-              <h2 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-2">
+              <h2 className="text-3xl font-black text-white uppercase tracking-tighter mb-2">
                 Policy <span className="text-[#f9a825]">Customizer</span>
               </h2>
               <p className="text-white/65 text-[10px] font-black uppercase tracking-[3px]">Tailor-made Legal Documents</p>
@@ -101,7 +101,7 @@ These terms are governed by the laws of the jurisdiction where the business is r
                 <p className="text-[10px] font-black text-[#f9a825] uppercase tracking-widest">Business Rules</p>
                 
                 <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
-                  <span className="text-xs text-white/60 font-bold uppercase italic">Refund Window</span>
+                  <span className="text-xs text-white/60 font-bold uppercase">Refund Window</span>
                   <select 
                     className="bg-black text-[#f9a825] text-xs font-bold border-none outline-none cursor-pointer"
                     onChange={(e) => setFormData({...formData, refundDays: e.target.value})}
@@ -118,12 +118,12 @@ These terms are governed by the laws of the jurisdiction where the business is r
 
                 <label className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all group">
                   <input type="checkbox" className="accent-[#f9a825] w-4 h-4" onChange={(e) => setFormData({...formData, isDropshipping: e.target.checked})} />
-                  <span className="text-xs text-white/60 font-bold uppercase italic group-hover:text-white transition-colors">I am Dropshipping</span>
+                  <span className="text-xs text-white/60 font-bold uppercase group-hover:text-white transition-colors">I am Dropshipping</span>
                 </label>
 
                 <label className="flex items-center gap-3 p-4 bg-white/5 rounded-2xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all group">
                   <input type="checkbox" className="accent-[#f9a825] w-4 h-4" onChange={(e) => setFormData({...formData, collectPhone: e.target.checked})} />
-                  <span className="text-xs text-white/60 font-bold uppercase italic group-hover:text-white transition-colors">Collect Phone Numbers</span>
+                  <span className="text-xs text-white/60 font-bold uppercase group-hover:text-white transition-colors">Collect Phone Numbers</span>
                 </label>
               </div>
             </div>
@@ -164,14 +164,14 @@ These terms are governed by the laws of the jurisdiction where the business is r
       {content && (
         <div className="max-w-4xl mx-auto px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
-            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
             <p className="text-white/65 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             {content.features?.map((f: any, i: number) => (
               <div key={i} className="p-8 bg-[#0d0d0d] border border-white/5 rounded-[32px] hover:border-[#f9a825]/30 transition-all group">
-                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic flex items-center gap-2">
+                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 flex items-center gap-2">
                   <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" /> {f.title}
                 </h3>
                 <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
@@ -182,13 +182,13 @@ These terms are governed by the laws of the jurisdiction where the business is r
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-10">
               <HelpCircle className="text-[#f9a825]" size={32} />
-              <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">Legal FAQs</h3>
+              <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Legal FAQs</h3>
             </div>
             <div className="space-y-4">
               {content.faqs?.map((faq: any, i: number) => (
                 <div key={i} className={`group overflow-hidden bg-white/[0.02] border rounded-2xl transition-all duration-300 ${activeIndex === i ? "border-[#f9a825]/40 bg-white/[0.04]" : "border-white/5"}`}>
                   <button onClick={() => setActiveIndex(activeIndex === i ? null : i)} className="w-full p-6 flex items-center justify-between text-left outline-none">
-                    <h4 className={`font-bold uppercase text-sm italic tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
+                    <h4 className={`font-bold uppercase text-sm tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>

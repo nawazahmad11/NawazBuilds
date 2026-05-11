@@ -114,7 +114,7 @@ const NameGenerator = () => {
         </div>
 
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+          <h2 className="text-4xl md:text-1xl font-black text-white tracking-tighter uppercase leading-none">
             {category} <span className="text-[#f9a825]">Generator</span>
           </h2>
         </div>
@@ -145,7 +145,7 @@ const NameGenerator = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-in fade-in zoom-in-95 duration-500">
             {results.map((name, index) => (
               <div key={index} className="group bg-white/[0.03] border border-white/5 px-6 py-5 rounded-2xl flex items-center justify-between hover:border-[#f9a825]/40 transition-all">
-                <span className="text-white font-black italic uppercase tracking-tight text-sm truncate">{name}</span>
+                <span className="text-white font-black uppercase tracking-tight text-sm truncate">{name}</span>
                 <button onClick={() => copyToClipboard(name, index)} className="text-white/60 group-hover:text-[#f9a825] transition-all">
                   {copiedIndex === index ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
                 </button>
@@ -159,14 +159,14 @@ const NameGenerator = () => {
       {content && (
         <div className="max-w-4xl mx-auto mt-24 px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
-            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-[0.9]">{content.title}</h2>
             <p className="text-white/70 text-lg font-medium leading-relaxed max-w-2xl">{content.description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             {content.features?.map((f: any, i: number) => (
               <div key={i} className="p-8 bg-[#0d0d0d] border border-white/5 rounded-[32px] hover:border-[#f9a825]/30 transition-all group">
-                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic flex items-center gap-2">
+                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 flex items-center gap-2">
                   <Sparkle size={12} /> {f.title}
                 </h3>
                 <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
@@ -177,13 +177,13 @@ const NameGenerator = () => {
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-10">
               <HelpCircle className="text-[#f9a825]" size={32} />
-              <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">F.A.Q</h3>
+              <h3 className="text-3xl font-black text-white uppercase tracking-tighter">F.A.Q</h3>
             </div>
             <div className="space-y-4">
               {content.faqs?.map((faq: any, i: number) => (
                 <div key={i} className={`group overflow-hidden bg-white/[0.02] border rounded-2xl transition-all duration-300 ${activeIndex === i ? "border-[#f9a825]/40 bg-white/[0.04]" : "border-white/5"}`}>
                   <button onClick={() => setActiveIndex(activeIndex === i ? null : i)} className="w-full p-6 flex items-center justify-between text-left outline-none">
-                    <h4 className={`font-bold uppercase text-sm italic tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
+                    <h4 className={`font-bold uppercase text-sm tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>Q: {faq.q}</h4>
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />
                   </button>
                   <div className={`px-6 transition-all duration-300 ease-in-out overflow-hidden ${activeIndex === i ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0"}`}>

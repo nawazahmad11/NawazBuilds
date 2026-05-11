@@ -15,7 +15,7 @@ const ThemeDetector = () => {
   // --- Accordion State for FAQs ---
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const activeToolId = "theme-detector";
+  const activeToolId = "shopify-theme-detector";
   const content = (toolData as any)[activeToolId];
 
   const loadingMessages = [
@@ -97,7 +97,7 @@ const ThemeDetector = () => {
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#f9a825]/10 blur-[80px] rounded-full"></div>
 
         <div className="text-center mb-10 relative">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-3 italic tracking-tight uppercase">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tight uppercase">
             Shopify <span className="text-[#f9a825]">Theme Spy</span>
           </h2>
           <p className="text-white/70 text-[10px] font-black uppercase tracking-[4px]">Advanced OSINT Intelligence</p>
@@ -145,7 +145,7 @@ const ThemeDetector = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in slide-in-from-bottom-8 duration-700">
             <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 p-8 rounded-[32px] group hover:border-[#f9a825]/30 transition-all">
               <p className="text-[#f9a825] text-[10px] font-black uppercase tracking-[3px] mb-4">Core Architecture</p>
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-2 italic tracking-tighter uppercase leading-none">{result.themeName}</h3>
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tighter uppercase leading-none">{result.themeName}</h3>
               <div className="flex items-center gap-2 text-green-500 mt-4"><CheckCircle2 size={12} /><span className="text-[10px] font-black uppercase tracking-widest">Verified Shopify Stack</span></div>
             </div>
             <div className="bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 p-8 rounded-[32px] group hover:border-[#f9a825]/30 transition-all">
@@ -166,7 +166,7 @@ const ThemeDetector = () => {
       {content && (
         <div className="max-w-4xl mx-auto mt-24 px-6 pb-24">
           <div className="mb-16 border-l-4 border-[#f9a825] pl-8">
-            <h2 className="text-4xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
               {content.title}
             </h2>
             <p className="text-white/70 text-lg md:text-xl font-medium leading-relaxed max-w-2xl">
@@ -178,7 +178,7 @@ const ThemeDetector = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
             {content.features?.map((f: any, i: number) => (
               <div key={i} className="p-8 bg-[#0d0d0d] border border-white/5 rounded-[32px] hover:border-[#f9a825]/30 transition-all">
-                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4 italic">{f.title}</h3>
+                <h3 className="text-[#f9a825] font-black uppercase text-[10px] tracking-[3px] mb-4">{f.title}</h3>
                 <p className="text-white/65 text-sm leading-relaxed">{f.detail}</p>
               </div>
             ))}
@@ -188,7 +188,7 @@ const ThemeDetector = () => {
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-10">
               <HelpCircle className="text-[#f9a825]" size={32} />
-              <h3 className="text-3xl font-black text-white uppercase italic tracking-tighter">Everything You Need To Know</h3>
+              <h3 className="text-3xl font-black text-white uppercase tracking-tighter">Everything You Need To Know</h3>
             </div>
             
             <div className="space-y-4">
@@ -198,7 +198,7 @@ const ThemeDetector = () => {
                     onClick={() => toggleFAQ(i)}
                     className="w-full p-6 flex items-center justify-between text-left focus:outline-none"
                   >
-                    <h4 className={`font-bold uppercase text-sm italic tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>
+                    <h4 className={`font-bold uppercase text-sm tracking-wide transition-colors ${activeIndex === i ? "text-[#f9a825]" : "text-white"}`}>
                       Q: {faq.q}
                     </h4>
                     <ChevronDown size={18} className={`text-[#f9a825] transition-transform duration-300 ${activeIndex === i ? "rotate-180" : "rotate-0"}`} />

@@ -35,7 +35,7 @@ const ProfitCalculator = () => {
       <div className="w-full max-w-6xl mx-auto p-4 md:p-8 bg-[#0a0a0a] border border-white/5 rounded-[32px] shadow-2xl overflow-hidden">
         
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight uppercase">
+          <h2 className="text-3xl md:text-3xl font-black text-white mb-4 tracking-tight uppercase">
             Profit <span className="text-[#f9a825]">Margin</span> Calculator
           </h2>
           <p className="text-white/70 text-[10px] font-black uppercase tracking-[4px]">Financial Intelligence Suite</p>
@@ -107,7 +107,7 @@ const ProfitCalculator = () => {
               {/* DUAL STATS: ROAS & ROI */}
               <div className="grid grid-cols-2 gap-4 mt-12">
                  <div className="bg-black/40 p-6 rounded-2xl border border-white/5 flex flex-col justify-center">
-                    <p className="text-[9px] font-black text-[#f9a825] uppercase tracking-widest mb-1 italic">ROAS (Ad Scale)</p>
+                    <p className="text-[9px] font-black text-[#f9a825] uppercase tracking-widest mb-1">ROAS (Ad Scale)</p>
                     <h5 className="text-3xl font-black text-white tracking-tighter">
                       {roas.toFixed(1)}x
                     </h5>
