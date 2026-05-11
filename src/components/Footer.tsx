@@ -94,10 +94,10 @@ const Footer = () => {
             <div className="space-y-5">
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Growth Tools</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
-                <li><Link to="/tools?tool=calculator" className="hover:text-[#f9a825] transition-colors">Profit Calculator</Link></li>
-                <li><Link to="/tools?tool=policy" className="hover:text-[#f9a825] transition-colors">Policy Generator</Link></li>
-                <li><Link to="/tools?tool=generator" className="hover:text-[#f9a825] transition-colors">Name Generator</Link></li>
-                <li><Link to="/tools?tool=detector" className="hover:text-[#f9a825] transition-colors">Theme Detector</Link></li>
+                <li><Link to="/tools/profit-margin-calculator" className="hover:text-[#f9a825] transition-colors">Profit Calculator</Link></li>
+                <li><Link to="/tools/legal-policy-generator"  className="hover:text-[#f9a825] transition-colors">Policy Generator</Link></li>
+                <li><Link to="/tools/business-name-generator" className="hover:text-[#f9a825] transition-colors">Name Generator</Link></li>
+                <li><Link to="/tools/shopify-theme-detector" className="hover:text-[#f9a825] transition-colors">Theme Detector</Link></li>
               </ul>
             </div>
 

@@ -21,12 +21,29 @@ const Header = () => {
 
   const websiteLogo = "/NawazCart.webp"; 
 
-  const tools = [
-    { name: "Profit Calculator", icon: <Calculator size={14} />, path: "/tools?tool=calculator" },
-    { name: "Policy Generator", icon: <ShieldCheck size={14} />, path: "/tools?tool=policy" },
-    { name: "Theme Detector", icon: <Layout size={14} />, path: "/tools?tool=detector" },
-    { name: "Name Generator", icon: <ShoppingBag size={14} />, path: "/tools?tool=generator" },
-  ];
+// Is array ko update karein
+const tools = [
+  { 
+    name: "Profit Calculator", 
+    icon: <Calculator size={14} />, 
+    path: "/tools/profit-margin-calculator" 
+  },
+  { 
+    name: "Policy Generator", 
+    icon: <ShieldCheck size={14} />, 
+    path: "/tools/legal-policy-generator" 
+  },
+  { 
+    name: "Theme Detector", 
+    icon: <Layout size={14} />, 
+    path: "/tools/shopify-theme-detector"
+  },
+  { 
+    name: "Name Generator", 
+    icon: <ShoppingBag size={14} />, 
+    path: "/tools/business-name-generator"
+  },
+];
 
   useEffect(() => {
     const handleScroll = () => {

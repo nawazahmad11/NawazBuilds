@@ -77,7 +77,9 @@ const App = () => (
           <Route path="/blog/:id" element={<BlogPostDetail />} />
           
           {/* Tools Page */}
+          {/* <Route path="/tools" element={<ToolsPage />} /> */}
           <Route path="/tools" element={<ToolsPage />} />
+          <Route path="/tools/:toolName" element={<ToolsPage />} />
           
           {/* 404 - Always keep this at the very bottom */}
           <Route path="*" element={<NotFound />} />
