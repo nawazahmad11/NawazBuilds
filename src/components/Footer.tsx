@@ -181,7 +181,7 @@ const Footer = () => {
                 {[
                   { icon: <Youtube size={20} />, url: "", label: "Visit YouTube" },
                   { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/", label: "Visit LinkedIn" },
-                  { icon: <Instagram size={20} />, url: "", label: "Visit Instagram" },
+                  { icon: <Instagram size={20} />, url: "https://www.instagram.com/nawazbuilds.official/", label: "Visit Instagram" },
                   { icon: <MessageCircle size={20} />, url: "https://wa.me/923244146447", label: "Chat on WhatsApp" }
                 ].map((social, i) => (
                   <a 
