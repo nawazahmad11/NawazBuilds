@@ -17,7 +17,7 @@ import ProcessSection from "@/components/ProcessSection";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-// import FloatingIcon from "@/components/FloatingIcon";
+import FloatingIcon from "@/components/FloatingIcon";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -76,6 +76,37 @@ const FunnelStep1 = () => {
           delay="3.8s" 
         />
 </div> */}
+
+
+{/* --- FLOATING ICONS LAYER --- */}
+{/* FIX: h-screen ko h-full kiya taake layout bounding box secure rahe aur extra padding collapse na ho */}
+<div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-full">
+   <FloatingIcon
+     iconUrl="/nawaz-builds-icon-shopify.webp"
+     altText="Shopify"
+     positionClass="top-[10%] left-[4%] md:left-[8%] md:top-[15%]"
+     delay="0s"
+   />
+   <FloatingIcon
+     iconUrl="/nawaz-builds-icon-google.webp"
+     altText="Google"
+     positionClass="top-[15%] right-[4%] md:right-[8%] md:top-[22%]"
+     delay="2.5s"
+   />
+   <FloatingIcon
+     iconUrl="/nawaz-builds-icon-react.webp"
+     altText="React"
+     positionClass="bottom-[20%] left-[5%] md:bottom-[28%] md:left-[8%]"
+     delay="1.2s"
+   />
+   <FloatingIcon
+     iconUrl="/nawaz-builds-icon-meta.webp"
+     altText="Meta"
+     positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
+     delay="3.8s"
+   />
+</div>
+
 
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
