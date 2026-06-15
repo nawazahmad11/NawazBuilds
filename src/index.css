@@ -2,7 +2,7 @@
   font-family: 'Inter';
   src: url('/fonts/Inter_28pt-Regular.woff2') format('woff2');
   font-weight: 400;
-font-display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,17 +19,12 @@ font-display: swap;
   font-display: swap;
 }
 
-
-
 /* @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter_28pt-ExtraBold.woff2') format('woff2');
   font-weight: 800;
   font-display: swap;
 } */
-
-/* font-display: swap; */
-/* font-display: optional; */
 
 @tailwind base;
 @tailwind components;
@@ -184,17 +179,24 @@ font-display: swap;
     @apply text-lg text-white/70 mb-6 leading-relaxed;
   }
 
-  .blog-rich-text ul, .blog-rich-text ol {
-    @apply mb-8 space-y-3;
+  /* FIX: Default bullets removed to avoid duplication */
+  .blog-rich-text ul {
+    @apply list-none mb-8 space-y-3;
+  }
+  
+  /* FIX: Ordered list default numbering preserved */
+  .blog-rich-text ol {
+    @apply list-decimal pl-5 mb-8 space-y-3 text-lg text-white/70;
   }
 
-  .blog-rich-text li {
+  /* FIX: Cleaned up structure for custom bullet styling */
+  .blog-rich-text ul li {
     @apply text-lg text-white/70 flex items-start gap-2;
   }
 
-  .blog-rich-text li::before {
+  .blog-rich-text ul li::before {
     content: '•';
-    @apply text-primary font-bold mr-2;
+    @apply text-primary font-bold;
   }
 
   /* --- Table Styling --- */
@@ -226,9 +228,10 @@ font-display: swap;
     display: none;
   }
 
+  /* FAQ Icon: Default state */
   .faq-accordion summary::after {
     content: '+';
-    @apply text-2xl font-light text-primary transition-transform duration-300;
+    @apply text-2xl font-light text-primary transition-transform duration-300 block;
   }
 
   .faq-accordion details[open] {
@@ -239,9 +242,9 @@ font-display: swap;
     @apply border-b border-white/5;
   }
 
+  /* FAQ Icon: Smooth Rotate Animation when opened */
   .faq-accordion details[open] summary::after {
-    content: '−';
-    @apply rotate-180;
+    transform: rotate(45deg);
   }
 
   .faq-accordion details p {
