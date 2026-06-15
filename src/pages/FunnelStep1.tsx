@@ -150,32 +150,32 @@ const FunnelStep1 = () => {
             </h1> */}
             
             <h1 className="mx-auto mt-8 max-w-5xl text-balance text-5xl font-medium md:text-7xl lg:mt-10 xl:text-[6rem] tracking-tight leading-[1.1] text-white text-center">
-  Shopify <span className="relative inline-block">
-    <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
-          style={{ 
-            backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-            WebkitBackgroundClip: "text",
-            // animation: "aurora 2s linear infinite" // Animation ko filhal comment kar diya hai
-          }}>
-      Expert
-    </span>
-  </span> 
-  <br />
-  <span className="flex flex-wrap items-center justify-center gap-x-4">
-    <span className="font-light text-white/90">&</span>
-    <span className="relative inline-block">
-      <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
-            style={{ 
-              backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
-              WebkitBackgroundClip: "text",
-              // animation: "aurora 6s linear infinite" // Animation ko filhal comment kar diya hai
-            }}>
-        Growth
-      </span>
-    </span>
-    <span className="text-white font-medium">Partner</span>
-  </span>
-</h1>
+            Shopify <span className="relative inline-block">
+              <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-bold italic" 
+                    style={{ 
+                      backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                      WebkitBackgroundClip: "text",
+                      // animation: "aurora 2s linear infinite" // Animation ko filhal comment kar diya hai
+                    }}>
+                Expert
+              </span>
+            </span> 
+            <br />
+            <span className="flex flex-wrap items-center justify-center gap-x-4">
+              <span className="font-light text-white/90">&</span>
+              <span className="relative inline-block">
+                <span className="relative bg-[length:200%_auto] bg-clip-text text-transparent font-black"
+                      style={{ 
+                        backgroundImage: "linear-gradient(135deg, #3b82f6 0%, #a855f7 25%, #ec4899 50%, #a855f7 75%, #3b82f6 100%)",
+                        WebkitBackgroundClip: "text",
+                        // animation: "aurora 6s linear infinite" // Animation ko filhal comment kar diya hai
+                      }}>
+                  Growth
+                </span>
+              </span>
+              <span className="text-white font-medium">Partner</span>
+            </span>
+          </h1>
 
 
               <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
