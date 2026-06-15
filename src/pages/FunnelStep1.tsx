@@ -17,7 +17,7 @@ import ProcessSection from "@/components/ProcessSection";
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-import FloatingIcon from "@/components/FloatingIcon";
+// import FloatingIcon from "@/components/FloatingIcon";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -50,7 +50,7 @@ const FunnelStep1 = () => {
 
 
 {/* --- FLOATING ICONS LAYER --- */}
-<div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
+{/* <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
         <FloatingIcon 
           iconUrl="/nawaz-builds-icon-shopify.webp" 
           altText="Shopify"
@@ -75,7 +75,7 @@ const FunnelStep1 = () => {
           positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
           delay="3.8s" 
         />
-      </div>
+</div> */}
 
       {/* 2. Hero Section */}
       <section className="relative overflow-hidden py-24 lg:py-17 z-20">
