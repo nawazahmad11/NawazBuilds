@@ -14,14 +14,10 @@ import PricingSection from "@/components/PricingSection";
 import { AnimatedCounter } from "@/components/Tools/AnimatedCounter";
 import AuditSection from "@/components/AuditSection";
 import ProcessSection from "@/components/ProcessSection";
-
 import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
-
 import FloatingIcon from "@/components/FloatingIcon";
-
-
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -505,12 +501,10 @@ const FunnelStep1 = () => {
             <ProcessSection />
             </div>
 
-
             <div className="z-20 relative">
             <AuditSection />
             </div>
-
-
+            
             {/* Blog*/}
             <div className="z-20 relative">
                 <BlogSection />

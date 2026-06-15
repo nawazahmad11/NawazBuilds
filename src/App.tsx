@@ -29,26 +29,18 @@ const queryClient = new QueryClient();
 
 
 // Pixel Tracking
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import { useLocation } from 'react-router-dom';
 
-// const location = useLocation();
-// useEffect(() => {
-//   if (window.fbq) {
-//     window.fbq('track', 'PageView');
-//   }
-// }, [location]);
-
-
-const PixelTracker = () => {
-  const location = useLocation(); 
-  useEffect(() => {
-    if (window.fbq) {
-      window.fbq('track', 'PageView');
-    }
-  }, [location]);
-  return null; 
-};
+// const PixelTracker = () => {
+//   const location = useLocation(); 
+//   useEffect(() => {
+//     if (window.fbq) {
+//       window.fbq('track', 'PageView');
+//     }
+//   }, [location]);
+//   return null; 
+// };
 
 
 const App = () => (
@@ -58,7 +50,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
 
-      <PixelTracker />
+      {/* <PixelTracker /> */}
 
         <ScrollToTop />
         <Header />
@@ -87,8 +79,6 @@ const App = () => (
           {/* PEHLA ROUTE: Jab koi sirf /case-studies par jaye (404/Not Found khatam karne ke liye) */}
           <Route path="/case-studies" element={<CaseStudyDetail />} />
 
-          {/* DOOSRA ROUTE: Jab specific project khule (Aurex, Bloom etc.) */}
-          <Route path="/case-studies" element={<CaseStudyDetail />} />
           <Route path="/case-studies/:projectId" element={<CaseStudyDetail />} />
 
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
