@@ -87,8 +87,8 @@ const BlogPostDetail = () => {
 </div> */}
 
 
-<div className="w-[95vw] max-w-[1400px] mx-auto aspect-[21/7] rounded-[2.5rem] overflow-hidden mb-10 border border-white/5 bg-white/5 shadow-2xl">
-  
+{/* <div className="w-[95vw] max-w-[1400px] mx-auto aspect-[21/7] rounded-[2.5rem] overflow-hidden mb-10 border border-white/5 bg-white/5 shadow-2xl"> */}
+<div className="w-full max-w-[1400px] mx-auto aspect-[16/9] md:aspect-[21/7] rounded-2xl md:rounded-[2.5rem] overflow-hidden mb-10 border border-white/5 bg-white/5 shadow-2xl px-4 md:px-0">
   <img 
     src={post.image} 
     alt={post.title} 
