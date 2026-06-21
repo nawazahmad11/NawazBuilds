@@ -324,113 +324,112 @@ const FunnelStep1 = () => {
       </section>
 
       {/* 5. Services Section*/}
+      <section id="services" className="py-5 z-20 relative">
+        <div className="section-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="text-center mb-10"
+          >
+            <motion.h2 variants={fadeInUp} custom={0} className="text-3xl sm:text-4xl font-bold mb-3 text-white tracking-tight">
+              What I Build For You
+            </motion.h2>
+            <motion.p variants={fadeInUp} custom={1} className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
+              Delivered Within 15 Days
+            </motion.p>
+          </motion.div>
 
-{/* 5. Services Section*/}
-<section id="services" className="py-5 z-20 relative">
-  <div className="section-container">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={staggerContainer}
-      className="text-center mb-10"
-    >
-      <motion.h2 variants={fadeInUp} custom={0} className="text-3xl sm:text-4xl font-bold mb-3 text-white tracking-tight">
-        What I Build For You
-      </motion.h2>
-      <motion.p variants={fadeInUp} custom={1} className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-        Delivered Within 15 Days
-      </motion.p>
-    </motion.div>
-
-    <motion.div
-      className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={staggerContainer}
-    >
-      {[
-        { 
-          label: "Custom Liquid Themes", 
-          desc: "Pure speed, no bulky apps.", 
-          link: "/services/custom-liquid-development" 
-        },
-        { 
-          label: "CRO Optimization", 
-          desc: "Psychology-backed layouts.",
-          link: "#services" // Scroll directly back to core services / portfolio anchor
-        },
-        { 
-          label: "Mobile-First UX", 
-          desc: "Seamless on every device.", 
-          link: "/services/mobile-first-ux" // 📱 Live mapped route
-        },
-        { 
-          label: "App & API Sync", 
-          desc: "Perfectly synced ecosystem.", 
-          link: "/services/app-api-sync" // 🔄 Live mapped route
-        },
-        { 
-          label: "Visual Storytelling", 
-          desc: "High-end product presentation.", 
-          link: "/services/visual-storytelling" // ✨ Live mapped route
-        },
-        { 
-          label: "Advanced Tracking", 
-          desc: "Meta Pixel & GA4 precision.",
-          link: "#services" 
-        },
-        { 
-          label: "Checkout Flow", 
-          desc: "Zero-friction buying.", 
-          link: "/services/checkout-flow" // 🛍️ Live mapped route
-        },
-        { 
-          label: "Launch Blueprint", 
-          desc: "Your strategy for success.",
-          link: "#services" 
-        },
-      ].map((item, i) => (
-        <motion.div
-          key={i}
-          variants={fadeInUp}
-          custom={i}
-          whileHover={{ y: -3, scale: 1.02 }}
-          className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-primary/50 hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-md overflow-hidden cursor-default"
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300" />
-
-          <div className="flex-shrink-0 z-10">
-            <div className="p-1.5 rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300 shadow-sm shadow-primary/20">
-              <CheckCircle className="w-4 h-4" />
-            </div>
-          </div>
-
-          <div className="flex flex-col z-10 w-full">
-            <h3 className="text-[16px] font-semibold text-white group-hover:text-primary transition-colors duration-300">
-              {item.label}
-            </h3>
-            <p className="text-[15px] text-white/65 group-hover:text-white/80 transition-colors leading-tight">
-              {item.desc}
-            </p>
-            
-            {/* 🔗 Dynamic Learn More Link injected cleanly here */}
-            {item.link && (
-              <a
-                href={item.link}
-                onClick={(e) => e.stopPropagation()} // Framer motion parent click stop trigger
-                className="text-[13px] text-primary hover:underline mt-1.5 inline-flex items-center gap-1 cursor-pointer transition-colors w-fit z-20"
+          <motion.div
+            className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {[
+              {
+                label: "Custom Liquid Themes",
+                desc: "Pure speed, no bulky apps.",
+                link: "/services/custom-liquid-development"
+              },
+              {
+                label: "CRO Optimization",
+                desc: "Psychology-backed layouts.",
+                link: "#services" // Scroll directly back to core services / portfolio anchor
+              },
+              {
+                label: "Mobile-First UX",
+                desc: "Seamless on every device.",
+                link: "/services/mobile-first-ux" // 📱 Live mapped route
+              },
+              {
+                label: "App & API Sync",
+                desc: "Perfectly synced ecosystem.",
+                link: "/services/app-api-sync" // 🔄 Live mapped route
+              },
+              {
+                label: "Visual Storytelling",
+                desc: "High-end product presentation.",
+                link: "/services/visual-storytelling" // ✨ Live mapped route
+              },
+              {
+                label: "Advanced Tracking",
+                desc: "Meta Pixel & GA4 precision.",
+                link: "#services"
+              },
+              {
+                label: "Checkout Flow",
+                desc: "Zero-friction buying.",
+                link: "/services/checkout-flow" // 🛍️ Live mapped route
+              },
+              {
+                label: "Launch Blueprint",
+                desc: "Your strategy for success.",
+                link: "#services"
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                custom={i}
+                whileHover={{ y: -3, scale: 1.02 }}
+                className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-primary/50 hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-md overflow-hidden cursor-default"
               >
-                Learn More <span className="transition-transform group-hover:translate-x-0.5 inline-block">→</span>
-              </a>
-            )}
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
-  </div>
-</section>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300" />
+
+                <div className="flex-shrink-0 z-10">
+                  <div className="p-1.5 rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300 shadow-sm shadow-primary/20">
+                    <CheckCircle className="w-4 h-4" />
+                  </div>
+                </div>
+
+                <div className="flex flex-col z-10 w-full">
+                  <h3 className="text-[16px] font-semibold text-white group-hover:text-primary transition-colors duration-300">
+                    {item.label}
+                  </h3>
+                  <p className="text-[15px] text-white/65 group-hover:text-white/80 transition-colors leading-tight">
+                    {item.desc}
+                  </p>
+
+                  {/* 🔗 Dynamic Learn More Link injected cleanly here */}
+                  {item.link && (
+                    <a
+                      href={item.link}
+                      onClick={(e) => e.stopPropagation()} // Framer motion parent click stop trigger
+                      className="text-[13px] text-primary hover:underline mt-1.5 inline-flex items-center gap-1 cursor-pointer transition-colors w-fit z-20"
+                    >
+                      Learn More <span className="transition-transform group-hover:translate-x-0.5 inline-block">→</span>
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+      
       {/* <section id="services" className="py-5 z-20 relative">
         <div className="section-container">
           <motion.div
@@ -503,29 +502,29 @@ const FunnelStep1 = () => {
       {/* <div id="portfolio" className="z-20 relative">
         <PortfolioSection />
       </div> */}
-      
 
-{/* 7. Portfolio Section */}
-<div id="portfolio" className="z-20 relative">
-  {/* 1. Humne onProjectSelect ka rasta pass kiya */}
-  <PortfolioSection onProjectSelect={(id) => setActiveProjectId(id)} />
-</div>
 
-{/* 8. Lazy Loaded Portfolio Modal Activation */}
-<Suspense fallback={null}>
-  {activeProjectId && (
-    <PortfolioModal 
-      isOpen={!!activeProjectId}
-      projectId={activeProjectId} 
-      onClose={() => setActiveProjectId(null)} 
-    />
-  )}
-</Suspense>
+      {/* 7. Portfolio Section */}
+      <div id="portfolio" className="z-20 relative">
+        {/* 1. Humne onProjectSelect ka rasta pass kiya */}
+        <PortfolioSection onProjectSelect={(id) => setActiveProjectId(id)} />
+      </div>
+
+      {/* 8. Lazy Loaded Portfolio Modal Activation */}
+      <Suspense fallback={null}>
+        {activeProjectId && (
+          <PortfolioModal
+            isOpen={!!activeProjectId}
+            projectId={activeProjectId}
+            onClose={() => setActiveProjectId(null)}
+          />
+        )}
+      </Suspense>
 
 
 
       {/* --- CUSTOM PORTFOLIO CARDS WITH POPUP --- */}
-{/* <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto py-10 px-4">
+      {/* <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto py-10 px-4">
   {portfolioProjects.map((project) => (
     <div 
       key={project.id}
