@@ -188,7 +188,7 @@ const FunnelStep1 = () => {
           </h1>
 
 
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-normal leading-relaxed">
             I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
           </p>
 
