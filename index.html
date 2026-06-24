@@ -27,20 +27,6 @@
   <meta name="twitter:description" content="I build high-converting, custom Shopify stores designed to scale." />
   <meta name="twitter:image" content="/og-image.webp" />
 
-  <!-- <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.push.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2425785011167739'); 
-      fbq('track', 'PageView');
-    </script> -->
-
-
   <!-- AI Crawler Knowledge Graph Integration (Schema JSON-LD) -->
   <script type="application/ld+json">
   {
@@ -75,38 +61,47 @@
   }
   </script>
 
+  <!-- Optimized Google Tag Manager (Delayed to Save Performance) -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      let gtmLoaded = false;
 
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
 
-<!-- Google Analytics Ahmad -->
- <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P7MGJ9S5');</script>
-  <!-- End Google Tag Manager Ahmad -->
+        // Create GTM Script Tag
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P7MGJ9S5'; 
+        document.head.appendChild(script);
 
+        // Create GTM DataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      }
 
+      // Load GTM on user interaction
+      const activityEvents = ['mousedown', 'mousemove', 'keydown', 'scroll', 'touchstart'];
+      activityEvents.forEach(event => {
+        window.addEventListener(event, loadGTM, { passive: true, once: true });
+      });
 
-
+      // Fallback: If no interaction, load after 4 seconds
+      setTimeout(loadGTM, 4000);
+    });
+  </script>
 
 </head>
 
 <body>
-  <!-- <noscript>
-      <img height="1" width="1" style="display:none" 
-           src="https://www.facebook.com/tr?id=2425785011167739&ev=PageView&noscript=1"/>
-    </noscript> -->
 
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
 
-<!-- Google Analytics Ahmad -->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7MGJ9S5"
+  <!-- Google Tag Manager (noscript) Fallback -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7MGJ9S5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) Ahmad -->
-
 
 </body>
 
