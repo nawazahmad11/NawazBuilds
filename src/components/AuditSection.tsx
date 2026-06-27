@@ -59,7 +59,7 @@ const AuditSection = () => {
                 {/* Start Your Project */}
 
             <button 
-                onClick={() => window.location.href = '/thank-you?package=Maintenance'}
+                onClick={() => window.location.href = '/strategy-call?package=Maintenance'}
                 className="btn-primary" // Ya jo bhi aapki class hai
                     >
                 Start Your Project →

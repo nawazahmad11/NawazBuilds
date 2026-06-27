@@ -256,7 +256,7 @@ export const blogPosts = [
           <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
           <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
           
-          <a href="/thank-you?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
+          <a href="/strategy-call?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
           
           <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px;">Limited spots available for April • 100% Conversion Focused</p>
         </div>
@@ -698,7 +698,7 @@ export const blogPosts = [
           <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
           <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
           
-          <a href="/thank-you?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
+          <a href="/strategy-call?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
           
           <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px;">Limited spots available for April • 100% Conversion Focused</p>
         </div>
@@ -1081,7 +1081,7 @@ export const blogPosts = [
         <div class="cta-premium-block" style="background: rgba(17, 17, 21, 0.95); backdrop-filter: blur(10px); padding: 40px 20px; border-radius: 24px; margin-top: 60px; border: 1px solid rgba(250, 204, 21, 0.15); text-align: center;">
             <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
             <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
-            <a href="/thank-you?package=Design Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
+            <a href="/strategy-call?package=Design Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
             <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px;">Limited spots available for April • 100% Conversion Focused</p>
         </div>
       `

@@ -41,7 +41,7 @@ const staggerContainer = {
 
 const FunnelStep1 = () => {
   const navigate = useNavigate();
-  const handleCTA = () => navigate("/thank-you");
+  const handleCTA = () => navigate("/strategy-call");
 
   // 2. State to track which project is clicked for the modal
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);

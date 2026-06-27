@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Send, Phone, Mail, User, MessageSquare, PenTool } from "lucide-react";
+import { CheckCircle, Send, Phone, Mail, User, PenTool } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom"; // Redirect ke liye navigation import ki
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -18,8 +19,8 @@ const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
-const ThankYou = () => {
-  const [submitted, setSubmitted] = useState(false);
+const StrategyCallForm = () => { // Name changed to match purpose
+  const navigate = useNavigate(); // React Router Hook for redirection
   const [loading, setLoading] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("Direct Inquiry");
 
@@ -30,10 +31,9 @@ const ThankYou = () => {
     hasStore: "",
     revenueGoal: "",
     readyToInvest: "",
-    message: "", // Nayi field state mein
+    message: "",
   });
 
-  // URL se package capture karna
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("package");
@@ -53,7 +53,6 @@ const ThankYou = () => {
     const params = new URLSearchParams(window.location.search);
     const source = params.get("utm_source") || params.get("ref") || "direct";
 
-    // Supabase Insert - Ensure Columns match your SQL
     const { error } = await supabase.from("ShopifyTable").insert({
       full_name: form.name,
       email: form.email,
@@ -61,8 +60,8 @@ const ThankYou = () => {
       has_store: form.hasStore,
       revenue_goal: form.revenueGoal,
       ready_to_invest: form.readyToInvest,
-      package_selected: selectedPlan, // Naya Column
-      customer_message: form.message,  // Naya Column
+      package_selected: selectedPlan,
+      customer_message: form.message,
       source,
       funnel_step: "booking",
     });
@@ -88,37 +87,14 @@ const ThankYou = () => {
 
     toast({
       title: "Strategy call booked! 🎉",
-      description: "We'll reach out via WhatsApp within 24 hours.",
+      description: "Redirecting to confirmation page...",
     });
-    setSubmitted(true);
-  };
 
-  if (submitted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4 pt-16">
-        <motion.div
-          className="glass-card p-10 text-center max-w-md mx-auto"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-8 h-8 check-green" />
-          </div>
-          <h2 className="text-2xl font-bold mb-3">You're All Set! 🎉</h2>
-          <p className="text-muted-foreground mb-4">
-            Your request for <span className="text-primary font-bold">{selectedPlan}</span> has been confirmed.
-          </p>
-          <div className="glass-card p-4 text-left text-sm">
-            <p className="text-muted-foreground">
-              <MessageSquare className="w-4 h-4 inline mr-1.5 check-green" />
-              Expect a WhatsApp message from me personally to finalize your call time.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    );
-  }
+    // 🚀 MASTER MOVE REDIRECT: URL ke sath package pass kar rahe hain taake naye page par show ho sake
+    // ✅ Isko badal kar exact yeh likh dein:
+    navigate(`/thank-you?package=${encodeURIComponent(selectedPlan)}`);
+    // navigate(`/strategy-call?package=${encodeURIComponent(selectedPlan)}`);
+  };
 
   return (
     <div className="min-h-screen bg-background py-12 sm:py-20 pt-28">
@@ -195,7 +171,7 @@ const ThankYou = () => {
               </div>
             </div>
 
-            {/* MESSAGE / REQUIREMENTS (Nayi Field) */}
+            {/* Message */}
             <div>
               <label className="text-sm font-medium mb-1.5 block">Tell us about your brand/goals</label>
               <div className="relative">
@@ -218,11 +194,10 @@ const ThankYou = () => {
                     key={opt}
                     type="button"
                     onClick={() => handleChange("hasStore", opt)}
-                    className={`flex-1 py-2.5 rounded-lg text-sm font-medium border transition-all ${
-                      form.hasStore === opt
+                    className={`flex-1 py-2.5 rounded-lg text-sm font-medium border transition-all ${form.hasStore === opt
                         ? "border-primary bg-primary/10 text-primary"
                         : "border-white/10 bg-secondary/30 text-muted-foreground hover:border-white/30"
-                    }`}
+                      }`}
                   >
                     {opt}
                   </button>
@@ -239,11 +214,10 @@ const ThankYou = () => {
                     key={opt}
                     type="button"
                     onClick={() => handleChange("revenueGoal", opt)}
-                    className={`py-2.5 rounded-lg text-sm font-medium border transition-all ${
-                      form.revenueGoal === opt
+                    className={`py-2.5 rounded-lg text-sm font-medium border transition-all ${form.revenueGoal === opt
                         ? "border-primary bg-primary/10 text-primary"
                         : "border-white/10 bg-secondary/30 text-muted-foreground hover:border-white/30"
-                    }`}
+                      }`}
                   >
                     {opt}
                   </button>
@@ -260,11 +234,10 @@ const ThankYou = () => {
                     key={opt}
                     type="button"
                     onClick={() => handleChange("readyToInvest", opt)}
-                    className={`flex-1 py-2.5 rounded-lg text-sm font-medium border transition-all ${
-                      form.readyToInvest === opt
+                    className={`flex-1 py-2.5 rounded-lg text-sm font-medium border transition-all ${form.readyToInvest === opt
                         ? "border-primary bg-primary/10 text-primary"
                         : "border-white/10 bg-secondary/30 text-muted-foreground hover:border-white/30"
-                    }`}
+                      }`}
                   >
                     {opt}
                   </button>
@@ -286,4 +259,4 @@ const ThankYou = () => {
   );
 };
 
-export default ThankYou;
+export default StrategyCallForm;

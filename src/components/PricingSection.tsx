@@ -7,7 +7,7 @@ const PricingSection = () => {
   const handleCTA = (packageName: string) => {
     const encodedPackage = encodeURIComponent(packageName);
    
-    window.location.href = `/thank-you?package=${encodedPackage}`;
+    window.location.href = `/strategy-call?package=${encodedPackage}`;
   };
 
   return (

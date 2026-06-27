@@ -11,7 +11,10 @@ import ScrollToTop from "./components/ScrollToTop";
 
 // Pages
 import FunnelStep1 from "./pages/FunnelStep1";
-import ThankYou from "./pages/ThankYou";
+
+import StrategyCallForm from "./pages/StrategyCall";
+import ThankYouDone from "./components/ThankYouDone";
+
 import NotFound from "./pages/NotFound";
 import BlogPage from "./pages/BlogPage";
 import BlogPostDetail from "./pages/BlogPostDetail";
@@ -69,7 +72,14 @@ const App = () => (
 
           {/* Funnel Routes */}
           <Route path="/funnel/step1" element={<FunnelStep1 />} />
-          <Route path="/thank-you" element={<ThankYou />} />
+
+          {/* Strategy Call Form Route */}
+          <Route path="/strategy-call" element={<StrategyCallForm />} />
+
+          {/* Conversion Tracking Page Route (Jo Google Ads track karega) */}
+          <Route path="/thank-you" element={<ThankYouDone />} />
+
+          {/* <Route path="/strategy-call" element={<ThankYou />} /> */}
 
           {/* Blog Routes - Dynamic System */}
           <Route path="/blog" element={<BlogPage />} />
