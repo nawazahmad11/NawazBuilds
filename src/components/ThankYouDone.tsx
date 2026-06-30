@@ -10,8 +10,10 @@ const ThankYouDone = () => {
     const plan = params.get("package");
     if (plan) {
       setSelectedPlan(decodeURIComponent(plan));
+      
     }
   }, []);
+
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4 pt-16">

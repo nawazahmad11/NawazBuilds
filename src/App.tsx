@@ -21,6 +21,7 @@ import BlogPage from "./pages/BlogPage";
 
 import BlogPostDetail from "./pages/BlogPostDetail";
 import ToolsPage from "./pages/Tools";
+
 import AuditPopup from "./components/AuditPopup";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -63,14 +64,12 @@ const App = () => (
       <BrowserRouter>
 
         {/* <PixelTracker /> */}
-
         <ScrollToTop />
         <Header />
         <Routes>
           {/* Root Redirect */}
           <Route path="/" element={<FunnelStep1 />} />
           {/* <Route path="/" element={<Navigate to="/funnel/step1" replace />} /> */}
-
 
           {/* Funnel Routes */}
           <Route path="/funnel/step1" element={<FunnelStep1 />} />
@@ -105,7 +104,7 @@ const App = () => (
           <Route path="/terms-of-service" element={<TermsOfService />} />
 
           <Route path="/refund-policy" element={<RefundPolicy />} />
-
+          {/* liquid service */}
           <Route path="/services/custom-liquid-development" element={<ShopifyLiquidService />} />
 
 
