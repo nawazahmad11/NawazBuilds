@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { CheckCircle, MessageSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 
+
+// code by nawaz
+
 const ThankYouDone = () => {
   const [selectedPlan, setSelectedPlan] = useState("Direct Inquiry");
 
@@ -10,7 +13,6 @@ const ThankYouDone = () => {
     const plan = params.get("package");
     if (plan) {
       setSelectedPlan(decodeURIComponent(plan));
-      
     }
   }, []);
 
