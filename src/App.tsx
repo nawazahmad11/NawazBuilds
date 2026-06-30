@@ -16,7 +16,9 @@ import StrategyCallForm from "./pages/StrategyCall";
 import ThankYouDone from "./components/ThankYouDone";
 
 import NotFound from "./pages/NotFound";
-import BlogPage from "./pages/BlogPage";
+import BlogPage from "./pages/BlogPage"; 
+
+
 import BlogPostDetail from "./pages/BlogPostDetail";
 import ToolsPage from "./pages/Tools";
 import AuditPopup from "./components/AuditPopup";
