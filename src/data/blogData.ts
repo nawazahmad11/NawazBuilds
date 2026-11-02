@@ -254,7 +254,7 @@ export const blogPosts = [
 
         <div class="cta-premium-block" style="background: rgba(17, 17, 21, 0.95); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 24px; margin-top: 60px; border: 1px solid rgba(250, 204, 21, 0.15); text-align: center;">
           <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
-          <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a <a href="/services/shopify-store-audit">professional store audit</a> or a custom build that converts traffic into profit.</p>
           
           <a href="/strategy-call?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
           
@@ -696,7 +696,7 @@ export const blogPosts = [
 
         <div class="cta-premium-block" style="background: rgba(17, 17, 21, 0.95); backdrop-filter: blur(10px); padding: 10px 20px; border-radius: 24px; margin-top: 60px; border: 1px solid rgba(250, 204, 21, 0.15); text-align: center;">
           <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
-          <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a <a href="/services/shopify-store-audit">professional store audit</a> or a custom build that converts traffic into profit.</p>
           
           <a href="/strategy-call?package=Blog Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
           
@@ -833,8 +833,6 @@ export const blogPosts = [
           <h4 style="color: #f9a825; font-weight: 900; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 8px;">Professional Fix:</h4>
           <p style="margin: 0; color: rgba(255,255,255,0.8);">We use <strong>Shopify 2.0 Dynamic Sections</strong>. We hide the "heavy" stuff on mobile. We use <strong>SVG icons</strong> instead of heavy images. The goal? A store that feels like an app. Fast. Smooth. One-handed.</p>
       </div>
-
-
 
 
 
@@ -1026,7 +1024,7 @@ export const blogPosts = [
       <div class="p-8 my-12 rounded-[2rem] bg-white/[0.03] border border-white/10 text-center">
           <h3 class="text-2xl font-bold mb-4">Ready to Transform Your Store?</h3>
           <p class="text-white/60 mb-8">Don't let technical debt hold your business back. Let's build a high-converting Shopify experience that scales.</p>
-          <a href="/contact" class="inline-block px-8 py-4 rounded-full bg-[#f9a825] text-black font-bold hover:bg-[#f9a825]/90 transition-all">
+          <a href="/services/shopify-store-audit" class="inline-block px-8 py-4 rounded-full bg-[#f9a825] text-black font-bold hover:bg-[#f9a825]/90 transition-all">
               Book a Free Audit
           </a>
       </div>
@@ -1080,10 +1078,360 @@ export const blogPosts = [
   
         <div class="cta-premium-block" style="background: rgba(17, 17, 21, 0.95); backdrop-filter: blur(10px); padding: 40px 20px; border-radius: 24px; margin-top: 60px; border: 1px solid rgba(250, 204, 21, 0.15); text-align: center;">
             <h2 style="color: #fff; margin-bottom: 15px; font-weight: 800; font-size: 1.8rem;">Ready to Build a Store That Actually Sells?</h2>
-            <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a professional store audit or a custom build that converts traffic into profit.</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 30px; max-width: 550px; margin-left: auto; margin-right: auto;">Stop wasting your budget on duds. Get a <a href="/services/shopify-store-audit">professional store audit</a> or a custom build that converts traffic into profit.</p>
             <a href="/strategy-call?package=Design Consultation" class="shimmer-btn">Claim Your Free Consultation</a>
             <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px;">Limited spots available for April • 100% Conversion Focused</p>
         </div>
       `
-  }
+  },
+    {
+      id: "shopify-checkout-extensibility-guide",
+      title: "Shopify Checkout Extensibility: Customer Events, Web Pixels and Attribution Data, Explained",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "CHECKOUT",
+      readTime: "7 min read",
+      image: "/blog/shopify-checkout-extensibility-guide.webp",
+      toc: [
+        { id: "what-is-checkout-extensibility", title: "What is checkout extensibility?" },
+        { id: "what-are-customer-events-on-shopify", title: "What are customer events on Shopify?" },
+        { id: "what-are-web-pixels-and-how-do-they-carry-attribution-data", title: "What are web pixels, and how do they carry attribution data?" },
+        { id: "how-do-you-check-whether-your-store-migrated-properly", title: "How do you check whether your store migrated properly?" },
+        { id: "what-breaks-most-often-after-the-upgrade", title: "What breaks most often after the upgrade?" },
+        { id: "can-you-still-customize-checkout-without-plus", title: "Can you still customize checkout without Plus?" },
+        { id: "when-should-you-get-help-with-this", title: "When should you get help with this?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Shopify retired checkout.liquid and replaced it with checkout extensibility. Your tracking now runs on two things: customer events, which describe what a shopper did, and web pixels, which carry that data to tools like Google Analytics and Meta. If your old checkout scripts were never rebuilt on this system, your attribution data has gaps you cannot see from the dashboard.</p>
+      <p>This guide explains how the new system works in plain language. It also shows you how to check whether your store made the move properly, and what to fix if it did not.</p>
+      <h2 id="what-is-checkout-extensibility">What is checkout extensibility?</h2>
+      <p>Checkout extensibility is Shopify's current system for customizing checkout and the thank you and order status pages. Instead of editing checkout.liquid code, you now use checkout editor blocks, Shopify Functions and apps built on Shopify's own APIs.</p>
+      <p>Shopify retired checkout.liquid for Shopify Plus checkout pages in August 2024. The thank you and order status pages followed in August 2025 for Plus stores. The old additional scripts box on the order status page went away with them.</p>
+      <p>The practical meaning is simple. Any customization or script that lived in checkout.liquid or in additional scripts stopped working when your store was upgraded. Stores that planned the move kept everything. Stores that ignored the emails lost pieces quietly.</p>
+      <h2 id="what-are-customer-events-on-shopify">What are customer events on Shopify?</h2>
+      <p>Customer events are Shopify's standard way of describing shopper actions. Page views, product views, add to cart, checkout started, payment info submitted and checkout completed are all defined events with defined data attached.</p>
+      <p>This matters because your marketing tools feed on these events. When a pixel listens for checkout_completed, it receives order data in a standard shape, the same on every store. That is very different from the old world of custom scripts scraping the thank you page.</p>
+      <p>Shopify documents the full event list in its <a href="https://shopify.dev/docs/api/web-pixels-api/standard-events" target="_blank" rel="noopener noreferrer">customer events reference</a>. If a tool you use cannot name the events it listens to, that is a warning sign about how it was built.</p>
+      <h2 id="what-are-web-pixels-and-how-do-they-carry-attribution-data">What are web pixels, and how do they carry attribution data?</h2>
+      <p>A web pixel is a small piece of code that subscribes to customer events and sends them somewhere. App pixels are installed by apps, such as the official Google and YouTube app or the Facebook app. Custom pixels are code you or your developer add in Settings, under Customer events, for tools that have no official app.</p>
+      <p>Attribution lives or dies inside this layer. Your ad platforms match purchases back to clicks using the data these pixels send. If the checkout_completed event never reaches Meta or Google Ads with the right order value, your reports understate sales and your campaigns optimize toward the wrong signals.</p>
+      <p>Shopify's <a href="https://shopify.dev/docs/apps/build/marketing-analytics/pixels" target="_blank" rel="noopener noreferrer">web pixels documentation</a> explains the model in full. The short version: pixels run in a sandbox, they only see the events Shopify gives them, and they are now the only supported route for checkout tracking.</p>
+      <h2 id="how-do-you-check-whether-your-store-migrated-properly">How do you check whether your store migrated properly?</h2>
+      <p>Start in Settings, then Customer events. Every pixel listed there should be one you recognize, and its status should show it is loaded. A store that never cleaned up after the upgrade often has old pixels nobody remembers installing.</p>
+      <p>Next, run a real test order and watch what your tools receive. Google Analytics should show the purchase with the correct value. Your ad platform's event tester should show the checkout events firing in order. Do not trust a green settings tick as proof; only a test purchase proves the chain works.</p>
+      <p>Then check your thank you page customizations. Anything that was in additional scripts, such as post purchase surveys, review requests or affiliate tracking, needed a new home built on extensibility. If those tools went quiet around your upgrade date, you have found why.</p>
+      <h2 id="what-breaks-most-often-after-the-upgrade">What breaks most often after the upgrade?</h2>
+      <p>The most common casualty is tracking that was pasted into checkout.liquid years ago by a freelancer or an app. It worked until the upgrade, then stopped silently. Nobody gets an error message when a pixel dies.</p>
+      <p>The second casualty is checkout customization itself. Banners, trust messages, delivery notes and custom fields built the old way vanished or had to be rebuilt with checkout blocks and Functions. Our <a href="/services/checkout-flow">Checkout Flow</a> page covers how we rebuild those pieces properly.</p>
+      <p>The third is attribution arguments inside teams. Marketing says ads stopped working, the data says sales held, and both are looking at a broken measurement chain. Fix the chain first. Then judge the ads.</p>
+      <h2 id="can-you-still-customize-checkout-without-plus">Can you still customize checkout without Plus?</h2>
+      <p>Yes, within limits. Shopify Plus stores get the full checkout editor and can add blocks throughout checkout. Stores on standard plans can customize branding and use apps that extend the thank you and order status pages, and they fully use customer events and web pixels for tracking.</p>
+      <p>That last part matters. The tracking migration applied to every store, not only Plus. A standard store that never reviewed its pixels has the same attribution risks as a Plus store that ignored the deadline.</p>
+      <h2 id="when-should-you-get-help-with-this">When should you get help with this?</h2>
+      <p>Get help if your test purchase does not show up correctly in your analytics, or if nobody on your team can explain what each pixel in your settings does. Those are signs the chain has gaps you are making decisions on.</p>
+      <p>Stores we maintain get this check as part of routine care, because pixels and apps change quietly over time. You can see how that works on our <a href="/services/shopify-maintenance-services">Shopify Maintenance Services</a> page. And if your store is on Plus, read our companion guide on <a href="/blog/shopify-plus-checkout-extensibility-tracking">Shopify Plus checkout extensibility tracking</a> next, because Plus stores carried the deepest customizations into this change.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Did Shopify force this change on every store?</strong>
+      Yes. Checkout extensibility is not optional, and checkout.liquid is retired. Stores were upgraded on Shopify's schedule. The only choice was whether your customizations and tracking were rebuilt before or after the switch.</p>
+      <p><strong>How do I know if my attribution data is wrong?</strong>
+      Compare your Shopify order revenue with what Google Analytics and your ad platforms report for the same period. Small differences are normal. A large gap that started around your checkout upgrade points at a broken pixel chain.</p>
+      <p><strong>Are custom pixels safe to add?</strong>
+      Custom pixels are an official Shopify feature, added under Settings and Customer events. They are safe when the code comes from the tool vendor itself or a developer you trust. Never paste pixel code from a random forum post into your store.</p>
+      <p><strong>What happened to the additional scripts box?</strong>
+      It was retired with the old order status page. Everything that lived there, from tracking to post purchase messages, needs an extensibility based replacement. If a tool still tells you to paste code there, that tool's instructions are out of date.</p>
+      `
+    },
+    {
+      id: "shopify-plus-checkout-extensibility-tracking",
+      title: "Shopify Plus Checkout Extensibility Tracking: What to Check After the Upgrade",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "SHOPIFY PLUS",
+      readTime: "7 min read",
+      image: "/blog/shopify-plus-checkout-extensibility-tracking.webp",
+      toc: [
+        { id: "why-is-plus-tracking-different-from-standard-shopify-tracking", title: "Why is Plus tracking different from standard Shopify tracking?" },
+        { id: "check-1-is-every-pixel-in-your-settings-accounted-for", title: "Check 1: Is every pixel in your settings accounted for?" },
+        { id: "check-2-do-your-checkout-events-fire-in-the-right-order", title: "Check 2: Do your checkout events fire in the right order?" },
+        { id: "check-3-did-your-thank-you-page-tools-survive", title: "Check 3: Did your thank you page tools survive?" },
+        { id: "check-4-are-your-checkout-customizations-doing-their-job", title: "Check 4: Are your checkout customizations doing their job?" },
+        { id: "check-5-does-the-money-match-across-your-reports", title: "Check 5: Does the money match across your reports?" },
+        { id: "what-should-you-fix-first", title: "What should you fix first?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>On Shopify Plus, checkout tracking now runs entirely through checkout extensibility and customer events. If your Plus store upgraded from checkout.liquid without a deliberate tracking rebuild, some of your events are probably missing, duplicated or sending the wrong values. This article is a checking guide, not a history lesson.</p>
+      <p>Run the checks below in order. Each one takes minutes, and together they tell you whether your marketing data can be trusted again. For the full background on how events and pixels work, read our main guide on <a href="/blog/shopify-checkout-extensibility-guide">checkout extensibility, customer events and attribution</a> first if you need it.</p>
+      <h2 id="why-is-plus-tracking-different-from-standard-shopify-tracking">Why is Plus tracking different from standard Shopify tracking?</h2>
+      <p>Plus stores customized checkout the deepest. Scripts for analytics, A/B testing, affiliate tracking, post purchase offers and custom reporting lived inside checkout.liquid and the thank you page. Standard stores never had that access, so they had less to lose.</p>
+      <p>Plus stores also run more tools. A typical Plus stack feeds Google Analytics, Google Ads, Meta, TikTok, an affiliate network and a data warehouse from the same checkout. One broken event definition echoes through all of them.</p>
+      <p>That is why a Plus tracking check is not a five minute glance at settings. It is a chain test, from the shopper's action to each platform's report, with real orders as the proof.</p>
+      <h2 id="check-1-is-every-pixel-in-your-settings-accounted-for">Check 1: Is every pixel in your settings accounted for?</h2>
+      <p>Open Settings, then Customer events. Write down every pixel you see. Next to each one, write which tool it serves and who installed it.</p>
+      <p>Any pixel nobody can explain gets investigated before it gets deleted. Some old pixels are harmless leftovers. Others are quietly sending your order data to a tool you stopped paying for, which is a privacy problem, not only a data problem.</p>
+      <p>Official app pixels, such as the Google and YouTube app and the Facebook app, should be connected through their apps, not duplicated as custom pixels. Duplicates are the most common cause of double counted conversions on Plus stores we review.</p>
+      <h2 id="check-2-do-your-checkout-events-fire-in-the-right-order">Check 2: Do your checkout events fire in the right order?</h2>
+      <p>Place a test order on a phone, the way a customer would. The event order should follow the real journey: product viewed, added to cart, checkout started, contact and payment steps, checkout completed.</p>
+      <p>Use each platform's own testing tool while you order. Google's tools show the purchase event arriving with its value. Meta's event tester shows the purchase with its event source and parameters. If an event arrives twice, arrives without a value, or does not arrive at all, the problem is in the pixel layer, not in the platform.</p>
+      <p>Write down what you find before fixing anything. A short before and after record is what turns a messy afternoon into proof that the repair worked.</p>
+      <h2 id="check-3-did-your-thank-you-page-tools-survive">Check 3: Did your thank you page tools survive?</h2>
+      <p>The thank you and order status pages were the second half of the Plus upgrade, in August 2025. Post purchase surveys, review collection, referral prompts, affiliate attribution and upsell blocks often lived in additional scripts or in old page customizations.</p>
+      <p>Open a real order status page from a test order and look at it as a customer. Is everything there that used to be there? Then check each tool's dashboard for data after your upgrade date. A tool showing a cliff on that date is telling you it never got rebuilt.</p>
+      <p>Replacements are built with checkout and post purchase extensions, not scripts. If a vendor still instructs you to paste code into additional scripts, that vendor has not updated for extensibility, and it may be time to replace the vendor.</p>
+      <h2 id="check-4-are-your-checkout-customizations-doing-their-job">Check 4: Are your checkout customizations doing their job?</h2>
+      <p>Plus checkouts often carried business logic, not just tracking. Address validation, delivery date pickers, B2B fields, custom discounts and warning messages were common checkout.liquid work.</p>
+      <p>Under extensibility those live as checkout blocks and Shopify Functions. Test each one as a customer, including the unhappy paths: a wrong address, a discount code that should fail, a product that should trigger the extra field. Logic that displays fine but validates wrong is worse than logic that is missing, because it fails silently at the exact moment of purchase.</p>
+      <p>If your checkout needs this kind of rebuilding, it is development work, not a settings change. Our <a href="/services/checkout-flow">Checkout Flow</a> service exists for exactly this layer of the store.</p>
+      <h2 id="check-5-does-the-money-match-across-your-reports">Check 5: Does the money match across your reports?</h2>
+      <p>Pick one recent week. Compare orders and revenue in Shopify against Google Analytics and your main ad platform for the same days.</p>
+      <p>Small gaps are normal and always existed. Time zones, refunds, consent choices and attribution windows all move numbers slightly. What you are hunting for is a step change: a gap that opened at your upgrade date and never closed. That pattern means an event broke during the move and is still broken.</p>
+      <p>Also check order values, not only counts. A purchase event that fires without the correct value makes an ad platform optimize toward cheap orders while reporting success. Counts can look healthy while value data rots.</p>
+      <h2 id="what-should-you-fix-first">What should you fix first?</h2>
+      <p>Fix in this order: duplicate purchase events first, because they inflate results and corrupt bidding. Missing purchase events second, because they blind your platforms. Wrong values third, because they quietly mislead optimization. Thank you page tools and cosmetic issues come after the money chain is clean.</p>
+      <p>If your store sells through multiple channels or a warehouse feed, bring those teams into the test week. Tracking repairs that surprise another system are how new problems get born.</p>
+      <p>Stores under our <a href="/services/shopify-maintenance-services">Shopify Maintenance Services</a> get this chain retested on a cycle, because apps update and pixels drift. A one time repair is good. A repair that is rechecked is better.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How long does a full Plus tracking check take?</strong>
+      The five checks in this article take a few hours including test orders, for a store with a normal tool stack. Stores with many custom pixels or several ad platforms take longer, mostly in the testing, not the fixing.</p>
+      <p><strong>Our agency upgraded us. Should we still check?</strong>
+      Yes. Upgrades were often done against a deadline, with the focus on keeping checkout working, and tracking verification was the step most often rushed. A check either confirms their work, which is good news, or finds the gap while it is still cheap to fix.</p>
+      <p><strong>Can we recover the data we lost?</strong>
+      No. Events that never fired cannot be reconstructed. That is exactly why the check matters now: every week of delay is another week of decisions made on partial data.</p>
+      <p><strong>Is Google Tag Manager still usable on Shopify checkout?</strong>
+      Tag Manager cannot be injected into checkout the old way. Tracking now goes through app pixels and custom pixels under Customer events. Some setups use a custom pixel to forward events onward, but the pixel layer is always the starting point.</p>
+      `
+    },
+    {
+      id: "shopify-store-audit-checklist",
+      title: "Shopify Store Audit Checklist: 20 Checks That Matter",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "STORE AUDIT",
+      readTime: "8 min read",
+      image: "/blog/shopify-store-audit-checklist.webp",
+      toc: [
+        { id: "before-you-start-how-to-use-this-checklist", title: "Before you start: how to use this checklist" },
+        { id: "speed-checks-1-to-4", title: "Speed checks (1 to 4)" },
+        { id: "product-page-checks-5-to-8", title: "Product page checks (5 to 8)" },
+        { id: "checkout-checks-9-to-12", title: "Checkout checks (9 to 12)" },
+        { id: "trust-and-content-checks-13-to-16", title: "Trust and content checks (13 to 16)" },
+        { id: "seo-basics-checks-17-to-20", title: "SEO basics checks (17 to 20)" },
+        { id: "what-do-you-do-with-your-results", title: "What do you do with your results?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can audit your own Shopify store with the 20 checks below. They cover speed, product pages, checkout, trust and SEO basics, in the same order a professional audit works through them. Give each check a simple pass or fail, and do not fix anything until the full list is done.</p>
+      <p>The list takes about an hour with a phone and a laptop. At the end you will know whether your store needs small fixes, a cleanup, or a professional <a href="/services/shopify-store-audit">Shopify Store Audit</a> to go deeper.</p>
+      <h2 id="before-you-start-how-to-use-this-checklist">Before you start: how to use this checklist</h2>
+      <p>Audit on a phone first. Most of your visitors shop on mobile, and problems hide there that desktop never shows. Use your best selling product page for the product checks, not a random one.</p>
+      <p>Write down failures instead of fixing on the spot. Mid audit fixing breaks your flow and hides patterns. Three failures in one group usually share one root cause, and the pattern is the real finding.</p>
+      <h2 id="speed-checks-1-to-4">Speed checks (1 to 4)</h2>
+      <p><strong>1. Your product page loads fast on a phone.</strong> Run it through Google PageSpeed Insights on mobile. You are looking for an obviously slow page, not a perfect score. If the page feels slow to you on real mobile data, it feels slow to customers too.</p>
+      <p><strong>2. Your images are sized for the web.</strong> Open your best seller and look at the images closely. Blurry images hurt trust, and enormous images hurt speed. Product photos should be sharp and compressed, not straight off a camera at full size.</p>
+      <p><strong>3. Every app in your store earns its place.</strong> List your installed apps and write one line for what each does. Any app you cannot explain gets reviewed. Unused apps still load code, still cost money and still create conflicts.</p>
+      <p><strong>4. Your homepage makes its point in five seconds.</strong> Show it to someone who does not know your store. If they cannot say what you sell and who it is for almost immediately, your homepage is pretty and unclear, which is the worst combination.</p>
+      <h2 id="product-page-checks-5-to-8">Product page checks (5 to 8)</h2>
+      <p><strong>5. Price, variants and availability are obvious.</strong> A visitor should never hunt for the price or wonder which size they are buying. Confusion at this exact spot quietly kills add to cart clicks. Our post on <a href="/blog/high-converting-product-pages">product pages that convert</a> goes deeper on this section.</p>
+      <p><strong>6. Delivery and returns information is visible before checkout.</strong> Shoppers look for shipping cost and timing on the product page, not after they commit. If the answer only appears at checkout, expect abandoned carts from people who simply refused to guess.</p>
+      <p><strong>7. Reviews or proof appear near the buy button.</strong> Stars, a review count, a photo from a customer, anything real. Empty space where proof should be makes a good product look untested. Never invent reviews to fill the gap; an honest few beat a fake fifty.</p>
+      <p><strong>8. The buy path works one handed on mobile.</strong> Add the product to cart with your thumb only. If the button hides, the drawer confuses, or the options are hard to tap, mobile buyers are working too hard to give you money.</p>
+      <h2 id="checkout-checks-9-to-12">Checkout checks (9 to 12)</h2>
+      <p><strong>9. A full test order completes without friction.</strong> Buy your own cheapest product, with a test payment, from cart to confirmation. Note every moment you pause, scroll back or wonder what happens next. Your customers pause in the same places, then leave.</p>
+      <p><strong>10. Shipping costs appear as early as possible.</strong> A surprise shipping fee at the last step is the classic abandoned checkout. If your rates depend on the order, say so early and clearly.</p>
+      <p><strong>11. Payment options are visible and working.</strong> Cards, and the express options your customers expect, should appear without error. Test each one you offer. A broken express checkout button can sit unnoticed for weeks.</p>
+      <p><strong>12. Discount codes fail politely.</strong> Enter a wrong code on purpose. The message should be clear and the checkout should stay usable. An error that looks like a crash sends people away mid purchase.</p>
+      <h2 id="trust-and-content-checks-13-to-16">Trust and content checks (13 to 16)</h2>
+      <p><strong>13. A human can find how to contact you in under a minute.</strong> Email, a contact page, a real business name. Stores that hide contact details look temporary, and shoppers price that risk into their decision not to buy.</p>
+      <p><strong>14. Your policy pages are complete and readable.</strong> Shipping, returns, privacy and terms, written for humans. Missing or copied policy pages surface later as disputes and chargebacks, which cost far more than writing them properly. Our free <a href="/tools/legal-policy-generator">policy generator tool</a> is a decent starting draft, then have it reviewed.</p>
+      <p><strong>15. Your store explains who is behind it.</strong> An about section, a founder note, real photos, anything that proves people run this business. Anonymous stores convert worse because shoppers cannot judge who holds their money.</p>
+      <p><strong>16. No broken links or dead pages inside the store.</strong> Click your main menu, footer links and old campaign links. Every dead end tells a visitor the store is not looked after. If nobody maintains these basics, <a href="/services/shopify-maintenance-services">monthly maintenance</a> is usually the real gap.</p>
+      <h2 id="seo-basics-checks-17-to-20">SEO basics checks (17 to 20)</h2>
+      <p><strong>17. Every key page has a unique, clear title.</strong> Check your homepage, top collections and best sellers in a search style preview. Duplicate or empty titles waste the one line of advertising Google gives you free.</p>
+      <p><strong>18. Each page has one clear main heading.</strong> Product and collection pages should say what they are in words a buyer would search. Decorative heading text that never names the product helps nobody find it.</p>
+      <p><strong>19. Your product images have descriptive alt text.</strong> Alt text helps visually impaired shoppers and helps search engines understand the image. File names like IMG 2041 help neither.</p>
+      <p><strong>20. Your important pages are indexed.</strong> Search Google for your store name plus your best product. If key pages do not appear, check that your sitemap is submitted in Google Search Console and that the pages are not blocked. Traffic cannot buy from pages Google has never seen.</p>
+      <h2 id="what-do-you-do-with-your-results">What do you do with your results?</h2>
+      <p>Count your failures by group, not in total. A store failing mostly on speed and apps has a technical cleanup ahead. A store failing on product pages and trust has a persuasion problem. The fix order is: checkout failures first, then product pages, then speed, then the rest.</p>
+      <p>If you failed three or fewer checks, fix them yourself this week and retest. If you failed four to ten, you have a real list, and it is worth doing properly in one pass. If you failed more than ten, or your checkout checks failed, get a professional audit before spending another dollar on ads, because ads pour traffic into a leaking bucket.</p>
+      <p>That is exactly what our <a href="/services/shopify-store-audit">Shopify Store Audit</a> service does: the same thinking, deeper tools, and a report that ranks every finding by impact, including an honest list of what you can ignore.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How often should I audit my store?</strong>
+      Run this checklist every quarter, and after any big change such as a theme update, a redesign or a batch of new apps. Stores drift constantly; the audit is how you notice.</p>
+      <p><strong>Can a checklist replace a professional audit?</strong>
+      It replaces the first layer. A checklist finds visible problems. A professional audit also tests speed under load, reviews theme code, checks tracking and digs into data you cannot see from the front of the store.</p>
+      <p><strong>My store failed the checkout checks. What now?</strong>
+      Fix nothing else first. Reproduce the failure, note exactly where it happens, and treat it as urgent. If you cannot find the cause, that single problem justifies professional help on its own.</p>
+      <p><strong>Should I fix everything at once or one group at a time?</strong>
+      One group at a time, checkout first. Fixing in groups lets you see which changes actually moved your sales, instead of changing twelve things and learning nothing.</p>
+      `
+    },
+    {
+      id: "why-shopify-store-needs-cro-audit",
+      title: "What Is a Shopify CRO Audit, and When Does Your Store Need One?",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "CONVERSION",
+      readTime: "7 min read",
+      image: "/blog/why-shopify-store-needs-cro-audit.webp",
+      toc: [
+        { id: "what-is-the-difference-between-a-store-audit-and-a-cro-audit", title: "What is the difference between a store audit and a CRO audit?" },
+        { id: "what-are-the-signs-your-store-has-a-conversion-problem", title: "What are the signs your store has a conversion problem?" },
+        { id: "what-does-a-cro-audit-actually-examine", title: "What does a CRO audit actually examine?" },
+        { id: "what-do-you-receive-from-a-cro-audit", title: "What do you receive from a CRO audit?" },
+        { id: "when-is-a-cro-audit-the-wrong-spend", title: "When is a CRO audit the wrong spend?" },
+        { id: "how-is-this-different-from-just-redesigning-the-store", title: "How is this different from just redesigning the store?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A CRO audit examines where your store loses buyers between landing and checkout, and ranks the leaks by how much revenue each one likely costs. CRO stands for conversion rate optimization. If your store gets steady traffic but sales feel stuck, a CRO audit is usually the right next spend, ahead of more ads.</p>
+      <p>This article explains the signs that point to a conversion problem, what the audit actually examines, and the cases where you should not buy one at all.</p>
+      <h2 id="what-is-the-difference-between-a-store-audit-and-a-cro-audit">What is the difference between a store audit and a CRO audit?</h2>
+      <p>A general store audit is a health check. It covers speed, apps, technical problems, SEO basics and checkout, the full list in our <a href="/blog/shopify-store-audit-checklist">Shopify store audit checklist</a>. It answers the question: what is broken or risky in this store?</p>
+      <p>A CRO audit is narrower and more commercial. It studies buyer behavior: where visitors hesitate, where they leave, and which page elements fail to persuade. It answers a different question: why do people who already visit not buy?</p>
+      <p>Many stores need the health check first. A store with a broken checkout does not have a persuasion problem. But a healthy store with flat sales has exactly the problem a CRO audit exists to find.</p>
+      <h2 id="what-are-the-signs-your-store-has-a-conversion-problem">What are the signs your store has a conversion problem?</h2>
+      <p>The clearest sign is a gap. Traffic grows, or holds steady, while orders do not. Your ad reports look acceptable, your products sell elsewhere, and still the store underperforms.</p>
+      <p>A second sign is a weak step in the funnel. Many visitors view products, few add to cart. Or carts fill and checkouts die. Each pattern points at a different page, and guessing wrong means fixing the healthy page while the leaking one keeps leaking.</p>
+      <p>A third sign is disagreement inside the team. One person blames price, another blames the design, a third blames traffic quality. When everyone has a theory and nobody has evidence, an audit replaces opinions with a ranked list.</p>
+      <h2 id="what-does-a-cro-audit-actually-examine">What does a CRO audit actually examine?</h2>
+      <p>It starts with your numbers. Sessions, add to cart rate, checkout starts and completed orders, split by device. On most stores the mobile numbers tell the story, because mobile is where the traffic is and where the experience is weakest.</p>
+      <p>Then it walks the pages as a buyer. Product pages get the closest look: the offer, the images, the proof, the delivery information and the buy path. Our guide to <a href="/blog/high-converting-product-pages">product pages that convert</a> shows the standard those pages are judged against.</p>
+      <p>It also examines trust at the moment of payment. Shoppers decide with their guard up at checkout. Missing delivery clarity, thin policies and absent proof cost the most exactly there. Finally it checks the offer itself: bundles, thresholds for free shipping, and whether the first purchase asks for too much commitment.</p>
+      <h2 id="what-do-you-receive-from-a-cro-audit">What do you receive from a CRO audit?</h2>
+      <p>You receive findings ranked by likely revenue impact, each with the evidence behind it. Not a list of design opinions. A finding sounds like this: mobile buyers cannot see delivery timing before checkout, and your checkout abandonment is concentrated on mobile. The fix follows from the evidence.</p>
+      <p>You also receive what not to change. Stores often arrive planning a redesign. A good CRO audit sometimes proves the design is fine and the problem is one page, one missing piece of information, or one broken step on phones. That answer saves more money than any redesign quote.</p>
+      <p>Our <a href="/services/shopify-store-audit">Shopify Store Audit</a> service includes this conversion layer, reported the same way: critical first, improvements ranked, and an honest ignore list at the end.</p>
+      <h2 id="when-is-a-cro-audit-the-wrong-spend">When is a CRO audit the wrong spend?</h2>
+      <p>Skip it if your store has little traffic. Conversion work multiplies what exists. With very few visitors, there is not enough behavior to study and not enough sales to move. Spend on getting the right visitors first.</p>
+      <p>Skip it if your store has obvious technical failures. A slow store, a broken checkout or a pile of app conflicts will poison every conversion finding. Fix the foundations first, with a health audit and cleanup, then study behavior on a store that works.</p>
+      <p>Skip it if you will not act on the findings. An audit you shelve is the most expensive kind. If budget for fixes does not exist this quarter, delay the audit until it does, and run the free checklist in the meantime.</p>
+      <h2 id="how-is-this-different-from-just-redesigning-the-store">How is this different from just redesigning the store?</h2>
+      <p>A redesign changes how the store looks, everywhere, all at once. Sometimes that is right, and our article on <a href="/blog/shopify-redesign-signs-2026">the signs your store needs a redesign</a> helps you judge it honestly.</p>
+      <p>But a redesign built on guesses imports the old problems into a new skin. The product page that hid delivery information still hides it, now in a nicer font. A CRO audit tells you what to fix and what to carry over untouched, so money goes to the leaks instead of the paint.</p>
+      <p>After the fixes, the gains hold better with routine care. Stores drift: apps change, pages get edited, offers expire. That is why many owners pair a one time audit with <a href="/services/shopify-maintenance-services">monthly maintenance</a> afterward.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How much traffic do I need before a CRO audit makes sense?</strong>
+      Enough that patterns exist. As a rough guide, a store with steady daily orders and thousands of monthly visits has behavior worth studying. A store with a handful of visits a day should fix traffic first. These are judgment calls, not hard cutoffs, and a good auditor will tell you if you are too early.</p>
+      <p><strong>Will a CRO audit guarantee more sales?</strong>
+      No, and you should distrust anyone who guarantees it. An audit guarantees clarity about where buyers are lost and which fixes matter most. Sales improve when the right fixes are implemented well. The audit's job is to make sure you fix the right things.</p>
+      <p><strong>How is a CRO audit different from A/B testing?</strong>
+      Testing compares two versions of one element and needs traffic volume to reach a verdict. An audit studies the whole journey and finds the problems worth testing or fixing in the first place. For most small stores, audit first, fix the obvious, and test only the big open questions.</p>
+      <p><strong>Can I do a CRO audit myself?</strong>
+      You can do the first layer with our <a href="/blog/shopify-store-audit-checklist">audit checklist</a> and your own analytics. The deeper layer, reading the data patterns and ranking by revenue impact, is where an outside specialist earns their fee, mostly because they have seen the same leaks across many stores.</p>
+      `
+    },
+    {
+      id: "magento-to-shopify-migration-checklist",
+      title: "Magento to Shopify Migration Checklist: Before, During and After the Move",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "8 min read",
+      image: "/blog/magento-to-shopify-migration-checklist.webp",
+      toc: [
+        { id: "phase-1-before-you-move-anything", title: "Phase 1: Before you move anything" },
+        { id: "phase-2-building-the-new-store", title: "Phase 2: Building the new store" },
+        { id: "phase-3-testing-before-launch", title: "Phase 3: Testing before launch" },
+        { id: "phase-4-launch-and-the-weeks-after", title: "Phase 4: Launch and the weeks after" },
+        { id: "what-does-this-checklist-not-cover", title: "What does this checklist not cover?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A Magento to Shopify migration succeeds or fails on preparation, not on moving day. This checklist follows the order we work in: audit and mapping first, then the build, then testing, then a launch sequence that protects your data and your Google rankings.</p>
+      <p>Work through it in order and resist skipping ahead. Every item exists because a migration somewhere was hurt by its absence. If you want the service version of this list, our <a href="/services/shopify-migration-services">Shopify Migration Services</a> page explains how we run the whole move for you.</p>
+      <h2 id="phase-1-before-you-move-anything">Phase 1: Before you move anything</h2>
+      <p><strong>Export and back up everything.</strong> Full Magento backup, database included, stored somewhere outside the server. Products, customers, orders, CMS pages, blog content, media. If it exists, it gets copied before anyone touches anything.</p>
+      <p><strong>Audit what you actually have.</strong> Count products, variants, customers and orders honestly. Years of Magento stores accumulate test products, dead categories and duplicate customer accounts. Migrating junk is wasted effort; this is your one cheap chance to clean house.</p>
+      <p><strong>List every extension and decide its fate.</strong> For each Magento extension, choose one of three outcomes: a Shopify app replaces it, the feature gets rebuilt in Liquid, or it gets dropped because nobody uses it. Write the decision down. Features discovered missing after launch are the classic Magento migration wound.</p>
+      <p><strong>Map your custom attributes.</strong> Magento catalogs carry custom attributes that drive filters, sizing, materials and compatibility data. Decide how each maps to Shopify metafields, tags or variants before data moves. This mapping document is the heart of the whole migration.</p>
+      <p><strong>Record your current SEO state.</strong> Export your top pages by traffic, your full URL list and your current rankings for money keywords. You cannot protect what you have not measured, and after the move you will need this baseline to prove what held.</p>
+      <h2 id="phase-2-building-the-new-store">Phase 2: Building the new store</h2>
+      <p><strong>Build on a development store with real data.</strong> Migrate a real sample of the catalog early, including your most complex products. If configurable products, bundles and custom options survive the sample, the full move will behave. If they break, better to learn it in week one.</p>
+      <p><strong>Rebuild the design as a native Shopify theme.</strong> Do not try to port Magento templates. Recreate the look in a proper Shopify theme so updates stay easy and speed stays honest. Many owners freshen the design at this point, since the rebuild cost is already being paid.</p>
+      <p><strong>Rebuild custom features deliberately.</strong> Checkout related features go through checkout extensibility, not scripts. Storefront features get Liquid or an app, per your Phase 1 decisions. Every rebuilt feature gets tested as a customer, not just installed.</p>
+      <p><strong>Set up the boring essentials.</strong> Payments, taxes, shipping zones and rates, domain records, staff accounts and notification emails. These are unglamorous and absolutely launch critical. A store that cannot take a payment correctly is not migrated, whatever the product count says.</p>
+      <p><strong>Prepare the redirect map.</strong> Every important Magento URL gets a destination on the new store: products to products, categories to collections, content to content. Magento and Shopify URL shapes differ, so assume nothing carries over automatically. This map is your rankings insurance, and it gets built now, not at launch.</p>
+      <h2 id="phase-3-testing-before-launch">Phase 3: Testing before launch</h2>
+      <p><strong>Run complete test orders.</strong> Every payment method, a discount code, a refund, a failed payment. On a phone and on a desktop. Checkout is the one place a small surprise costs real money.</p>
+      <p><strong>Check the data like a customer.</strong> Open your top twenty products and compare them against the old store: images, prices, variants, descriptions, stock. Then open ten customer accounts and ten past orders. Data errors hide in the records nobody opens.</p>
+      <p><strong>Test the features from your extension list.</strong> Go down the Phase 1 document and physically use each kept feature. A feature that exists but behaves differently is a complaint waiting for launch day.</p>
+      <p><strong>Speed check the new store.</strong> Compare key pages against the old store's numbers. The new store should be at least as fast. If it is slower, find out why now, while fixing it costs nothing but time.</p>
+      <h2 id="phase-4-launch-and-the-weeks-after">Phase 4: Launch and the weeks after</h2>
+      <p><strong>Pick a quiet window and freeze changes.</strong> Launch in your lowest traffic period. Stop editing the old store during the final data sync so no order or product change gets stranded between stores.</p>
+      <p><strong>Switch, then verify in order.</strong> Domain first, then a live test order, then the redirect map spot checks: take twenty old URLs from your baseline list and confirm each lands on the right new page. Then submit the new sitemap in Google Search Console.</p>
+      <p><strong>Plan the customer account emails.</strong> Customer passwords cannot migrate between platforms, for security reasons. Your customers get a friendly activation invite for the new store. Write it like a welcome, explain the move briefly, and send it while the launch is fresh.</p>
+      <p><strong>Watch the numbers daily for two weeks.</strong> Traffic, orders, search impressions and 404 errors. Small problems caught in week one are maintenance. The same problems found in month three are a rescue. Many owners hand this watching brief to <a href="/services/shopify-maintenance-services">monthly maintenance</a> so nothing depends on memory.</p>
+      <p><strong>Expect a possible small rankings dip.</strong> Even a careful migration can wobble while Google recrawls everything. With a complete redirect map and content moved in full, rankings normally settle back. A dip that keeps falling after several weeks means something was missed, and the baseline you recorded in Phase 1 is how you find it.</p>
+      <h2 id="what-does-this-checklist-not-cover">What does this checklist not cover?</h2>
+      <p>It does not cover deciding whether to migrate at all. That is a business decision about Magento's running costs versus the move, and it deserves an honest review of your current store first. Our <a href="/services/shopify-store-audit">Shopify Store Audit</a> works well as that review, because it examines the store you have before anyone sells you the store you might get.</p>
+      <p>It also does not promise the move is quick. A small clean catalog moves in weeks. A store with years of custom data takes longer, and anyone quoting you a fast fixed timeline without seeing your data is guessing. The checklist exists precisely because guessing is how migrations fail.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can order history be migrated from Magento to Shopify?</strong>
+      Yes, order records can be imported so customers and you keep the history. Passwords are the exception: they never migrate, which is why the account activation email is part of the launch plan.</p>
+      <p><strong>What happens to my Magento store during the migration?</strong>
+      It stays live and keeps selling. The new store is built separately with your data. Only the final switch, in a quiet window, changes what customers see.</p>
+      <p><strong>Which is harder, the data or the design?</strong>
+      The data, almost always. Designs are visible, so problems get spotted. Data problems hide quietly inside attributes, customer records and URL structures, and only surface when a customer or a search engine goes looking. That is why Phase 1 is the longest phase.</p>
+      <p><strong>Do I need a developer for this, or can an app do it?</strong>
+      Import apps move basic data well for small, simple catalogs. Stores with custom attributes, extensions and real traffic usually need a developer for the mapping, the feature decisions and the redirect work. The checklist above is a fair test: if every item feels easy for your store, an app may genuinely be enough.</p>
+      `
+    },
+    {
+      id: "what-is-included-in-shopify-maintenance-plan",
+      title: "What Is Included in a Shopify Maintenance Plan?",
+      date: "November 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "MAINTENANCE",
+      readTime: "7 min read",
+      image: "/blog/what-is-included-in-shopify-maintenance-plan.webp",
+      toc: [
+        { id: "updates-theme-and-apps-done-safely", title: "Updates: theme and apps, done safely" },
+        { id: "backups-checked-not-assumed", title: "Backups: checked, not assumed" },
+        { id: "security-checks-accounts-apps-and-access", title: "Security checks: accounts, apps and access" },
+        { id: "checkout-testing-the-monthly-test-order", title: "Checkout testing: the monthly test order" },
+        { id: "small-fixes-and-content-changes", title: "Small fixes and content changes" },
+        { id: "monitoring-and-the-monthly-report", title: "Monitoring and the monthly report" },
+        { id: "what-a-maintenance-plan-should-not-include", title: "What a maintenance plan should not include" },
+        { id: "do-you-actually-need-a-plan", title: "Do you actually need a plan?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A proper Shopify maintenance plan includes theme and app updates, backup checks, security reviews, monthly checkout testing, small content fixes and a plain language health report. If a plan you are quoted does not name most of these, you are probably buying a support retainer wearing a maintenance label.</p>
+      <p>This guide walks through each part, what it actually involves, and what a plan should honestly exclude. It ends with the questions to ask before you sign anything, ours or anyone else's.</p>
+      <h2 id="updates-theme-and-apps-done-safely">Updates: theme and apps, done safely</h2>
+      <p>Updates are the core of maintenance, and the word "done safely" is where plans differ. A theme update applied directly to your live store can wipe customizations and break layouts. Done properly, the update is applied to a copy of the theme, checked page by page, and only then published.</p>
+      <p>Apps update themselves more quietly, which is not the same as safely. An app update can change how it loads, conflict with your theme or alter a checkout related flow. Maintenance includes watching for exactly that, and reviewing whether each app still earns its place. Stores collect apps the way drawers collect cables.</p>
+      <h2 id="backups-checked-not-assumed">Backups: checked, not assumed</h2>
+      <p>Shopify keeps the platform running, but it does not keep a restore point of your theme customizations and store setup for you. If a change breaks your store on a Friday night, the question is whether a clean copy exists to roll back to.</p>
+      <p>A maintenance plan should include regular backups of your theme and key data exports, and the part everyone skips: verifying the backup is usable. An unchecked backup is a hope, not a backup. Before any significant change, a fresh copy gets taken first. That habit is the cheapest insurance in this entire article.</p>
+      <h2 id="security-checks-accounts-apps-and-access">Security checks: accounts, apps and access</h2>
+      <p>Store security problems rarely look like movie hacking. They look like a forgotten staff account for a freelancer from two years ago, an app with permissions it does not need, or a weak password on the owner's login.</p>
+      <p>Maintenance includes a periodic review of staff accounts and permissions, app access scopes, and basic account security such as two factor authentication on key logins. It is housekeeping. It is also how real breaches get prevented, quietly and without drama.</p>
+      <h2 id="checkout-testing-the-monthly-test-order">Checkout testing: the monthly test order</h2>
+      <p>Checkout is where your store turns into money, and it can break without anyone touching it. An app updates, a payment setting shifts, a market configuration changes. The store looks fine. The orders quietly stop.</p>
+      <p>That is why a real plan includes a test order every month, run end to end like a customer: add to cart, checkout, payment, confirmation email. Five minutes of testing that catches the single most expensive failure a store can have. If a plan does not mention checkout testing, ask why not.</p>
+      <h2 id="small-fixes-and-content-changes">Small fixes and content changes</h2>
+      <p>Stores need constant small touches. A banner for a sale, a collection reordered, a page corrected, a broken image replaced. Plans usually include a set amount of this small work each month, because asking for a quote for every ten minute job wastes everyone's time.</p>
+      <p>The definition matters. Small means small: tasks measured in minutes, using what the store already has. Building a new feature, a new page design or an integration is development work, quoted separately. A good plan says this boundary out loud, the way our own <a href="/services/shopify-maintenance-services">Shopify Maintenance Services</a> page does, instead of letting you discover it on an invoice.</p>
+      <h2 id="monitoring-and-the-monthly-report">Monitoring and the monthly report</h2>
+      <p>You should receive one short report each month. What was updated, what was checked, what was fixed, and what needs a decision from you. Written in plain language, without padded lists of meaningless activity.</p>
+      <p>The report is also your early warning system. Speed creeping down over three months, an app misbehaving repeatedly, error pages accumulating. None of these announce themselves. The report is how they get caught while they are still cheap, and our <a href="/blog/shopify-store-audit-checklist">audit checklist</a> shows the kinds of items such a report tracks.</p>
+      <h2 id="what-a-maintenance-plan-should-not-include">What a maintenance plan should not include</h2>
+      <p>Honest exclusions protect you as much as inclusions. New features and custom development are out. Redesigns are out. Emergency heroics caused by other developers changing the live store without telling anyone are, at best, a conversation.</p>
+      <p>Also be wary of the opposite problem: plans that promise everything. Unlimited changes, instant responses, guaranteed uptime of your sales. Maintenance is routine care by humans. Anyone selling it as magic is selling you a disappointment scheduled for later.</p>
+      <h2 id="do-you-actually-need-a-plan">Do you actually need a plan?</h2>
+      <p>Not every store does. A brand new store with few apps and an owner comfortable in the dashboard can self maintain for a while. The honest trigger points are these: you are selling steadily, your app count keeps growing, nobody on the team enjoys the technical side, or one hour of downtime costs more than the plan does.</p>
+      <p>Stores also commonly start with a one time <a href="/services/shopify-store-audit">Shopify Store Audit</a> to fix what has already drifted, then move to a plan to stop it drifting again. Fixing first and maintaining second is the right order. Maintaining a store with known serious problems just polishes the problems monthly.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How much should a Shopify maintenance plan cost?</strong>
+      Prices vary with store size, app count and how much small change work is included. Be suspicious of prices quoted without anyone looking at your store. A fair provider examines the store first, because a five app store and a forty app store are different jobs wearing the same name.</p>
+      <p><strong>Can I pause or cancel a maintenance plan?</strong>
+      With most independent providers, yes, plans run monthly without long lock ins. Ask before signing, and get the answer in writing. Long contracts for routine care deserve a raised eyebrow.</p>
+      <p><strong>What is the difference between maintenance and support?</strong>
+      Support reacts when you report a problem. Maintenance prevents and checks whether you report anything or not: updates, backups, security reviews and test orders happen on a schedule. Good plans include both, but the scheduled half is the part that saves you.</p>
+      <p><strong>Will a maintenance plan improve my sales?</strong>
+      Not directly, and any provider claiming otherwise is stretching. Maintenance protects sales: it keeps the store fast, working and trustworthy, so the traffic and marketing you pay for are not wasted on a store with silent breakages. Growth work is a different service.</p>
+      `
+    }
 ];

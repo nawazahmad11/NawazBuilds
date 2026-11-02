@@ -15,6 +15,7 @@ const BlogPostDetail = () => {
   const { id } = useParams();
   const post = blogPosts.find((p) => p.id === id);
   const [activeId, setActiveId] = useState("");
+  const [copied, setCopied] = useState(false);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -39,6 +40,25 @@ const BlogPostDetail = () => {
   }, [post]);
 
   if (!post) return <div className="text-white pt-40 text-center font-bold">Post Not Found</div>;
+
+  const handleShare = async () => {
+    const url = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: post.title, url });
+      } catch {
+        // User closed the share sheet. Nothing to do.
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard unavailable in this browser. Nothing to do.
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#f9a825] selection:text-black">
@@ -65,7 +85,7 @@ const BlogPostDetail = () => {
               <div className="flex items-center gap-2"><Calendar size={14} className="text-[#f9a825]" /> {post.date}</div>
               <div className="flex items-center gap-2"><User size={14} className="text-[#f9a825]" /> By {post.author}</div>
               <div className="flex items-center gap-2"><Clock size={14} className="text-[#f9a825]" /> {post.readTime || '10 min read'}</div>
-              <button className="ml-auto hover:text-white transition-colors"><Share2 size={14} /></button>
+              <button onClick={handleShare} aria-label="Share article" title="Share article" className="ml-auto hover:text-white transition-colors"><Share2 size={14} /></button>
             </div>
           </motion.div>
         </header>
@@ -109,6 +129,7 @@ const BlogPostDetail = () => {
             {/* Styles are kept here or in index.css */}
             <style>{`
               .custom-content-styles p { color: rgba(255, 255, 255, 0.6); font-size: 1.13rem; line-height: 1.3; margin-bottom: 1.0rem; }
+              .custom-content-styles a { color: #f9a825; text-decoration: underline; text-underline-offset: 3px; }
               .custom-content-styles h2 { color: white; font-size: 1.8rem; font-weight: 900; text-transform: uppercase; word-spacing: 0.1em; letter-spacing: -0.05em; margin-top: 3.5rem; margin-bottom: 1.3rem; line-height: 1.1; scroll-margin-top: 100px; }
               .custom-content-styles h3 { color: white; font-size: 1.1rem; font-weight: 800; text-transform: uppercase; margin-top: 1.0rem; margin-bottom: 0.5rem; }
               .custom-content-styles ul { margin-bottom: 3rem; padding-left: 1.5rem; list-style-type: none; }
@@ -222,8 +243,8 @@ const BlogPostDetail = () => {
                 <h4 className="text-white font-black uppercase tracking-tighter text-lg">{post.author}</h4>
                 <p className="text-[10px] text-white/40 uppercase font-bold tracking-widest mt-1">Shopify Architect</p>
                 <div className="mt-6 pt-6 border-t border-white/5">
-                  <button className="flex items-center gap-3 text-white/20 hover:text-[#f9a825] transition-all text-[10px] font-black uppercase tracking-widest">
-                    <Share2 size={14} /> Share Article
+                  <button onClick={handleShare} className="flex items-center gap-3 text-white/20 hover:text-[#f9a825] transition-all text-[10px] font-black uppercase tracking-widest">
+                    <Share2 size={14} /> {copied ? "Link Copied" : "Share Article"}
                   </button>
                 </div>
               </div>

@@ -1,11 +1,3 @@
-import FunnelStep1 from "./FunnelStep1"; // Apne funnel component ko import karein
-
-const Index = () => {
-  return (
-    <main>
-      <FunnelStep1 /> 
-    </main>
-  );
-};
-
-export default Index;
+// The homepage component lives in ./Home. This file simply re-exports it.
+// Safe to delete this file in Cursor once the build passes.
+export { default } from "./Home";

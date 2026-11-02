@@ -4,25 +4,25 @@ import { Link } from "react-router-dom"; // Link import kiya
 
 const blogs = [
   {
-    id: "why-shopify-stores-fail",
-    title: "Why Most Shopify Stores Fail After Launch (And How to Fix Yours)",
-    excerpt: "95% of Shopify stores fail. Master the audits and conversion hacks used by top brands to fix funnel and maximize ROI.",
-    date: "April 5, 2026",
-    image: "/shopify-store-failure-reasons.webp",
+    id: "shopify-checkout-extensibility-guide",
+    title: "Shopify Checkout Extensibility: Customer Events, Web Pixels and Attribution Data, Explained",
+    excerpt: "Checkout.liquid is retired. How customer events and web pixels now carry your tracking and attribution, and how to check your store made the move properly.",
+    date: "November 2, 2026",
+    image: "/blog/shopify-checkout-extensibility-guide.webp",
   },
   {
-    id: "high-converting-product-pages",
-    title: "The Brutal Truth About Shopify Conversion Rates",
-    excerpt: "Stop wasting ads on a broken store. Fix your conversion leaks and double your revenue with our Shopify 2.0 UI/UX secrets.",
-    date: "April 13, 2026",
-    image: "/shopify-conversion-rates.webp",
+    id: "shopify-store-audit-checklist",
+    title: "Shopify Store Audit Checklist: 20 Checks That Matter",
+    excerpt: "Run the 20 checks a professional audit runs: speed, product pages, checkout, trust and SEO basics, in order, with a phone and a laptop.",
+    date: "November 2, 2026",
+    image: "/blog/shopify-store-audit-checklist.webp",
   },
   {
-    id: "shopify-redesign-signs-2026",
-    title: "7 Signs Your Shopify Store Needs a Redesign (2026 Edition)",
-    excerpt: "Is your store stuck in 2022? Spot the 7 red flags killing your sales and learn how a 2026 redesign scales Customer LTV.",
-    date: "April 14, 2026",
-    image: "/shopify-store-redesign-signs.webp",
+    id: "magento-to-shopify-migration-checklist",
+    title: "Magento to Shopify Migration Checklist: Before, During and After the Move",
+    excerpt: "The migration checklist we work from: data mapping, extension decisions, redirect planning, testing and launch checks, in the order that protects your rankings.",
+    date: "November 2, 2026",
+    image: "/blog/magento-to-shopify-migration-checklist.webp",
   }
 ];
 

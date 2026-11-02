@@ -1,62 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>https://www.nawazbuilds.com/</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>1.0</priority>
   </url>
-
+  <url>
+    <loc>https://www.nawazbuilds.com/services/visual-storytelling</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/checkout-flow</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/mobile-first-ux</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/custom-liquid-development</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/app-api-sync</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/case-studies/kith-store</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/case-studies/District99</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/case-studies/jewelry-store</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/case-studies/clothing-store</loc>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/case-studies/Saha</loc>
+  </url>
   <url>
     <loc>https://www.nawazbuilds.com/blog/why-shopify-stores-fail</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nawazbuilds.com/blog/high-converting-product-pages</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.nawazbuilds.com/blog/shopify-redesign-signs-2026</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.8</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.nawazbuilds.com/tools/profit-margin-calculator</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.9</priority>
-    </url>
-    <url>
+  </url>
+  <url>
     <loc>https://www.nawazbuilds.com/tools/legal-policy-generator</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.9</priority>
-    </url>
-    <url>
-    <loc>https://www.nawazbuilds.com/tools/shopify-theme-detector</loc> 
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.9</priority>
-    </url>
-    <url>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/tools/shopify-theme-detector</loc>
+  </url>
+  <url>
     <loc>https://www.nawazbuilds.com/tools/business-name-generator</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.9</priority>
-    </url>
-
+  </url>
   <url>
     <loc>https://www.nawazbuilds.com/privacy-policy</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.nawazbuilds.com/terms-of-service</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.nawazbuilds.com/refund-policy</loc>
-    <lastmod>2026-05-11</lastmod>
-    <priority>0.3</priority>
   </url>
-
+  <url>
+    <loc>https://www.nawazbuilds.com/services/shopify-maintenance-services</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/shopify-store-audit</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/services/shopify-migration-services</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/shopify-checkout-extensibility-guide</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/shopify-plus-checkout-extensibility-tracking</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/shopify-store-audit-checklist</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/why-shopify-store-needs-cro-audit</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/magento-to-shopify-migration-checklist</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/what-is-included-in-shopify-maintenance-plan</loc>
+    <lastmod>2026-11-02</lastmod>
+  </url>
 </urlset>

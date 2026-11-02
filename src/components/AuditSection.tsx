@@ -10,7 +10,7 @@ const AuditSection = () => {
   ];
 
   return (
-    <section className="py-12 px-6">
+    <section id="performance" className="py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

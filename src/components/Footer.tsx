@@ -60,7 +60,7 @@ const Footer = () => {
 
               <img 
                   src={websiteLogo} 
-                  alt="Logo" 
+                  alt="Nawaz Builds logo" 
                   width={40} 
                   height={40} 
                   className="h-10 w-auto object-contain rounded-full" 
@@ -84,7 +84,7 @@ const Footer = () => {
               <ul className="space-y-3 text-sm text-white/70 font-medium">
                 <li><button onClick={() => scrollToSection("services")} className="hover:text-[#f9a825] transition-colors">Development</button></li>
                 <li><button onClick={() => scrollToSection("performance")} className="hover:text-[#f9a825] transition-colors">Optimization</button></li>
-                <li><Link to="/blog" className="hover:text-[#f9a825] transition-colors">Case Studies</Link></li>
+                <li><Link to="/case-studies" className="hover:text-[#f9a825] transition-colors">Case Studies</Link></li>
               </ul>
             </div>
 
@@ -101,6 +101,16 @@ const Footer = () => {
               </ul>
             </div>
 
+
+            <div className="space-y-5">
+              <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Services</h4>
+              <ul className="space-y-3 text-sm text-white/70 font-medium">
+                <li><Link to="/services/custom-liquid-development" className="hover:text-[#f9a825] transition-colors">Custom Liquid Development</Link></li>
+                <li><Link to="/services/shopify-maintenance-services" className="hover:text-[#f9a825] transition-colors">Shopify Maintenance</Link></li>
+                <li><Link to="/services/shopify-store-audit" className="hover:text-[#f9a825] transition-colors">Shopify Store Audit</Link></li>
+                <li><Link to="/services/shopify-migration-services" className="hover:text-[#f9a825] transition-colors">Shopify Migration</Link></li>
+              </ul>
+            </div>
 
             {/* --- Naya Legal Section --- */}
             <div className="space-y-5">
@@ -133,7 +143,7 @@ const Footer = () => {
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Resources</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
                 <li><Link to="/blog" className="hover:text-[#f9a825] transition-colors">Shopify Tips</Link></li>
-                <li><a href="#" className="hover:text-[#f9a825] transition-colors">WhatsApp Channel</a></li>
+                <li><a href="https://wa.me/923244146447" target="_blank" rel="noopener noreferrer" className="hover:text-[#f9a825] transition-colors">WhatsApp Channel</a></li>
               </ul>
             </div>
 
