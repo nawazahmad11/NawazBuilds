@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -20,8 +19,6 @@ import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 import FloatingIcon from "@/components/FloatingIcon";
 
 import React, { useState, Suspense, lazy } from 'react';
-// 1. Data ko direct modal file se import kiya taake homepage code chota ho jaye
-import { portfolioProjects } from '@/components/PortfolioModal';
 const PortfolioModal = lazy(() => import('@/components/PortfolioModal'));
 
 
@@ -57,33 +54,7 @@ const Home = () => {
       <div className="vignette-overlay" />
 
 
-      {/* --- FLOATING ICONS LAYER --- */}
-      {/* <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden h-screen">
-        <FloatingIcon 
-          iconUrl="/nawaz-builds-icon-shopify.webp" 
-          altText="Shopify"
-          positionClass="top-[10%] left-[4%] md:left-[8%] md:top-[15%]"
-          delay="0s"
-        />
-        <FloatingIcon 
-          iconUrl="/nawaz-builds-icon-google.webp" 
-          altText="Google"
-          positionClass="top-[15%] right-[4%] md:right-[8%] md:top-[22%]"
-          delay="2.5s"
-        />
-      <FloatingIcon 
-          iconUrl="/nawaz-builds-icon-react.webp" 
-          altText="React"
-          positionClass="bottom-[20%] left-[5%] md:bottom-[28%] md:left-[8%]"
-          delay="1.2s" 
-        />
-        <FloatingIcon 
-          iconUrl="/nawaz-builds-icon-meta.webp" 
-          altText="Meta"
-          positionClass="bottom-[20%] right-[4%] md:bottom-[28%] md:right-[12%]"
-          delay="3.8s" 
-        />
-</div> */}
+      
 
 
       {/* --- FLOATING ICONS LAYER --- */}
@@ -123,12 +94,7 @@ const Home = () => {
         </div>
 
         <div className="section-container relative z-10">
-          {/* <motion.div
-            className="text-center max-w-4xl mx-auto"
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >       Nawaazzzzzzzzzzz */}
+          
 
           <div className="mb-8 flex justify-center">
             <div className="relative mx-auto w-fit overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(255,255,255,0.05)]">
@@ -167,7 +133,7 @@ const Home = () => {
                   WebkitBackgroundClip: "text",
                   // animation: "aurora 2s linear infinite" // Animation ko filhal comment kar diya hai
                 }}>
-                Expert
+                Development
               </span>
             </span>
             <br />
@@ -189,10 +155,8 @@ const Home = () => {
 
 
           <p className="text-center text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 mt-5 font-normal leading-relaxed">
-            I help businesses launch professional Shopify stores that look modern, load fast, and convert visitors into paying customers.
+            I design, build and grow Shopify stores that load fast and turn visitors into paying customers. Custom Liquid development, store audits, maintenance and migration, all done properly.
           </p>
-
-          {/* </motion.div>    Nawaazzzzzzzzzzz */}
 
           {/* --- Static Version (No Animations) --- */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
@@ -230,7 +194,7 @@ const Home = () => {
                 <div className="relative w-full h-full group/play">
                   <img
                     src="/yt-poster.webp"
-                    alt="Shopify Expert Video"
+                    alt="Watch how a NawazBuilds Shopify store is built"
                     // --- CRITICAL LCP OPTIMIZATIONS ---
                     loading="eager"           // Is image ko wait mat karwao
                     fetchPriority="high"      // Browser ko batao ye priority image hai
@@ -247,7 +211,7 @@ const Home = () => {
               ) : (
                 <LiteYouTubeEmbed
                   id="3yt-kojnojk"
-                  title="Shopify Pros - Watch How We Build"
+                  title="NawazBuilds - Watch How We Build"
                   noCookie={true}
                 />
               )}
@@ -284,7 +248,7 @@ const Home = () => {
           >
             {[
               { icon: Zap, title: "Slow Themes", desc: "Heavy templates that tank your page speed and kill conversions." },
-              { icon: Smartphone, title: "Poor Mobile UX", desc: "Clunky mobile experiences driving away 70%+ of your traffic." },
+              { icon: Smartphone, title: "Poor Mobile UX", desc: "Clunky mobile experiences driving away most of your traffic." },
               { icon: TrendingDown, title: "Low Conversion Rate", desc: "Generic layouts with no conversion psychology built in." },
               { icon: Package, title: "App Overload", desc: "Too many apps slowing your store and conflicting with each other." },
             ].map((item, i) => (
@@ -317,8 +281,11 @@ const Home = () => {
               aria-label="Scroll to how we fix this"
               className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:gap-4 hover:text-primary/80 transition-all cursor-pointer bg-transparent border-none"
             >
-              How Shopify Pros Fixes This <ArrowRight className="w-5 h-5" />
+              How NawazBuilds Fixes This <ArrowRight className="w-5 h-5" />
             </button>
+            <p className="mt-5">
+              <a href="/blog/why-shopify-stores-fail" className="text-sm text-white/50 hover:text-primary underline underline-offset-4 transition-colors">Read the full breakdown: why Shopify stores fail after launch</a>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -338,6 +305,9 @@ const Home = () => {
             </motion.h2>
             <motion.p variants={fadeInUp} custom={1} className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
               Delivered Within 15 Days
+            </motion.p>
+            <motion.p variants={fadeInUp} custom={2} className="text-white/60 max-w-2xl mx-auto mt-5 text-base md:text-lg leading-relaxed">
+              Every build is custom work, not a theme swap. NawazBuilds covers Shopify store design and development, custom Liquid features, conversion audits, ongoing maintenance and platform migration, so your store keeps selling while it grows.
             </motion.p>
           </motion.div>
 
@@ -445,68 +415,7 @@ const Home = () => {
         </div>
       </section>
       
-      {/* <section id="services" className="py-5 z-20 relative">
-        <div className="section-container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="text-center mb-10"
-          >
-            <motion.h2 variants={fadeInUp} custom={0} className="text-3xl sm:text-4xl font-bold mb-3 text-white tracking-tight">
-              What I Build For You
-            </motion.h2>
-            <motion.p variants={fadeInUp} custom={1} className="text-primary font-bold text-sm uppercase tracking-[0.2em]">
-              Delivered Within 30 Days
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            className="grid sm:grid-cols-2 gap-3 max-w-3xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            {[
-              { label: "Custom Liquid Themes", desc: "Pure speed, no bulky apps." },
-              { label: "CRO Optimization", desc: "Psychology-backed layouts." },
-              { label: "Mobile-First UX", desc: "Seamless on every device." },
-              { label: "App & API Sync", desc: "Perfectly synced ecosystem." },
-              { label: "Visual Storytelling", desc: "High-end product presentation." },
-              { label: "Advanced Tracking", desc: "Meta Pixel & GA4 precision." },
-              { label: "Checkout Flow", desc: "Zero-friction buying." },
-              { label: "Launch Blueprint", desc: "Your strategy for success." },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                custom={i}
-                whileHover={{ y: -3, scale: 1.02 }}
-                className="group relative flex items-center gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/10 hover:border-primary/50 hover:bg-white/[0.05] transition-all duration-300 backdrop-blur-md overflow-hidden cursor-default"
-              >
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300" />
-
-                <div className="flex-shrink-0 z-10">
-                  <div className="p-1.5 rounded-md bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300 shadow-sm shadow-primary/20">
-                    <CheckCircle className="w-4 h-4" />
-                  </div>
-                </div>
-
-                <div className="flex flex-col z-10">
-                  <h3 className="text-[16px] font-semibold text-white group-hover:text-primary transition-colors duration-300">
-                    {item.label}
-                  </h3>
-                  <p className="text-[15px] text-white/65 group-hover:text-white/80 transition-colors leading-tight">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section> */}
+      
 
       {/* About Section*/}
       <div id="about-me" className="z-20 relative">
@@ -514,9 +423,6 @@ const Home = () => {
       </div>
 
       {/* 7. Portfolio Section */}
-      {/* <div id="portfolio" className="z-20 relative">
-        <PortfolioSection />
-      </div> */}
 
 
       {/* 7. Portfolio Section */}
@@ -538,21 +444,7 @@ const Home = () => {
 
 
 
-      {/* --- CUSTOM PORTFOLIO CARDS WITH POPUP --- */}
-      {/* <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto py-10 px-4">
-  {portfolioProjects.map((project) => (
-    <div 
-      key={project.id}
-      onClick={() => setActiveProjectId(project.id)} // 🎯 Click par direct state update ho gi
-      className="cursor-pointer border border-white/10 bg-white/[0.02] p-4 rounded-xl hover:border-primary/50 transition-all duration-300"
-    >
-     
-      <img src={project.thumbnail} alt={project.title} className="w-full aspect-video object-cover rounded-lg mb-3" />
-      <h3 className="text-lg font-bold text-white">{project.title}</h3>
-      <p className="text-sm text-white/60">{project.description}</p>
-    </div>
-  ))}
-</div> */}
+      
 
 
 
@@ -654,7 +546,7 @@ const Home = () => {
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
-                          <img src={t.logo} alt={t.platform} className="w-4 h-4 opacity-70" />
+                          <img src={t.logo} alt={t.platform} loading="lazy" className="w-4 h-4 opacity-70" />
                           <span className="text-[9.5px] font-bold text-white/60 uppercase tracking-widest">{t.platform}</span>
                         </div>
                         <div className="flex gap-0.5">

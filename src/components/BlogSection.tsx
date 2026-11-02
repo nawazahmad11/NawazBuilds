@@ -37,7 +37,7 @@ const BlogSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="text-left">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-              Recent <span className="text-gradient-gold">Blog Posts</span>
+              Latest <span className="text-gradient-gold">Shopify Guides</span>
             </h2>
             <p className="text-white/60 text-lg font-light">
               Latest insights on Shopify development and e-commerce scaling.

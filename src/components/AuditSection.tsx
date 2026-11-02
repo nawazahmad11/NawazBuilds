@@ -29,9 +29,9 @@ const AuditSection = () => {
                 Free Offer
               </div>
               
-              <h3 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
                 Get a free <span className="text-primary">store audit.</span>
-              </h3>
+              </h2>
               
               <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
                 I'll review your Shopify store and send you a personalised report 
