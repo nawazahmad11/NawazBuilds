@@ -1083,7 +1083,7 @@ export const blogPosts = [
             <p style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 20px;">Limited spots available for April • 100% Conversion Focused</p>
         </div>
       `
-  },
+    },
     {
       id: "shopify-checkout-extensibility-guide",
       title: "Shopify Checkout Extensibility: Customer Events, Web Pixels and Attribution Data, Explained",
