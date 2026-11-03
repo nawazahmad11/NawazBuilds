@@ -309,6 +309,9 @@ const Home = () => {
             <motion.p variants={fadeInUp} custom={2} className="text-white/60 max-w-2xl mx-auto mt-5 text-base md:text-lg leading-relaxed">
               Every build is custom work, not a theme swap. NawazBuilds covers Shopify store design and development, custom Liquid features, conversion audits, ongoing maintenance and platform migration, so your store keeps selling while it grows.
             </motion.p>
+            <motion.p variants={fadeInUp} custom={3} className="text-white/40 max-w-2xl mx-auto mt-3 text-sm leading-relaxed">
+              Most stores are ready within 15 days. A larger catalog or detailed custom requirements can take a little longer, and your exact timeline is confirmed in writing before the work starts.
+            </motion.p>
           </motion.div>
 
           <motion.div
@@ -335,8 +338,8 @@ const Home = () => {
                 link: "/services/mobile-first-ux" // 📱 Live mapped route
               },
               {
-                label: "App & API Sync",
-                desc: "Perfectly synced ecosystem.",
+                label: "Integration & App Sync",
+                desc: "ERP, warehouse and tools connected.",
                 link: "/services/app-api-sync" // 🔄 Live mapped route
               },
               {
@@ -368,6 +371,36 @@ const Home = () => {
                 label: "Store Migration",
                 desc: "Move platforms, keep your rankings.",
                 link: "/services/shopify-migration-services"
+              },
+              {
+                label: "Theme Customization",
+                desc: "Your brand, not a template.",
+                link: "/services/shopify-theme-customization-services"
+              },
+              {
+                label: "Speed Optimization",
+                desc: "Fast pages that keep rankings.",
+                link: "/services/shopify-speed-optimization-services"
+              },
+              {
+                label: "Store Management",
+                desc: "Daily store work, handled.",
+                link: "/services/shopify-store-management-services"
+              },
+              {
+                label: "Shopify Consulting",
+                desc: "Decisions before you spend.",
+                link: "/services/shopify-consulting-services"
+              },
+              {
+                label: "Shopify Development",
+                desc: "New builds and custom features.",
+                link: "/services/shopify-development-services"
+              },
+              {
+                label: "Hire a Developer",
+                desc: "Work directly with your developer.",
+                link: "/services/hire-shopify-developer"
               },
               {
                 label: "Launch Blueprint",
@@ -461,9 +494,9 @@ const Home = () => {
             variants={staggerContainer}
           >
             {[
-              { value: 150, suffix: "+", label: "Stores Launched" },
-              { value: 2, prefix: "$", suffix: "M+", label: "Client Revenue" },
-              { value: 150, suffix: "k+", label: "Orders Processed" },
+              { value: 100, suffix: "+", label: "Stores Launched" },
+              { value: 1, prefix: "$", suffix: "M+", label: "Client Revenue" },
+              { value: 100, suffix: "k+", label: "Orders Processed" },
               { value: 15, suffix: "-Day", label: "Avg Delivery" },
             ].map((stat, i) => (
               <motion.div key={i} variants={fadeInUp} custom={i} className="text-center group cursor-default">
@@ -507,23 +540,23 @@ const Home = () => {
         <div className="marquee-wrapper flex flex-col gap-4 relative py-4">
           {(() => {
             const allReviews = [
-              { name: "James Anderson", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "The custom Liquid sections they built for my product page increased our conversion rate by 2.4%. Remarkable work.", initial: "JA", color: "from-blue-500 to-cyan-600" },
-              { name: "Sarah Jenkins", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Best Shopify developers I've ever hired. Mobile speed is insane. Store loads in under 1.5s now.", initial: "SJ", color: "from-green-400 to-emerald-600" },
+              { name: "James Anderson", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "The custom Liquid sections they built for my product page helped improve our conversion rate. Remarkable work.", initial: "JA", color: "from-blue-500 to-cyan-600" },
+              { name: "Sarah Jenkins", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Best Shopify developers I've ever hired. Mobile speed is insane. The store loads noticeably faster now.", initial: "SJ", color: "from-green-400 to-emerald-600" },
               { name: "Robert Wilson", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "Transformed our clunky 1.0 theme to a sleek 2.0 powerhouse. Seamless migration with zero data loss.", initial: "RW", color: "from-blue-600 to-blue-800" },
-              { name: "Emily Thompson", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Finally found experts who understand UX. Our AOV went up by 35% thanks to their strategic upsell integration.", initial: "ET", color: "from-purple-500 to-indigo-600" },
+              { name: "Emily Thompson", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Finally found experts who understand UX. Our average order value went up thanks to their strategic upsell integration.", initial: "ET", color: "from-purple-500 to-indigo-600" },
               { name: "Michael O'Neil", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Professional, communicative, and technically brilliant. They handled my complex API integrations perfectly.", initial: "MO", color: "from-red-500 to-rose-600" },
-              { name: "David Beck", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "The SEO structure they implemented is gold. We are already ranking on the first page for main keywords.", initial: "DB", color: "from-orange-500 to-yellow-600" },
+              { name: "David Beck", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "The SEO structure they implemented is gold. We are already ranking much better for our main keywords.", initial: "DB", color: "from-orange-500 to-yellow-600" },
               { name: "Jessica Miller", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "Cleanest code I've seen in a Shopify store. No more app-bloat, just pure performance.", initial: "JM", color: "from-pink-500 to-purple-600" },
-              { name: "Chris Ward", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Scaled my dropshipping store to $50k/mo. Their high-converting layout was the absolute game changer.", initial: "CW", color: "from-teal-500 to-green-600" },
+              { name: "Chris Ward", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Helped my dropshipping store grow steadily. Their high-converting layout was the absolute game changer.", initial: "CW", color: "from-teal-500 to-green-600" },
               { name: "Linda Evans", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Brilliant execution on the custom checkout styling. The branding is now consistent throughout.", initial: "LE", color: "from-blue-400 to-indigo-500" },
               { name: "Kevin Scott", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "If you want a Shopify store that actually makes money, hire this team. They know the psychology of selling.", initial: "KS", color: "from-slate-600 to-slate-800" },
               { name: "Alice Morgan", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "The cross-border setup for my brand was flawless. Multi-currency and multi-language working perfectly.", initial: "AM", color: "from-cyan-500 to-blue-600" },
               { name: "Thomas Wright", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "Incredible attention to detail. The custom animations make the site feel like a high-end luxury brand.", initial: "TW", color: "from-amber-500 to-orange-700" },
-              { name: "Sophia Grey", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "Fixed my tracking issues with GTM and Meta Pixel in 24 hours. Best analytics support.", initial: "SG", color: "from-violet-500 to-purple-700" },
-              { name: "Daniel Reed", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Our page speed score went from 34 to 92. The bounce rate dropped significantly almost overnight.", initial: "DR", color: "from-emerald-500 to-teal-700" },
+              { name: "Sophia Grey", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "Fixed my tracking issues with GTM and Meta Pixel. Best analytics support.", initial: "SG", color: "from-violet-500 to-purple-700" },
+              { name: "Daniel Reed", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Our page speed improved a lot, and the bounce rate dropped noticeably.", initial: "DR", color: "from-emerald-500 to-teal-700" },
               { name: "Olivia Foster", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "High-quality Shopify Plus development. They handled our large catalog migration with extreme care.", initial: "OF", color: "from-rose-400 to-pink-600" },
               { name: "Mark Stevens", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "Unmatched expertise in Liquid and Hydrogen. They built us a headless store that is lightning fast.", initial: "MS", color: "from-gray-700 to-black" },
-              { name: "Emma Walsh", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "The conversion rate optimization strategies they used boosted our sales by 40% in just one month.", initial: "EW", color: "from-yellow-500 to-orange-600" },
+              { name: "Emma Walsh", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "The conversion rate optimization strategies they used helped lift our sales in the very first month.", initial: "EW", color: "from-yellow-500 to-orange-600" },
               { name: "John Higgins", platform: "LinkedIn", logo: "/Nawaz-builds-icon-Linkedin.webp", text: "Solid communication and top-tier technical skills. They are now our go-to Shopify agency.", initial: "JH", color: "from-blue-800 to-indigo-900" },
               { name: "Clara Bennett", platform: "Upwork", logo: "/Nawaz-builds-icon-upwork.webp", text: "They redesigned our landing pages and the bounce rate plummeted. Professionalism at its best.", initial: "CB", color: "from-teal-400 to-cyan-500" },
               { name: "Paul Richards", platform: "Fiverr", logo: "/Nawaz-builds-icon-Fiverr.webp", text: "The best investment for my e-commerce brand. Their theme customization is flawless and clean.", initial: "PR", color: "from-red-600 to-red-800" }

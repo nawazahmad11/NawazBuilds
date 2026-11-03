@@ -72,7 +72,7 @@ const Footer = () => {
             <div className="space-y-4 text-sm text-white/70">
               <div className="flex items-center space-x-3 hover:text-[#f9a825] transition-colors cursor-pointer group">
                 <Mail size={16} />
-                <a href="mailto:info@nawazahmad.com">info@nawazbuilds.com</a>
+                <a href="mailto:info@nawazbuilds.com">info@nawazbuilds.com</a>
               </div>
               <div className="flex items-center space-x-3"><MapPin size={16} /><span>Lahore, Dubai & Remote</span></div>
             </div>
@@ -109,6 +109,16 @@ const Footer = () => {
                 <li><Link to="/services/shopify-maintenance-services" className="hover:text-[#f9a825] transition-colors">Shopify Maintenance</Link></li>
                 <li><Link to="/services/shopify-store-audit" className="hover:text-[#f9a825] transition-colors">Shopify Store Audit</Link></li>
                 <li><Link to="/services/shopify-migration-services" className="hover:text-[#f9a825] transition-colors">Shopify Migration</Link></li>
+                <li><Link to="/services/shopify-theme-customization-services" className="hover:text-[#f9a825] transition-colors">Theme Customization</Link></li>
+                <li><Link to="/services/shopify-consulting-services" className="hover:text-[#f9a825] transition-colors">Shopify Consulting</Link></li>
+                <li><Link to="/services/shopify-speed-optimization-services" className="hover:text-[#f9a825] transition-colors">Speed Optimization</Link></li>
+                <li><Link to="/services/shopify-store-management-services" className="hover:text-[#f9a825] transition-colors">Store Management</Link></li>
+                <li><Link to="/services/shopify-development-services" className="hover:text-[#f9a825] transition-colors">Shopify Development</Link></li>
+                <li><Link to="/services/hire-shopify-developer" className="hover:text-[#f9a825] transition-colors">Hire a Shopify Developer</Link></li>
+                <li><Link to="/services/app-api-sync" className="hover:text-[#f9a825] transition-colors">Integration & App Sync</Link></li>
+                <li><Link to="/services/checkout-flow" className="hover:text-[#f9a825] transition-colors">Checkout Flow</Link></li>
+                <li><Link to="/services/mobile-first-ux" className="hover:text-[#f9a825] transition-colors">Mobile First UX</Link></li>
+                <li><Link to="/services/visual-storytelling" className="hover:text-[#f9a825] transition-colors">Visual Storytelling</Link></li>
               </ul>
             </div>
 
@@ -143,7 +153,7 @@ const Footer = () => {
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Resources</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
                 <li><Link to="/blog" className="hover:text-[#f9a825] transition-colors">Shopify Tips</Link></li>
-                <li><a href="https://wa.me/923244146447" target="_blank" rel="noopener noreferrer" className="hover:text-[#f9a825] transition-colors">WhatsApp Channel</a></li>
+                <li><a href="https://wa.me/923244146447" target="_blank" rel="noopener noreferrer" className="hover:text-[#f9a825] transition-colors">WhatsApp Chat</a></li>
               </ul>
             </div>
 
@@ -151,7 +161,7 @@ const Footer = () => {
               <h4 className="text-[13px] font-black text-white uppercase tracking-widest">Connect</h4>
               <ul className="space-y-3 text-sm text-white/70 font-medium">
                 <li><a href="https://wa.me/923244146447" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><MessageCircle size={14} /> WhatsApp</a></li>
-                <li><a href="mailto:info@nawazahmad.com" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><Mail size={14} /> Email Me</a></li>
+                <li><a href="mailto:info@nawazbuilds.com" className="flex items-center gap-2 hover:text-[#f9a825] transition-colors"><Mail size={14} /> Email Me</a></li>
               </ul>
             </div>
           </div>
@@ -190,7 +200,7 @@ const Footer = () => {
               <div className="flex items-center space-x-4">
                 {[
                   { icon: <Youtube size={20} />, url: "", label: "Visit YouTube" },
-                  { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/nawaz-ahmad-shopify/", label: "Visit LinkedIn" },
+                  { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/company/nawaz-builds", label: "Visit LinkedIn" },
                   { icon: <Instagram size={20} />, url: "https://www.instagram.com/nawazbuilds.official/", label: "Visit Instagram" },
                   { icon: <MessageCircle size={20} />, url: "https://wa.me/923244146447", label: "Chat on WhatsApp" }
                 ].map((social, i) => (

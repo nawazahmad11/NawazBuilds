@@ -40,6 +40,12 @@ import CheckoutFlowService from './pages/services/checkout-flow';
 import ShopifyMaintenanceServices from './pages/services/shopify-maintenance-services';
 import ShopifyStoreAudit from './pages/services/shopify-store-audit';
 import ShopifyMigrationServices from './pages/services/shopify-migration-services';
+import ShopifyThemeCustomizationServices from './pages/services/shopify-theme-customization-services';
+import ShopifyConsultingServices from './pages/services/shopify-consulting-services';
+import ShopifySpeedOptimizationServices from './pages/services/shopify-speed-optimization-services';
+import ShopifyStoreManagementServices from './pages/services/shopify-store-management-services';
+import ShopifyDevelopmentServices from './pages/services/shopify-development-services';
+import HireShopifyDeveloper from './pages/services/hire-shopify-developer';
 
 const queryClient = new QueryClient();
 
@@ -89,6 +95,12 @@ const App = () => (
           <Route path="/services/shopify-maintenance-services" element={<ShopifyMaintenanceServices />} />
           <Route path="/services/shopify-store-audit" element={<ShopifyStoreAudit />} />
           <Route path="/services/shopify-migration-services" element={<ShopifyMigrationServices />} />
+          <Route path="/services/shopify-theme-customization-services" element={<ShopifyThemeCustomizationServices />} />
+          <Route path="/services/shopify-consulting-services" element={<ShopifyConsultingServices />} />
+          <Route path="/services/shopify-speed-optimization-services" element={<ShopifySpeedOptimizationServices />} />
+          <Route path="/services/shopify-store-management-services" element={<ShopifyStoreManagementServices />} />
+          <Route path="/services/shopify-development-services" element={<ShopifyDevelopmentServices />} />
+          <Route path="/services/hire-shopify-developer" element={<HireShopifyDeveloper />} />
 
           {/* 404 - Always keep this at the very bottom */}
           <Route path="*" element={<NotFound />} />

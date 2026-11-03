@@ -1,49 +1,67 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom"; 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const AuditPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [hasShown, setHasShown] = useState(false); 
+  const shownRef = useRef(false);
   const [step, setStep] = useState<"form" | "success">("form");
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [loading, setLoading] = useState(false);
   
   const location = useLocation(); 
 
+  // The popup is remembered in localStorage. Once a visitor closes it
+  // or submits the form, it never appears again for that visitor.
+  const STORAGE_KEY = "nb_audit_popup_seen";
+
+  const markSeen = (value: string) => {
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+    } catch {
+      // storage unavailable (private mode): the in-session ref still guards
+    }
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    markSeen("dismissed");
+  };
+
   useEffect(() => {
-    // Sirf Home page par popup trigger hoga
+    // Homepage only
     if (location.pathname !== "/") return;
 
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      stored = null;
+    }
+    if (stored) return; // already closed or submitted once: never show again
+
     const handleScroll = () => {
+      if (shownRef.current) return;
       const winScroll = window.pageYOffset || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (height <= 0) return;
       const scrolled = (winScroll / height) * 100;
-      
-      // 40% scroll + top reload protection
-      if (scrolled > 40 && !hasShown && winScroll > 300) {
+
+      // Show once, only when the visitor has scrolled 70% of the page
+      if (scrolled >= 70) {
+        shownRef.current = true;
         setIsOpen(true);
-        setHasShown(true); 
       }
     };
 
-    const handleExitIntent = (e: MouseEvent) => {
-      // Exit intent trigger after 500px scroll
-      if (e.clientY <= 0 && !hasShown && window.scrollY > 500) {
-        setIsOpen(true);
-        setHasShown(true); 
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mouseleave", handleExitIntent);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mouseleave", handleExitIntent);
     };
-  }, [hasShown, location.pathname]);
+  }, [location.pathname]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,6 +79,7 @@ const AuditPopup = () => {
           type: "Free Audit" 
         }),
       });
+      markSeen("submitted");
       setStep("success");
     } catch (error) {
       console.error("Error submitting lead:", error);
@@ -77,6 +96,7 @@ const AuditPopup = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={closePopup}
             className="fixed inset-0 z-[9998] bg-black/70 backdrop-blur-[2px]"
           />
 
@@ -88,7 +108,7 @@ const AuditPopup = () => {
               className="relative w-full max-w-md bg-[#0f1115] border border-white/10 rounded-[2.5rem] p-10 shadow-2xl pointer-events-auto overflow-hidden"
             >
               <button 
-                onClick={() => setIsOpen(false)} 
+                onClick={closePopup} 
                 className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-10"
               >
                 <X size={24} />
@@ -104,10 +124,10 @@ const AuditPopup = () => {
                     </div>
                     
                     <h3 className="text-3xl font-black text-white text-center mb-4 leading-tight">
-                      Wait — before you go!
+                      Get a Free Store Audit
                     </h3>
                     <p className="text-white/50 text-center mb-8 text-sm leading-relaxed">
-                      Get a <span className="text-primary font-bold">free 15-minute Shopify store audit</span> — I'll find the top 3 things killing your conversions.
+                      Get a <span className="text-primary font-bold">free 15-minute Shopify store audit</span>. I'll find the top 3 things killing your conversions.
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
@@ -140,7 +160,7 @@ const AuditPopup = () => {
                       I've received your request. I'll review your store and send the audit report to your inbox within 24 hours.
                     </p>
                     <button 
-                      onClick={() => setIsOpen(false)} 
+                      onClick={closePopup} 
                       className="mt-8 px-8 py-3 border border-white/10 rounded-xl text-white/60 text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-all"
                     >
                       Close Window

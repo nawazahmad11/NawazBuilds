@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: "How long does a full store design take?",
-    answer: "A professional, high-converting store typically takes 13-15 days. This includes product research, custom design, app integrations, and rigorous testing before launch.",
+    answer: "A professional, high-converting store typically takes 13-15 days. This includes product research, custom design, app integrations, and rigorous testing before launch. Stores with large catalogs or detailed custom requirements can take longer, and the exact timeline for your project is confirmed in writing before any work starts.",
     icon: <Clock className="w-4 h-4" />
   }
 ];

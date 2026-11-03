@@ -17,6 +17,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isToolsOpen, setIsToolsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const websiteLogo = "/NawazCart.webp"; 
@@ -44,6 +45,23 @@ const Header = () => {
     },
   ];
 
+  const services = [
+    { name: "Custom Liquid Development", path: "/services/custom-liquid-development" },
+    { name: "Shopify Development", path: "/services/shopify-development-services" },
+    { name: "Hire a Shopify Developer", path: "/services/hire-shopify-developer" },
+    { name: "Theme Customization", path: "/services/shopify-theme-customization-services" },
+    { name: "Speed Optimization", path: "/services/shopify-speed-optimization-services" },
+    { name: "Store Audit", path: "/services/shopify-store-audit" },
+    { name: "Store Migration", path: "/services/shopify-migration-services" },
+    { name: "Store Maintenance", path: "/services/shopify-maintenance-services" },
+    { name: "Store Management", path: "/services/shopify-store-management-services" },
+    { name: "Shopify Consulting", path: "/services/shopify-consulting-services" },
+    { name: "Integration & App Sync", path: "/services/app-api-sync" },
+    { name: "Checkout Flow", path: "/services/checkout-flow" },
+    { name: "Mobile First UX", path: "/services/mobile-first-ux" },
+    { name: "Visual Storytelling", path: "/services/visual-storytelling" },
+  ];
+
   // 1. Scroll check ke liye optimized, passive event listener lagaya hai
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +77,10 @@ const Header = () => {
   useEffect(() => {
     if (location.pathname === "/blog") {
       setActiveSection("blog");
+      return;
+    }
+    if (location.pathname.includes("/services")) {
+      setActiveSection("services");
       return;
     }
     if (location.pathname.includes("/tools")) {
@@ -163,8 +185,17 @@ const Header = () => {
 
         {/* Navigation (Desktop) */}
         <nav className="hidden md:flex items-center gap-7">
-          <div className="relative py-1 group">
+          <div className="relative py-1 group cursor-pointer" onMouseEnter={() => setIsServicesOpen(true)} onMouseLeave={() => setIsServicesOpen(false)}>
             <button onClick={() => handleNavClick("services")} className={`font-medium transition-all duration-500 ${isScrolled ? "text-[15px]" : "text-[16px]"} ${activeSection === "services" ? "text-[#f9a825]" : "text-white/50 hover:text-[#f9a825]"}`}>Services</button>
+            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 w-[24rem] ${isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+              <div className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-2 shadow-2xl backdrop-blur-2xl grid grid-cols-2">
+                {services.map((service) => (
+                  <Link key={service.name} to={service.path} className="flex items-center px-4 py-3 rounded-xl text-[11px] font-bold text-white/40 hover:text-[#f9a825] hover:bg-white/5 transition-all">
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
             <NavUnderline active={activeSection === "services"} />
           </div>
 
@@ -265,6 +296,22 @@ const Header = () => {
               <Link to="/case-studies" onClick={() => setIsMobileMenuOpen(false)} className="text-3xl font-bold text-white hover:text-[#f9a825] transition-colors">Case Studies</Link>
               
               <div className="h-[1px] bg-white/10 my-6 w-full" />
+
+              <span className="text-[#f9a825] uppercase tracking-[0.3em] text-[11px] font-black block mb-4">Services</span>
+              <div className="grid grid-cols-2 gap-3">
+                {services.map((service) => (
+                  <Link
+                    key={service.name}
+                    to={service.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 active:scale-95 transition-all"
+                  >
+                    <span className="text-[12px] font-medium text-white/90">{service.name}</span>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="h-[1px] bg-white/10 my-6 w-full" />
               
               <span className="text-[#f9a825] uppercase tracking-[0.3em] text-[11px] font-black block mb-4">Tools</span>
               <div className="grid grid-cols-2 gap-4">
@@ -289,6 +336,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-

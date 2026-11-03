@@ -105,6 +105,36 @@ const staticSeo: Record<string, SeoEntry> = {
     description:
       "Shopify migration services for Magento and WooCommerce stores: data, design, redirects and SEO protection planned before the move, not after the damage.",
   },
+  "/services/shopify-theme-customization-services": {
+    title: "Shopify Theme Customization Services | NawazBuilds",
+    description:
+      "Shopify theme customization and theme development services: reshape your current theme or build a custom one, with editable sections and no app bloat.",
+  },
+  "/services/shopify-consulting-services": {
+    title: "Shopify Consulting Services for Store Owners | NawazBuilds",
+    description:
+      "Independent Shopify consulting: rebuild, migration and Plus decisions reviewed with evidence, delivered as a ranked roadmap you can execute with any developer.",
+  },
+  "/services/shopify-speed-optimization-services": {
+    title: "Shopify Speed Optimization Service | NawazBuilds",
+    description:
+      "Shopify speed optimization that fixes app bloat, leftover code and heavy media on your real pages, measured before and after in a written report.",
+  },
+  "/services/shopify-store-management-services": {
+    title: "Shopify Store Management Services | NawazBuilds",
+    description:
+      "Shopify store management for daily operations: product uploads, content updates, promotions and campaign changes, with a monthly summary of all work done.",
+  },
+  "/services/shopify-development-services": {
+    title: "Shopify Development Services | NawazBuilds",
+    description:
+      "Shopify development services for new and growing stores: custom themes, app integration, checkout work and migration, built by the developer you talk to.",
+  },
+  "/services/hire-shopify-developer": {
+    title: "Hire a Shopify Developer | NawazBuilds",
+    description:
+      "Hire a Shopify developer and work directly with the person who writes your code. Theme work, custom features, fixes and honest advice, scoped in writing.",
+  },
 };
 
 const toolSeo: Record<string, SeoEntry> = {

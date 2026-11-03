@@ -8,15 +8,10 @@ Disallow: /admin/
 Disallow: /config/
 Disallow: /private/
 
-# Block AI Scrapers (Apne content ko AI se bachane ke liye)
-User-agent: GPTBot
-Disallow: /
-User-agent: ChatGPT-User
-Disallow: /
-User-agent: ClaudeBot
-Disallow: /
-User-agent: CCBot
-Disallow: /
+# AI search crawlers are welcome on purpose.
+# NawazBuilds sells Shopify growth work and wants to be found and cited
+# by ChatGPT, Claude, Perplexity and other AI search tools, so no AI
+# crawler is blocked here.
 
 # Allow Meta Ads Bot (Zaroori hai taake Ads sahi chalein)
 User-agent: facebookexternalhit
