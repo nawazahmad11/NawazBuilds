@@ -25,6 +25,10 @@ export default function HireShopifyDeveloper() {
             a: "It depends on the work, so the honest answer is a written one. After a first call you get the scope and the exact price, before anything starts. There is no open ended hourly meter, and additions are priced and approved before they are built, not discovered on an invoice."
         },
         {
+            q: "What makes one developer's quote higher than another's for the same job?",
+            a: "Usually scope honesty. A lower quote often assumes your theme is healthy, skips testing on a duplicate theme, or leaves out what happens after delivery. A higher one may be pricing the checking, the edge cases and the fixes that the work actually needs. Compare what each quote includes, in writing, not just the totals."
+        },
+        {
             q: "What if you are not the right fit for my store?",
             a: "Then you hear it on the first call, not after an invoice. Some stores need a big agency bench, some need a specialist we are not, and some need no developer at all yet. A clear no early is worth more than a hopeful yes, and we would rather point you at the right route."
         }
@@ -144,6 +148,18 @@ export default function HireShopifyDeveloper() {
                 <div className="space-y-5 text-zinc-400 leading-relaxed">
                     <p>With a strategy call and a small first task, deliberately. You should not have to commit to a long arrangement to learn whether a developer communicates well and ships clean work. The first task proves the relationship at low risk, on something your store actually needs.</p>
                     <p>From there, work settles into a rhythm: you raise what the store needs, it is scoped in writing, approved by you, built on a duplicate theme and published in a planned step. Stores that want the routine handled fold this into <a href="/services/shopify-maintenance-services" className="text-amber-500 hover:underline">monthly maintenance</a>, where the same developer keeps watch over updates and small fixes.</p>
+                </div>
+            </section>
+
+            {/* Cost */}
+            <section className="py-16 bg-zinc-950 border-y border-zinc-900">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">How much does it cost to hire a Shopify developer?</h2>
+                    <div className="space-y-5 text-zinc-400 leading-relaxed">
+                        <p>There is no honest single number, because the cost is set by the work itself. The drivers are consistent, though. The size of the job is the obvious one. Behind it sit the condition of your theme, because building on clean code and untangling years of app residue are different jobs wearing the same description. Custom features cost more than configuring what the theme already offers. Integrations add the cost of the other system, not just yours. And Plus checkout work carries extra testing, because checkout mistakes are the expensive kind.</p>
+                        <p>How NawazBuilds handles this is deliberately plain. After a strategy call, your job is scoped in writing and quoted exactly, before any work starts. There is no open ended hourly meter running while you wonder what the invoice will say. If the scope grows mid job, the addition is priced and approved by you before it is built. Many owners start with one small, well defined task, which keeps the first cost low and proves the working relationship before anything bigger is discussed.</p>
+                        <p>When you compare quotes, compare what is inside them. Does the price include testing on a duplicate theme, or is your live store the test? Who writes the code, and who answers when something breaks afterwards? Is the work documented, so the knowledge stays with your store? The cheapest quote for a job is often the one that quietly left those pieces out, and they are the pieces that decide what the job really costs you.</p>
+                    </div>
                 </div>
             </section>
 

@@ -403,6 +403,21 @@ const Home = () => {
                 link: "/services/hire-shopify-developer"
               },
               {
+                label: "App Development",
+                desc: "Private apps built for your store.",
+                link: "/services/shopify-app-development-services"
+              },
+              {
+                label: "Plus Development",
+                desc: "Checkout, B2B and automation on Plus.",
+                link: "/services/shopify-plus-development-services"
+              },
+              {
+                label: "Dubai and UAE Stores",
+                desc: "Specialist development, delivered remotely.",
+                link: "/services/shopify-development-services-dubai"
+              },
+              {
                 label: "Launch Blueprint",
                 desc: "Your strategy for success.",
                 link: "/strategy-call"

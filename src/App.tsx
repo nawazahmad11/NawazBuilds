@@ -46,6 +46,9 @@ import ShopifySpeedOptimizationServices from './pages/services/shopify-speed-opt
 import ShopifyStoreManagementServices from './pages/services/shopify-store-management-services';
 import ShopifyDevelopmentServices from './pages/services/shopify-development-services';
 import HireShopifyDeveloper from './pages/services/hire-shopify-developer';
+import ShopifyAppDevelopmentServices from './pages/services/shopify-app-development-services';
+import ShopifyPlusDevelopmentServices from './pages/services/shopify-plus-development-services';
+import ShopifyDevelopmentServicesDubai from './pages/services/shopify-development-services-dubai';
 
 const queryClient = new QueryClient();
 
@@ -101,6 +104,9 @@ const App = () => (
           <Route path="/services/shopify-store-management-services" element={<ShopifyStoreManagementServices />} />
           <Route path="/services/shopify-development-services" element={<ShopifyDevelopmentServices />} />
           <Route path="/services/hire-shopify-developer" element={<HireShopifyDeveloper />} />
+          <Route path="/services/shopify-app-development-services" element={<ShopifyAppDevelopmentServices />} />
+          <Route path="/services/shopify-plus-development-services" element={<ShopifyPlusDevelopmentServices />} />
+          <Route path="/services/shopify-development-services-dubai" element={<ShopifyDevelopmentServicesDubai />} />
 
           {/* 404 - Always keep this at the very bottom */}
           <Route path="*" element={<NotFound />} />

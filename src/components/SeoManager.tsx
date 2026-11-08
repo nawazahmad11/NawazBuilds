@@ -93,7 +93,7 @@ const staticSeo: Record<string, SeoEntry> = {
   "/services/shopify-maintenance-services": {
     title: "Shopify Maintenance Services for Growing Stores | NawazBuilds",
     description:
-      "Ongoing Shopify maintenance services covering updates, backups, security checks, small fixes and a monthly health report, from the studio behind your store.",
+      "Ongoing Shopify maintenance services from $99 per month, covering updates, backups, security checks, small fixes and a monthly health report.",
   },
   "/services/shopify-store-audit": {
     title: "Shopify Store Audit: Find What Is Costing You Sales | NawazBuilds",
@@ -134,6 +134,21 @@ const staticSeo: Record<string, SeoEntry> = {
     title: "Hire a Shopify Developer | NawazBuilds",
     description:
       "Hire a Shopify developer and work directly with the person who writes your code. Theme work, custom features, fixes and honest advice, scoped in writing.",
+  },
+  "/services/shopify-app-development-services": {
+    title: "Shopify App Development Services | NawazBuilds",
+    description:
+      "Shopify app development services for private and custom apps: connect your systems, automate store work and own the software built for your store.",
+  },
+  "/services/shopify-plus-development-services": {
+    title: "Shopify Plus Development Services | NawazBuilds",
+    description:
+      "Shopify Plus development: checkout extensibility, Scripts to Functions migration, B2B setup, Flow automation and Launchpad campaigns, verified properly.",
+  },
+  "/services/shopify-development-services-dubai": {
+    title: "Shopify Web Development Services in Dubai | NawazBuilds",
+    description:
+      "Shopify web development services for Dubai and UAE brands, delivered remotely by a specialist studio: builds, migrations, Plus work and ongoing care.",
   },
 };
 

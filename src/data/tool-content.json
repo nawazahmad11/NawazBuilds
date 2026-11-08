@@ -13,16 +13,20 @@
       ]
     },
     "name-generator": {
-      "title": "Best AI Business Name Generator 2026",
-      "description": "Our smart engine generates catchy, brandable, and SEO-friendly names for your Shopify store using deep-learning linguistics.",
+      "title": "Shopify Store Name Generator",
+      "description": "This tool turns the keywords you enter into brandable name ideas for a Shopify store. A good name is only the first step, because you still need to choose carefully and run a few checks before you commit. The sections below explain how to pick a strong name and what to verify before you use it.",
       "features": [
-        { "title": "Category Based", "detail": "Niche-specific suffixes and prefixes for maximum brand relevance." },
-        { "title": "AI Logic", "detail": "Smart combinations that sound professional and modern." },
-        { "title": "One-Click Copy", "detail": "Instantly save your favorite names to your clipboard." }
+        { "title": "Keyword Based", "detail": "Names are built from the words you enter, so the results stay tied to what your store actually sells." },
+        { "title": "Brandable Results", "detail": "The tool creates short combinations that are easy to say, spell and remember, which are the qualities a store name needs." },
+        { "title": "One Click Copy", "detail": "Copy any name you like to your clipboard with one click, so you can keep a shortlist while you run your checks." }
       ],
       "faqs": [
-        { "q": "Are these names domain-ready?", "a": "Yes, most names are generated to be short and brandable for easy domain registration." },
-        { "q": "How many names can I generate?", "a": "You can generate unlimited combinations by changing your keywords." }
+        { "q": "How do I choose a good Shopify store name?", "a": "Keep it short and easy to spell after hearing it once. Avoid words that limit you to one product if you may expand later. Say the name out loud a few times to check how it sounds. Avoid names that sound like a big existing brand." },
+        { "q": "How do I check if the domain is available?", "a": "Search the exact name plus .com at any domain registrar to see if it is free. Prefer the .com version without hyphens or extra words, because it is easier for customers to remember and type. If the exact .com is taken, treat that as a sign to pick another name rather than forcing a variation." },
+        { "q": "Should I check trademarks before using a name?", "a": "Yes, check trademarks before you use a name. Search your country trademark register, for example the USPTO database in the US, and also search Google and the app stores for businesses already using the name in your product area. A generator cannot do this check for you. When in doubt, choose a different name early, because renaming later costs far more." },
+        { "q": "What else should I check besides the domain?", "a": "Check the same name as a username on the social platforms you plan to use. Also run a plain Google search of the name to see what already ranks for it. If the results show a strong or confusing match, pick a cleaner name." },
+        { "q": "What makes a name easy to build a store brand on?", "a": "A strong store name is short, clear, and flexible enough to grow with your brand. You can pair a plain everyday word with a product word, for example Copper Pantry for a kitchen store. You can also use a short invented word that is easy to spell and say. Pick a style that feels natural when you say it and easy to remember later." },
+        { "q": "Can I change my Shopify store name later?", "a": "Yes, you can change the store name in your Shopify settings at any time. The domain is the serious part, because changing it later means setting up redirects and taking care with your Google presence. That is why the checks above are worth an hour now." }
       ]
     },
     "profit-calculator": {

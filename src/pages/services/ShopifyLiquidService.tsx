@@ -31,6 +31,10 @@ export default function ShopifyLiquidService() {
         {
             q: "Do you sign NDAs before working?",
             a: "Yes. Pre-launch builds and internal systems are common here. Your business metrics, source files and brand assets stay strictly confidential."
+        },
+        {
+            q: "Do you build complete custom Shopify themes?",
+            a: "Yes, we build them from scratch in Liquid, shaped around the store's products and brand, with sections you can edit in the theme editor. We only recommend it when a premium theme cannot carry what the store needs."
         }
     ];
 
@@ -117,6 +121,18 @@ export default function ShopifyLiquidService() {
                             </li>
                         ))}
                     </ul>
+                </div>
+            </section>
+
+            {/* Full custom themes */}
+            <section className="py-16 bg-zinc-950 border-y border-zinc-900">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Can custom development build a whole theme, not just features?</h2>
+                    <div className="space-y-5 text-zinc-400 leading-relaxed">
+                        <p>Yes, a complete custom Shopify theme can be built in Liquid from the ground up when a store needs it. It is not just small features added to an existing theme.</p>
+                        <p>That includes a design system that matches the brand, and product and collection templates shaped around how the products are actually sold. It also includes sections the owner can edit in the theme editor without code. Store features are built into the theme instead of rented from apps.</p>
+                        <p>Our published case studies show this work in practice, including a jewelry store and a clothing store rebuilt with custom interfaces, and <a href="/case-studies/District99" className="text-amber-500 hover:underline">District99</a>, where a custom product builder was built into the store experience. A full custom theme is not right for every store. If a premium theme plus customization would serve you better, that is what we will recommend through our <a href="/services/shopify-theme-customization-services" className="text-amber-500 hover:underline">Shopify Theme Customization Services</a>.</p>
+                    </div>
                 </div>
             </section>
 

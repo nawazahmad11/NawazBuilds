@@ -1068,7 +1068,7 @@ export const blogPosts = [
       date: "November 2, 2026",
       author: "Nawaz Ahmad",
       category: "CHECKOUT",
-      readTime: "7 min read",
+      readTime: "8 min read",
       image: "/blog/shopify-checkout-extensibility-guide.webp",
       toc: [
         { id: "what-is-checkout-extensibility", title: "What is checkout extensibility?" },
@@ -1077,11 +1077,12 @@ export const blogPosts = [
         { id: "how-do-you-check-whether-your-store-migrated-properly", title: "How do you check whether your store migrated properly?" },
         { id: "what-breaks-most-often-after-the-upgrade", title: "What breaks most often after the upgrade?" },
         { id: "can-you-still-customize-checkout-without-plus", title: "Can you still customize checkout without Plus?" },
+{ id: "what-can-shopify-functions-do-at-checkout", title: "What can Shopify Functions do at checkout?" },
         { id: "when-should-you-get-help-with-this", title: "When should you get help with this?" },
         { id: "faqs", title: "Frequently asked questions" }
       ],
       content: `
-      <p>Shopify retired checkout.liquid and replaced it with checkout extensibility. Your tracking now runs on two things: customer events, which describe what a shopper did, and web pixels, which carry that data to tools like Google Analytics and Meta. If your old checkout scripts were never rebuilt on this system, your attribution data has gaps you cannot see from the dashboard.</p>
+<p>Shopify retired checkout.liquid for checkout extensibility, and your tracking now runs on customer events, which describe what a shopper did, and web pixels, which carry that data to tools like Google Analytics and Meta. If your old checkout scripts were never rebuilt on this system, your attribution data has gaps you cannot see from the dashboard.</p>
       <p>This guide explains how the new system works in plain language. It also shows you how to check whether your store made the move properly, and what to fix if it did not.</p>
       <h2 id="what-is-checkout-extensibility">What is checkout extensibility?</h2>
       <p>Checkout extensibility is Shopify's current system for customizing checkout and the thank you and order status pages. Instead of editing checkout.liquid code, you now use checkout editor blocks, Shopify Functions and apps built on Shopify's own APIs.</p>
@@ -1106,6 +1107,10 @@ export const blogPosts = [
       <h2 id="can-you-still-customize-checkout-without-plus">Can you still customize checkout without Plus?</h2>
       <p>Yes, within limits. Shopify Plus stores get the full checkout editor and can add blocks throughout checkout. Stores on standard plans can customize branding and use apps that extend the thank you and order status pages, and they fully use customer events and web pixels for tracking.</p>
       <p>That last part matters. The tracking migration applied to every store, not only Plus. A standard store that never reviewed its pixels has the same attribution risks as a Plus store that ignored the deadline.</p>
+      <h2 id="what-can-shopify-functions-do-at-checkout">What can Shopify Functions do at checkout?</h2>
+      <p>Shopify Functions run small custom logic inside checkout instead of scripts. They are how checkout customization survived the move away from checkout.liquid. A function changes how checkout behaves for a specific order, based on rules you set.</p>
+      <p>Functions can run discount rules that combine conditions the standard discount settings cannot express. They can also hide, rename or reorder delivery options based on cart contents or address. Payment methods can be hidden or reordered for specific orders in the same way.</p>
+      <p>Functions can also run validation rules that stop an order with a clear message when a field is wrong. One example is blocking a delivery method for PO boxes. The shopper sees the reason at checkout, instead of the order failing later.</p>
       <h2 id="when-should-you-get-help-with-this">When should you get help with this?</h2>
       <p>Get help if your test purchase does not show up correctly in your analytics, or if nobody on your team can explain what each pixel in your settings does. Those are signs the chain has gaps you are making decisions on.</p>
       <p>Stores we maintain get this check as part of routine care, because pixels and apps change quietly over time. You can see how that works on our <a href="/services/shopify-maintenance-services">Shopify Maintenance Services</a> page. And if your store is on Plus, read our companion guide on <a href="/blog/shopify-plus-checkout-extensibility-tracking">Shopify Plus checkout extensibility tracking</a> next, because Plus stores carried the deepest customizations into this change.</p>
@@ -1411,5 +1416,474 @@ export const blogPosts = [
       <p><strong>Will a maintenance plan improve my sales?</strong>
       Not directly, and any provider claiming otherwise is stretching. Maintenance protects sales: it keeps the store fast, working and trustworthy, so the traffic and marketing you pay for are not wasted on a store with silent breakages. Growth work is a different service.</p>
       `
-    }
+    },
+    {
+      id: "wordpress-to-shopify-migration",
+      title: "How to Migrate From WordPress to Shopify: A Step by Step Guide",
+      date: "November 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "9 min read",
+      image: "/blog/wordpress-to-shopify-migration-cover.webp",
+      toc: [
+        { id: "what-actually-moves-when-you-migrate-from-wordpress-to-shopify", title: "What actually moves when you migrate from WordPress to Shopify?" },
+        { id: "step-1-what-should-you-audit-before-you-move", title: "Step 1: What should you audit before you move?" },
+        { id: "step-2-how-do-your-products-and-customers-move", title: "Step 2: How do your products and customers move?" },
+        { id: "step-3-what-happens-to-your-wordpress-blog-and-pages", title: "Step 3: What happens to your WordPress blog and pages?" },
+        { id: "step-4-how-do-you-replace-your-wordpress-plugins", title: "Step 4: How do you replace your WordPress plugins?" },
+        { id: "step-5-how-do-you-protect-your-rankings-with-redirects", title: "Step 5: How do you protect your rankings with redirects?" },
+        { id: "step-6-what-should-you-test-before-launch", title: "Step 6: What should you test before launch?" },
+        { id: "when-should-you-get-help-with-the-move", title: "When should you get help with the move?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can migrate from WordPress to Shopify and keep your products, your customers, your content and your Google rankings, as long as the move is planned in the right order: audit first, data and content second, plugin replacements third, redirects before launch, and testing before anyone sees the new store. Most failed moves skip straight to copying products and discover the rest afterwards.</p>
+      <p>This guide follows the same sequence we use on client migrations. If you run WooCommerce, this is your route. If your WordPress site sells through a different plugin setup, the same steps apply, with the plugin mapping in Step 4 doing more of the work. For the service version of this process, see our <a href="/services/shopify-migration-services">Shopify Migration Services</a>.</p>
+      <h2 id="what-actually-moves-when-you-migrate-from-wordpress-to-shopify">What actually moves when you migrate from WordPress to Shopify?</h2>
+      <p>Almost everything your store is made of. Products with their variants, prices and images. Collections, rebuilt from your WooCommerce categories and tags. Customer accounts and order history. Your pages, your blog posts and your media. What does not move is just as important to know upfront.</p>
+      <p>Customer passwords never move, on any platform move, because they are stored encrypted for security. Your customers will get a short activation invite on the new store instead. Plugin behaviour also does not move: anything your WordPress plugins were doing, from subscriptions to shipping rules, has to be replaced deliberately, which is what Step 4 covers. And your exact design does not copy across. The look is rebuilt as a native Shopify theme, which is a chance to freshen it, not a loss.</p>
+      <h2 id="step-1-what-should-you-audit-before-you-move">Step 1: What should you audit before you move?</h2>
+      <p>Start by counting what you actually have. Products, variants, customers, orders, blog posts, pages. WordPress sites accumulate years of drafts, test products, duplicate accounts and media nobody remembers uploading. Migrating all of it costs effort and clutters the new store. This audit is your one cheap chance to clean house.</p>
+      <p>Back everything up before anyone touches anything: a full WordPress backup including the database, stored somewhere outside your hosting. Then record your SEO baseline. Export your top pages by traffic, your full list of URLs, and your current rankings for the keywords that bring you sales. You cannot protect what you have not measured, and after the move this baseline is how you prove what held.</p>
+      <h2 id="step-2-how-do-your-products-and-customers-move">Step 2: How do your products and customers move?</h2>
+      <p>Data moves in a test run first, never in one heroic attempt. A sample of your catalog, including your most complicated products, is imported into a development Shopify store. Variable products, grouped products and anything with custom options get checked by hand, because those are the products that break in transfer.</p>
+      <p>When the sample is clean, the full import follows: products, then customers, then order history. WooCommerce and Shopify name their fields differently, so someone has to map them deliberately rather than trust a default. Prices, stock levels and image order are the three things to spot check like a customer afterwards, opening real products and comparing them against the old store.</p>
+      <h2 id="step-3-what-happens-to-your-wordpress-blog-and-pages">Step 3: What happens to your WordPress blog and pages?</h2>
+      <p>Your content moves too, and on a WordPress site this step matters more than on most platforms. Years of posts and guides may be earning a real share of your traffic. Those posts get rebuilt inside Shopify's blog, with their images and internal links carried over, not left behind because the import tool found them inconvenient.</p>
+      <p>The structural catch is URLs. WordPress post and category addresses rarely match Shopify's shapes, so every ranking post needs a redirect from its old address to its new one. That work belongs to Step 5, but the list of content URLs is made here, while you are looking at the content. Pages like your About, delivery and returns pages move the same way, rebuilt as Shopify pages with their content intact.</p>
+      <h2 id="step-4-how-do-you-replace-your-wordpress-plugins">Step 4: How do you replace your WordPress plugins?</h2>
+      <p>List every active plugin and write down the job it does. Then give each one one of three outcomes. A Shopify app replaces it. A feature Shopify includes natively covers it. Or the behaviour is small enough to rebuild directly in Liquid inside your theme. The decision is made in writing, plugin by plugin, before the move.</p>
+      <p>This is the step DIY migrations skip, and it is where they bleed. A subscription plugin, an SEO plugin holding your titles and redirects, a form builder carrying your contact page: each does a job that someone will miss the week after launch. Subscriptions and memberships deserve special care, because your customers' billing arrangements live there. If a plugin's job cannot be matched on Shopify, better to learn that now and plan around it than to discover it from a customer's email.</p>
+      <h2 id="step-5-how-do-you-protect-your-rankings-with-redirects">Step 5: How do you protect your rankings with redirects?</h2>
+      <p>Rankings survive a migration when no important URL is left pointing at a page that no longer exists. Build the redirect map from your Step 1 baseline: every top product, collection, page and post gets a destination on the new store. Shopify lets you create these redirects in the admin, and they should be in place before the domain switches, not added in a panic afterwards.</p>
+      <p>Content moves in full as well, because a redirect to a thinner page is a slow ranking leak. After launch, submit the new sitemap in Google Search Console and watch your traffic, impressions and error reports for the first weeks. A small temporary dip while Google recrawls is normal even on careful moves. A dip that keeps falling means a URL or a piece of content was missed, and your baseline list is how you find it. Our <a href="/blog/magento-to-shopify-migration-checklist">Magento migration checklist</a> goes deeper on this launch sequence, and the same discipline applies here.</p>
+      <h2 id="step-6-what-should-you-test-before-launch">Step 6: What should you test before launch?</h2>
+      <p>Test like a customer, end to end. Place complete orders with every payment method you offer. Use a discount code. Run a refund. Try a failed payment on purpose. Do it on a phone as well as a desktop, because most of your customers will meet the new store on a phone.</p>
+      <p>Then check the boring essentials nobody screenshots: shipping zones and rates, tax settings, notification emails, contact forms, and the plugin replacements from Step 4, used one by one. Launch in your quietest trading window, freeze changes on the old store during the final data sync, and keep the old WordPress site backed up and untouched until the new store has traded cleanly for a while. Only then is the move actually finished.</p>
+      <h2 id="when-should-you-get-help-with-the-move">When should you get help with the move?</h2>
+      <p>A small, simple store with a handful of products and no ranking content can genuinely move with an import app and a free weekend. Be honest about which store you have. If you have years of content, real traffic, subscriptions or a plugin stack doing real jobs, the mapping and redirect work in this guide is the job, and it is the part worth paying a developer for.</p>
+      <p>Our <a href="/services/shopify-migration-services">Shopify Migration Services</a> run this whole sequence for you, quoted exactly after a look at your current store. Book a <a href="/strategy-call">strategy call</a> with your store details and you will get a straight answer on whether the move is clean, complex, or not worth doing yet.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How long does a WordPress to Shopify migration take?</strong>
+      It depends on the size of your catalog and how much plugin behaviour has to be replaced. A small clean store moves quickly. A store with years of content and custom plugins takes longer, and anyone quoting a fixed timeline without seeing your data is guessing. You get a realistic timeline after the initial audit.</p>
+      <p><strong>Will my store be down during the migration?</strong>
+      No. Your WordPress store keeps selling while the Shopify store is built and tested separately. Only the final switch changes what customers see, and it is scheduled in a quiet window.</p>
+      <p><strong>Do my customers have to create new accounts?</strong>
+      Their accounts and order history migrate, but passwords cannot move between platforms for security reasons. Customers receive a simple activation invite on the new store, which takes them a minute.</p>
+      <p><strong>Can I migrate from WordPress to Shopify myself?</strong>
+      For a small store, yes, import tools handle basic products and customers reasonably well. The parts they do not handle are the parts this guide spends its length on: plugin replacement decisions, content URLs and the redirect map. If those matter to your store, that is where help earns its fee.</p>
+      `
+    },
+    {
+      id: "magento-vs-shopify",
+      title: "Magento vs Shopify: Cost, Control and Total Cost of Ownership",
+      date: "November 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "9 min read",
+      image: "/blog/magento-vs-shopify-cover.webp",
+      toc: [
+        { id: "what-is-the-short-answer-on-magento-vs-shopify", title: "What is the short answer on Magento vs Shopify?" },
+        { id: "how-do-the-two-platforms-differ-day-to-day", title: "How do the two platforms differ day to day?" },
+        { id: "what-does-magento-really-cost-to-own", title: "What does Magento really cost to own?" },
+        { id: "what-does-shopify-really-cost-to-own", title: "What does Shopify really cost to own?" },
+        { id: "how-does-total-cost-of-ownership-compare-over-three-years", title: "How does total cost of ownership compare over three years?" },
+        { id: "when-does-magento-still-make-sense", title: "When does Magento still make sense?" },
+        { id: "how-hard-is-switching-from-magento-to-shopify", title: "How hard is switching from Magento to Shopify?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>The short answer: Magento gives you total control and total responsibility, while Shopify gives you less control and almost no responsibility for keeping the platform alive. For most small and mid sized stores, Shopify's total cost of ownership ends up lower because the expensive part of Magento is not the software, which is free, but the hosting, patching and developer time it takes to keep it running safely. For very large or unusual operations, Magento's flexibility can still be worth that bill.</p>
+      <p>This comparison is written from migration work, not from a feature chart. Stores rarely leave Magento because of a missing feature. They leave because of what ownership costs them every month. If you are already decided, our <a href="/services/shopify-migration-services">Shopify Migration Services</a> describe how the move itself works.</p>
+      <h2 id="what-is-the-short-answer-on-magento-vs-shopify">What is the short answer on Magento vs Shopify?</h2>
+      <p>Choose Magento if your store genuinely needs deep customisation of how commerce itself works, you sell in complex B2B patterns, and you have the budget to keep developers close permanently. Choose Shopify if you want to sell products online without running a software platform as a second business. Most stores that ask us this question are really asking whether they can stop paying the Magento ownership tax without losing anything they actually use. Usually, they can.</p>
+      <p>Neither platform is the wrong answer in the abstract. The mistake is paying for control you never use, or giving up control you rely on every day. The sections below price both sides honestly, because the licence fee, or the subscription, is the smallest part of either bill.</p>
+      <h2 id="how-do-the-two-platforms-differ-day-to-day">How do the two platforms differ day to day?</h2>
+      <p>On Magento, your team, or your agency, is responsible for the server, the updates, the security patches and the performance. The platform can be shaped into almost anything, and every part of it can also break in ways that are yours to fix. Day to day, that means a developer is never far away, even for changes that feel small.</p>
+      <p>On Shopify, the platform is hosted and maintained for you. Updates arrive without a project. Security and checkout are Shopify's problem, and the checkout in particular is one most stores should not try to outbuild. What you give up is depth of control: checkout and some core behaviours work the way Shopify allows, extended through apps and, on Plus, through checkout extensibility and Functions, rather than rewritten at will.</p>
+      <p>The practical difference shows up in your calendar. Magento stores plan maintenance windows. Shopify stores plan campaigns.</p>
+      <h2 id="what-does-magento-really-cost-to-own">What does Magento really cost to own?</h2>
+      <p>Start with hosting that can actually carry your catalog and traffic, because cheap hosting on Magento is slow hosting, and slow is a sales cost as well as a technical one. Add security patching, which is not optional on a platform that handles payments, and which lands on a schedule you do not choose. Add version upgrades, which on a customised Magento store are projects, not button clicks.</p>
+      <p>Then add the quiet costs. Developer time for changes a hosted platform would make a setting. Extension licences and the conflicts between them. The sales lost during the incidents, which every long term Magento owner can list from memory. None of these appear in the free software pitch, and together they are the real price of the platform. This is not an argument that Magento is bad software. It is an argument that its cost is mostly labour, and labour is the expensive kind.</p>
+      <h2 id="what-does-shopify-really-cost-to-own">What does Shopify really cost to own?</h2>
+      <p>Shopify's costs are more visible, which makes them easier to plan and easier to resent. A monthly plan fee that scales with the tier you choose. App subscriptions, which creep if nobody audits them. Transaction related fees that depend on your plan and payment setup. Theme and development work when you want the store to do something custom, priced as projects rather than emergencies.</p>
+      <p>What mostly disappears is the standing maintenance bill. No servers to size, no patches to schedule, no version cliff waiting at the end of a support window. For a store without a technical team, that difference is the whole comparison. For honesty: Shopify Plus is a serious monthly commitment, and a store that does not need Plus features should not pay for them. The platform rewards buying the tier your store actually uses.</p>
+      <h2 id="how-does-total-cost-of-ownership-compare-over-three-years">How does total cost of ownership compare over three years?</h2>
+      <p>Over a three year window, a typical pattern emerges. Magento's costs arrive as labour: hosting, patching, upgrade projects, incident fixes and the developer retainer that holds it all together. Shopify's costs arrive as subscriptions: plan fees and apps, plus periodic project work. For small and mid sized stores, the subscription pile is usually smaller and always more predictable. Predictability itself has value, because it lets you plan marketing spend instead of reserving cash for platform surprises.</p>
+      <p>The crossover depends on how custom your operation truly is. A store whose entire business logic is bespoke may pay more to bend Shopify than to keep Magento, especially if it already employs the developers. A store using Magento in mostly standard ways is paying custom platform prices for standard commerce, and that is the profile that saves the most by moving. The honest way to decide is to list your last year of Magento costs, all of them, and compare against the Shopify plan and app stack your store would actually run. We do exactly this exercise with owners on strategy calls, using their numbers, not brochures.</p>
+      <h2 id="when-does-magento-still-make-sense">When does Magento still make sense?</h2>
+      <p>When your commerce is genuinely unusual: complex B2B pricing and approvals, deep integration into systems you control, catalogue structures Shopify's model fights against, or a business built around owning its entire stack. It also makes sense when you already have the team. Magento with strong in house developers is a powerful platform. Magento maintained reluctantly, by whoever is cheapest this quarter, is a liability wearing a platform's clothes.</p>
+      <p>If that second description sounds familiar, it is worth reading the ownership costs above again. Stores rarely regret leaving a platform that consumed their attention. They regret leaving late.</p>
+      <h2 id="how-hard-is-switching-from-magento-to-shopify">How hard is switching from Magento to Shopify?</h2>
+      <p>The move is well trodden and very doable, with care. Products, customers and order history migrate. Custom attributes need mapping to Shopify metafields, tags or variants. Each Magento extension gets a decision: an app replaces it, it is rebuilt, or it is dropped. URLs change shape, so a full redirect map protects your rankings. Our <a href="/blog/magento-to-shopify-migration-checklist">Magento to Shopify migration checklist</a> walks the whole sequence phase by phase.</p>
+      <p>The mistake to avoid is treating the move as a copy job. It is a translation job: the same store, expressed in a platform with different rules. Done that way, most owners end up with a store that feels familiar to customers and dramatically lighter to run. Book a <a href="/strategy-call">strategy call</a> if you want your own store's numbers run through the comparison above before you decide.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is Shopify cheaper than Magento?</strong>
+      For most small and mid sized stores, yes, once total cost of ownership is counted rather than licence price. Magento's software is free and its ownership is not: hosting, patching, upgrades and developer time are the bill. Very large or highly custom stores can be the exception.</p>
+      <p><strong>Will I lose features if I move from Magento to Shopify?</strong>
+      Some deep custom behaviours cannot be copied exactly, and anyone who promises a one to one match is not being straight with you. Most features stores actually use have an app, a native Shopify equivalent or a rebuild path. The audit stage of a migration lists every feature and its outcome before you commit.</p>
+      <p><strong>Can Shopify handle a large catalog like Magento can?</strong>
+      Yes, large catalogs run on Shopify routinely, including on Plus. The work is in structuring variants and attributes properly during the move, because Shopify models some things differently. Size alone is rarely the blocker. Unusual data logic is the thing to examine.</p>
+      <p><strong>Do I need Shopify Plus if I am leaving Magento?</strong>
+      Not automatically. Many ex Magento stores run well on standard Shopify plans. Plus earns its fee when you need checkout extensibility, B2B features or serious automation. Start from what your store uses, not from what your old platform cost you.</p>
+      `
+    },
+    {
+      id: "shopify-vs-squarespace",
+      title: "Shopify vs Squarespace: Which One Should Your Store Grow On?",
+      date: "November 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "COMPARISON",
+      readTime: "8 min read",
+      image: "/blog/shopify-vs-squarespace-cover.webp",
+      toc: [
+        { id: "what-is-the-short-answer-on-shopify-vs-squarespace", title: "What is the short answer on Shopify vs Squarespace?" },
+        { id: "which-platform-is-better-for-design-and-getting-started", title: "Which platform is better for design and getting started?" },
+        { id: "which-platform-is-stronger-for-selling", title: "Which platform is stronger for selling?" },
+        { id: "how-do-apps-and-extensions-compare", title: "How do apps and extensions compare?" },
+        { id: "what-happens-when-your-store-outgrows-the-platform", title: "What happens when your store outgrows the platform?" },
+        { id: "which-one-should-different-stores-choose", title: "Which one should different stores choose?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>The short answer: Squarespace is a beautiful website builder that can sell products, and Shopify is a commerce platform that can build beautiful websites. If selling is a side activity for your site, Squarespace is genuinely good. If selling is the business, Shopify is built for the whole job, and the gap widens every time your store grows a new need. Most stores that compare these two are really deciding how serious the selling is about to get.</p>
+      <p>We build on Shopify, so read this with that in mind. The honest framing below is the same one we give on calls, including where Squarespace wins. If you land on Shopify, our <a href="/services/shopify-development-services">Shopify Development Services</a> are where a serious build starts.</p>
+      <h2 id="what-is-the-short-answer-on-shopify-vs-squarespace">What is the short answer on Shopify vs Squarespace?</h2>
+      <p>Squarespace started as a website builder for portfolios, restaurants, creators and small brands, and design is still its home ground. Commerce exists and works, aimed at stores with modest catalogs and simple needs. Shopify started as commerce and only commerce. Its templates, checkout, inventory, discounts, reports and app ecosystem all exist to move products.</p>
+      <p>That origin decides most real world outcomes. A store is not just product pages. It is shipping rules, tax settings, abandoned checkout recovery, discount logic, gift cards, customer accounts, sales channels and reporting. Shopify treats those as the main event. Squarespace treats several of them as features inside a website. Both approaches are legitimate. They serve different ambitions.</p>
+      <h2 id="which-platform-is-better-for-design-and-getting-started">Which platform is better for design and getting started?</h2>
+      <p>Squarespace, for most beginners, and it is not close. Its templates are consistently polished, the editor is forgiving, and a presentable site can exist in a day without touching code or hiring anyone. For a portfolio with a small shop attached, or a creator selling a handful of products, that matters more than commerce depth.</p>
+      <p>Shopify's starting experience has improved a lot, and its free themes are clean and fast. But Shopify assumes you will grow into it: more settings, more structure, more to learn. The trade is deliberate. You are not just decorating pages, you are configuring a store, and stores have more moving parts than brochures. If design ease today is the whole requirement, take Squarespace and do not feel you chose wrong.</p>
+      <h2 id="which-platform-is-stronger-for-selling">Which platform is stronger for selling?</h2>
+      <p>Shopify, and the margin grows with your ambitions. Its checkout is the product of enormous testing across countless stores, and it shows in the details: address handling, payment options, Shop Pay, and a flow your customers have likely already used elsewhere, which quietly builds trust. Selling channels connect your catalog to the places people shop. Inventory, orders and fulfilment are built for volume, not adapted to it.</p>
+      <p>Squarespace sells perfectly well at small scale. Where stores start to feel the ceiling is in the operational layer: more complex product variations, heavier discounting logic, deeper reporting, and the long tail of situations a growing store meets monthly. None of these are reasons a small store cannot start there. They are reasons a growing store eventually prices a migration, and it is cheaper to choose with that day in mind.</p>
+      <h2 id="how-do-apps-and-extensions-compare">How do apps and extensions compare?</h2>
+      <p>This is the least fair fight in the comparison. Shopify's app ecosystem is vast: if a store needs a behaviour, someone has usually built it, and developers build custom apps and features for the gaps. Squarespace has an extensions marketplace, and it covers the common needs, but the depth is not comparable, and custom development has far less room to move because the platform is more closed.</p>
+      <p>Why it matters: your store's needs in year two are not your needs today. Subscriptions, advanced shipping rules, B2B pricing, loyalty mechanics, integrations with the rest of your business. On Shopify, those are shopping trips and development projects. On a closed platform, some of them are simply not available at any price, and the answer becomes a platform move instead of an upgrade.</p>
+      <h2 id="what-happens-when-your-store-outgrows-the-platform">What happens when your store outgrows the platform?</h2>
+      <p>On Shopify, growth mostly means configuration and better tooling: a stronger theme, apps or custom features, and eventually Plus if checkout control and automation earn their fee. The store stays the same store. Your data, your customers and your history carry forward.</p>
+      <p>Outgrowing Squarespace usually means migrating, because the ceiling is structural rather than a pricing tier. A migration is very doable, and we run them, but it is a project: data, design rebuild and redirects, as described in our <a href="/services/shopify-migration-services">migration services</a>. None of this makes starting on Squarespace a mistake for a store that may stay small. It makes starting there a decision to make with open eyes if growth is the plan.</p>
+      <h2 id="which-one-should-different-stores-choose">Which one should different stores choose?</h2>
+      <p>Choose Squarespace if the website is the product: portfolios, services, restaurants and creators, with a small shop riding along. Choose Shopify if the shop is the business, even if today it is small, because every part of your future work gets easier on the platform built for it. Choose Shopify from day one if you already know you will need subscriptions, serious discounting, multiple sales channels or wholesale.</p>
+      <p>If you are undecided, the deciding question is simple. Picture the store working exactly as you hope in two years. Which platform's limits show up in that picture? Build on the other one. And if that picture is unmistakably a store, book a <a href="/strategy-call">strategy call</a> and we will scope the build honestly, including telling you if a simple setup is all you need.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is Shopify more expensive than Squarespace?</strong>
+      The entry prices are in a similar range, and the totals depend on the apps and tier you grow into. The fairer comparison is cost against capability: Shopify's bill buys a commerce operation, Squarespace's buys a website with commerce attached. Growing stores usually find Shopify's spend easier to justify because it replaces tools and workarounds.</p>
+      <p><strong>Can I move my store from Squarespace to Shopify later?</strong>
+      Yes. Products, customers and content can be migrated, the design gets rebuilt as a Shopify theme, and redirects protect your rankings. It is a defined project rather than a button, which is why choosing with growth in mind saves money, but it is never a trap if you started on Squarespace.</p>
+      <p><strong>Which platform is better for SEO?</strong>
+      Both give you the fundamentals: editable titles, descriptions, clean URLs and sitemaps. Shopify's advantage is structural, in how product and collection pages scale, and in the app and development options when you need more. At small scale the difference rarely decides anything. Content and links decide more than platform does.</p>
+      <p><strong>Does Squarespace work for a store with many products?</strong>
+      It can hold a large catalog, but the management experience and the operational features are built for lighter commerce. Stores with many variants, complex shipping or heavy promotions usually feel the friction first in daily operations rather than in the storefront. That friction is the usual migration trigger.</p>
+      `
+    },
+    {
+      id: "shopify-app-development-cost",
+      title: "What Does Shopify App Development Cost? The Drivers Behind the Quote",
+      date: "November 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "8 min read",
+      image: "/blog/shopify-app-development-cost-cover.webp",
+      toc: [
+        { id: "why-is-there-no-standard-price-for-a-shopify-app", title: "Why is there no standard price for a Shopify app?" },
+        { id: "driver-1-what-exactly-must-the-app-do", title: "Driver 1: What exactly must the app do?" },
+        { id: "driver-2-what-must-the-app-connect-to", title: "Driver 2: What must the app connect to?" },
+        { id: "driver-3-private-app-or-public-app", title: "Driver 3: Private app or public app?" },
+        { id: "driver-4-how-much-interface-does-it-need", title: "Driver 4: How much interface does it need?" },
+        { id: "driver-5-what-happens-after-launch", title: "Driver 5: What happens after launch?" },
+        { id: "how-should-you-compare-app-development-quotes", title: "How should you compare app development quotes?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Shopify app development cost is driven less by the app itself than by five things around it: what the app must do, what it must connect to, whether it is private or public, how much interface it needs, and who looks after it after launch. That is why honest developers refuse to quote from a one line description, and why the cheapest quote you receive is often cheap because it silently assumed the smallest version of every one of those drivers.</p>
+      <p>This guide explains each driver in plain language, so you can read any quote, including ours, and see what it is really made of. It deliberately contains no price list. Any article that gives you one without knowing your store is inventing numbers, and invented numbers are how app projects go wrong before they start. For the service itself, see our <a href="/services/shopify-app-development-services">Shopify App Development Services</a>.</p>
+      <h2 id="why-is-there-no-standard-price-for-a-shopify-app">Why is there no standard price for a Shopify app?</h2>
+      <p>Because the word app covers tools of wildly different sizes. A small private app that listens for new orders and sends the details to your warehouse system is one kind of job. A public app with accounts, billing, onboarding and support for thousands of stores is a software company. Both get called app development, and quoting them from the same table would be nonsense.</p>
+      <p>What a developer actually prices is scope and risk: how many behaviours, how many systems, how many ways the data can be wrong, and how much of the unknown is being carried by whom. The five drivers below are that pricing, unpacked. When you understand them, you also understand the most useful question in any app conversation: which driver is making this quote big, and can we shrink it honestly?</p>
+      <h2 id="driver-1-what-exactly-must-the-app-do">Driver 1: What exactly must the app do?</h2>
+      <p>Behaviour is the first driver. An app that does one thing in response to one event is a small build. Each added behaviour multiplies testing, because behaviours interact: the discount logic meets the sync logic meets the refund logic, and the combinations are where bugs live. Edge cases cost more than main cases, always.</p>
+      <p>This is also where you have the most power over the price. A tight first version that does the essential job well, with the nice to have list written down for later, costs less and ships sooner than a grand design. Most successful private apps we see started smaller than their owners first imagined, then grew in a second phase once the core proved itself in daily use.</p>
+      <h2 id="driver-2-what-must-the-app-connect-to">Driver 2: What must the app connect to?</h2>
+      <p>Integrations are the second driver, and often the largest. Connecting to a modern system with a clean, documented API is routine work. Connecting to an older ERP, a warehouse system with its own ideas about data, or anything that exchanges files instead of talking live, is archaeology plus engineering. Data mapping sits in the middle of it: your systems will disagree about formats, field names and what a product even is, and someone has to translate carefully.</p>
+      <p>Volume matters too. An app moving a trickle of orders is simpler than one that must survive your biggest sale day without losing a sync, which needs queues, retries and respect for Shopify's rate limits built in from the start. Our <a href="/services/app-api-sync">integration work</a>, like the District99 logistics sync, lives on this driver: the app itself was the visible part, and the reliability engineering was the real job.</p>
+      <h2 id="driver-3-private-app-or-public-app">Driver 3: Private app or public app?</h2>
+      <p>A private app serves one store: yours. It needs no marketplace listing, no review process, no billing system for strangers, and its interface can be exactly as plain as your team tolerates. Most store specific needs should be private apps, and they are the far cheaper build for the same core behaviour.</p>
+      <p>A public app is a product. It must pass Shopify's review, handle installation and billing for any store, protect data to marketplace standards, and be supportable by whoever sells it. Those requirements are right and proper for software strangers will install, and they add real cost. If a developer quotes your private need at public app weight, or the reverse, the quote is telling you something about the developer.</p>
+      <h2 id="driver-4-how-much-interface-does-it-need">Driver 4: How much interface does it need?</h2>
+      <p>Some apps are invisible: they listen, sync and log, and nobody ever looks at them. Those are the cheapest interfaces in the world. Others live in your team's day: settings screens, dashboards, reports, approval steps inside the Shopify admin, or blocks inside checkout and the theme. Every screen is design, build and testing, and every workflow your team touches needs to survive a busy Monday, not just a demo.</p>
+      <p>The honest way to handle this driver is to separate the engine from the windows. Build the behaviour first with a minimal admin, use it, and then decide which screens your team genuinely needs. Many imagined dashboards turn out to be one weekly report. You will pay for the report, gladly, instead of the dashboard.</p>
+      <h2 id="driver-5-what-happens-after-launch">Driver 5: What happens after launch?</h2>
+      <p>An app is not finished at launch, because the ground under it moves. Shopify versions its APIs and retires old ones on a schedule, which means every app needs periodic attention to stay current and safe. Hosting runs continuously, modest for a private app but never zero. Monitoring matters most of all: an integration that fails silently costs more than the app did, in wrong stock and missed orders.</p>
+      <p>Good quotes name this driver instead of hiding it. Who watches the logs? Who applies the API updates? What does that care cost, and is it inside a maintenance arrangement you already have? A build priced without an after launch answer is a quote for the first chapter of the story, and the rest of the book still gets written, with or without a plan.</p>
+      <h2 id="how-should-you-compare-app-development-quotes">How should you compare app development quotes?</h2>
+      <p>Ask each developer the same five questions, one per driver. What exactly is included, behaviour by behaviour? How will the connection to our other system be built and tested? Is this scoped as a private app? What interface is included, and what is not? Who maintains it after launch, and at what arrangement? Written answers let you compare like with like, and the pattern of the answers tells you who understood your job.</p>
+      <p>At NawazBuilds, an app project is scoped in writing after a <a href="/strategy-call">strategy call</a> and quoted exactly before work starts, with the drivers above visible in the scope. If an existing app or a theme feature solves your problem for less, that is the recommendation you will get, because an app you did not need is the most expensive kind there is.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Why will developers not just give me a ballpark figure?</strong>
+      A ballpark given without seeing your systems and requirements is a guess dressed as information. The drivers in this guide can multiply a build several times over, so a responsible developer scopes first. A quick strategy call and a written scope protect you more than a fast number does.</p>
+      <p><strong>Is a custom app cheaper than paying for App Store apps every month?</strong>
+      Sometimes, and it depends on how many apps the custom build replaces and how long you will run it. The honest comparison counts years, not months, and includes what the stack of public apps cannot do at any price: behaviour specific to your store. We run this comparison with owners using their real app stack.</p>
+      <p><strong>Can a small app be built in phases to spread the cost?</strong>
+      Yes, and it is usually the smartest route. Build the core behaviour first, prove it in daily use, then add the second phase with real knowledge of what your team actually needs. Phasing costs a little more in total than one perfect build, and far less than one oversized build that guessed wrong.</p>
+      <p><strong>Who owns the app and its code?</strong>
+      With us, you do. A private app built for your store is your asset, documented for your team. That ownership is a large part of the point of building custom instead of renting behaviour from a stack of subscriptions.</p>
+      `
+    },
+    {
+      id: "shopify-flow-ai-assistant-prompts",
+      title: "Shopify Flow AI Assistant Prompts: Practical Examples for Store Owners",
+      date: "November 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "AUTOMATION",
+      readTime: "9 min read",
+      image: "/blog/shopify-flow-ai-assistant-prompts-cover.webp",
+      toc: [
+        { id: "what-can-the-flow-ai-assistant-actually-do", title: "What can the Flow AI assistant actually do?" },
+        { id: "how-do-you-write-a-prompt-flow-understands", title: "How do you write a prompt Flow understands?" },
+        { id: "prompt-examples-for-inventory-problems", title: "Prompt examples for inventory problems" },
+        { id: "prompt-examples-for-orders-and-fraud", title: "Prompt examples for orders and fraud" },
+        { id: "prompt-examples-for-customers-and-marketing", title: "Prompt examples for customers and marketing" },
+        { id: "what-should-you-check-before-you-activate-a-workflow", title: "What should you check before you activate a workflow?" },
+        { id: "when-should-a-store-get-help-with-automation", title: "When should a store get help with automation?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>The Shopify Flow AI assistant turns a plain sentence about your store into a working automation: you describe the job, it drafts the workflow, and you review and switch it on. The prompts that work best name a trigger, a condition and an action with real numbers from your store, like: when inventory for a product drops below our reorder point, tag it and email the person who reorders. This guide gives you copyable prompt examples for inventory, orders, fraud and customers, plus the checks to run before any automation touches a live store.</p>
+      <p>Flow is Shopify's own automation app, and on Plus stores it becomes one of the plan's hardest working features. The skill either way is the same: describing your store's repetitive jobs precisely. These examples come from the automation side of our <a href="/services/shopify-store-management-services">store management</a> work.</p>
+      <h2 id="what-can-the-flow-ai-assistant-actually-do">What can the Flow AI assistant actually do?</h2>
+      <p>Flow watches for events in your store, an order placed, inventory changed, a product created, a customer updated, and then performs actions: tagging orders, customers and products, sending internal emails and messages, holding or releasing fulfilment, writing metafields, and handing off to connected apps. The AI assistant sits at the front of that machinery. Instead of assembling triggers and actions block by block, you describe the workflow in a sentence and it builds the draft for you.</p>
+      <p>Two honest limits before the examples. The assistant drafts, it does not understand your business. It will happily build a workflow around a threshold that makes no sense for your store, because you typed it. And Flow works within its triggers, conditions, actions and connectors. If your job needs something outside that set, the draft comes back incomplete, which is the assistant telling you the job needs a different tool, possibly a custom app.</p>
+      <h2 id="how-do-you-write-a-prompt-flow-understands">How do you write a prompt Flow understands?</h2>
+      <p>Every good Flow prompt has the same skeleton: when this happens, if this is true, do that, and tell this person. Name the trigger precisely, an order being paid is a different moment from an order being created. Put real numbers in the conditions, copied from how your store actually runs: your reorder point, your definition of a large order, your high value customer line. And end with a human in the loop for anything destructive.</p>
+      <p>Vague prompts get vague workflows. "Keep an eye on inventory" gives the assistant nothing to build. "When available inventory for any product at our main location falls below 10, add the tag low-stock and email our operations address" gives it everything.</p>
+      <h2 id="prompt-examples-for-inventory-problems">Prompt examples for inventory problems</h2>
+      <p><strong>Low stock warning:</strong> "When a product's available inventory at our main location drops below 10 units, add the tag low-stock to the product and send an email to our operations team with the product name and quantity." Adjust the number to your real reorder rhythm. This one prompt replaces the weekly spreadsheet panic in many stores.</p>
+      <p><strong>Back in stock cleanup:</strong> "When a product's inventory rises back above 20 units, remove the low-stock and out-of-stock tags from that product." Automations that only add tags and never remove them slowly make the tags meaningless. Pair every tagging workflow with its cleanup.</p>
+      <p><strong>Incomplete new products:</strong> "When a new product is created, if it has no featured image or its price is zero, send an internal notification naming the product." Draft products missing the basics are a quiet storefront embarrassment, and this catches them the day they are made instead of the month a customer finds them.</p>
+      <h2 id="prompt-examples-for-orders-and-fraud">Prompt examples for orders and fraud</h2>
+      <p><strong>Fraud review hold:</strong> "When an order is created with a high risk level, add the tag fraud-review, hold its fulfilment, and send an email to our team with the order number." Notice what this prompt does not do: it does not cancel anything. A human reviews first. Start every risky automation in notify and hold mode, and only consider stronger actions when the pattern has proven itself.</p>
+      <p><strong>Large order attention:</strong> "When an order total is above our usual wholesale line, tag the order large-order and notify the team in our chat tool." Use your real number where the placeholder idea sits. Large orders deserve a human glance before fulfilment, for stock, for fraud and for the simple reason that a mistake inside one costs more.</p>
+      <p><strong>Repeat discount watch:</strong> "When the same customer uses a discount code on a third order, tag the customer discount-watch and notify us." You are not accusing anyone of anything. You are giving yourself the data to decide whether a code is leaking or a loyal customer is just loyal.</p>
+      <h2 id="prompt-examples-for-customers-and-marketing">Prompt examples for customers and marketing</h2>
+      <p><strong>VIP recognition:</strong> "When a customer's total spent across all orders passes our VIP threshold, add the tag VIP and add a note to their record." What happens next is marketing's job, through your email platform's own automations, but Flow's tag is the trigger that makes the customer visible. Set the threshold from your actual customer values, not from a blog's example, including this one.</p>
+      <p><strong>First order thank you list:</strong> "When a customer places their first order, tag them first-order and add them to our welcome segment." First orders are the cheapest loyalty you will ever earn, and most stores let them pass unmarked. The tag costs nothing and powers every follow up you build later.</p>
+      <p><strong>B2B housekeeping, for Plus stores:</strong> "When a B2B order is placed by a company account, tag the order with the company name and route a notification to our wholesale contact." Plus stores running B2B through Flow keeps wholesale orders from being processed like retail ones, which is the kind of quiet error that embarrasses everyone. Our <a href="/services/shopify-plus-development-services">Plus development</a> work sets these patterns up properly for stores that live on them.</p>
+      <h2 id="what-should-you-check-before-you-activate-a-workflow">What should you check before you activate a workflow?</h2>
+      <p>Read the draft the assistant built, block by block, and compare it against your sentence. Assistants misread scope: a condition you meant for one location may have been applied to all of them. Check the trigger moment, every condition, and every action, in that order. Then run the workflow against test cases in your head: the order that should fire it, the order that should not, and the weird one in between.</p>
+      <p>Start new workflows in observe mode where you can: notify only, no holds, no cancellations, no customer facing effects. Watch a week of real behaviour. Automations fail politely at first and expensively later, so that watching week is how professionals deploy anything that touches orders. Document what each active workflow does in one line, somewhere your team can find, or in six months nobody will know why orders keep getting tagged.</p>
+      <h2 id="when-should-a-store-get-help-with-automation">When should a store get help with automation?</h2>
+      <p>When the jobs stop being chores and start being systems: fulfilment routing across locations, B2B rules, fraud patterns, inventory across warehouses, or workflows that hand off into your other tools. At that point the design of the automation set matters more than any single prompt, and mistakes compound quietly. That is the work our <a href="/services/shopify-consulting-services">consulting</a> and management services exist for: mapping the jobs first, then building the smallest set of automations that covers them.</p>
+      <p>Start with the examples here, though. A store that has run five honest, small workflows understands its own operations better, and briefs any developer ten times more clearly. Book a <a href="/strategy-call">strategy call</a> when you reach the point where the next automation on your list makes you nervous. That nervousness is usually information.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is Shopify Flow free?</strong>
+      Flow is Shopify's own app and is available to stores on Shopify plans at no extra app cost, with its deepest use on Plus, where it also powers B2B and campaign automation. The cost is never the app. It is the thinking about what to automate, which this guide is for.</p>
+      <p><strong>Can the AI assistant build a workflow that breaks my store?</strong>
+      It can build one that takes the wrong action at the wrong moment if you activate it unreviewed, like any automation. That is why the checks section exists: read the draft, start in notify mode, and never let a new workflow cancel, refund or contact customers until it has earned trust on real orders.</p>
+      <p><strong>What if the assistant cannot build the workflow I describe?</strong>
+      Then your job needs something outside Flow's triggers, actions or connectors: typically a private app, or an integration with another system. That is a normal outcome, not a failure of your prompt. Describe the job to us on a strategy call and we will tell you which tool it actually belongs to.</p>
+      <p><strong>How many workflows should a store run?</strong>
+      As many as remove real work, and no more. Every active workflow is a small piece of machinery your store depends on. A dozen well understood ones beat fifty mysterious ones, and the one line documentation habit in this guide is what keeps the dozen understandable.</p>
+      `
+    },
+    {
+      id: "shopify-plans-explained",
+      title: "Shopify Plans Explained: Which Shopify Plan Do You Actually Need?",
+      date: "November 8, 2026",
+      author: "Nawaz Ahmad",
+      category: "STRATEGY",
+      readTime: "10 min read",
+      image: "/blog/shopify-plans-explained-cover.webp",
+      toc: [
+        { id: "how-much-does-each-shopify-plan-cost", title: "How much does each Shopify plan cost?" },
+        { id: "what-do-card-fees-do-to-your-real-monthly-bill", title: "What do card fees do to your real monthly bill?" },
+        { id: "when-does-grow-become-cheaper-than-basic", title: "When does Grow become cheaper than Basic?" },
+        { id: "when-does-advanced-pay-for-itself", title: "When does Advanced pay for itself?" },
+        { id: "what-happens-if-you-do-not-use-shopify-payments", title: "What happens if you do not use Shopify Payments?" },
+        { id: "what-does-shopify-plus-add", title: "What does Shopify Plus add?" },
+        { id: "how-should-you-choose-by-store-size", title: "How should you choose by store size?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Most small stores need Basic or Grow, and the right choice depends on your monthly sales, not on the feature list. Basic costs $39 per month and Grow costs $105 per month on monthly billing. Grow only becomes cheaper once your sales are high enough for its lower card rate to cover that extra $66. The maths below shows exactly where that point sits.</p>
+      <h2 id="how-much-does-each-shopify-plan-cost">How much does each Shopify plan cost?</h2>
+      <p>Basic is $39 per month billed monthly or $29 billed yearly, Grow is $105 or $79, Advanced is $399 or $299, and Plus starts from $2,300 per month. These prices are Shopify's published US prices from <a href="https://www.shopify.com/pricing">Shopify's pricing page</a> and they can change. Always check that page before you budget.</p>
+      <p>The plan price is only the starting point. Card fees apply to every order on top of the plan. Apps and a domain add more cost on top of that again.</p>
+      <h2 id="what-do-card-fees-do-to-your-real-monthly-bill">What do card fees do to your real monthly bill?</h2>
+      <p>Card fees often cost more than the plan itself once sales grow. With Shopify Payments, online card rates are 2.9% + 30 cents per order on Basic, 2.7% + 30 cents on Grow, 2.5% + 30 cents on Advanced, and 2.25% + 30 cents on Plus. The percentage and the fixed 30 cents both matter.</p>
+      <p>Take a store with a $50 average order and $10,000 in monthly sales, which is 200 orders. On Basic, card fees are $290 + $60 = $350, plus the $39 plan, for a $389 total. On Grow, card fees are $270 + $60 = $330, plus the $105 plan, for a $435 total.</p>
+      <p>Now take the same store at $50,000 in monthly sales, which is 1,000 orders. On Basic, card fees are $1,450 + $300 = $1,750, plus $39, for a $1,789 total. On Grow, card fees are $1,350 + $300 = $1,650, plus $105, for a $1,755 total, so Grow has moved ahead.</p>
+      <h2 id="when-does-grow-become-cheaper-than-basic">When does Grow become cheaper than Basic?</h2>
+      <p>Grow becomes cheaper than Basic at about $33,000 of monthly sales. Grow costs $66 more per month than Basic. It saves 0.2% on every sale, and 0.2% of $33,000 is $66, which covers the extra plan cost.</p>
+      <p>Below that level, Basic is the cheaper plan in total. Above that level, Grow saves you a little more every month as sales rise. Yearly billing lowers both plan prices, which moves this crossover point down.</p>
+      <h2 id="when-does-advanced-pay-for-itself">When does Advanced pay for itself?</h2>
+      <p>Advanced pays for itself at about $147,000 of monthly sales on card fees alone. Advanced costs $294 more per month than Grow. It saves another 0.2% on every sale, and 0.2% of $147,000 is $294.</p>
+      <p>Some stores choose Advanced before that point for other reasons. Selling internationally with duties and tax needs is a common one. If neither the maths nor those needs apply, Grow is usually enough.</p>
+      <h2 id="what-happens-if-you-do-not-use-shopify-payments">What happens if you do not use Shopify Payments?</h2>
+      <p>If you use a different payment provider instead of Shopify Payments, Shopify adds its own fee to every sale. That added fee is 2% on Basic, 1% on Grow, 0.6% on Advanced, and 0.2% on Plus. It sits on top of that provider's own charges, so you pay twice on each order.</p>
+      <p>Basic stores feel this most because their added fee is the highest at 2%. On $10,000 of monthly sales, that is an extra $200 before the provider takes its own cut. For most stores, using Shopify Payments is the simple way to avoid this cost.</p>
+      <h2 id="what-does-shopify-plus-add">What does Shopify Plus add?</h2>
+      <p>Plus adds full checkout customization with checkout extensibility, B2B features, and the ability to run more stores under one organization. It also carries the lowest card rate at 2.25% + 30 cents per order. Stores move to Plus for control, not just for the rate.</p>
+      <p>Plus starts from $2,300 per month, so the jump is large. If checkout control or B2B is not your reason, the lower plans will almost always cost you less. Do the card fee maths first before you consider it.</p>
+      <h2 id="how-should-you-choose-by-store-size">How should you choose by store size?</h2>
+      <p>A new store, or a store making its first sales, should start on Basic. A growing store with a small team and steady five figure monthly sales should look at Grow, especially near the $33,000 crossover. A high volume store, or one selling internationally with duties and tax needs, should look at Advanced.</p>
+      <p>Choose Plus only when checkout control or B2B is the reason. If you are unsure which stage your store has reached, our <a href="/services/shopify-development-services">Shopify development services</a> can help you review the numbers before you switch. You can also change plans later, so starting small is a safe choice.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can you change plans later?</strong>
+      Yes. You can upgrade or downgrade at any time, and your fees adjust with the new plan. Most stores start on a lower plan and move up as sales grow.</p>
+      <p><strong>Is the plan price the whole cost?</strong>
+      No. Card fees apply to every order, and apps and a domain sit on top of the plan price. Your real monthly bill is the plan plus all of those costs together.</p>
+      <p><strong>Which plan do most small stores need?</strong>
+      Basic or Grow, honestly. Basic suits new and small stores, and Grow suits stores with steady sales and a growing team. Most small stores do not need Advanced or Plus.</p>
+      `
+    },,
+    {
+      id: "bigcommerce-to-shopify-migration",
+      title: "How to Migrate From BigCommerce to Shopify: A Step by Step Guide",
+      date: "November 8, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "9 min read",
+      image: "/blog/bigcommerce-to-shopify-migration-cover.webp",
+      toc: [
+        { id: "what-actually-moves-when-you-migrate-from-bigcommerce-to-shopify", title: "What actually moves when you migrate from BigCommerce to Shopify?" },
+        { id: "step-1-what-should-you-audit-before-the-move", title: "Step 1: What should you audit before the move?" },
+        { id: "step-2-what-should-you-move-first-when-you-transfer-your-data", title: "Step 2: What should you move first when you transfer your data?" },
+        { id: "step-3-what-should-you-map-before-you-rebuild-your-features", title: "Step 3: What should you map before you rebuild your features?" },
+        { id: "step-4-what-should-you-redirect-before-you-launch", title: "Step 4: What should you redirect before you launch?" },
+        { id: "step-5-what-should-you-test-before-you-go-live", title: "Step 5: What should you test before you go live?" },
+        { id: "when-should-you-get-help-with-the-move", title: "When should you get help with the move?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Yes, you can move from BigCommerce to Shopify and keep your products, customers, orders and content. You can also keep your rankings if data mapping and redirects are planned before the switch. The move fails when stores rush the import and think about redirects after launch. Plan first, move second, and the switch is routine work.</p>
+      <h2 id="what-actually-moves-when-you-migrate-from-bigcommerce-to-shopify">What actually moves when you migrate from BigCommerce to Shopify?</h2>
+      <p>Products with options, customers, order history, pages and blog content can all move to Shopify. Customer passwords never move on any platform change, for security reasons. Your customers keep their records and get an activation invite to set a new password.</p>
+      <p>BigCommerce product options and rules do not map one to one to Shopify. Option sets and rules become Shopify variants, metafields or small custom code, and that choice is made item by item. Themes do not copy either, so your design is rebuilt as a Shopify theme.</p>
+      <h2 id="step-1-what-should-you-audit-before-the-move">Step 1: What should you audit before the move?</h2>
+      <p>Audit first, so you know exactly what you have before anything moves. Count your products, options, customers and orders. A clear count tells you the size of the job and helps you spot missing data later.</p>
+      <p>Record your top URLs and rankings as the baseline. That record is how you prove after launch that traffic held up. Back up the full BigCommerce export and keep it safe, even after the move is done.</p>
+      <h2 id="step-2-what-should-you-move-first-when-you-transfer-your-data">Step 2: What should you move first when you transfer your data?</h2>
+      <p>Start with a test import of your most complicated products first. Complicated products expose mapping problems while the job is still small. Check prices, stock and images on those products with care.</p>
+      <p>Run the full import only after the test looks right. BigCommerce exports CSV files and its API both work for the move. Check a sample from every product group after the full import, not just the first few items.</p>
+      <h2 id="step-3-what-should-you-map-before-you-rebuild-your-features">Step 3: What should you map before you rebuild your features?</h2>
+      <p>List every BigCommerce feature your store relies on, and decide its Shopify home before you rebuild. Customer groups and product filtering are common examples. Each feature lands in one of three places: a native Shopify feature, an app, or a Liquid rebuild.</p>
+      <p>Write that decision down for every feature on the list. Features with no decision get forgotten, and forgotten features get found by customers after launch. A simple list prevents that problem.</p>
+      <h2 id="step-4-what-should-you-redirect-before-you-launch">Step 4: What should you redirect before you launch?</h2>
+      <p>Map every important old URL to its new Shopify page before launch. BigCommerce and Shopify use different URL shapes, so most product and category addresses will change. Redirects tell Google and your customers where each page went.</p>
+      <p>Set the redirects up inside Shopify admin before you launch, not after. Use your audit baseline to build the list, starting with the pages that get traffic and links. A complete redirect map is the main thing that protects your rankings.</p>
+      <h2 id="step-5-what-should-you-test-before-you-go-live">Step 5: What should you test before you go live?</h2>
+      <p>Test the full buying journey with real orders before you go live. Try every payment method, a discount, and a refund, and do it on mobile as well as desktop. Most launch problems hide in checkout, not on product pages.</p>
+      <p>Check shipping zones and taxes on orders to each area you sell to. Read the notification emails a customer would receive, from order confirmation to shipping updates. Fix anything that looks wrong before real customers see it.</p>
+      <h2 id="when-should-you-get-help-with-the-move">When should you get help with the move?</h2>
+      <p>A small, simple catalog suits a careful DIY move with an import app. If you can audit, test and set up redirects with confidence, you can handle that kind of move yourself. Take your time and follow the steps above in order.</p>
+      <p>Option heavy catalogs, customer groups or real ranking content are where help earns its fee. Those are the areas where one mapping mistake can cost sales or traffic. Our <a href="/services/shopify-migration-services">Shopify migration services</a> cover the audit, the data move and the redirect map for stores in that position.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How long does it take?</strong>
+      It depends on catalog complexity. A small catalog can move quickly, while option heavy catalogs and large order histories take longer. You get a real timeline after the audit in step 1.</p>
+      <p><strong>Will the store be down?</strong>
+      No. Your BigCommerce store keeps selling until the switch. The Shopify store is built and tested in the background, then the domain points to it.</p>
+      <p><strong>Do customers keep their accounts?</strong>
+      Their records move, but their passwords do not. Passwords never move on any platform change, for security reasons. Each customer gets an activation invite to set a new password on Shopify.</p>
+      <p><strong>Will rankings drop?</strong>
+      A small temporary dip is possible during any platform change. A complete redirect map prevents lasting losses. Recording your baseline before the move lets you check and fix any page that slips.</p>
+      `
+    },,
+    {
+      id: "squarespace-wix-to-shopify-migration",
+      title: "Switching From Squarespace or Wix to Shopify: What Moves and What Does Not",
+      date: "November 8, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "8 min read",
+      image: "/blog/squarespace-wix-to-shopify-migration-cover.webp",
+      toc: [
+        { id: "why-do-stores-outgrow-squarespace-and-wix", title: "Why do stores outgrow Squarespace and Wix?" },
+        { id: "what-moves-to-shopify", title: "What moves to Shopify?" },
+        { id: "what-does-not-move", title: "What does not move?" },
+        { id: "how-does-the-switch-run-step-by-step", title: "How does the switch run, step by step?" },
+        { id: "when-should-you-not-move", title: "When should you NOT move?" },
+        { id: "where-can-you-get-help-with-the-switch", title: "Where can you get help with the switch?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Products and customers can move from Squarespace or Wix to Shopify, but designs and builder features cannot. The design is rebuilt, and some features need apps or a decision to drop them. Not every store should move either. This guide explains what moves, what does not, and when staying put is the honest answer.</p>
+      <h2 id="why-do-stores-outgrow-squarespace-and-wix">Why do stores outgrow Squarespace and Wix?</h2>
+      <p>Stores outgrow these platforms because they are website builders first and commerce tools second. That order works well at the start. It becomes a limit as selling turns into the main job of the site.</p>
+      <p>The limits show up in inventory handling, checkout control and the app ecosystem as orders grow. Stock gets harder to manage and checkout stays fixed. When those problems cost you time every week, Shopify starts to make sense.</p>
+      <h2 id="what-moves-to-shopify">What moves to Shopify?</h2>
+      <p>Products move by export and import, and customer records move with them. Your domain moves too, by transfer or by connection to the new store. The data that runs your selling can come with you.</p>
+      <p>Blog and page content moves as rebuilt content, not as a direct copy. The words and images can be carried across and placed into the new theme. Expect to check and tidy each page as it lands.</p>
+      <h2 id="what-does-not-move">What does not move?</h2>
+      <p>Your design and layout do not move. The look of your site is rebuilt as a Shopify theme, which is a chance to improve it, but it is real work. Plan time for that rebuild in your switch.</p>
+      <p>Builder features do not move either. Appointment booking, restaurant features or member areas need apps on Shopify, or a decision to drop them. Customer passwords also never move, so customers get activation invites instead, and your exact URLs will change.</p>
+      <h2 id="how-does-the-switch-run-step-by-step">How does the switch run, step by step?</h2>
+      <p>The switch runs in a simple order, and each step protects the next one. First, audit what you have, so nothing important is missed. Second, export your products and customers from your current platform.</p>
+      <p>Third, build the Shopify store and theme. Fourth, import your data and check it with care, product by product. Fifth, set redirects for the URLs that matter, then test real orders from start to finish.</p>
+      <p>Last, point your domain to Shopify once testing passes. Your old site keeps working until that final step. Most problems come from rushing the checks, not from the move itself.</p>
+      <h2 id="when-should-you-not-move">When should you NOT move?</h2>
+      <p>Do not move if selling is still a small side part of your site. A hobby store with a handful of products, on a site that is mostly a portfolio or brochure, may be better staying where it is. Moving costs time and money with little gain in that case.</p>
+      <p>Move when selling is becoming the main job of the site. That is when stronger product handling, order handling and checkout control start to pay back the effort. Be honest about which side of that line your store sits on.</p>
+      <h2 id="where-can-you-get-help-with-the-switch">Where can you get help with the switch?</h2>
+      <p>You can get help with the audit, the data move, the theme rebuild and the redirects if you do not want to run the switch alone. Help matters most when you have ranking content, many products, or features that need an app decision. A small and simple store can often manage alone with care.</p>
+      <p>Our <a href="/services/shopify-migration-services">Shopify migration services</a> handle the full switch for stores that need it. Start with the audit either way. It tells you what you have, what will move cleanly, and what needs a decision first.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can I keep my domain?</strong>
+      Yes. You can transfer your domain to Shopify or connect it and keep it with your current provider. Either way, your customers keep using the same address.</p>
+      <p><strong>Will I lose my Google rankings?</strong>
+      Content and redirects decide that, not the platform change alone. Small sites often have little ranking content, so there may be little to lose, but any page that ranks needs a redirect to its new home. Check your top pages before you switch.</p>
+      <p><strong>Is Shopify harder to use than Squarespace or Wix?</strong>
+      It is different, not simply harder. Product and order handling is stronger on Shopify, which makes daily selling easier as orders grow. Design freedom works inside a theme, so you trade free layout control for a store built for selling.</p>
+      `
+    },,
+    {
+      id: "what-happens-when-nobody-maintains-your-shopify-store",
+      title: "What Happens When Nobody Maintains Your Shopify Store",
+      date: "November 8, 2026",
+      author: "Nawaz Ahmad",
+      category: "MAINTENANCE",
+      readTime: "8 min read",
+      image: "/blog/what-happens-when-nobody-maintains-your-shopify-store-cover.webp",
+      toc: [
+        { id: "what-happens-to-your-theme-when-updates-are-skipped", title: "What happens to your theme when updates are skipped?" },
+        { id: "what-is-app-rot", title: "What is app rot?" },
+        { id: "why-does-your-store-get-slower-over-time", title: "Why does your store get slower over time?" },
+        { id: "what-security-risks-build-up-quietly", title: "What security risks build up quietly?" },
+        { id: "what-happens-when-shopify-itself-changes-the-platform", title: "What happens when Shopify itself changes the platform?" },
+        { id: "how-does-this-end-if-nobody-steps-in", title: "How does this end if nobody steps in?" },
+        { id: "what-does-monthly-maintenance-actually-cover", title: "What does monthly maintenance actually cover?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Nothing breaks on day one when nobody maintains your Shopify store. The store decays quietly through skipped updates, rotting apps and drifting speed. By the time you notice, lost sales are usually the first symptom. This post walks through that slow decline, step by quiet step.</p>
+      <h2 id="what-happens-to-your-theme-when-updates-are-skipped">What happens to your theme when updates are skipped?</h2>
+      <p>Your theme falls behind, and small problems pile up with nobody fixing them. Theme updates fix bugs and keep up with Shopify platform changes. Skipping them feels harmless at first because the store still loads.</p>
+      <p>The cost arrives later as one risky jump across many versions. When an update is finally forced, old custom code is where things break. Small regular updates are far safer than one large rescue job.</p>
+      <h2 id="what-is-app-rot">What is app rot?</h2>
+      <p>App rot is what happens when installed apps are left unwatched for months. Apps update themselves, change pricing, get abandoned by their developers, or leave code behind when removed. Each change happens without anyone checking the effect on your store.</p>
+      <p>Every app adds a small script load to your pages. Each one is also a possible conflict with your theme or with another app. With nobody watching, you find out from a customer, not from a report.</p>
+      <h2 id="why-does-your-store-get-slower-over-time">Why does your store get slower over time?</h2>
+      <p>Your store gets slower because weight is added and almost never removed. Images go up without compression, app scripts accumulate, and tracking tags pile up one campaign at a time. No single change feels big enough to matter.</p>
+      <p>Speed drift is gradual, so nobody notices it week to week. Shoppers notice it though, in slower pages and weaker conversions. By the time sales sag, the store has been slowing down for a long while.</p>
+      <h2 id="what-security-risks-build-up-quietly">What security risks build up quietly?</h2>
+      <p>The main risks are old access and missing backups. Staff accounts and collaborator access that nobody removed stay active long after people leave. Connected apps keep permissions that nobody reviews.</p>
+      <p>Many neglected stores also have no backup habit before changes. A bad edit or a broken update then has no clean way back. A short monthly check on accounts, permissions and backups closes most of this risk.</p>
+      <h2 id="what-happens-when-shopify-itself-changes-the-platform">What happens when Shopify itself changes the platform?</h2>
+      <p>Platform changes arrive whether your store is ready or not, and untouched stores find out late. A real example from our own published work is checkout extensibility, which replaced checkout.liquid. Stores had to rebuild checkout tracking with customer events and web pixels, as our <a href="/blog/shopify-checkout-extensibility-guide">checkout extensibility guide</a> explains.</p>
+      <p>Stores under care moved on time because someone was watching for the change. Untouched stores learned about it when their tracking broke. Shopify will keep changing the platform, so someone needs to keep watch.</p>
+      <h2 id="how-does-this-end-if-nobody-steps-in">How does this end if nobody steps in?</h2>
+      <p>It rarely ends in one big failure. Stores slow down, collect small errors, and lose sales one quiet week at a time. Each small problem looks too minor to act on by itself.</p>
+      <p>Added together, those small problems become the real cost. A feature quietly breaks, pages load a little slower, and fewer visitors buy. The rescue job at the end costs far more than steady care would have.</p>
+      <h2 id="what-does-monthly-maintenance-actually-cover">What does monthly maintenance actually cover?</h2>
+      <p>Monthly maintenance covers theme updates applied to a copy first and checked, app updates and review, and backup checks. It also covers security checks on accounts and permissions, checkout testing with test orders, and broken link and error checks. Speed is watched on key pages, small fixes are handled, and you get a monthly health report.</p>
+      <p>That list is the published scope of our <a href="/services/shopify-maintenance-services">Shopify maintenance services</a>, and plans start at $99 per month. The point of the cycle is simple. Problems get caught while they are still small and cheap to fix.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can I maintain my store myself?</strong>
+      Yes, if you have the time and the technical confidence. Many owners do the basics well, such as updates, checks and test orders. The key is a regular cycle, not who does the work.</p>
+      <p><strong>How often does a store need maintenance?</strong>
+      A monthly cycle works for most stores. It catches problems while they are small, before they turn into lost sales. Busy stores with frequent changes may need attention more often.</p>
+      <p><strong>What is the first sign a store has been neglected?</strong>
+      Usually a slow sales slide, or a feature quietly breaking. It is rarely a dramatic crash. If sales drift down with no clear cause, check the health of the store first.</p>
+      `
+    },
 ];

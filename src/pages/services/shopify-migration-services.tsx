@@ -27,6 +27,18 @@ export default function ShopifyMigrationServices() {
         {
             q: "Do you migrate platforms other than Magento and WooCommerce?",
             a: "Yes, most established platforms can be migrated, including custom built stores, as long as your data can be exported. Tell us what you are running on the strategy call and we will tell you honestly whether the move is clean, complex or not worth doing."
+        },
+        {
+            q: "Can our WordPress blog posts and pages move to Shopify too?",
+            a: "Yes. WordPress sites often carry years of blog posts and landing pages, and that content moves with the store, rebuilt inside Shopify's blog and page structure. Because WordPress and Shopify shape their URLs differently, every post and page is included in the redirect map, so the rankings your content earned do not get stranded on dead addresses."
+        },
+        {
+            q: "What happens to our WordPress plugins when we move?",
+            a: "Each plugin gets a decision before the move, the same discipline we apply to Magento extensions. Some plugins have a direct Shopify app equivalent. Some are covered by features Shopify includes natively. A few need a small custom rebuild in Liquid. What matters is that no plugin's job is discovered missing after launch, which is why the mapping happens in writing, first."
+        },
+        {
+            q: "Do you migrate BigCommerce, Squarespace or Wix stores?",
+            a: "Yes, we migrate all three. Products, customers and content move, and designs are rebuilt as Shopify themes. Platform specific features are mapped to apps or native Shopify features before the move. Customer passwords cannot move for security reasons, so customers receive an activation invite."
         }
     ];
 
@@ -135,6 +147,38 @@ export default function ShopifyMigrationServices() {
                         <p>The data move is straightforward for products and customers. The careful part is everything around it: plugin features that must be replaced with Shopify apps or native features, and a checkout that behaves differently from the WooCommerce flow your regulars know.</p>
                         <p>We rebuild that flow deliberately, using the same thinking behind our <a href="/services/checkout-flow" className="text-amber-500 hover:underline">Checkout Flow</a> work. Your returning customers should feel the new store is easier, not just different.</p>
                     </div>
+                </div>
+            </section>
+
+            {/* WordPress */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">WordPress to Shopify migration</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>If you are working out how to migrate from WordPress to Shopify, your store is most likely WooCommerce underneath, and the sections above cover that route. But a WordPress move has its own shape, because a WordPress site is usually two things at once: a store, and a content site that may have been publishing for years.</p>
+                    <p>That content is the first difference. Blog posts, guides and landing pages move too, rebuilt inside Shopify's blog structure, not abandoned. WordPress URL patterns for posts, categories and pages rarely match Shopify's, so the redirect map for a WordPress migration covers content URLs as carefully as product URLs. A post that ranks is an asset, and it gets treated like one.</p>
+                    <p>The second difference is plugins. A WordPress store can be carrying dozens of them, for subscriptions, SEO, forms, shipping rules and a dozen small jobs. Each one is mapped before the move: replaced by a Shopify app, covered by a native Shopify feature, or rebuilt in Liquid. Our step by step <a href="/blog/wordpress-to-shopify-migration" className="text-amber-500 hover:underline">WordPress to Shopify migration guide</a> walks through the whole sequence, so you can see exactly what your move involves before you commit to it.</p>
+                </div>
+            </section>
+
+            {/* BigCommerce */}
+            <section className="py-16 bg-zinc-950 border-y border-zinc-900">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">BigCommerce to Shopify migration</h2>
+                    <div className="space-y-5 text-zinc-400 leading-relaxed">
+                        <p>Some BigCommerce owners move when they hit the limits of built in features and plan rules. Others want the larger Shopify app ecosystem. Some also find BigCommerce themes rigid to customize.</p>
+                        <p>Products move with options and modifiers mapped to Shopify variants and metafields. Customers, order history and content also move. BigCommerce product rules and customer groups have no one to one equal in Shopify, so each one is rebuilt as a variant, a metafield, an app or a small piece of Liquid.</p>
+                        <p>Customer passwords cannot move on any platform change, so customers get an activation invite to set a new password. For the full step by step view, read our <a href="/blog/bigcommerce-to-shopify-migration" className="text-amber-500 hover:underline">BigCommerce to Shopify migration guide</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Squarespace and Wix */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Squarespace and Wix to Shopify migration</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>Squarespace and Wix are website builders first and shops second. Stores move when selling becomes the main job. They need deeper inventory handling, a real checkout and a bigger app ecosystem.</p>
+                    <p>Products and customers move by export and import. The domain can move or connect, and pages and blog content are rebuilt inside Shopify. The design and layout do not transfer, so they are rebuilt as a Shopify theme, not copied.</p>
+                    <p>Builder specific features such as appointment booking or member areas are replaced by apps or dropped by decision, and customer passwords cannot move. A small hobby store selling a handful of items may not need to move at all, and we will say so. For a full walkthrough, read our <a href="/blog/squarespace-wix-to-shopify-migration" className="text-amber-500 hover:underline">Squarespace and Wix switching guide</a>.</p>
                 </div>
             </section>
 

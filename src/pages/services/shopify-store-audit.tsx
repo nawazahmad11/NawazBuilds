@@ -27,6 +27,10 @@ export default function ShopifyStoreAudit() {
         {
             q: "My store was built by someone else. Can you still audit it?",
             a: "Yes. Most stores we audit were built by other developers or by the owner. A fresh pair of expert eyes is the whole point of the exercise."
+        },
+        {
+            q: "What is the difference between the free audit and the full store audit?",
+            a: "The free audit is a 15 minute look that names the top 3 things hurting your conversions. The full audit checks the whole store in depth and gives you the complete written fix list in priority order."
         }
     ];
 
@@ -135,6 +139,16 @@ export default function ShopifyStoreAudit() {
                         <p>We then review the store the way a customer uses it, on a real phone and a desktop. Test orders go through checkout. Speed tests run on the pages that make you money, not only the homepage.</p>
                         <p>You receive the report with a delivery date confirmed when you book. If you want, we walk through it together on a call, finding by finding, until every line makes sense to you.</p>
                     </div>
+                </div>
+            </section>
+
+            {/* Free audit */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Is there a free way to start?</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>Yes, you can start for free. The homepage offers a free 15 minute Shopify store audit with no strings attached. It is a quick look that names the top 3 things hurting your conversions.</p>
+                    <p>The full store audit on this page is the deep version. It checks speed, theme code, apps, checkout, product pages, SEO basics and trust signals. Findings are reported in three lists: fix now, fix soon, and safe to ignore.</p>
+                    <p>Choose the full audit when you want the complete picture in writing before spending on fixes. Either way, findings come before any paid work. Many owners then hand the fix list to our maintenance plan or fix items themselves, and both are fine. You can start by booking a <a href="/strategy-call" className="text-amber-500 hover:underline">strategy call</a>.</p>
                 </div>
             </section>
 

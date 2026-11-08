@@ -31,6 +31,10 @@ export default function ShopifyDevelopmentServices() {
         {
             q: "What happens after the build goes live?",
             a: "You get a walkthrough of what changed and how to use it, and defects in the delivered work are fixed as part of the project. After that, most stores move ongoing changes into a maintenance arrangement, so one developer keeps looking after code they already know."
+        },
+        {
+            q: "Are you an agency or a freelancer?",
+            a: "NawazBuilds is a small Shopify development company. You work directly with the developer who builds your store, and projects run with a written scope and quote like agency work, without account managers in between."
         }
     ];
 
@@ -78,13 +82,13 @@ export default function ShopifyDevelopmentServices() {
 
                 <div className="relative text-center max-w-4xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800/80 text-xs text-amber-500 font-medium tracking-wide uppercase mb-6 shadow-sm">
-                        Full Scope Store Development
+                        Shopify Development Agency
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
                         Shopify <span className="bg-gradient-to-r from-amber-400 via-orange-500 to-amber-300 bg-clip-text text-transparent">Development</span> Services
                     </h1>
                     <p className="text-lg md:text-xl text-zinc-400 font-normal leading-relaxed max-w-2xl mx-auto mb-6">
-                        Shopify development services cover everything your store needs built in code: a new store build, custom theme work, features your theme cannot do, app integration and checkout changes. At NawazBuilds the developer you speak to first is the developer who writes the code, so the plan you approve is the store you get.
+                        A Shopify development agency builds what your store needs in code: a new store build, custom theme work, features your theme cannot do, app integration and checkout changes. NawazBuilds works as your Shopify development agency without the agency layers: the developer you speak to first is the developer who writes the code, so the plan you approve is the store you get.
                     </p>
                     <p className="text-zinc-500 leading-relaxed max-w-2xl mx-auto mb-10">
                         Most stores arrive here the same way. The first theme did its job, sales grew, and now every change is a workaround. Another app for this, a patch for that. Development is how a store stops accumulating workarounds and gets built properly instead.
@@ -144,14 +148,27 @@ export default function ShopifyDevelopmentServices() {
 
             {/* Honest limits */}
             <section className="py-16 max-w-4xl mx-auto px-6">
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">What can development not fix?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">What should you expect from a Shopify development company?</h2>
                 <div className="space-y-5 text-zinc-400 leading-relaxed">
                     <p>Code cannot rescue a product nobody wants or an offer priced against you. If the store gets traffic and the pages are honest, development removes friction. If the problem sits earlier, in the product or the positioning, we tell you that instead of selling you a rebuild.</p>
                     <p>A defined project also has a finish line, and a growing store usually needs both kinds of help at different times. If your need is regular access to a developer who already knows your store, rather than one scoped build, read how it works to <a href="/services/hire-shopify-developer" className="text-amber-500 hover:underline">hire a Shopify developer</a> instead.</p>
                 </div>
             </section>
 
-            {/* FAQ */}
+                        {/* Agency or freelancer */}
+            <section className="py-16 bg-zinc-950 border-y border-zinc-900">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Should you hire a Shopify development agency or a freelancer?</h2>
+                    <div className="space-y-5 text-zinc-400 leading-relaxed">
+                        <p>An agency gives you a team. If one person is away, someone else can cover the work. The cost is higher because you also pay for account managers and hand offs, and the person who sells the work rarely writes the code.</p>
+                        <p>A freelancer is usually cheaper and you speak to them directly. The risk is simple. Everything stops when they are busy, ill or gone, and their skills end where their experience ends.</p>
+                        <p>NawazBuilds is deliberately the middle shape. It is a development company where the developer you speak to is the developer who builds. Every project runs with a defined scope and a written quote, so you get agency reliability without agency layers.</p>
+                        <p>A very small one off fix often suits a freelancer. An ongoing programme that needs many skills at once often suits a big agency. A defined store build or rebuild where you want direct developer access suits this model, and you can book a <a href="/strategy-call" className="text-amber-500 hover:underline">strategy call</a> to talk it through.</p>
+                    </div>
+                </div>
+            </section>
+
+{/* FAQ */}
             <section className="py-20 max-w-3xl mx-auto px-6 border-t border-zinc-900">
                 <div className="text-center mb-12">
                     <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">Frequently Asked Questions</h2>

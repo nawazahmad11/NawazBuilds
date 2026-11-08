@@ -115,6 +115,9 @@ const Footer = () => {
                 <li><Link to="/services/shopify-store-management-services" className="hover:text-[#f9a825] transition-colors">Store Management</Link></li>
                 <li><Link to="/services/shopify-development-services" className="hover:text-[#f9a825] transition-colors">Shopify Development</Link></li>
                 <li><Link to="/services/hire-shopify-developer" className="hover:text-[#f9a825] transition-colors">Hire a Shopify Developer</Link></li>
+                <li><Link to="/services/shopify-app-development-services" className="hover:text-[#f9a825] transition-colors">App Development</Link></li>
+                <li><Link to="/services/shopify-plus-development-services" className="hover:text-[#f9a825] transition-colors">Plus Development</Link></li>
+                <li><Link to="/services/shopify-development-services-dubai" className="hover:text-[#f9a825] transition-colors">Dubai</Link></li>
                 <li><Link to="/services/app-api-sync" className="hover:text-[#f9a825] transition-colors">Integration & App Sync</Link></li>
                 <li><Link to="/services/checkout-flow" className="hover:text-[#f9a825] transition-colors">Checkout Flow</Link></li>
                 <li><Link to="/services/mobile-first-ux" className="hover:text-[#f9a825] transition-colors">Mobile First UX</Link></li>

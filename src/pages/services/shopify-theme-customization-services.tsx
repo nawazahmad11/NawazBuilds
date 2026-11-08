@@ -126,6 +126,17 @@ export default function ShopifyThemeCustomizationServices() {
                 </div>
             </section>
 
+            {/* Custom vs premium */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Should you buy a premium theme or build a custom theme?</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>A premium theme is a ready made theme bought from the Shopify Theme Store for a one time license fee. You get a proven layout, regular updates from its developer and a fast start. But your store shares its skeleton with thousands of others, and your brand must fit inside its sections.</p>
+                    <p>A custom theme is designed and built for your store only. The layout follows your products and your brand. Features your store needs are built in instead of added as apps, so every removed app is one less monthly fee and one less script slowing pages. Sections are built so your team can edit them without code.</p>
+                    <p>Premium wins on speed of launch and lower upfront cost. Custom wins when your product pages need layouts no theme offers. Custom also wins when app fees and app scripts are piling up, or when your brand look is the product itself.</p>
+                    <p>Many stores start premium and go custom when growth justifies it. We will say honestly when premium plus settings is enough for your store. If you are weighing a custom build, see how <a href="/services/custom-liquid-development" className="text-amber-500 hover:underline">Custom Liquid Development</a> fits into that choice.</p>
+                </div>
+            </section>
+
             {/* Where customization stops */}
             <section className="py-16 bg-zinc-950 border-y border-zinc-900">
                 <div className="max-w-4xl mx-auto px-6">
