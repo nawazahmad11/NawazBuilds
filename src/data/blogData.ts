@@ -925,7 +925,7 @@ export const blogPosts = [
 
       <div style="margin: 40px 0; padding-left: 20px; border-left: 2px solid rgba(250, 204, 21, 0.3);">
         <div style="margin-bottom: 30px;">
-          <h4 style="color: #f9a825; font-size: 1.1rem; margin-bottom: 8px;">1. The Deep Audit</h4>
+          <p>When you hire a Shopify redesign service, that process is what you are actually buying: the audit, the blueprint, the build and the testing, in that order. A theme swap without the process is not a redesign, and it rarely moves sales.</p> <h4 style="color: #f9a825; font-size: 1.1rem; margin-bottom: 8px;">1. The Deep Audit</h4>
           <p style="margin: 0; color: rgba(255,255,255,0.8);">We don't guess. We look at your data. Where are people leaving? Is it the product page? The checkout? We find the leaks first.</p>
         </div>
 
@@ -1085,7 +1085,7 @@ export const blogPosts = [
 <p>Shopify retired checkout.liquid for checkout extensibility, and your tracking now runs on customer events, which describe what a shopper did, and web pixels, which carry that data to tools like Google Analytics and Meta. If your old checkout scripts were never rebuilt on this system, your attribution data has gaps you cannot see from the dashboard.</p>
       <p>This guide explains how the new system works in plain language. It also shows you how to check whether your store made the move properly, and what to fix if it did not.</p>
       <h2 id="what-is-checkout-extensibility">What is checkout extensibility?</h2>
-      <p>Checkout extensibility is Shopify's current system for customizing checkout and the thank you and order status pages. Instead of editing checkout.liquid code, you now use checkout editor blocks, Shopify Functions and apps built on Shopify's own APIs.</p>
+      <p>Checkout extensibility is Shopify's current system for customizing checkout and the thank you and order status pages. Instead of editing checkout.liquid code, you now use checkout editor blocks, Shopify Functions and apps built on Shopify's own APIs.</p> <p>Two terms in this system get mixed up. Checkout UI extensions are the building blocks apps use to add content inside checkout, such as banners, offers and custom fields. Checkout extensibility is the wider system around them: the checkout editor, the extensions, Shopify Functions and the customer events and pixels covered below. It is also worth knowing that themes never controlled checkout in the old system. Themes style the storefront, while checkout was handled separately, first by checkout.liquid on Plus plans and now by extensibility on every plan.</p>
       <p>Shopify retired checkout.liquid for Shopify Plus checkout pages in August 2024. The thank you and order status pages followed in August 2025 for Plus stores. The old additional scripts box on the order status page went away with them.</p>
       <p>The practical meaning is simple. Any customization or script that lived in checkout.liquid or in additional scripts stopped working when your store was upgraded. Stores that planned the move kept everything. Stores that ignored the emails lost pieces quietly.</p>
       <h2 id="what-are-customer-events-on-shopify">What are customer events on Shopify?</h2>
@@ -1121,7 +1121,7 @@ export const blogPosts = [
       Compare your Shopify order revenue with what Google Analytics and your ad platforms report for the same period. Small differences are normal. A large gap that started around your checkout upgrade points at a broken pixel chain.</p>
       <p><strong>Are custom pixels safe to add?</strong>
       Custom pixels are an official Shopify feature, added under Settings and Customer events. They are safe when the code comes from the tool vendor itself or a developer you trust. Never paste pixel code from a random forum post into your store.</p>
-      <p><strong>What happened to the additional scripts box?</strong>
+      <p><strong>How do I enable checkout extensibility in Shopify?</strong> There is nothing to switch on. Extensibility is simply how checkout works now. You customize it in the checkout editor under Settings and Checkout, by adding blocks and apps built on checkout UI extensions, and you add tracking under Settings and Customer events. If your store was upgraded automatically, the real work is checking that your old scripts and customizations were rebuilt.</p> <p><strong>What happened to the additional scripts box?</strong>
       It was retired with the old order status page. Everything that lived there, from tracking to post purchase messages, needs an extensibility based replacement. If a tool still tells you to paste code there, that tool's instructions are out of date.</p>
       `
     },
@@ -1233,7 +1233,7 @@ export const blogPosts = [
       <p><strong>17. Every key page has a unique, clear title.</strong> Check your homepage, top collections and best sellers in a search style preview. Duplicate or empty titles waste the one line of advertising Google gives you free.</p>
       <p><strong>18. Each page has one clear main heading.</strong> Product and collection pages should say what they are in words a buyer would search. Decorative heading text that never names the product helps nobody find it.</p>
       <p><strong>19. Your product images have descriptive alt text.</strong> Alt text helps visually impaired shoppers and helps search engines understand the image. File names like IMG 2041 help neither.</p>
-      <p><strong>20. Your important pages are indexed.</strong> Search Google for your store name plus your best product. If key pages do not appear, check that your sitemap is submitted in Google Search Console and that the pages are not blocked. Traffic cannot buy from pages Google has never seen.</p>
+      <p><strong>20. Your important pages are indexed.</strong> Search Google for your store name plus your best product. If key pages do not appear, check that your sitemap is submitted in Google Search Console and that the pages are not blocked. Traffic cannot buy from pages Google has never seen.</p> <p>If a key page disappeared after a platform move, the usual cause is a missing redirect. That is why redirect mapping sits at the center of our <a href="/services/shopify-migration-services">Shopify Migration Services</a>.</p>
       <h2 id="what-do-you-do-with-your-results">What do you do with your results?</h2>
       <p>Count your failures by group, not in total. A store failing mostly on speed and apps has a technical cleanup ahead. A store failing on product pages and trust has a persuasion problem. The fix order is: checkout failures first, then product pages, then speed, then the rest.</p>
       <p>If you failed three or fewer checks, fix them yourself this week and retest. If you failed four to ten, you have a real list, and it is worth doing properly in one pass. If you failed more than ten, or your checkout checks failed, get a professional audit before spending another dollar on ads, because ads pour traffic into a leaking bucket.</p>
@@ -1300,7 +1300,7 @@ export const blogPosts = [
       No, and you should distrust anyone who guarantees it. An audit guarantees clarity about where buyers are lost and which fixes matter most. Sales improve when the right fixes are implemented well. The audit's job is to make sure you fix the right things.</p>
       <p><strong>How is a CRO audit different from A/B testing?</strong>
       Testing compares two versions of one element and needs traffic volume to reach a verdict. An audit studies the whole journey and finds the problems worth testing or fixing in the first place. For most small stores, audit first, fix the obvious, and test only the big open questions.</p>
-      <p><strong>Can I do a CRO audit myself?</strong>
+      <p><strong>What does a Shopify CRO audit include?</strong> A Shopify CRO audit examines the full buying journey: the homepage and how fast it explains the offer, product pages and their trust signals, the cart and checkout flow, mobile behavior, and the analytics data that shows where buyers drop off. You receive the findings ranked by revenue impact, with the fixes that matter first.</p> <p><strong>Can I do a CRO audit myself?</strong>
       You can do the first layer with our <a href="/blog/shopify-store-audit-checklist">audit checklist</a> and your own analytics. The deeper layer, reading the data patterns and ranking by revenue impact, is where an outside specialist earns their fee, mostly because they have seen the same leaks across many stores.</p>
       `
     },
@@ -1322,7 +1322,7 @@ export const blogPosts = [
       ],
       content: `
       <p>A Magento to Shopify migration succeeds or fails on preparation, not on moving day. This checklist follows the order we work in: audit and mapping first, then the build, then testing, then a launch sequence that protects your data and your Google rankings.</p>
-      <p>Work through it in order and resist skipping ahead. Every item exists because a migration somewhere was hurt by its absence. If you want the service version of this list, our <a href="/services/shopify-migration-services">Shopify Migration Services</a> page explains how we run the whole move for you.</p>
+      <p>Work through it in order and resist skipping ahead. Every item exists because a migration somewhere was hurt by its absence. If you want the service version of this list, our <a href="/services/shopify-migration-services">Shopify Migration Services</a> page explains how we run the whole move for you.</p> <p>Magento 2 stores follow the same order of work. The difference is in the detail: Magento 2 extensions rarely have a one to one Shopify equivalent, customer and order data needs careful field mapping, and the URL structure changes completely, so the redirect plan carries more weight than on a simple move.</p>
       <h2 id="phase-1-before-you-move-anything">Phase 1: Before you move anything</h2>
       <p><strong>Export and back up everything.</strong> Full Magento backup, database included, stored somewhere outside the server. Products, customers, orders, CMS pages, blog content, media. If it exists, it gets copied before anyone touches anything.</p>
       <p><strong>Audit what you actually have.</strong> Count products, variants, customers and orders honestly. Years of Magento stores accumulate test products, dead categories and duplicate customer accounts. Migrating junk is wasted effort; this is your one cheap chance to clean house.</p>
@@ -1401,7 +1401,7 @@ export const blogPosts = [
       <p>You should receive one short report each month. What was updated, what was checked, what was fixed, and what needs a decision from you. Written in plain language, without padded lists of meaningless activity.</p>
       <p>The report is also your early warning system. Speed creeping down over three months, an app misbehaving repeatedly, error pages accumulating. None of these announce themselves. The report is how they get caught while they are still cheap, and our <a href="/blog/shopify-store-audit-checklist">audit checklist</a> shows the kinds of items such a report tracks.</p>
       <h2 id="what-a-maintenance-plan-should-not-include">What a maintenance plan should not include</h2>
-      <p>Honest exclusions protect you as much as inclusions. New features and custom development are out. Redesigns are out. Emergency heroics caused by other developers changing the live store without telling anyone are, at best, a conversation.</p>
+      <p>Honest exclusions protect you as much as inclusions. New features and custom development are out. Redesigns are out. Emergency heroics caused by other developers changing the live store without telling anyone are, at best, a conversation.</p> <p>Moving platforms is out as well. A platform move is a project of its own, and it belongs in <a href="/services/shopify-migration-services">Shopify Migration Services</a>, not in a monthly care plan.</p>
       <p>Also be wary of the opposite problem: plans that promise everything. Unlimited changes, instant responses, guaranteed uptime of your sales. Maintenance is routine care by humans. Anyone selling it as magic is selling you a disappointment scheduled for later.</p>
       <h2 id="do-you-actually-need-a-plan">Do you actually need a plan?</h2>
       <p>Not every store does. A brand new store with few apps and an owner comfortable in the dashboard can self maintain for a while. The honest trigger points are these: you are selling steadily, your app count keeps growing, nobody on the team enjoys the technical side, or one hour of downtime costs more than the plan does.</p>
@@ -1413,7 +1413,7 @@ export const blogPosts = [
       With most independent providers, yes, plans run monthly without long lock ins. Ask before signing, and get the answer in writing. Long contracts for routine care deserve a raised eyebrow.</p>
       <p><strong>What is the difference between maintenance and support?</strong>
       Support reacts when you report a problem. Maintenance prevents and checks whether you report anything or not: updates, backups, security reviews and test orders happen on a schedule. Good plans include both, but the scheduled half is the part that saves you.</p>
-      <p><strong>Will a maintenance plan improve my sales?</strong>
+      <p><strong>What is Shopify maintenance?</strong> Shopify maintenance is the routine care a live store needs after launch: theme and app updates applied safely, backups that are checked rather than assumed, security and access reviews, a monthly checkout test order, small fixes, and a short health report that shows what was done. It is the scheduled work that stops small problems from quietly becoming lost sales.</p> <p><strong>Will a maintenance plan improve my sales?</strong>
       Not directly, and any provider claiming otherwise is stretching. Maintenance protects sales: it keeps the store fast, working and trustworthy, so the traffic and marketing you pay for are not wasted on a store with silent breakages. Growth work is a different service.</p>
       `
     },
@@ -1570,7 +1570,7 @@ export const blogPosts = [
       <p><strong>Is Shopify more expensive than Squarespace?</strong>
       The entry prices are in a similar range, and the totals depend on the apps and tier you grow into. The fairer comparison is cost against capability: Shopify's bill buys a commerce operation, Squarespace's buys a website with commerce attached. Growing stores usually find Shopify's spend easier to justify because it replaces tools and workarounds.</p>
       <p><strong>Can I move my store from Squarespace to Shopify later?</strong>
-      Yes. Products, customers and content can be migrated, the design gets rebuilt as a Shopify theme, and redirects protect your rankings. It is a defined project rather than a button, which is why choosing with growth in mind saves money, but it is never a trap if you started on Squarespace.</p>
+      Yes. Products, customers and content can be migrated, the design gets rebuilt as a Shopify theme, and redirects protect your rankings. It is a defined project rather than a button, which is why choosing with growth in mind saves money, but it is never a trap if you started on Squarespace.</p> <p>Our <a href="/services/shopify-migration-services">Shopify Migration Services</a> run that move end to end, from data transfer to the redirect checks after launch.</p>
       <p><strong>Which platform is better for SEO?</strong>
       Both give you the fundamentals: editable titles, descriptions, clean URLs and sitemaps. Shopify's advantage is structural, in how product and collection pages scale, and in the app and development options when you need more. At small scale the difference rarely decides anything. Content and links decide more than platform does.</p>
       <p><strong>Does Squarespace work for a store with many products?</strong>
