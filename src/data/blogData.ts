@@ -722,6 +722,7 @@ export const blogPosts = [
           { id: "quick-wins", title: "10. 5 Quick Wins for Your Current Store", level: 2 },
 
           { id: "conclusion", title: "11. Conclusion: Don't Let an Old Site Kill Your Growth", level: 2 },
+          { id: "shopify-redesign", title: "10.5. What Does a Shopify Redesign Include?", level: 2 },
           { id: "faqs", title: "12. FAQs (The Real Talk)", level: 2 },
       ],
       content: `
@@ -991,6 +992,9 @@ export const blogPosts = [
 
 
 
+
+        <h2 id="shopify-redesign">What does a Shopify redesign include?</h2>
+        <p>A Shopify redesign includes four stages, in order: an audit of the current store data, a custom UI and UX blueprint built for your buyer, the build itself on a modern Shopify 2.0 theme, and testing on real devices before launch. If your store shows several of the seven signs above, that full process is the fix, rather than another round of small patches on the old design.</p>
 
       <h2 id="conclusion">Conclusion: Don't Let an Old Site Kill Your Growth</h2>
       <p>It is 2026. A "good enough" Shopify store is not enough anymore. If your site feels like a template, loads slowly, or breaks on mobile? You are losing money. Every single day.</p>
@@ -1358,6 +1362,8 @@ export const blogPosts = [
       The data, almost always. Designs are visible, so problems get spotted. Data problems hide quietly inside attributes, customer records and URL structures, and only surface when a customer or a search engine goes looking. That is why Phase 1 is the longest phase.</p>
       <p><strong>Do I need a developer for this, or can an app do it?</strong>
       Import apps move basic data well for small, simple catalogs. Stores with custom attributes, extensions and real traffic usually need a developer for the mapping, the feature decisions and the redirect work. The checklist above is a fair test: if every item feels easy for your store, an app may genuinely be enough.</p>
+      <p><strong>What should a complete Shopify migration checklist include?</strong>
+      Four phases, in order: preparation (backups, an honest audit of what you have, extension decisions, attribute mapping and an SEO baseline), the build (a development store with real data, a native theme rebuild, feature rebuilds and a redirect map), testing (full test orders, data checks against the old store and a speed comparison), and launch (a quiet window, the switch, redirect spot checks and two weeks of daily monitoring). A checklist missing the redirect map or the SEO baseline is not complete, because those two items protect the rankings you already have.</p>
       `
     },
     {
@@ -1381,6 +1387,7 @@ export const blogPosts = [
       ],
       content: `
       <p>A proper Shopify maintenance plan includes theme and app updates, backup checks, security reviews, monthly checkout testing, small content fixes and a plain language health report. If a plan you are quoted does not name most of these, you are probably buying a support retainer wearing a maintenance label.</p>
+      <p>People also search for this as Shopify maintenance packages, and the comparison that matters is not the package name or the price on its own. It is the list of work inside it. Two packages at the same price can cover very different things, so compare them line by line against the sections below: updates, backups, security checks, checkout testing, small fixes and the monthly report.</p>
       <p>This guide walks through each part, what it actually involves, and what a plan should honestly exclude. It ends with the questions to ask before you sign anything, ours or anyone else's.</p>
       <h2 id="updates-theme-and-apps-done-safely">Updates: theme and apps, done safely</h2>
       <p>Updates are the core of maintenance, and the word "done safely" is where plans differ. A theme update applied directly to your live store can wipe customizations and break layouts. Done properly, the update is applied to a copy of the theme, checked page by page, and only then published.</p>
@@ -1413,6 +1420,8 @@ export const blogPosts = [
       With most independent providers, yes, plans run monthly without long lock ins. Ask before signing, and get the answer in writing. Long contracts for routine care deserve a raised eyebrow.</p>
       <p><strong>What is the difference between maintenance and support?</strong>
       Support reacts when you report a problem. Maintenance prevents and checks whether you report anything or not: updates, backups, security reviews and test orders happen on a schedule. Good plans include both, but the scheduled half is the part that saves you.</p>
+      <p><strong>What should a Shopify website maintenance checklist include each month?</strong>
+      Theme and app updates applied to a copy of the theme first and checked before publishing, a verified backup, a review of staff accounts and app permissions, one full test order through checkout, any small fixes that have queued up, and a short written report of what was done and what needs your decision.</p>
       <p><strong>What is Shopify maintenance?</strong> Shopify maintenance is the routine care a live store needs after launch: theme and app updates applied safely, backups that are checked rather than assumed, security and access reviews, a monthly checkout test order, small fixes, and a short health report that shows what was done. It is the scheduled work that stops small problems from quietly becoming lost sales.</p> <p><strong>Will a maintenance plan improve my sales?</strong>
       Not directly, and any provider claiming otherwise is stretching. Maintenance protects sales: it keeps the store fast, working and trustworthy, so the traffic and marketing you pay for are not wasted on a store with silent breakages. Growth work is a different service.</p>
       `
