@@ -182,12 +182,22 @@ export default function ShopifyMigrationServices() {
                 </div>
             </section>
 
+            {/* Already on Shopify and moving to Plus */}
+            <section className="py-16 bg-zinc-950 border-y border-zinc-900">
+                <div className="max-w-4xl mx-auto px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Already on Shopify and moving to Shopify Plus?</h2>
+                    <div className="space-y-5 text-zinc-400 leading-relaxed">
+                        <p>That is an upgrade, not a platform move, and it has its own traps: checkout customizations have to be rebuilt with checkout extensibility, and old scripts need Shopify Functions equivalents. Our <a href="/services/shopify-plus-development-services" className="text-amber-500 hover:underline">Shopify Plus development services</a> cover the upgrade, and our <a href="/blog/shopify-plus-migration-guide" className="text-amber-500 hover:underline">Shopify Plus migration guide</a> walks through the audit, rebuild and launch order in detail.</p>
+                    </div>
+                </div>
+            </section>
+
             {/* Rankings */}
             <section className="py-16 max-w-4xl mx-auto px-6">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Will a migration hurt your Google rankings?</h2>
                 <div className="space-y-5 text-zinc-400 leading-relaxed">
                     <p>It can, and pretending otherwise would be dishonest. Rankings dip when URLs change without redirects, when content gets dropped in the move, or when the new store launches slower than the old one. These are the three classic migration injuries, and all three are preventable.</p>
-                    <p>Our protection is boring and thorough. Every important old URL is mapped to its new home before launch. Content moves in full, not in summary. The new store is speed checked before the switch, the sitemap is submitted the day it goes live, and rankings and traffic are watched in the weeks after.</p>
+                    <p>Our protection is boring and thorough. Every important old URL is mapped to its new home before launch. Content moves in full, not in summary. The new store is speed checked before the switch, the sitemap is submitted the day it goes live, and rankings and traffic are watched in the weeks after. Our <a href="/blog/magento-to-shopify-migration-checklist" className="text-amber-500 hover:underline">migration checklist</a> shows the same sequence step by step, so you can see exactly what your move involves.</p>
                     <p>Even with all of that, a small temporary dip is possible while Google recrawls the new store. Anyone who promises zero movement is selling you comfort, not a plan. What we promise is that no page is lost by carelessness.</p>
                     <p>This care is deliberate. Your migration is planned by a developer who also works in SEO every day, so the redirect map gets the same attention as the design.</p>
                 </div>

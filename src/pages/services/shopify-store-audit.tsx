@@ -31,6 +31,10 @@ export default function ShopifyStoreAudit() {
         {
             q: "What is the difference between the free audit and the full store audit?",
             a: "The free audit is a 15 minute look that names the top 3 things hurting your conversions. The full audit checks the whole store in depth and gives you the complete written fix list in priority order."
+        },
+        {
+            q: "Can I just check my store myself instead of booking an audit?",
+            a: "You can, and the checklists on this page are written for exactly that. Owners usually book the audit when they want the inside view as well: theme code health, app conflicts, checkout tested end to end, and one ranked list that says what to fix first instead of forty small maybes. Start with the free checks. If questions remain, that is what the audit is for."
         }
     ];
 
@@ -148,6 +152,7 @@ export default function ShopifyStoreAudit() {
                 <div className="space-y-5 text-zinc-400 leading-relaxed">
                     <p>Yes, you can start for free. The homepage offers a free 15 minute Shopify store audit with no strings attached. It is a quick look that names the top 3 things hurting your conversions.</p>
                     <p>The full store audit on this page is the deep version. It checks speed, theme code, apps, checkout, product pages, SEO basics and trust signals. Findings are reported in three lists: fix now, fix soon, and safe to ignore.</p>
+                    <p>You can also check parts of the store yourself for free. Our <a href="/blog/shopify-store-audit-checklist" className="text-amber-500 hover:underline">store audit checklist</a> walks the same areas we check, in the order we check them, and our <a href="/blog/shopify-seo-checklist" className="text-amber-500 hover:underline">Shopify SEO checklist</a> covers the search side in 24 checks. Self checking tells you what is visible from the outside. The full audit goes further: theme code, checkout testing with real orders, and every finding ranked by what it costs you in sales.</p>
                     <p>Choose the full audit when you want the complete picture in writing before spending on fixes. Either way, findings come before any paid work. Many owners then hand the fix list to our maintenance plan or fix items themselves, and both are fine. You can start by booking a <a href="/strategy-call" className="text-amber-500 hover:underline">strategy call</a>.</p>
                 </div>
             </section>

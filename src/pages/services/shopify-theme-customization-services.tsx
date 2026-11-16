@@ -101,7 +101,7 @@ export default function ShopifyThemeCustomizationServices() {
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What can be customized in a Shopify theme?</h2>
                     <p className="text-zinc-400 leading-relaxed mb-10">
-                        Almost everything a customer sees and touches. These are the changes store owners ask us for most often.
+                        Almost everything a customer sees and touches, including how your prices themselves are displayed: our <a href="/blog/shopify-currency-formatting" className="text-amber-500 hover:underline">Shopify currency formatting guide</a> shows the display options most stores never find. These are the changes store owners ask us for most often.
                     </p>
                     <ul className="space-y-4">
                         {includes.map((item, i) => (
@@ -113,6 +113,7 @@ export default function ShopifyThemeCustomizationServices() {
                             </li>
                         ))}
                     </ul>
+                    <p className="text-zinc-400 leading-relaxed mt-10">Not sure which theme your store is even running, or which theme a competitor's store uses? Our free <a href="/tools/shopify-theme-detector" className="text-amber-500 hover:underline">Shopify theme detector</a> reads the theme name from the store's own code in seconds, and our <a href="/blog/how-to-find-what-theme-a-shopify-store-uses" className="text-amber-500 hover:underline">guide to finding a store's theme</a> explains the manual method and the cases where no tool can tell. Knowing the starting point makes every customization conversation shorter.</p>
                 </div>
             </section>
 
@@ -153,7 +154,7 @@ export default function ShopifyThemeCustomizationServices() {
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">How does the customization process work?</h2>
                 <div className="space-y-5 text-zinc-400 leading-relaxed">
                     <p>We start by reviewing your current theme and your change list on a duplicate copy of your store. You see every change on that copy first, on real product pages, not on mockups that hide the problems.</p>
-                    <p>You review, we refine, and nothing publishes until you approve it. Speed is checked before and after, because a prettier store that loads slower sells less, not more.</p>
+                    <p>You review, we refine, and nothing publishes until you approve it. Speed is checked before and after, because a prettier store that loads slower sells less, not more. One of the most common fixes is also the smallest: our guide to the <a href="/blog/shopify-hero-image-eager-loading-fix" className="text-amber-500 hover:underline">hero image eager loading fix</a> shows how a lazy loaded banner quietly caps a store's speed score.</p>
                     <p>After launch we show your team how the new sections work in the theme editor, so the store stays yours to run. If you would rather not think about updates at all afterwards, that is what our <a href="/services/shopify-maintenance-services" className="text-amber-500 hover:underline">maintenance service</a> exists for.</p>
                 </div>
             </section>

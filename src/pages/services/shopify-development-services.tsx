@@ -43,6 +43,7 @@ export default function ShopifyDevelopmentServices() {
         "Custom theme development, and rebuilds when patching an old theme stops paying",
         "Custom Liquid sections and features your theme cannot do out of the box",
         "App integration, and private app work for the tools your store depends on",
+        "B2B and wholesale setups: company accounts, catalogs and trade pricing built into your store",
         "Checkout customization on Plus, using checkout extensibility and Shopify Functions",
         "Migration into Shopify from other platforms, with redirects and data checks",
         "Speed and mobile fixes made inside the theme, not bolted on top of it",
@@ -134,6 +135,15 @@ export default function ShopifyDevelopmentServices() {
                 </div>
             </section>
 
+            {/* B2B and wholesale */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Can you build our B2B or wholesale channel?</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>Yes. Selling to other businesses is development work, not a theme setting: company accounts, customer specific catalogs and price lists, payment terms and minimum orders all have to be built and tested as one system. On Shopify Plus that system is native. On standard plans it is built with carefully chosen apps, and we will tell you honestly which side of that line your rules sit on before anything is quoted.</p>
+                    <p>If you are planning the channel, our <a href="/blog/b2b-ecommerce-consulting" className="text-amber-500 hover:underline">B2B ecommerce consulting</a> article explains how the planning works, and our <a href="/blog/shopify-wholesale-setup-guide" className="text-amber-500 hover:underline">Shopify wholesale setup guide</a> walks the setup steps.</p>
+                </div>
+            </section>
+
             {/* How a project runs */}
             <section className="py-16 bg-zinc-950 border-y border-zinc-900">
                 <div className="max-w-4xl mx-auto px-6">
@@ -165,6 +175,14 @@ export default function ShopifyDevelopmentServices() {
                         <p>NawazBuilds is deliberately the middle shape. It is a development company where the developer you speak to is the developer who builds. Every project runs with a defined scope and a written quote, so you get agency reliability without agency layers.</p>
                         <p>A very small one off fix often suits a freelancer. An ongoing programme that needs many skills at once often suits a big agency. A defined store build or rebuild where you want direct developer access suits this model, and you can book a <a href="/strategy-call" className="text-amber-500 hover:underline">strategy call</a> to talk it through.</p>
                     </div>
+                </div>
+            </section>
+
+            {/* SEO on a new build */}
+            <section className="py-16 max-w-4xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">What about SEO on a new build?</h2>
+                <div className="space-y-5 text-zinc-400 leading-relaxed">
+                    <p>A build from us is technically clean for search from day one: sensible page structure, fast theme code, and titles and descriptions you can edit yourself. Ongoing SEO, the keyword work, content and monthly cycle that grows rankings over time, is a separate discipline. It is handled by our sister agency, RankVelt, whose <a href="https://www.rankvelt.com/shopify-seo-services" className="text-amber-500 hover:underline">Shopify SEO services</a> are built for exactly that, and our <a href="/blog/shopify-seo-checklist" className="text-amber-500 hover:underline">Shopify SEO checklist</a> shows you the basics if you want to run them yourself first.</p>
                 </div>
             </section>
 

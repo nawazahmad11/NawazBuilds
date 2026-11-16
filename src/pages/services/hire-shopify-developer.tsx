@@ -31,6 +31,10 @@ export default function HireShopifyDeveloper() {
         {
             q: "What if you are not the right fit for my store?",
             a: "Then you hear it on the first call, not after an invoice. Some stores need a big agency bench, some need a specialist we are not, and some need no developer at all yet. A clear no early is worth more than a hopeful yes, and we would rather point you at the right route."
+        },
+        {
+            q: "Should I hire a Shopify developer or a Shopify expert?",
+            a: "The two labels overlap, and stores use them for the same job: someone who can build and fix things in a Shopify store properly. What actually matters is not the label. It is who writes your code, whether the work is tested on a duplicate theme before it touches your live store, and whether you can reach that person directly when something breaks. Judge any hire, including us, on those three things."
         }
     ];
 
