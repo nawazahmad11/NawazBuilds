@@ -1,58 +1,282 @@
 {
-    "theme-detector": {
-      "title": "Best Shopify Theme Detector 2026",
-      "description": "Our advanced Shopify Theme Spy uses deep-scan technology to reveal the exact theme and apps behind any successful dropshipping store.",
-      "features": [
-        { "title": "Deep Scan", "detail": "Detects parent themes even if they are heavily renamed by the owner." },
-        { "title": "App Intelligence", "detail": "Identifies over 50+ Shopify apps including Klaviyo, Loox, and PageFly." },
-        { "title": "Fast & Lite", "detail": "Powered by lightweight proxies to ensure 3-second results without lag." }
-      ],
-      "faqs": [
-        { "q": "How does the Shopify Theme Detector work?", "a": "It scans the publicly available liquid files and CSS signatures of a store." },
-        { "q": "Can I detect themes on password stores?", "a": "No, the tool requires the store to be public to read the theme's architecture." }
-      ]
-    },
-    "name-generator": {
-      "title": "Shopify Store Name Generator",
-      "description": "This tool turns the keywords you enter into brandable name ideas for a Shopify store. A good name is only the first step, because you still need to choose carefully and run a few checks before you commit. The sections below explain how to pick a strong name and what to verify before you use it.",
-      "features": [
-        { "title": "Keyword Based", "detail": "Names are built from the words you enter, so the results stay tied to what your store actually sells." },
-        { "title": "Brandable Results", "detail": "The tool creates short combinations that are easy to say, spell and remember, which are the qualities a store name needs." },
-        { "title": "One Click Copy", "detail": "Copy any name you like to your clipboard with one click, so you can keep a shortlist while you run your checks." }
-      ],
-      "faqs": [
-        { "q": "How do I choose a good Shopify store name?", "a": "Keep it short and easy to spell after hearing it once. Avoid words that limit you to one product if you may expand later. Say the name out loud a few times to check how it sounds. Avoid names that sound like a big existing brand." },
-        { "q": "How do I check if the domain is available?", "a": "Search the exact name plus .com at any domain registrar to see if it is free. Prefer the .com version without hyphens or extra words, because it is easier for customers to remember and type. If the exact .com is taken, treat that as a sign to pick another name rather than forcing a variation." },
-        { "q": "Should I check trademarks before using a name?", "a": "Yes, check trademarks before you use a name. Search your country trademark register, for example the USPTO database in the US, and also search Google and the app stores for businesses already using the name in your product area. A generator cannot do this check for you. When in doubt, choose a different name early, because renaming later costs far more." },
-        { "q": "What else should I check besides the domain?", "a": "Check the same name as a username on the social platforms you plan to use. Also run a plain Google search of the name to see what already ranks for it. If the results show a strong or confusing match, pick a cleaner name." },
-        { "q": "What makes a name easy to build a store brand on?", "a": "A strong store name is short, clear, and flexible enough to grow with your brand. You can pair a plain everyday word with a product word, for example Copper Pantry for a kitchen store. You can also use a short invented word that is easy to spell and say. Pick a style that feels natural when you say it and easy to remember later." },
-        { "q": "Can I change my Shopify store name later?", "a": "Yes, you can change the store name in your Shopify settings at any time. The domain is the serious part, because changing it later means setting up redirects and taking care with your Google presence. That is why the checks above are worth an hour now." }
-      ]
-    },
-    "profit-calculator": {
-      "title": "Shopify Profit & Margin Calculator 2026",
-      "description": "Stop guessing your profits. Use our advanced calculator to factor in COGS, shipping, and ad spend to find your true net profit.",
-      "features": [
-        { "title": "Net Margin Analysis", "detail": "Calculate exactly how much you keep after all expenses." },
-        { "title": "ROI Tracker", "detail": "Measure the effectiveness of your ad spend instantly." },
-        { "title": "Break-Even Point", "detail": "Know the minimum price you need to sell at to stay in profit." }
-      ],
-      "faqs": [
-        { "q": "What is a good profit margin for dropshipping?", "a": "Typically, a net profit margin between 15% to 25% is considered healthy." },
-        { "q": "Does this include Shopify fees?", "a": "You can add Shopify transaction fees into the 'Other Costs' field for better accuracy." }
-      ]
-    },
-    "policy-generator": {
-      "title": "Legal Policy Generator 2026",
-      "description": "Generate high-quality Privacy Policies, Refund Policies, and Terms of Service. Custom-tailored for Dropshipping and E-commerce stores.",
-      "features": [
-        { "title": "Custom Logic", "detail": "Policies change based on your business model and refund window." },
-        { "title": "GDPR Ready", "detail": "Includes standard clauses for data protection and cookie consent." },
-        { "title": "Instant Copy", "detail": "Perfectly formatted text ready to be pasted into your Shopify legal settings." }
-      ],
-      "faqs": [
-        { "q": "Are these policies legally binding?", "a": "These are templates based on standard practices. We recommend a legal review for 100% compliance." },
-        { "q": "Can I use these for TikTok Shop?", "a": "Yes, these templates follow the general requirements for most e-commerce platforms." }
-      ]
-    }
+  "theme-detector": {
+    "title": "Best Shopify Theme Detector 2026",
+    "description": "Our advanced Shopify Theme Spy uses deep-scan technology to reveal the exact theme and apps behind any successful dropshipping store.",
+    "features": [
+      {
+        "title": "Deep Scan",
+        "detail": "Detects parent themes even if they are heavily renamed by the owner."
+      },
+      {
+        "title": "App Intelligence",
+        "detail": "Identifies over 50+ Shopify apps including Klaviyo, Loox, and PageFly."
+      },
+      {
+        "title": "Fast & Lite",
+        "detail": "Powered by lightweight proxies to ensure 3-second results without lag."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How does the Shopify Theme Detector work?",
+        "a": "It scans the publicly available liquid files and CSS signatures of a store."
+      },
+      {
+        "q": "Can I detect themes on password stores?",
+        "a": "No, the tool requires the store to be public to read the theme's architecture."
+      }
+    ]
+  },
+  "name-generator": {
+    "title": "Shopify Store Name Generator",
+    "description": "This tool turns the keywords you enter into brandable name ideas for a Shopify store. A good name is only the first step, because you still need to choose carefully and run a few checks before you commit. The sections below explain how to pick a strong name and what to verify before you use it.",
+    "features": [
+      {
+        "title": "Keyword Based",
+        "detail": "Names are built from the words you enter, so the results stay tied to what your store actually sells."
+      },
+      {
+        "title": "Brandable Results",
+        "detail": "The tool creates short combinations that are easy to say, spell and remember, which are the qualities a store name needs."
+      },
+      {
+        "title": "One Click Copy",
+        "detail": "Copy any name you like to your clipboard with one click, so you can keep a shortlist while you run your checks."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I choose a good Shopify store name?",
+        "a": "Keep it short and easy to spell after hearing it once. Avoid words that limit you to one product if you may expand later. Say the name out loud a few times to check how it sounds. Avoid names that sound like a big existing brand."
+      },
+      {
+        "q": "How do I check if the domain is available?",
+        "a": "Search the exact name plus .com at any domain registrar to see if it is free. Prefer the .com version without hyphens or extra words, because it is easier for customers to remember and type. If the exact .com is taken, treat that as a sign to pick another name rather than forcing a variation."
+      },
+      {
+        "q": "Should I check trademarks before using a name?",
+        "a": "Yes, check trademarks before you use a name. Search your country trademark register, for example the USPTO database in the US, and also search Google and the app stores for businesses already using the name in your product area. A generator cannot do this check for you. When in doubt, choose a different name early, because renaming later costs far more."
+      },
+      {
+        "q": "What else should I check besides the domain?",
+        "a": "Check the same name as a username on the social platforms you plan to use. Also run a plain Google search of the name to see what already ranks for it. If the results show a strong or confusing match, pick a cleaner name."
+      },
+      {
+        "q": "What makes a name easy to build a store brand on?",
+        "a": "A strong store name is short, clear, and flexible enough to grow with your brand. You can pair a plain everyday word with a product word, for example Copper Pantry for a kitchen store. You can also use a short invented word that is easy to spell and say. Pick a style that feels natural when you say it and easy to remember later."
+      },
+      {
+        "q": "Can I change my Shopify store name later?",
+        "a": "Yes, you can change the store name in your Shopify settings at any time. The domain is the serious part, because changing it later means setting up redirects and taking care with your Google presence. That is why the checks above are worth an hour now."
+      }
+    ]
+  },
+  "profit-calculator": {
+    "title": "Shopify Profit Margin and Fee Calculator 2026",
+    "description": "Work out what one order really leaves you after product cost, shipping, ads and Shopify fees. Pick your plan, check the card rate against your own Payments settings, and see net profit, margin after fees, ROAS and ROI per order.",
+    "features": [
+      {
+        "title": "Plan aware fees",
+        "detail": "Basic, Grow, Advanced and Plus card rates load automatically, and every rate stays editable, because your country's rates are the ones that count."
+      },
+      {
+        "title": "Fees in the open",
+        "detail": "Card processing and gateway transaction fees are shown as their own lines, not buried inside a single costs figure where nobody sees them."
+      },
+      {
+        "title": "Margin after fees",
+        "detail": "The margin this tool reports is the one left after Shopify takes its share, which is the only margin worth pricing on."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What fees does Shopify take from each order?",
+        "a": "With Shopify Payments, a card processing fee: a percentage of the order total plus a fixed amount per order. The rate depends on your plan and country. If you use an external payment gateway instead, Shopify adds a transaction fee on top, from 2 percent on Basic down to 0.2 percent on Plus at US rates. This calculator includes both."
+      },
+      {
+        "q": "Why does my plan change my profit?",
+        "a": "Higher plans carry lower card rates. On thin margins, the difference between the Basic rate and the Advanced rate can be the difference between a product that works and one that quietly loses money on every order."
+      },
+      {
+        "q": "Should the fixed per order fee change how I price?",
+        "a": "Yes, on low priced items. A 30 cent fixed fee is minor on a 200 dollar order and heavy on a 10 dollar order, which is one reason very cheap products are hard to sell profitably on any platform."
+      },
+      {
+        "q": "Is this the same as the profit my accounts show?",
+        "a": "Not exactly. This is per order economics: price minus the costs of that order. Rent, salaries, software and taxes sit below this line. Use it to judge products and prices, and your accounts for the whole business."
+      }
+    ]
+  },
+  "policy-generator": {
+    "title": "Legal Policy Generator 2026",
+    "description": "Generate high-quality Privacy Policies, Refund Policies, and Terms of Service. Custom-tailored for Dropshipping and E-commerce stores.",
+    "features": [
+      {
+        "title": "Custom Logic",
+        "detail": "Policies change based on your business model and refund window."
+      },
+      {
+        "title": "GDPR Ready",
+        "detail": "Includes standard clauses for data protection and cookie consent."
+      },
+      {
+        "title": "Instant Copy",
+        "detail": "Perfectly formatted text ready to be pasted into your Shopify legal settings."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Are these policies legally binding?",
+        "a": "These are templates based on standard practices. We recommend a legal review for 100% compliance."
+      },
+      {
+        "q": "Can I use these for TikTok Shop?",
+        "a": "Yes, these templates follow the general requirements for most e-commerce platforms."
+      }
+    ]
+  },
+  "break-even-roas-calculator": {
+    "title": "Break-Even ROAS Calculator 2026",
+    "description": "Find the lowest ROAS your ads can hit before an order starts losing money. Enter your price and per order costs, and get your break-even ROAS, your maximum cost per order, and the contribution margin your ads are paid from.",
+    "features": [
+      {
+        "title": "One number to set",
+        "detail": "Your break-even ROAS becomes the floor in your ad account. Targets below it scale losses. Targets above it scale profit."
+      },
+      {
+        "title": "Fees included",
+        "detail": "Payment fees are taken out of the price first, because ads are paid from what is left after Shopify and the card networks take their share."
+      },
+      {
+        "title": "Max cost per order",
+        "detail": "The same maths gives the highest cost per purchase you can accept, the number to watch in Meta Ads and Google Ads."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is break-even ROAS?",
+        "a": "The return on ad spend at which an order exactly covers its costs. When revenue divided by ad spend equals this number, profit on the order is zero. Anything above it is profitable. Anything below it loses money."
+      },
+      {
+        "q": "How is break-even ROAS calculated?",
+        "a": "Take what is left of the selling price after product cost, shipping, other per order costs and payment fees. That is the contribution. Break-even ROAS is the price divided by the contribution. A 50 dollar product with 25 dollars of contribution has a break-even ROAS of 2.0."
+      },
+      {
+        "q": "What ROAS should I target?",
+        "a": "Above your break-even, by enough to leave the profit you want. If break-even is 2.0 and you want 10 dollars of profit per 50 dollar order, your target ROAS is 2.5. The calculator shows the floor. Your target is your decision."
+      },
+      {
+        "q": "Why do my platform numbers disagree with this?",
+        "a": "Ad platforms count revenue their own way, with their own attribution windows. This calculator uses your real per order costs, which platforms never see. Judge campaigns by whether orders stayed profitable, not by the platform headline ROAS alone."
+      }
+    ]
+  },
+  "landed-cost-calculator": {
+    "title": "Landed Cost Calculator 2026",
+    "description": "Work out what one unit really costs by the time it reaches your shelf: product cost plus freight, duty and fees, spread over the shipment. Then see the selling price your target margin actually requires.",
+    "features": [
+      {
+        "title": "Every cost in",
+        "detail": "Freight, duty and the small fees around importing are spread across the units in the shipment, which is where they belong."
+      },
+      {
+        "title": "The hidden extra",
+        "detail": "The tool shows the extra cost per unit above the product cost, the number most stores have never seen written down."
+      },
+      {
+        "title": "Price from truth",
+        "detail": "Enter a target margin and get the selling price that margin requires at your real landed cost, before ads and payment fees."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is landed cost?",
+        "a": "The total cost of getting a product ready to sell: what you paid for it, plus freight, insurance, customs duty and handling fees, divided by the units in the shipment. It is the cost your margin should be calculated from."
+      },
+      {
+        "q": "Why does pricing from product cost fail?",
+        "a": "Because freight and duty are real costs that arrive later and get forgotten. A product that looks like a 50 percent margin on product cost can be a 20 percent margin, or a loss, once a small shipment's freight is spread over its units."
+      },
+      {
+        "q": "How is duty calculated here?",
+        "a": "As a percentage of the goods value, which is how most duties are assessed. Your rate depends on the product category and the countries involved, so check the rate for your goods with your broker or customs authority and enter it here."
+      },
+      {
+        "q": "Does landed cost include selling costs?",
+        "a": "No. Payment fees, shipping to the customer and ad costs come after. Landed cost gets the product to your shelf at a true cost. What it costs to sell is the next layer, and our profit calculator covers that side."
+      }
+    ]
+  },
+  "shopify-store-checker": {
+    "title": "Shopify Store Checker 2026",
+    "description": "Twenty checks across speed, product pages, trust and checkout, scored honestly. Tick what is true for your store, see your score, and get the fix list in the order most stores should tackle it.",
+    "features": [
+      {
+        "title": "The checks that decide sales",
+        "detail": "No vanity items. Every check on this list is something that changes whether a visitor trusts the store and finishes a purchase."
+      },
+      {
+        "title": "A fix list, not a lecture",
+        "detail": "Your unchecked items become a short priority list, so you know what to do first instead of staring at twenty problems."
+      },
+      {
+        "title": "Honest by design",
+        "detail": "The score counts only what you confirm. A store that scores 12 with honest answers gains more than one that ticks everything and fixes nothing."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What does this checker actually check?",
+        "a": "Twenty basics across four areas: speed and performance, product pages, trust and clarity, and checkout and mobile. They are the same areas our full store audit opens with, in the same order."
+      },
+      {
+        "q": "Is a high score a guarantee of sales?",
+        "a": "No. These checks remove the friction that stops sales. They cannot create demand for a product, and no honest tool will promise that. What a good score means is that the store itself is no longer the reason visitors leave."
+      },
+      {
+        "q": "What can this checker not see?",
+        "a": "Anything inside the store: theme code health, app conflicts, checkout behaviour under real orders, and analytics setup. That is the difference between this free checker and the full audit, which works from collaborator access inside your store."
+      },
+      {
+        "q": "How often should I run it?",
+        "a": "After any theme change, app cleanup or redesign, and once a quarter otherwise. Stores drift: apps accumulate, pages age, and last year's checked item quietly breaks."
+      }
+    ]
+  },
+  "reorder-point-calculator": {
+    "title": "Reorder Point Calculator 2026",
+    "description": "Find the stock level at which you must reorder, from your daily sales, your supplier's lead time and the safety cover you choose. Plus how many days of stock you have left, and whether you should order now.",
+    "features": [
+      {
+        "title": "The standard formula, minus the spreadsheet",
+        "detail": "Daily sales times lead time, plus safety stock. The formula every inventory guide teaches, without building a sheet to run it."
+      },
+      {
+        "title": "Days left, in plain words",
+        "detail": "Your current stock is turned into days of cover, and the tool tells you plainly whether to order now, soon, or not yet."
+      },
+      {
+        "title": "Per product thinking",
+        "detail": "Run it for each key product separately. A storewide average hides the one bestseller that is about to sell out."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is a reorder point?",
+        "a": "The stock level that triggers a new order. It is set so the remaining stock covers sales while the delivery is on its way, with safety stock left over for delays and surprises."
+      },
+      {
+        "q": "How much safety stock should I keep?",
+        "a": "Enough to cover your supplier being late and demand being stronger than average. Three to seven days of sales is typical. Keep more when a supplier is unreliable or a product is hard to replace, less when deliveries are fast and predictable."
+      },
+      {
+        "q": "What average daily sales should I use?",
+        "a": "The last 30 days of orders for that product is a good default. Use a shorter window when demand is rising fast, and remember that a promotion can double the rate overnight, which is what safety stock is for."
+      },
+      {
+        "q": "Does this work for seasonal products?",
+        "a": "Yes, with the right inputs. Recalculate with the daily sales rate you expect in season, not the quiet months, and raise the safety cover, because a stockout in peak season costs the most."
+      }
+    ]
   }
+}

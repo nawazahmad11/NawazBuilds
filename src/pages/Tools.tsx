@@ -1,12 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 import { useParams, useSearchParams, useNavigate } from "react-router-dom"; // useParams aur useNavigate add kiya
 import { 
-  ShoppingBag, Layout, Calculator, ShieldCheck
+  ShoppingBag, Layout, Calculator, ShieldCheck, Target, Truck, ClipboardCheck, RefreshCcw
 } from "lucide-react";
 import NameGenerator from "../components/Tools/NameGenerator";
 import ThemeDetector from "../components/Tools/ThemeDetector"; 
 import ProfitCalculator from "../components/Tools/ProfitCalculator"; 
 import PolicyGenerator from "../components/Tools/PolicyGenerator";
+import BreakEvenRoasCalculator from "../components/Tools/BreakEvenRoasCalculator";
+import LandedCostCalculator from "../components/Tools/LandedCostCalculator";
+import StoreChecker from "../components/Tools/StoreChecker";
+import ReorderPointCalculator from "../components/Tools/ReorderPointCalculator";
 
 const ToolsPage = () => {
   const { toolName } = useParams(); // SEO Friendly URL slug (/tools/profit-margin-calculator)
@@ -23,6 +27,10 @@ const ToolsPage = () => {
     "shopify-theme-detector": "detector",
     "theme-detector": "detector",
     "business-name-generator": "generator",
+    "break-even-roas-calculator": "roas",
+    "landed-cost-calculator": "landed",
+    "shopify-store-checker": "checker",
+    "reorder-point-calculator": "reorder",
     // Purani support ke liye (Agar koi purane ?tool=calculator link se aaye)
     "calculator": "calculator",
     "policy": "policy",
@@ -80,6 +88,38 @@ const ToolsPage = () => {
       toolType: "generator",
       slug: "business-name-generator",
       status: "Live"
+    },
+    {
+      title: "Break-Even ROAS",
+      desc: "Find the lowest ROAS your ads can hit before an order loses money.",
+      icon: <Target className="w-5 h-5 text-purple-400" />,
+      toolType: "roas", 
+      slug: "break-even-roas-calculator",
+      status: "Live"
+    },
+    {
+      title: "Landed Cost Cal",
+      desc: "True per unit cost with freight, duty and fees included.",
+      icon: <Truck className="w-5 h-5 text-cyan-400" />,
+      toolType: "landed", 
+      slug: "landed-cost-calculator",
+      status: "Live"
+    },
+    {
+      title: "Store Checker",
+      desc: "20 honest checks across speed, product pages, trust and checkout.",
+      icon: <ClipboardCheck className="w-5 h-5 text-rose-400" />,
+      toolType: "checker", 
+      slug: "shopify-store-checker",
+      status: "Live"
+    },
+    {
+      title: "Reorder Point",
+      desc: "The stock level that tells you when to reorder, before you sell out.",
+      icon: <RefreshCcw className="w-5 h-5 text-lime-400" />,
+      toolType: "reorder", 
+      slug: "reorder-point-calculator",
+      status: "Live"
     }
   ];
 
@@ -98,6 +138,10 @@ const ToolsPage = () => {
       case "detector": return <ThemeDetector />;
       case "calculator": return <ProfitCalculator />;
       case "policy": return <PolicyGenerator />;
+      case "roas": return <BreakEvenRoasCalculator />;
+      case "landed": return <LandedCostCalculator />;
+      case "checker": return <StoreChecker />;
+      case "reorder": return <ReorderPointCalculator />;
       default: return <NameGenerator />;
     }
   };

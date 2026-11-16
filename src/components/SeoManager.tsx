@@ -46,7 +46,7 @@ const staticSeo: Record<string, SeoEntry> = {
   "/tools": {
     title: "Free Shopify Tools | Nawaz Builds",
     description:
-      "Free tools for Shopify store owners: profit margin calculator, legal policy generator, theme detector and business name generator.",
+      "Free tools for Shopify store owners: profit and fee calculator, break-even ROAS calculator, landed cost calculator, store checker, reorder point calculator, theme detector and more.",
   },
   "/case-studies": {
     title: "Shopify Case Studies | Nawaz Builds",
@@ -171,6 +171,26 @@ const toolSeo: Record<string, SeoEntry> = {
     title: "Shopify Business Name Generator | Nawaz Builds",
     description:
       "Generate brandable business name ideas for your Shopify store with this free name generator.",
+  },
+  "break-even-roas-calculator": {
+    title: "Break-Even ROAS Calculator | Nawaz Builds",
+    description:
+      "Calculate the lowest ROAS your ads can hit before an order loses money. Free break-even ROAS calculator with your real per order costs and payment fees included.",
+  },
+  "landed-cost-calculator": {
+    title: "Landed Cost Calculator | Nawaz Builds",
+    description:
+      "Calculate the true landed cost per unit with product cost, freight, duty and fees, plus the selling price your target margin requires. Free landed cost calculator.",
+  },
+  "shopify-store-checker": {
+    title: "Shopify Store Checker | Nawaz Builds",
+    description:
+      "Check your Shopify store against 20 honest basics across speed, product pages, trust and checkout, and get a score with a fix list. Free store checker.",
+  },
+  "reorder-point-calculator": {
+    title: "Reorder Point Calculator | Nawaz Builds",
+    description:
+      "Calculate your reorder point from daily sales, supplier lead time and safety stock, and see how many days of stock you have left. Free reorder point calculator.",
   },
 };
 
