@@ -1895,4 +1895,473 @@ export const blogPosts = [
       Usually a slow sales slide, or a feature quietly breaking. It is rarely a dramatic crash. If sales drift down with no clear cause, check the health of the store first.</p>
       `
     },
+    {
+      id: "shopify-seo-checklist",
+      title: "Shopify SEO Checklist: 24 Checks That Help Your Store Rank",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "SEO",
+      readTime: "8 min read",
+      image: "/blog/shopify-seo-checklist-cover.webp",
+      toc: [
+        { id: "setup-and-foundation", title: "Setup and foundation" },
+        { id: "keyword-mapping", title: "Keyword mapping" },
+        { id: "on-page-seo", title: "On page SEO" },
+        { id: "technical-checks", title: "Technical checks" },
+        { id: "content-that-ranks", title: "Content that ranks" },
+        { id: "the-monthly-routine", title: "The monthly routine" },
+        { id: "what-if-you-do-not-have-time-for-this", title: "What if you do not have time for this?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>If your Shopify store is not showing up in Google, work through this checklist before you spend anything on ads or apps. These 24 checks cover the reasons Shopify stores fail to rank: missing basics, pages fighting each other, duplicate URLs the platform creates on its own, and product pages written for suppliers instead of buyers. Do them in order. The first two groups take an afternoon, and most stores find their biggest problems there.</p>
+      <h2 id="setup-and-foundation">Setup and foundation</h2>
+      <p><strong>1.</strong> Connect Google Search Console and confirm your store is being indexed. If Google cannot see your pages, nothing else on this list matters.</p>
+      <p><strong>2.</strong> Submit your sitemap in Search Console. Shopify builds it for you at yourstore.com/sitemap.xml and updates it automatically.</p>
+      <p><strong>3.</strong> Connect Google Analytics so you can see which pages actually bring buyers, not just visitors.</p>
+      <p><strong>4.</strong> Make sure only one version of your domain is the main one (with or without www) and the other redirects to it. Shopify handles this in domain settings.</p>
+      <p><strong>5.</strong> Check your store is fully live with no password page, and skim your robots.txt file. Shopify sets a sensible default, and most stores should leave it alone.</p>
+      <h2 id="keyword-mapping">Keyword mapping</h2>
+      <p><strong>6.</strong> List your money pages: your main collections and your best selling products. SEO effort goes here first.</p>
+      <p><strong>7.</strong> Give each of those pages one main keyword. Collections carry category searches (what the product type is), products carry specific searches (brand, model, material, use case).</p>
+      <p><strong>8.</strong> Check no two pages chase the same keyword. When two pages compete, Google often ranks neither. Merge or retarget the weaker one.</p>
+      <h2 id="on-page-seo">On page SEO</h2>
+      <p><strong>9.</strong> Write a unique title tag for every important page, with its keyword in natural words and a reason to click.</p>
+      <p><strong>10.</strong> Write meta descriptions that sell the click: what the product is, who it is for, and one proof or offer point.</p>
+      <p><strong>11.</strong> Keep one clear H1 per page that matches what the page is about. Headings inside the page should follow a sensible order.</p>
+      <p><strong>12.</strong> Rewrite supplier product descriptions in your buyers' words. Copied descriptions are duplicate content, and they do not answer buyer questions.</p>
+      <p><strong>13.</strong> Add alt text to product images that describes the product plainly. This helps image search and accessibility.</p>
+      <p><strong>14.</strong> Rename image files before upload (product name and variant, not IMG_2041) and compress them so pages stay fast.</p>
+      <h2 id="technical-checks">Technical checks</h2>
+      <p>This group sits inside the wider store health picture covered by our <a href="/blog/shopify-store-audit-checklist">store audit checklist</a>. Work through the technical checks there too if you have not audited your store before.</p>
+      <p><strong>15.</strong> Look for duplicate pages created by tags, filters, and sorting. Shopify stores collect these quietly. Your theme should point them back to the main page with canonical tags, so check a few by viewing the page source.</p>
+      <p><strong>16.</strong> Build internal links: from blog posts to the collections and products they mention, and from collections to their key products. Internal links tell Google which pages matter.</p>
+      <p><strong>17.</strong> Confirm product schema is output on product pages (price, availability, reviews). Test one product URL in Google's Rich Results Test. While you are in the theme, our free <a href="/tools/shopify-theme-detector">theme detector</a> shows you exactly which theme any store, including yours, is running.</p>
+      <p><strong>18.</strong> Find and fix broken links and 404 pages. Redirect anything with traffic or links to the closest live page.</p>
+      <p><strong>19.</strong> After any URL change, redesign, or migration, set up 301 redirects from old URLs to new ones. Lost redirects are the most common reason a redesign kills traffic. Our <a href="/blog/magento-to-shopify-migration-checklist">migration checklist</a> covers redirect mapping in detail.</p>
+      <p><strong>20.</strong> Run your homepage and one product page through PageSpeed Insights on mobile. Remove apps you no longer use; every app adds weight to every page.</p>
+      <h2 id="content-that-ranks">Content that ranks</h2>
+      <p><strong>21.</strong> Add real content to collection pages: a short intro that says what the collection is, who it is for, and how to choose. Collections are usually the pages that rank first, and most stores leave them empty.</p>
+      <p><strong>22.</strong> Publish guides that answer the questions buyers ask before they buy, and link them to the products they discuss. One good guide beats ten thin blog posts.</p>
+      <h2 id="the-monthly-routine">The monthly routine</h2>
+      <p><strong>23.</strong> Once a month, open Search Console and check impressions, your top queries, and any page losing clicks. SEO problems show up there first. If keeping up this monthly cycle is not realistic for you, that ongoing work is what <a href="https://www.rankvelt.com/shopify-seo-services">Shopify SEO services</a> are for.</p>
+      <p><strong>24.</strong> Every quarter, refresh your top pages: update content that has gone stale, improve pages sitting just below page one, and recheck this list after any theme change.</p>
+      <h2 id="what-if-you-do-not-have-time-for-this">What if you do not have time for this?</h2>
+      <p>This checklist is the work, whether you do it yourself or hand it over. NawazBuilds builds and maintains Shopify stores, and the technical checks above are part of how we build them, alongside our <a href="/services/shopify-store-audit">store audit service</a>. Ongoing SEO, the keyword work, content, and the monthly cycle, is a different job, and it is handled by our sister agency: <a href="https://www.rankvelt.com/shopify-seo-services">RankVelt's Shopify SEO services</a> exist for store owners who want this done for them, starting with a free audit. Either way, do not skip the list. A store that passes these 24 checks is already ahead of most of its competitors.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How often should I run through this checklist?</strong>
+      Run the full list once a quarter and after any theme change or redesign. Group 6 is the monthly habit that keeps the rest from slipping.</p>
+      <p><strong>Do I need an SEO app for my Shopify store?</strong>
+      No. Everything on this list is done with settings, content, and theme level work. An app can help with specific jobs, but no app fixes empty collections or copied descriptions.</p>
+      <p><strong>What if my store is brand new?</strong>
+      Do groups 1 to 3 before you worry about traffic. A new store with clean foundations and well written product pages is ahead of older stores that skipped them.</p>
+      `
+    },
+    {
+      id: "shopify-flow-ai-workflows",
+      title: "How to Use Shopify Flow AI to Create Workflows That Save You Hours",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "AUTOMATION",
+      readTime: "7 min read",
+      image: "/blog/shopify-flow-ai-workflows-cover.webp",
+      toc: [
+        { id: "what-is-shopify-flow-in-plain-words", title: "What is Shopify Flow, in plain words?" },
+        { id: "how-do-you-create-a-workflow-with-the-flow-ai-assistant", title: "How do you create a workflow with the Flow AI assistant?" },
+        { id: "which-workflows-should-a-store-set-up-first", title: "Which workflows should a store set up first?" },
+        { id: "what-mistakes-do-people-make-with-flow-ai", title: "What mistakes do people make with Flow AI?" },
+        { id: "what-can-flow-not-do", title: "What can Flow not do?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Shopify Flow is Shopify's own automation app, and its AI assistant can build a workflow from a plain English description: you describe the job, Flow drafts the trigger, conditions, and actions, and you review and switch it on. Used well, it quietly handles the repetitive work of running a store: tagging orders, warning you about stock, flagging risky orders, and keeping customers organised. This guide shows how to create your first AI built workflow and five workflows worth copying.</p>
+      <h2 id="what-is-shopify-flow-in-plain-words">What is Shopify Flow, in plain words?</h2>
+      <p>Flow is a free Shopify app that connects events in your store to actions, without code. Every workflow has three parts. A trigger is the event that starts it, like an order being paid or inventory dropping. A condition is a check, like the order total being above a set amount. An action is what happens next, like adding a tag, sending your team a message, or updating a product. The AI assistant sits on top of this: instead of dragging blocks yourself, you describe the workflow and it assembles the blocks for you.</p>
+      <h2 id="how-do-you-create-a-workflow-with-the-flow-ai-assistant">How do you create a workflow with the Flow AI assistant?</h2>
+      <p><strong>1.</strong> Install Shopify Flow from the Shopify App Store if it is not already in your admin, and open it.</p>
+      <p><strong>2.</strong> Choose to create a workflow and open the AI assistant option.</p>
+      <p><strong>3.</strong> Describe one clear job in one or two sentences. Say what should start it, what should be checked, and what should happen. Example: "When an order over 500 dollars is paid, tag the order VIP and send an email to our team."</p>
+      <p><strong>4.</strong> Review the draft the AI builds. Check the trigger is the right event, the condition matches your description, and the action is exactly what you asked for. The AI is fast, but it guesses details like amounts and tag names, so read every block.</p>
+      <p><strong>5.</strong> Fix anything wrong by editing the blocks directly, then name the workflow clearly, for example "VIP order tagging".</p>
+      <p><strong>6.</strong> Turn it on, place a small test order if you can, and confirm the workflow ran under its run history.</p>
+      <h2 id="which-workflows-should-a-store-set-up-first">Which workflows should a store set up first?</h2>
+      <p>Start with these five. Each one solves a problem stores hit every week.</p>
+      <p><strong>Low stock warning:</strong> When inventory for a product falls below your chosen level, send your team a message. This prevents the silent stockouts that cost sales and ad spend.</p>
+      <p><strong>High value order tagging:</strong> When an order passes your VIP threshold, tag the order and the customer. Your best customers become easy to find for support, offers, and retention work.</p>
+      <p><strong>Fraud risk flag:</strong> When an order comes back with a high risk level, tag it and notify your team before fulfilment. This puts a human check exactly where it belongs.</p>
+      <p><strong>Out of stock cleanup:</strong> When a product sells out, hide it from the collection or tag it for review, so customers stop landing on products they cannot buy.</p>
+      <p><strong>First purchase welcome tag:</strong> When a customer places their first order, tag them as a new customer. Later email and reporting work gets much easier when this is automatic.</p>
+      <h2 id="what-mistakes-do-people-make-with-flow-ai">What mistakes do people make with Flow AI?</h2>
+      <p>The most common one is trusting the draft without reading it. The AI can pick a similar but wrong trigger, or set a condition slightly differently from what you meant, and the workflow then runs wrongly for weeks. The second mistake is building clever workflows nobody needs. Automate work you already do by hand every week, not work you might do one day. The third is switching a workflow on and never checking its run history. Spend two minutes a week scanning the runs, especially after theme or app changes.</p>
+      <h2 id="what-can-flow-not-do">What can Flow not do?</h2>
+      <p>Flow works inside Shopify and the apps that connect to it. It does not replace your email platform, your accounting software, or a proper integration between separate systems. When a job needs data from outside Shopify, or complicated logic with many exceptions, that is <a href="/services/shopify-app-development-services">custom development work</a>, not a Flow workflow. Knowing the boundary saves you hours of forcing the wrong tool.</p>
+      <p>Your first workflow should take under fifteen minutes: describe it, check the draft block by block, test it, and let it run. If you would rather have your store's automations planned and built properly, that is part of our <a href="/services/shopify-development-services">Shopify development services</a>. And if you want to get better at writing the descriptions themselves, our guide to <a href="/blog/shopify-flow-ai-assistant-prompts">Shopify Flow AI assistant prompts</a> is the companion to this one.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is Shopify Flow free?</strong>
+      Yes, Flow is Shopify's own app and it is free to install from the Shopify App Store. Availability of some features can depend on your plan, so check the app listing for your store.</p>
+      <p><strong>Do I need to know code to use Flow?</strong>
+      No. Workflows are built from triggers, conditions, and actions, and the AI assistant can draft them from a written description. Code only enters the picture when a job goes beyond what Flow can do.</p>
+      <p><strong>Can a Flow workflow break my store?</strong>
+      A badly checked workflow can tag wrongly, notify the wrong people, or hide products it should not. That is why you review every block, test with a small order, and scan the run history weekly.</p>
+      `
+    },
+    {
+      id: "shopify-hero-image-eager-loading-fix",
+      title: "Shopify Hero Image Loading Slow? The Eager Loading Fix, Step by Step",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "SPEED",
+      readTime: "6 min read",
+      image: "/blog/shopify-hero-image-eager-loading-fix-cover.webp",
+      toc: [
+        { id: "why-does-the-hero-image-decide-your-speed-score", title: "Why does the hero image decide your speed score?" },
+        { id: "what-exactly-needs-to-change", title: "What exactly needs to change?" },
+        { id: "how-do-you-apply-the-fix-in-your-theme", title: "How do you apply the fix in your theme?" },
+        { id: "how-do-you-check-the-fix-worked", title: "How do you check the fix worked?" },
+        { id: "what-if-your-theme-already-loads-the-hero-eagerly", title: "What if your theme already loads the hero eagerly?" },
+        { id: "what-mistakes-should-you-avoid", title: "What mistakes should you avoid?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>If your Shopify homepage feels slow and PageSpeed Insights keeps naming your hero banner as the problem, the usual cause is simple: your theme lazy loads the hero image, so the browser waits before loading the biggest thing on the page. The fix is to load that one image eagerly, with fetchpriority set to high, and keep every other image lazy. This guide shows exactly where to change it in your theme and how to check it worked.</p>
+      <h2 id="why-does-the-hero-image-decide-your-speed-score">Why does the hero image decide your speed score?</h2>
+      <p>Google measures your page largely by LCP, Largest Contentful Paint: how long the main content takes to appear. On most Shopify homepages the main content is the hero image, and Google counts anything under 2.5 seconds as good. Themes lazy load images to save bandwidth, which is right for product photos further down the page. Applied to the hero, the same setting tells the browser to fetch your most important image late. Your page can have a fast server and still score badly, purely because the hero was queued last.</p>
+      <h2 id="what-exactly-needs-to-change">What exactly needs to change?</h2>
+      <p>Two attributes on the hero image, and only the hero image. Loading set to eager instead of lazy, so the browser starts fetching it immediately. And fetchpriority set to high, so the browser puts it ahead of other images and scripts. Everything below the fold stays lazy. Eager loading every image is the opposite mistake: the browser then downloads everything at once and the hero still fights for bandwidth.</p>
+      <h2 id="how-do-you-apply-the-fix-in-your-theme">How do you apply the fix in your theme?</h2>
+      <p><strong>1.</strong> In your Shopify admin, go to Online Store, Themes, and duplicate your live theme first. Never edit the only copy.</p>
+      <p><strong>2.</strong> On the duplicate, open Edit code and find the section that renders your homepage banner. It is usually called slideshow.liquid or image-banner.liquid, inside the Sections folder.</p>
+      <p><strong>3.</strong> Find where that section outputs its image. Many themes use Shopify's image_tag filter or an img tag with width and height attributes.</p>
+      <p><strong>4.</strong> For the first slide or banner image only, set loading to eager and add fetchpriority high. With the image_tag filter this means passing the loading and fetchpriority options the filter accepts in current Shopify versions. If your theme builds the img tag by hand, add the two attributes directly to that tag.</p>
+      <p><strong>5.</strong> If your theme loops through several slides, make sure only the first image gets the eager treatment. Slides two and three stay lazy.</p>
+      <p><strong>6.</strong> Save, preview the duplicate theme, and check the homepage looks identical. Then publish when you are ready.</p>
+      <h2 id="how-do-you-check-the-fix-worked">How do you check the fix worked?</h2>
+      <p>Run your homepage through PageSpeed Insights on mobile, before and after, and compare the LCP time and the element it names. After the fix, the hero should load earlier and the report should stop flagging the hero image as lazily loaded. Also open your homepage on a real phone on mobile data. Scores guide you, but the felt speed is what your customers judge.</p>
+      <h2 id="what-if-your-theme-already-loads-the-hero-eagerly">What if your theme already loads the hero eagerly?</h2>
+      <p>Then your LCP problem lives somewhere else, and this fix will not move it. The other usual causes are an oversized hero file (compress it and serve the right size for mobile), a slideshow with several heavy images, and apps injecting scripts ahead of your content. PageSpeed Insights names the LCP element and the biggest delays, so follow what it actually reports instead of applying every speed tip you find. A full <a href="/blog/shopify-store-audit-checklist">store audit checklist</a> helps you work through the rest in order.</p>
+      <h2 id="what-mistakes-should-you-avoid">What mistakes should you avoid?</h2>
+      <p>Do not add a preload tag for the hero and eager loading and a speed app all at once; stacked tricks conflict and make the result impossible to measure. Do not remove lazy loading from product grids to chase the score. And do not judge the change by one test run: run PageSpeed two or three times and compare the pattern, because single runs vary.</p>
+      <p>This is a small change with an outsized effect, and it is the first thing we check on slow stores. If your store needs a full speed pass, theme code, app weight, and image sizes together, that is what our <a href="/services/shopify-speed-optimization-services">Shopify speed optimization services</a> cover. If you are not sure where your store stands, start with a <a href="/services/shopify-store-audit">store audit</a> and fix in the right order.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Will eager loading hurt my page speed if I use it on all images?</strong>
+      Yes. Eager loading tells the browser to fetch images immediately. Applied to every image, the browser downloads everything at once and the important images wait in the same queue. Eager is for the hero only.</p>
+      <p><strong>Does this fix work on every Shopify theme?</strong>
+      The principle works everywhere, but the exact edit depends on how your theme outputs the hero image. The steps above cover the common slideshow and image banner sections. If your theme is heavily customised, a developer may need to find the right file.</p>
+      <p><strong>What is a good LCP score for a Shopify store?</strong>
+      Google counts an LCP under 2.5 seconds as good, measured on mobile for most stores. Treat it as the target for your homepage and your busiest product and collection pages.</p>
+      `
+    },
+    {
+      id: "shopify-currency-formatting",
+      title: "Shopify Currency Formatting: How to Display Prices Exactly How You Want",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "6 min read",
+      image: "/blog/shopify-currency-formatting-cover.webp",
+      toc: [
+        { id: "where-do-you-change-currency-formatting-in-shopify", title: "Where do you change currency formatting in Shopify?" },
+        { id: "what-do-the-format-options-actually-mean", title: "What do the format options actually mean?" },
+        { id: "which-format-should-your-store-use", title: "Which format should your store use?" },
+        { id: "what-mistakes-should-you-avoid", title: "What mistakes should you avoid?" },
+        { id: "does-currency-formatting-affect-checkout", title: "Does currency formatting affect checkout?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Shopify currency formatting is the setting that controls how prices appear in your store: decimals or no decimals, commas or spaces as separators, and where the currency symbol sits. You change it in Settings, under Store details, in the currency section, by editing a short format string. This guide explains each format option, when to use it, and the mistakes that make prices look wrong or untrustworthy.</p>
+      <h2 id="where-do-you-change-currency-formatting-in-shopify">Where do you change currency formatting in Shopify?</h2>
+      <p>Go to Settings, then Store details, and find the currency section. Choose Change formatting and you will see the format strings Shopify uses, one for prices shown with HTML and one for plain text such as emails. You edit the string, save, and the new format applies across your storefront: product pages, collections, and the cart. If you sell in several currencies through Shopify Markets, each market shows prices in the customer's local currency with its standard local format, which is the behaviour most stores should keep.</p>
+      <h2 id="what-do-the-format-options-actually-mean">What do the format options actually mean?</h2>
+      <p>The format is built from a placeholder that decides how the number itself is written.</p>
+      <p><strong>{{amount}}</strong> shows the price with two decimals and a dot separator, the default style most stores start with once the theme adds the currency symbol.</p>
+      <p><strong>{{amount_no_decimals}}</strong> rounds the price and drops the decimals. Stores selling higher priced goods often prefer this cleaner look.</p>
+      <p><strong>{{amount_with_comma_separator}}</strong> uses a comma for decimals and a dot for thousands, the style common in much of Europe.</p>
+      <p><strong>{{amount_no_decimals_with_comma_separator}}</strong> combines the two: rounded, with the comma style.</p>
+      <p>There are also space and apostrophe separator variants for countries that use those conventions. Around the placeholder you can add your currency symbol or code and spacing, for example showing USD after the price when you sell internationally and customers need to be sure which dollars you mean.</p>
+      <h2 id="which-format-should-your-store-use">Which format should your store use?</h2>
+      <p>Match the convention your customers already read at home. A US store keeps decimals and the dot style its customers expect. A European store selling in euros usually wants the comma style. If your prices are mostly whole numbers, dropping decimals looks cleaner and more premium. If you sell low priced items where cents matter, keep the decimals. The rule is familiarity: a price format that makes a customer pause and decode it costs you trust at exactly the wrong moment.</p>
+      <h2 id="what-mistakes-should-you-avoid">What mistakes should you avoid?</h2>
+      <p>The first is changing the format string and breaking it: delete part of the placeholder and prices can show raw code or nothing at all, so copy the original string somewhere before you edit. The second is mixing formats, one style on product pages and another in the cart, which happens when a theme hardcodes its own price display instead of using Shopify's format; if that is your store, the fix belongs in the theme code. The third is adding a currency code everywhere when you sell in one country only. It clutters prices for no benefit. Add the code when international customers could genuinely confuse your currency with theirs.</p>
+      <h2 id="does-currency-formatting-affect-checkout">Does currency formatting affect checkout?</h2>
+      <p>Checkout follows Shopify's own formatting for the customer's currency and language, and you do not control it with the storefront format string. That is a good thing: checkout stays consistent and localised. Your job is to make the storefront match that experience closely enough that the price never looks different in a way that surprises the customer between the product page and payment.</p>
+      <p>Currency formatting takes five minutes to change and every customer sees it on every page. Set it once, in your customers' convention, and check a product page, a collection, and the cart afterwards to confirm they agree. If your theme displays prices its own way and ignores the setting, that is theme work, and it is part of our <a href="/services/shopify-theme-customization-services">Shopify theme customization services</a>.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Why do my prices show the wrong format after I changed the setting?</strong>
+      Usually because your theme hardcodes its own price display instead of using Shopify's money format. The setting is correct; the theme is ignoring it, and the fix is in the theme code.</p>
+      <p><strong>Can I show different formats for different countries?</strong>
+      With Shopify Markets, each market displays prices in the local currency with its standard format automatically. You do not need to hand build formats per country.</p>
+      <p><strong>Should I remove decimals from my prices?</strong>
+      If your prices are mostly whole numbers and your market reads rounded prices as normal, yes, it looks cleaner. If your customers compare on small price differences, keep the decimals.</p>
+      `
+    },
+    {
+      id: "how-to-find-what-theme-a-shopify-store-uses",
+      title: "How to Find Out What Theme a Shopify Store Is Using (2 Working Methods)",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "5 min read",
+      image: "/blog/how-to-find-what-theme-a-shopify-store-uses-cover.webp",
+      toc: [
+        { id: "how-do-you-use-a-theme-detector-tool", title: "How do you use a theme detector tool?" },
+        { id: "how-do-you-check-the-theme-manually-in-the-page-source", title: "How do you check the theme manually in the page source?" },
+        { id: "why-can-you-sometimes-not-find-the-theme", title: "Why can you sometimes not find the theme?" },
+        { id: "what-should-you-do-once-you-know-the-theme", title: "What should you do once you know the theme?" },
+        { id: "is-checking-another-stores-theme-allowed", title: "Is checking another store's theme allowed?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can find out which theme a Shopify store uses in under a minute. The fastest way is a theme detector tool: paste the store's address and it reads the theme name from the store's code. The manual way is to view the page source and look for the theme name Shopify prints there. This guide walks through both, and explains the cases where neither works, so you do not waste time chasing a theme you cannot have.</p>
+      <h2 id="how-do-you-use-a-theme-detector-tool">How do you use a theme detector tool?</h2>
+      <p>Open our free <a href="/tools/shopify-theme-detector">Shopify Theme Detector</a>, paste the full address of any Shopify store, and run it. The tool reads the store's public code and reports the theme name when Shopify exposes it, which is most of the time. This is the same information you would dig out of the source by hand, without the digging. Store owners use it on competitors; developers use it to identify what a client is running before quoting work.</p>
+      <h2 id="how-do-you-check-the-theme-manually-in-the-page-source">How do you check the theme manually in the page source?</h2>
+      <p><strong>1.</strong> Open the store in your browser and view the page source (right click, View Page Source, on most browsers).</p>
+      <p><strong>2.</strong> Search the source for "Shopify.theme".</p>
+      <p><strong>3.</strong> You will find a small block that names the theme, for example a line showing the theme name as "Dawn" along with an ID number. That name is the theme the store is running.</p>
+      <p><strong>4.</strong> If the name looks unfamiliar or generic, the store may be running a customised or renamed theme, which the next section explains.</p>
+      <p>This works because Shopify itself writes the theme name into every storefront page it serves.</p>
+      <h2 id="why-can-you-sometimes-not-find-the-theme">Why can you sometimes not find the theme?</h2>
+      <p>Three reasons. First, the store owner or their developer renamed the theme in the admin, and the new name is what the code shows, so you learn nothing useful. Second, the theme is fully custom, built for that one store, so there is no theme to buy or download. Third, the store is headless: Shopify runs the backend but the storefront is built with separate technology, and the usual theme markers are not there. In all three cases the honest answer is that the store's look was made for them, not picked from a shelf.</p>
+      <h2 id="what-should-you-do-once-you-know-the-theme">What should you do once you know the theme?</h2>
+      <p>If it is a theme from the Shopify Theme Store, you can open its listing, check its features and demos, and decide whether it fits your store or whether your competitor's advantage is the theme at all. Often it is not: two stores can run the same theme and look completely different after customisation, quality images, and good content. Treat the theme as the starting point. If you want a store that looks like a leader in your market, the theme choice is step one and the customisation is the real work, which is what our <a href="/services/shopify-theme-customization-services">Shopify theme customization services</a> are for.</p>
+      <h2 id="is-checking-another-stores-theme-allowed">Is checking another store's theme allowed?</h2>
+      <p>Yes. Everything these methods read is public code your browser already receives when you visit the store. You are not accessing anything private, and identifying a theme is a normal part of research, redesign planning, and development work.</p>
+      <p>Start with the detector for speed, fall back to the page source when you want to confirm, and remember the limits: renamed, custom, and headless stores will not give up their theme, because there is no off the shelf theme to find.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can a theme detector tell me which apps a store uses?</strong>
+      No. A theme detector reads the theme name. Some app traces exist in a store's code, but identifying apps reliably is a different job, and this tool does not claim to do it.</p>
+      <p><strong>The detector shows a name I cannot find in the Theme Store. Why?</strong>
+      The theme was probably renamed by the store's developer, or it is a custom theme built only for that store. Either way, there is no public listing to buy.</p>
+      <p><strong>Can I copy a competitor's theme exactly?</strong>
+      You can buy the same base theme if it is a public one, but their customisations, images, and content are theirs. The theme alone will not reproduce their store, and copying their design closely is poor practice as well as poor strategy.</p>
+      `
+    },
+    {
+      id: "shopify-product-title-seo",
+      title: "Shopify Product Title SEO: How to Write Titles That Rank and Sell",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "SEO",
+      readTime: "6 min read",
+      image: "/blog/shopify-product-title-seo-cover.webp",
+      toc: [
+        { id: "why-does-the-product-title-matter-so-much-for-seo", title: "Why does the product title matter so much for SEO?" },
+        { id: "what-is-the-right-structure-for-a-product-title", title: "What is the right structure for a product title?" },
+        { id: "what-do-good-and-bad-titles-look-like", title: "What do good and bad titles look like?" },
+        { id: "what-mistakes-hurt-product-titles-most", title: "What mistakes hurt product titles most?" },
+        { id: "how-long-should-a-product-title-be", title: "How long should a product title be?" },
+        { id: "where-does-the-product-title-fit-in-the-wider-seo-work", title: "Where does the product title fit in the wider SEO work?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A good Shopify product title does two jobs at once: it tells Google exactly what the product is, in the words buyers search, and it convinces the person reading the search results to click. The structure that works is simple: the product type and its main searched keyword first, then the details that separate it, like material, size, or use. This guide shows the structure, real before and after examples, and the title mistakes we see in almost every store audit.</p>
+      <h2 id="why-does-the-product-title-matter-so-much-for-seo">Why does the product title matter so much for SEO?</h2>
+      <p>Your product title becomes the page's title tag and its main heading, which makes it the strongest signal on the page about what the product is. It is also the clickable line in Google's results and the label customers scan in collections. A weak title wastes all three. Supplier names, internal codes, and vague words like "premium quality item" tell Google nothing and tell the customer even less.</p>
+      <h2 id="what-is-the-right-structure-for-a-product-title">What is the right structure for a product title?</h2>
+      <p><strong>Product type with the searched words first.</strong> Start with what the product is, in the language customers type into Google. If people search "linen duvet cover", those words lead, not your brand name or a poetic product name.</p>
+      <p><strong>The deciding detail next.</strong> Material, size, capacity, colour range, or the use case that makes a buyer choose this one. This is the part that earns the click against ten similar results.</p>
+      <p><strong>Brand last, if at all.</strong> Unless your brand is what people search for, it belongs at the end or nowhere in the title. Your store name already appears across the site.</p>
+      <p>Keep the title readable as a sentence a human would say. If it sounds like a list of keywords shouted at Google, rewrite it.</p>
+      <h2 id="what-do-good-and-bad-titles-look-like">What do good and bad titles look like?</h2>
+      <p><strong>Bad:</strong> "SKU 8841 Premium Quality Bedding Set Luxury Hotel Style". A code, filler words, and no searched phrase. <strong>Better:</strong> "Linen Duvet Cover Set, Stonewashed French Flax, Queen". The searched product first, the deciding details after.</p>
+      <p><strong>Bad:</strong> "Amazing Super Soft Towel Best Price Fast Shipping". Promises instead of information, and it reads as spam. <strong>Better:</strong> "Organic Cotton Bath Towel, 700 GSM, Extra Large". Specific, believable, and matched to how towel buyers compare.</p>
+      <p><strong>Bad:</strong> "Dress". One word cannot rank or sell. <strong>Better:</strong> "Wrap Midi Dress, Floral Print, Short Sleeve". Type, style, and features in the buyer's words.</p>
+      <h2 id="what-mistakes-hurt-product-titles-most">What mistakes hurt product titles most?</h2>
+      <p>Copying the supplier's title is the biggest one: you inherit duplicate wording shared with every other store selling the same item, plus codes and claims written for warehouses, not customers. Keyword stuffing is next: repeating the same phrase in different orders reads badly and adds nothing. All capital letters look like shouting and are harder to read. And leaving the same title on near identical variants wastes the chance to match each page to its own searches; where products genuinely differ by colour or size in ways buyers search, the titles should say so.</p>
+      <h2 id="how-long-should-a-product-title-be">How long should a product title be?</h2>
+      <p>Long enough to carry the product type and the deciding detail, short enough to read at a glance in search results and on a phone. In practice that is usually a handful of well chosen words, not a paragraph. If the deciding detail needs a second sentence, it belongs in the description, not the title.</p>
+      <h2 id="where-does-the-product-title-fit-in-the-wider-seo-work">Where does the product title fit in the wider SEO work?</h2>
+      <p>Titles are one item on the full list. They work alongside collection content, product descriptions, image alt text, and technical health. If you want the whole picture in order, work through our <a href="/blog/shopify-seo-checklist">Shopify SEO checklist</a>, and if you would rather have someone check your store for you, our <a href="/services/shopify-store-audit">store audit</a> covers titles as part of the full review.</p>
+      <p>Rewrite your ten best selling products' titles first, using the structure above, and watch how much clearer your store reads, to Google and to people. Small pages, done properly, are how stores climb.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Should every product title contain a keyword?</strong>
+      Every important product title should contain the words buyers use for that product. That is the keyword, in natural language. Minor products with no search demand still deserve clear, descriptive titles for your own visitors.</p>
+      <p><strong>Will changing product titles hurt my rankings?</strong>
+      A better title can shift rankings briefly while Google reprocesses the page, then the clearer signal works in your favour. Change your most important titles deliberately, a batch at a time, not the whole catalog overnight.</p>
+      <p><strong>Should variant titles be different from the product title?</strong>
+      Variants are options of one product, not separate pages, so they share the product title. Separate products that buyers search for differently deserve their own pages and their own titles.</p>
+      `
+    },
+    {
+      id: "shopify-plus-migration-guide",
+      title: "Shopify Plus Migration Guide: How to Upgrade Without Breaking Your Store",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "SHOPIFY PLUS",
+      readTime: "7 min read",
+      image: "/blog/shopify-plus-migration-guide-cover.webp",
+      toc: [
+        { id: "what-actually-changes-when-you-move-to-shopify-plus", title: "What actually changes when you move to Shopify Plus?" },
+        { id: "what-should-you-audit-before-migrating", title: "What should you audit before migrating?" },
+        { id: "what-is-the-right-order-for-the-migration-itself", title: "What is the right order for the migration itself?" },
+        { id: "how-long-does-a-plus-migration-take", title: "How long does a Plus migration take?" },
+        { id: "what-are-the-most-common-mistakes", title: "What are the most common mistakes?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Migrating to Shopify Plus is not a data move, it is a rebuild of the parts of your store that Plus does differently: checkout, automation, B2B, and app compatibility. Stores get hurt when they treat it as a plan change and discover afterwards that a checkout customisation, a script, or a critical app did not survive. This guide walks the upgrade in the order that keeps your store selling: audit first, rebuild the differences, test everything, then switch.</p>
+      <h2 id="what-actually-changes-when-you-move-to-shopify-plus">What actually changes when you move to Shopify Plus?</h2>
+      <p>Four things matter most. Checkout moves fully to checkout extensibility, so any old checkout customisations have to be rebuilt with supported tools such as Shopify Functions and checkout apps. B2B becomes native, with company accounts, catalogs, and payment terms instead of workarounds. Automation goes further, with tools like Launchpad for scheduled sales and events on Plus. And your limits rise: higher API capacity and more room for the integrations a growing store depends on. If none of these four is your reason for upgrading, question whether you need Plus yet.</p>
+      <h2 id="what-should-you-audit-before-migrating">What should you audit before migrating?</h2>
+      <p><strong>Checkout customisations.</strong> List every change made to your old checkout: extra fields, shipping rules, discount logic, post purchase offers. Each one needs a supported replacement or a decision to drop it.</p>
+      <p><strong>Scripts and discount logic.</strong> Anything built with Script Editor needs a Shopify Functions equivalent or an app, planned before the move, not after.</p>
+      <p><strong>Apps.</strong> Check every app for Plus and checkout extensibility compatibility. The one app nobody checked is always the one the store depends on.</p>
+      <p><strong>Data and accounts.</strong> Products, customers, orders, gift cards, and discount codes: decide what moves, what is archived, and how customer accounts are handled so nobody is locked out.</p>
+      <p><strong>URLs and redirects.</strong> If anything about your structure changes during the upgrade, every old URL needs a redirect, or you will trade your search traffic for a new plan.</p>
+      <h2 id="what-is-the-right-order-for-the-migration-itself">What is the right order for the migration itself?</h2>
+      <p><strong>1. Plan on a copy, not the live store.</strong> Build and rebuild in a development or duplicate environment where breaking things is free.</p>
+      <p><strong>2. Rebuild checkout with extensibility.</strong> Recreate your checkout customisations using Functions and supported apps, and test the full buying path, including discounts and shipping rules.</p>
+      <p><strong>3. Reconnect and retest apps.</strong> Install, configure, and run each critical app end to end: payments, shipping, email, reviews, and anything touching orders.</p>
+      <p><strong>4. Move and verify data.</strong> Import, then spot check real products, real customers, and real orders against the old store. Counts matching is not enough; open the records.</p>
+      <p><strong>5. Set redirects and check them.</strong> Test your highest traffic and highest value URLs personally.</p>
+      <p><strong>6. Launch in a quiet window.</strong> Switch during your lowest traffic hours, keep the old setup reachable for comparison, and watch orders, search console, and support messages closely for the first days. Check your tracking fires on the new checkout too, as our <a href="/blog/shopify-plus-checkout-extensibility-tracking">Plus checkout tracking guide</a> explains.</p>
+      <h2 id="how-long-does-a-plus-migration-take">How long does a Plus migration take?</h2>
+      <p>It depends on the rebuild list from your audit, not on the data size. A store with a clean checkout and compatible apps can move quickly. A store with years of scripts, checkout edits, and custom integrations should plan the project properly, in weeks, with testing time protected. Anyone who quotes you a time before auditing your store is guessing with your revenue.</p>
+      <h2 id="what-are-the-most-common-mistakes">What are the most common mistakes?</h2>
+      <p>Upgrading during your busiest sales period. Skipping the checkout rebuild because the old setup "seems to still work", until a Shopify deadline or an update ends it. Forgetting gift cards and store credit, which customers experience as theft. And launching without checking that analytics and pixels fire on the new checkout, so the first month of data is a hole you can never fill.</p>
+      <p>Plus is worth it when checkout control, B2B, or scale is genuinely limiting you, and the upgrade is safe when it is run as an audit, a rebuild, and a tested launch, in that order. If you want the move handled end to end, that is exactly what our <a href="/services/shopify-plus-development-services">Shopify Plus development services</a> cover. For the checkout side in more depth, read our guide to <a href="/blog/shopify-checkout-extensibility-guide">Shopify checkout extensibility</a>.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Will my store go down during a Plus migration?</strong>
+      It should not. The rebuild happens on a copy, and the switch itself is a plan change and configuration launch in a quiet window. Downtime usually means the move was rushed, not that it is unavoidable.</p>
+      <p><strong>Do my customers need to reset their passwords?</strong>
+      If you are upgrading the same store to Plus rather than moving to a brand new store, your customers and accounts stay as they are. Password resets are a platform to platform migration issue, not a plan upgrade issue.</p>
+      <p><strong>Can I migrate to Plus from another platform directly?</strong>
+      Yes, and it is often cleaner than migrating twice. The same audit first order applies, with data migration from your old platform added to the rebuild list.</p>
+      `
+    },
+    {
+      id: "b2b-ecommerce-consulting",
+      title: "B2B Ecommerce Consulting: What It Is, and When Your Store Actually Needs It",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "B2B",
+      readTime: "6 min read",
+      image: "/blog/b2b-ecommerce-consulting-cover.webp",
+      toc: [
+        { id: "how-is-b2b-buying-different-from-retail-buying", title: "How is B2B buying different from retail buying?" },
+        { id: "what-does-a-b2b-ecommerce-consultant-actually-do", title: "What does a B2B ecommerce consultant actually do?" },
+        { id: "what-are-the-signs-your-store-needs-b2b-help", title: "What are the signs your store needs B2B help?" },
+        { id: "can-you-not-just-install-a-wholesale-app", title: "Can you not just install a wholesale app?" },
+        { id: "what-does-the-process-look-like-with-nawazbuilds", title: "What does the process look like with NawazBuilds?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>B2B ecommerce consulting is expert help for stores that sell to other businesses: wholesalers, distributors, and brands adding a trade channel. A consultant maps how your business customers actually buy, with their pricing tiers, payment terms, bulk ordering, and approval steps, and turns that into a store setup that handles it properly instead of forcing business buyers through a retail checkout. This guide explains what the work covers, the signs your store needs it, and what to expect from the process.</p>
+      <h2 id="how-is-b2b-buying-different-from-retail-buying">How is B2B buying different from retail buying?</h2>
+      <p>Almost everything about the order. A retail customer pays the listed price, by card, today. A business customer often buys on negotiated prices that differ per customer, orders in volume, pays on terms such as net 30, needs a quote or an approval from their own manager first, and reorders the same basket regularly. If your store treats that buyer like a retail shopper, they will not fight your checkout. They will email, phone, or quietly buy from a competitor whose setup respects how they work.</p>
+      <h2 id="what-does-a-b2b-ecommerce-consultant-actually-do">What does a B2B ecommerce consultant actually do?</h2>
+      <p><strong>Maps your buying process.</strong> Who your business customers are, how they are approved, what prices and terms each group gets, and where orders currently get stuck.</p>
+      <p><strong>Designs the pricing and catalog logic.</strong> Customer specific price lists, volume tiers, minimum orders, and which products each type of customer can even see.</p>
+      <p><strong>Plans the platform setup.</strong> On Shopify, that means company accounts, catalogs, and payment terms where your plan supports them, or a well chosen app setup where it does not.</p>
+      <p><strong>Connects the back office.</strong> How orders, invoices, and stock flow into the accounting and inventory tools you already use, so B2B growth does not mean B2B chaos.</p>
+      <p><strong>Sequences the build.</strong> What launches first, what waits, and how your retail store keeps running untouched while the trade side is built.</p>
+      <h2 id="what-are-the-signs-your-store-needs-b2b-help">What are the signs your store needs B2B help?</h2>
+      <p>Your trade orders arrive by email and phone because the website cannot take them properly. Your team retypes website orders into another system by hand. Different customers pay different prices, and that logic lives in someone's head or a spreadsheet. You have lost a business customer over payment terms your checkout could not offer. Or you are planning a wholesale launch and want it built once, correctly, instead of rebuilt twice. Any one of these means the setup, not your products, is the bottleneck.</p>
+      <h2 id="can-you-not-just-install-a-wholesale-app">Can you not just install a wholesale app?</h2>
+      <p>Sometimes, yes. If your B2B needs are simple, one price list and a minimum order, a good app on your existing store may be enough, and an honest consultant will tell you that. Apps struggle when your rules stack up: several customer groups, each with its own catalog and terms, plus approvals and back office syncing. The consulting work is deciding where that line sits for your store before you spend on the wrong layer.</p>
+      <h2 id="what-does-the-process-look-like-with-nawazbuilds">What does the process look like with NawazBuilds?</h2>
+      <p>It starts with how you sell today: your customer types, pricing rules, terms, and tools. From that we produce a setup plan for your store: what gets built, on which plan or apps, in what order, and what it depends on. Then we build and test it with your real products and a test company account before any customer touches it. It is the same careful order as our wider <a href="/services/shopify-development-services">Shopify development services</a> and our <a href="/services/shopify-consulting-services">Shopify consulting services</a>, applied to the trade side of your business. If you are setting up the mechanics yourself first, our <a href="/blog/shopify-wholesale-setup-guide">Shopify wholesale setup guide</a> walks the steps.</p>
+      <p>B2B buyers reward the store that makes their job easy and quietly abandon the one that makes them work around a retail checkout. If your trade channel has outgrown email orders and spreadsheets, that is the moment consulting pays for itself.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Do I need Shopify Plus for B2B?</strong>
+      Not always. Plus has native B2B with company accounts and catalogs, which is the cleanest route at scale. Simpler trade setups can run on standard plans with the right apps. The consulting work starts by deciding which side of that line your store sits on.</p>
+      <p><strong>How much does B2B consulting cost?</strong>
+      It depends on the complexity of your pricing, catalogs, and integrations, so we scope it after understanding how you sell. Anyone quoting a flat price before asking about your terms and customer groups has not understood the job.</p>
+      <p><strong>Will adding B2B affect my retail store?</strong>
+      Done properly, no. Trade pricing and catalogs are separated by customer account, and retail visitors keep seeing the retail store. Protecting that separation is a core part of the setup and the testing.</p>
+      `
+    },
+    {
+      id: "shopify-wholesale-setup-guide",
+      title: "Shopify Wholesale Setup: How to Add a Trade Channel to Your Store",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "B2B",
+      readTime: "7 min read",
+      image: "/blog/shopify-wholesale-setup-guide-cover.webp",
+      toc: [
+        { id: "which-wholesale-route-fits-your-store", title: "Which wholesale route fits your store?" },
+        { id: "what-do-you-need-to-decide-before-setting-anything-up", title: "What do you need to decide before setting anything up?" },
+        { id: "what-are-the-setup-steps-whichever-route-you-choose", title: "What are the setup steps, whichever route you choose?" },
+        { id: "what-mistakes-do-stores-make-with-wholesale-setup", title: "What mistakes do stores make with wholesale setup?" },
+        { id: "when-does-wholesale-outgrow-a-basic-setup", title: "When does wholesale outgrow a basic setup?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>There are three ways to set up wholesale on Shopify: use the built in B2B features if you are on Shopify Plus, run a separate password protected wholesale store, or add wholesale pricing apps to your existing store. The right choice depends on how different your trade prices, products, and terms are from retail. This guide compares the three routes honestly, then walks the setup steps that every route shares.</p>
+      <h2 id="which-wholesale-route-fits-your-store">Which wholesale route fits your store?</h2>
+      <p><strong>Shopify Plus B2B.</strong> Plus includes native B2B: company accounts, catalogs with customer specific pricing, and payment terms, all inside your existing store. If you are already on Plus, or your volume justifies it, this is the cleanest route: one store, one inventory, proper separation between retail and trade.</p>
+      <p><strong>A separate wholesale store.</strong> A second store, password protected, carrying your trade catalog and prices. It suits businesses whose wholesale range, pricing, or branding is very different from retail, and it keeps trade completely away from your public store. The cost is running two stores: two sets of updates, and inventory to keep in step.</p>
+      <p><strong>Wholesale apps on your current store.</strong> Pricing and minimum order apps from the Shopify App Store can add a basic trade layer to a standard plan store. This suits simple setups: one trade price list, approved customers, minimum orders. It struggles when rules multiply, and app quality varies, so test the full buying path before committing.</p>
+      <p>Pick by your rules, not by fashion. Simple trade, simple tool.</p>
+      <h2 id="what-do-you-need-to-decide-before-setting-anything-up">What do you need to decide before setting anything up?</h2>
+      <p>Four decisions drive the whole setup. Who qualifies as a trade customer, and how do they apply and get approved? What pricing do they get: a percentage off retail, fixed trade prices, or volume tiers? What are your terms: pay now, or net terms, and what minimum order applies? And which products are trade only, retail only, or both? Write these down first. Every route above is just a way of enforcing these four decisions, and changing them later is much harder than choosing them now.</p>
+      <h2 id="what-are-the-setup-steps-whichever-route-you-choose">What are the setup steps, whichever route you choose?</h2>
+      <p><strong>1. Create the customer structure.</strong> Trade customers get accounts you approve manually at the start. Nobody should be able to self serve their way into trade pricing.</p>
+      <p><strong>2. Build the catalogs and price lists.</strong> Load your trade products and prices exactly as decided, then check them as a customer would see them, not as the admin shows them.</p>
+      <p><strong>3. Set terms and minimums.</strong> Apply payment terms, minimum order values or quantities, and any order rules, and test an order that breaks each rule to confirm it is stopped.</p>
+      <p><strong>4. Fix the communications.</strong> Application confirmation, approval, and order emails should sound like your business and state terms clearly. The default wording rarely does.</p>
+      <p><strong>5. Test the whole journey with a test account.</strong> Apply, get approved, log in, order, and pay or check out on terms. Then do it on a phone.</p>
+      <p><strong>6. Launch to a few customers first.</strong> Invite two or three trusted trade customers, watch their first orders, fix the friction, then open it wider.</p>
+      <h2 id="what-mistakes-do-stores-make-with-wholesale-setup">What mistakes do stores make with wholesale setup?</h2>
+      <p>Showing trade prices to the public, usually through a badly configured app or a theme that displays the wrong price to logged out visitors. That one mistake can poison your retail pricing overnight. Others: approving trade accounts automatically, skipping minimums and then drowning in tiny unprofitable trade orders, and forgetting that trade customers reorder constantly, so if reordering is clunky they will go back to emailing you, and your new channel sits empty.</p>
+      <h2 id="when-does-wholesale-outgrow-a-basic-setup">When does wholesale outgrow a basic setup?</h2>
+      <p>When customer specific catalogs, several price lists, net terms with credit limits, or approval chains inside your customers' own companies become normal, you have outgrown apps and workarounds. That is the point where Plus B2B, or a properly planned build, earns its cost. Our article on <a href="/blog/b2b-ecommerce-consulting">B2B ecommerce consulting</a> explains how that planning works, and our <a href="/services/shopify-development-services">Shopify development services</a> cover the build itself.</p>
+      <p>Wholesale done well turns your most loyal buyers into your most predictable revenue. Decide the rules first, pick the route that enforces them with the least machinery, and test as a customer before you invite a single trader in.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can I run wholesale and retail in the same Shopify store?</strong>
+      Yes. On Plus, B2B runs natively beside retail with separate catalogs and pricing per company. On standard plans, apps can separate trade pricing by customer account. The separation must be tested as a logged out visitor and as a trade customer before launch.</p>
+      <p><strong>How do I stop retail customers seeing trade prices?</strong>
+      Keep trade prices behind approved customer accounts, never as public discounts or codes, and test your store logged out after every setup change. A theme or app that shows the wrong price publicly is the most common failure.</p>
+      <p><strong>What minimum order should I set for wholesale?</strong>
+      One that makes a trade order worth fulfilling: product cost, packing time, and shipping included, with a small margin of safety. Stores usually set it by value, by quantity, or both. Start higher than feels comfortable; you can lower it for proven customers.</p>
+      `
+    },
+    {
+      id: "best-shopify-apps-clothing-store",
+      title: "Best Shopify Apps for Clothing Stores: The 7 Types You Actually Need",
+      date: "November 16, 2026",
+      author: "Nawaz Ahmad",
+      category: "STRATEGY",
+      readTime: "7 min read",
+      image: "/blog/best-shopify-apps-clothing-store-cover.webp",
+      toc: [
+        { id: "why-does-a-clothing-store-need-a-size-chart-and-fit-app", title: "1. Why does a clothing store need a size chart and fit app?" },
+        { id: "why-do-photo-reviews-matter-more-for-clothing", title: "2. Why do photo reviews matter more for clothing than anything else?" },
+        { id: "what-should-a-returns-and-exchanges-app-do", title: "3. What should a returns and exchanges app do?" },
+        { id: "why-are-back-in-stock-alerts-worth-having", title: "4. Why are back in stock alerts worth having?" },
+        { id: "how-do-bundle-and-complete-the-look-apps-help", title: "5. How do bundle and complete the look apps help?" },
+        { id: "when-does-a-clothing-store-need-better-search-and-filtering", title: "6. When does a clothing store need better search and filtering?" },
+        { id: "does-a-clothing-store-need-a-loyalty-app", title: "7. Does a clothing store need a loyalty app?" },
+        { id: "in-what-order-should-you-add-these-apps", title: "In what order should you add these apps?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A clothing store needs apps for the problems clothing actually creates: sizes, fit, returns, and styles that sell out. In our experience the right stack is seven types of app, not thirty random ones: sizing help, photo reviews, easy returns, back in stock alerts, outfit bundles, strong search and filtering, and loyalty. This guide explains what each type does, what to look for when choosing, and the order to add them in.</p>
+      <h2 id="why-does-a-clothing-store-need-a-size-chart-and-fit-app">1. Why does a clothing store need a size chart and fit app?</h2>
+      <p>Wrong size is the top reason clothing comes back. A good sizing app puts a clear size chart on every product page, in the units your customers use, and ideally asks a couple of questions to suggest a size. Look for charts you can vary by product type, because a dress and a shoe do not share a chart, and a display that works well on mobile, where most clothing is bought. Skip anything that slows the product page down to show a table.</p>
+      <h2 id="why-do-photo-reviews-matter-more-for-clothing">2. Why do photo reviews matter more for clothing than anything else?</h2>
+      <p>Because fit and fabric cannot be judged from your studio photos. Reviews with customer photos show how a garment sits on real bodies, and that sells the next one. Look for automatic review requests after delivery, photo and video uploads, and review display that does not fight your theme's design. Moderate the first batch yourself so you learn what customers actually praise and complain about.</p>
+      <h2 id="what-should-a-returns-and-exchanges-app-do">3. What should a returns and exchanges app do?</h2>
+      <p>Clothing returns are a cost of doing business, so the goal is cheap, calm handling and exchanges instead of refunds wherever possible. A good app gives customers a self serve portal, generates the return flow without your team emailing labels back and forth, and pushes an exchange or store credit at the moment of return. Look for clear reporting too: if one size of one product keeps coming back, that is a product page problem to fix, not a returns problem.</p>
+      <h2 id="why-are-back-in-stock-alerts-worth-having">4. Why are back in stock alerts worth having?</h2>
+      <p>Popular sizes sell out first, and a sold out size with no alert is a lost customer who wanted to pay you. A restock app lets shoppers leave an email or number for the exact size and colour, and messages them the moment it returns. Look for variant level alerts, not just product level, and automatic messages so nobody on your team has to watch stock levels.</p>
+      <h2 id="how-do-bundle-and-complete-the-look-apps-help">5. How do bundle and complete the look apps help?</h2>
+      <p>Clothing is bought in outfits. Bundle apps let you sell a set at a small incentive, and complete the look sections suggest the matching pieces on the product page. Look for honest presentation: real products, real prices, no fake discounts invented by the app. This is also where restraint matters: one good suggestion row beats three popups.</p>
+      <h2 id="when-does-a-clothing-store-need-better-search-and-filtering">6. When does a clothing store need better search and filtering?</h2>
+      <p>As soon as your catalog is big enough that customers browse by size, colour, fit, or occasion and your theme's filters cannot keep up. A search and filter app should let shoppers filter by the attributes clothing buyers actually think in, and it must stay fast on mobile. Test it with your real catalog size before paying: filters that crawl on 2,000 products are worse than simple ones.</p>
+      <h2 id="does-a-clothing-store-need-a-loyalty-app">7. Does a clothing store need a loyalty app?</h2>
+      <p>Only once you have repeat buyers to reward. Clothing suits loyalty well because customers return by season. Look for simple points and referral mechanics you can explain in one sentence. If you cannot explain the programme in one sentence, your customers will not understand it either, and an app nobody uses is just a monthly fee.</p>
+      <h2 id="in-what-order-should-you-add-these-apps">In what order should you add these apps?</h2>
+      <p>Fix buying confidence first: sizing, then reviews, then returns, because those three decide whether a first time visitor dares to buy. Then recover lost sales with restock alerts. Then grow the basket with bundles, then fix findability with search, then reward repeat buyers with loyalty. And after every install, check your store speed: apps add weight to every page, and a slow clothing store loses the sale the app was meant to win. Our <a href="/services/shopify-store-audit">store audit</a> includes an app review for exactly this reason.</p>
+      <p>Choose apps the way you choose stock: for a known customer problem, in the right order, and ruthlessly remove what does not earn its place. If you want a hand reviewing your current stack, that is part of our <a href="/services/shopify-store-management-services">Shopify store management services</a>.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How many apps should a clothing store have in total?</strong>
+      There is no magic number, but every app must earn its place by solving a named problem. Most healthy clothing stores run a focused stack covering the seven types here, not dozens of overlapping tools.</p>
+      <p><strong>Do apps slow down a Shopify store?</strong>
+      Each app can add scripts and requests to your pages, so yes, an unmanaged stack slows a store down. Install one app at a time, check your speed after each, and remove apps you stop using, including their leftover code where possible.</p>
+      <p><strong>Why does this guide not name the single best app in each type?</strong>
+      Because the best choice depends on your catalog size, your theme, and your budget, and a recommendation made without seeing your store would be a guess dressed as advice. The criteria in each section are how we judge apps when we review a real store's stack.</p>
+      `
+    }
 ];
