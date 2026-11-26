@@ -2363,5 +2363,1023 @@ export const blogPosts = [
       <p><strong>Why does this guide not name the single best app in each type?</strong>
       Because the best choice depends on your catalog size, your theme, and your budget, and a recommendation made without seeing your store would be a guess dressed as advice. The criteria in each section are how we judge apps when we review a real store's stack.</p>
       `
-    }
+    },
+
+    {
+      id: "shopify-theme-detector",
+      title: "What Shopify Theme Is This? How to Detect Any Store's Theme",
+      date: "November 27, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "10 min read",
+      image: "/blog/shopify-theme-detector-cover.webp",
+      toc: [
+        { id: "what-theme-is-this-shopify-store-using", title: "What theme is this Shopify store using?" },
+        { id: "how-can-i-tell-if-a-website-is-built-on-shopify", title: "How can I tell if a website is built on Shopify?" },
+        { id: "can-i-use-the-same-theme-as-another-store", title: "Can I use the same theme as another store?" },
+        { id: "how-do-i-know-if-a-theme-is-custom-or-from-the-theme-store", title: "How do I know if a theme is custom or from the Theme Store?" },
+        { id: "what-should-i-do-after-finding-a-theme-i-like", title: "What should I do after finding a theme I like?" },
+        { id: "what-does-it-mean-when-a-detector-says-custom-or-unknown", title: "What does it mean when a detector says custom or unknown?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Yes, you can find out which theme almost any Shopify store is using, usually in under a minute. The fastest route is a shopify theme detector tool: paste the store URL and it reads the theme name from the store's public code. You can also check manually by viewing the page source and searching for the theme name Shopify loads on every page.</p>
+
+      <p>Knowing the theme name is a useful starting point for design research. It is not the whole story, and the sections below explain both the detection methods and the limits of what a theme name tells you.</p>
+
+      <h2 id="what-theme-is-this-shopify-store-using">What theme is this Shopify store using?</h2>
+      <p>There are three reliable ways to answer this, from fastest to most manual.</p>
+      <p><strong>Use a theme detector tool.</strong> A detector visits the store, reads the theme information Shopify publishes in the page code, and returns the theme name and whether it came from the Shopify Theme Store. This takes seconds and works on any public store. Our free Theme Detector does exactly this, with no signup.</p>
+      <p><strong>Check the page source yourself.</strong> Open the store in your browser, right click, and choose View Page Source. Search the source for "Shopify.theme". You will find a short block of code that looks like this:</p>
+      <p>Shopify.theme = {"name":"Dawn","id":123456789,"role":"main"};</p>
+      <p>The name field is the theme's name as the store owner or developer set it. Theme Store themes keep their official name, so "Dawn" or "Sense" here means exactly what it says.</p>
+      <p>There is one more field worth knowing. Alongside the name, the same block carries a schema name, which records the base theme the store was built from. The name field shows whatever label the store owner typed in their admin, and owners often rename their theme to their brand name or a version note. The schema name does not change when a theme is renamed, so if the two differ, trust the schema name: it tells you the theme the store actually started from.</p>
+      <p><strong>Search the Shopify Theme Store.</strong> Once you have a name, search for it in the official Theme Store. If it appears there, you can see its price, its demo stores, and the layouts it ships with. If it does not appear, the theme is custom, renamed, or an older theme that has been removed from the store.</p>
+      <p>One caution: store owners can rename a theme in their admin. If the name looks like a brand name rather than a known theme, the store is probably running a custom build or a renamed copy, which the next sections cover.</p>
+
+      <h2 id="how-can-i-tell-if-a-website-is-built-on-shopify">How can I tell if a website is built on Shopify?</h2>
+      <p>Before detecting a theme, confirm the site runs on Shopify at all. A theme detector shopify tool will usually tell you this too, but the manual signs are easy to spot:</p>
+      <ul>
+        <li>View the page source and search for "/cdn/shop/". Shopify serves images and files from paths that include this string.</li>
+        <li>Look for "myshopify.com" in the source. Most stores use a custom domain, but their original myshopify address still appears in the code.</li>
+        <li>Add "/products.json" to the store's main URL. A Shopify store returns a structured list of product data. Other platforms return a normal page or an error.</li>
+        <li>Start a checkout. Shopify checkouts run on the store's domain with "/checkouts/" in the URL and have a very recognisable layout.</li>
+        <li>Check the footer for "Powered by Shopify". This is the weakest sign, because many stores remove it.</li>
+        <li>Open the browser console and type Shopify.theme. If the browser replies that Shopify is not defined, the site is not running a standard Shopify storefront at all.</li>
+      </ul>
+      <p>If two or three of these signs are present, you are looking at a Shopify store, and theme detection will work.</p>
+
+      <h2 id="can-i-use-the-same-theme-as-another-store">Can I use the same theme as another store?</h2>
+      <p>If the theme is a free Shopify theme, yes. Themes like Dawn, Sense and Craft are free for every store, and you can install one today and start customising it.</p>
+      <p>If it is a paid Theme Store theme, you can use it, but you need your own licence. Paid themes are licensed per store, so you buy your own copy from the Theme Store rather than taking a copy from someone else. Using an unlicensed copy can get your theme removed and leaves you without updates or support.</p>
+      <p>If the theme is custom, you cannot use it. A custom coded theme belongs to the store that paid for it, and copying another store's design outright can also create legal problems around their branding and content. The healthy approach is to use the theme name as a starting point, then make the design your own with your branding, your sections and your content.</p>
+      <p>It is also worth knowing that two stores on the same theme rarely look alike for long. Colours, fonts, sections, apps and custom code change the result completely, which is why the theme name alone is only step one.</p>
+      <p>Buy through the official Theme Store even when the same theme name appears on third party marketplaces. A Theme Store purchase ties the licence to your store, includes future updates and gives you the developer's support channel. Copies bought elsewhere can be outdated versions, and Shopify cannot help you with a theme it did not sell you.</p>
+
+      <h2 id="how-do-i-know-if-a-theme-is-custom-or-from-the-theme-store">How do I know if a theme is custom or from the Theme Store?</h2>
+      <p>A few signals separate a custom coded theme from a Theme Store theme:</p>
+      <ul>
+        <li>In the page source, Theme Store themes include a theme store ID in the Shopify.theme block. If that field is missing, the theme is usually custom or an unpublished copy.</li>
+        <li>Custom themes often carry the store's name, an agency's name, or a version style like "Brandname v2.1" instead of a public theme name.</li>
+        <li>Search the name in the Theme Store. No listing, no demo stores and no public reviews point to a custom build.</li>
+        <li>Look at the details. Unusual product page layouts, unique section combinations and features that no demo shows usually mean a developer has extended a base theme or built one from scratch.</li>
+      </ul>
+      <p>Why does this matter? If the store you admire runs a custom theme, buying the nearest Theme Store theme will not reproduce their site. You would need theme customisation or custom development to reach the same result, and it is better to know that before you spend money on a theme that cannot do what you saw.</p>
+
+      <h2 id="what-should-i-do-after-finding-a-theme-i-like">What should I do after finding a theme I like?</h2>
+      <p>Treat the theme name as research, not as a shopping list. A short process keeps you from copying the surface of a store while missing what actually makes it work:</p>
+      <ol>
+        <li><strong>Check the store on mobile.</strong> Most traffic is mobile. A theme that looks great on desktop but feels clumsy on a phone is the wrong model.</li>
+        <li><strong>Check its speed.</strong> Run the store through a free speed test. A beautiful but slow store is not a good template for your own.</li>
+        <li><strong>Separate theme from apps.</strong> Review widgets, popups, filters and upsells are usually apps, not theme features. List them separately so you know what you would need to add.</li>
+        <li><strong>Note the custom work.</strong> Look for sections and layouts that the theme's demo does not have. Those are the parts that need a developer.</li>
+        <li><strong>Decide your route.</strong> Install the theme and customise it yourself, have it customised for you, or build custom. Your budget and how different you need to look decide this, not the theme name.</li>
+        <li><strong>Note the theme version.</strong> Stores often run older versions of a theme. Some of what you see may come from features or fixes that a fresh install handles differently, so treat the live store as a guide, not a promise of an identical result.</li>
+      </ol>
+      <p>This kind of competitor store research is most useful when it feeds decisions about your own store: your layout, your product pages, your trust signals and your speed.</p>
+
+      <h2 id="what-does-it-mean-when-a-detector-says-custom-or-unknown">What does it mean when a detector says custom or unknown?</h2>
+      <p>It means the tool could not match the store to a Theme Store listing, and there are four usual reasons. First, the theme is genuinely custom, built for that one store. Second, the theme is a renamed or heavily modified copy of a Theme Store theme, changed enough that pattern matching fails; checking the schema name in the page source by hand often still reveals the base theme. Third, the store is headless: it sells through Shopify but the storefront is built with a framework such as Hydrogen instead of a theme, so there is no theme to detect. Fourth, the store sits behind a password page, which blocks tools from reading the storefront code.</p>
+      <p>An unknown result is still information. It tells you the store invested in custom work rather than taking a theme off the shelf, which usually means design and presentation are a deliberate part of how they compete.</p>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>What Shopify theme is this store using?</strong>
+      Paste the store's address into a theme detector tool, or view the page source and search for "Shopify.theme". The name and schema name shown there identify the theme in seconds, and both methods are free.</p>
+      <p><strong>Why does the detector say custom or unknown?</strong>
+      Usually because the theme was built for that store alone, renamed and heavily modified, or the store runs a headless storefront with no theme at all. A password protected store can also block the check. Trying the manual page source method is worth one attempt before you conclude it is custom.</p>
+      <p><strong>Can I still find the theme if the owner renamed it?</strong>
+      Often, yes. Renaming changes the display name in the admin, but the schema name in the page source still records the base theme the store was built from. If the schema name matches a Theme Store theme, that is your answer even when the display name is the store's own brand.</p>
+      <p><strong>Is it legal to check what theme another store uses?</strong>
+      Yes. The theme name sits in code the store sends to every visitor's browser, so reading it is no different from viewing the page itself. What you may not do is copy the other store's branding, images or text, or reuse a paid theme without your own licence.</p>
+      <p><strong>Can I use the same theme as another store?</strong>
+      Yes, if it is a Theme Store theme. Free themes cost nothing, and paid themes need a licence bought for your own store. A custom theme built for another store cannot be reused, and copying their design outright can create legal problems.</p>
+      <p><strong>Does the theme name tell me which apps a store uses?</strong>
+      No. A detector reads theme information only. Some apps leave visible traces on a store, such as review stars or a chat bubble, but many run invisibly, so treat any app guess as partial rather than a complete picture.</p>
+      <p>Found a store whose look you want to learn from? Run its URL through our free <a href="/tools/shopify-theme-detector">Theme Detector</a> to get the theme name in seconds. Then, if you are planning a build or a redesign of your own, book a <a href="/services/shopify-store-audit">Free Shopify Store Audit</a> and we will review your current store against the standard you are aiming for, with a clear list of what to change first.</p>
+      `
+    },
+    {
+      id: "digital-product-conversion-rate-benchmark-shopify-store-ai-tools",
+      title: "Conversion Rate Benchmarks for Digital Products on Shopify",
+      date: "November 28, 2026",
+      author: "Nawaz Ahmad",
+      category: "CONVERSION",
+      readTime: "10 min read",
+      image: "/blog/digital-product-conversion-rate-benchmark-shopify-store-ai-tools-cover.webp",
+      toc: [
+        { id: "what-is-a-good-conversion-rate-for-a-shopify-store-selling-digital-products", title: "What is a good conversion rate for a Shopify store selling digital products?" },
+        { id: "what-is-the-average-shopify-conversion-rate", title: "What is the average Shopify conversion rate?" },
+        { id: "how-do-i-check-my-own-stores-conversion-rate", title: "How do I check my own store's conversion rate?" },
+        { id: "why-is-my-conversion-rate-below-the-benchmark", title: "Why is my conversion rate below the benchmark?" },
+        { id: "what-improves-digital-product-conversion-fastest", title: "What improves digital product conversion fastest?" },
+        { id: "what-mistakes-do-people-make-when-comparing-conversion-rates", title: "What mistakes do people make when comparing conversion rates?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>For a Shopify store selling digital products, a healthy conversion rate is usually somewhere between 2% and 3.5% of sessions turning into orders. Below 1% signals a real problem with the offer, the product page or the traffic. Above 5% happens, but mostly on warm traffic, low priced products or very focused stores.</p>
+
+      <p>Treat these bands as orientation, not a grade. Price, traffic source and product type move the numbers a lot, and the sections below show how to read your own figures properly before you compare them with anyone else's.</p>
+
+      <h2 id="what-is-a-good-conversion-rate-for-a-shopify-store-selling-digital-products">What is a good conversion rate for a Shopify store selling digital products?</h2>
+      <p>Digital products should convert better than physical products. There is no shipping cost, no waiting for delivery and usually a lower price, so fewer reasons to abandon the purchase. A practical set of bands for digital product stores looks like this:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Your conversion rate</th>
+            <th>What it usually means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Under 1%</td><td>Something is broken: wrong traffic, unclear offer or a page that does not build trust</td></tr>
+          <tr><td>1% to 2%</td><td>Below where a digital store should be; fixable with page and offer work</td></tr>
+          <tr><td>2% to 3.5%</td><td>Healthy range for most digital product stores</td></tr>
+          <tr><td>3.5% to 5%</td><td>Strong; usually a clear offer, good previews and warm or well targeted traffic</td></tr>
+          <tr><td>Over 5%</td><td>Excellent, and often helped by low prices, an existing audience or email traffic</td></tr>
+        </tbody>
+      </table>
+      <p>Product type matters inside those bands. Low priced templates, presets and ebooks can convert at the top end because the decision is small. Online courses sit in the middle: the buyer wants proof, a curriculum and a reason to trust the teacher. Higher priced digital products, such as software style downloads or professional resource libraries, convert at lower rates per session but earn more per order, which is why revenue per visitor is often the fairer number for them.</p>
+      <p>Traffic source matters just as much. Search traffic with buying intent converts far better than cold social traffic that clicked out of curiosity. A store at 1.5% on cold ad traffic may be healthier than a store at 3% on email traffic from an existing audience.</p>
+
+      <h2 id="what-is-the-average-shopify-conversion-rate">What is the average Shopify conversion rate?</h2>
+      <p>Across all Shopify stores and all product types, published benchmark roundups usually place the average somewhere around 1.4% to 2%. That average mixes physical and digital stores, tiny stores and huge brands, so it is a weak target for a digital product store to aim at.</p>
+      <p>The digital product conversion rate benchmark shopify store ai tools question exists because store owners want a comparison that fits their situation. Use the all store average only as a floor: if your digital store is converting below the general Shopify average, something specific is wrong, and it is almost never the platform. If you are above it but below the digital bands in the table above, your store is fine but has room to grow with page and offer improvements rather than more traffic.</p>
+      <p>One more warning about averages: your own rate will swing by week and by campaign. Judge your store on a full month of data, and compare like with like, the same traffic source and the same product range, before you conclude anything.</p>
+      <p>Set your target from your own starting point instead. If you are at 1.2%, reaching 1.8% is a meaningful win, worth more than chasing a published 5% figure from a store with a different price point and a warm audience. Relative improvement on your own funnel, held over a full month, is the benchmark that actually pays.</p>
+
+      <h2 id="how-do-i-check-my-own-stores-conversion-rate">How do I check my own store's conversion rate?</h2>
+      <p>Shopify shows your conversion rate in the admin under Analytics, then Dashboard. The headline figure is your online store conversion rate for the selected period, and the reports behind it break the funnel into three steps: sessions that added to cart, sessions that reached checkout, and sessions that converted.</p>
+      <p>Read those three steps separately, because they point to different problems:</p>
+      <ul>
+        <li><strong>Plenty of sessions, few add to carts:</strong> the product page is not convincing people. The offer, the preview or the price presentation needs work.</li>
+        <li><strong>Good add to carts, weak checkout completion:</strong> price surprises, account friction or a lack of express payment options are likely causes.</li>
+        <li><strong>Healthy steps but low overall rate:</strong> your traffic quality is the issue, not the store.</li>
+      </ul>
+      <p>Set up your conversion tracking properly before trusting any of this. Check that your Shopify analytics period matches what you compare against, and expect small differences between Shopify and GA4 numbers, because the tools count sessions differently. Small gaps are normal; a huge gap means a tracking problem worth fixing, since every decision after that depends on the data.</p>
+      <p>A quick worked example shows how to read the funnel. Say a store had 1,000 sessions in a month, 90 sessions added something to the cart, 45 reached checkout and 22 placed an order. The headline rate is 2.2%, which looks healthy. But only half of the sessions that reached checkout finished it, and fewer than one in ten visitors added anything to the cart. The leaks sit at the product page and the checkout in roughly equal measure, not in traffic volume, and that is where the fix list should start.</p>
+
+      <h2 id="why-is-my-conversion-rate-below-the-benchmark">Why is my conversion rate below the benchmark?</h2>
+      <p>When we review digital product stores, the causes repeat. In rough order of how often they appear:</p>
+      <ol>
+        <li><strong>Buyers cannot tell what they actually get.</strong> File formats, sizes, compatibility, what is inside the download: if this is vague, people leave. Digital products are bought sight unseen, so clarity replaces the ability to touch the product.</li>
+        <li><strong>No preview or sample.</strong> A short preview, a few pages, a demo clip or example files remove the biggest risk a digital buyer feels.</li>
+        <li><strong>Delivery feels uncertain.</strong> Buyers want to know how the file arrives, how fast, and what happens if the download fails. One clear line near the buy button answers this.</li>
+        <li><strong>The page is slow or cluttered on mobile.</strong> Most discovery traffic is mobile. A heavy page with popups stacked on top of each other kills intent before the offer is even read.</li>
+        <li><strong>Weak trust signals.</strong> No reviews, no guarantees where they fit, no visible support route. For digital goods, a clear refund policy for faulty files and a real contact option do heavy lifting.</li>
+        <li><strong>Traffic mismatch.</strong> Ads or content that promise one thing and land on another produce sessions that never had a chance to convert.</li>
+      </ol>
+      <p>Notice that none of these are fixed by more traffic. Sending more visitors into a page with an unclear offer just produces a bigger, more expensive version of the same result.</p>
+
+      <h2 id="what-improves-digital-product-conversion-fastest">What improves digital product conversion fastest?</h2>
+      <p>Start with the changes that sit closest to the buy decision:</p>
+      <ul>
+        <li><strong>Rewrite the top of the product page.</strong> The first screen should say what the product is, who it is for, and what the buyer receives, in plain words, with the price and delivery format visible.</li>
+        <li><strong>Add a real preview.</strong> Samples, page spreads, screenshots of the files, or a short walkthrough video. Previews are the digital equivalent of picking a product up in a physical store.</li>
+        <li><strong>Place proof near the price.</strong> Reviews, ratings and specific buyer comments belong beside the buy button, not only at the bottom of the page.</li>
+        <li><strong>Offer express checkout.</strong> Apple Pay and similar one tap options remove the form filling stage where mobile buyers drop off.</li>
+        <li><strong>Use AI tools where they answer questions.</strong> An AI chat or guided question tool on the product page can answer compatibility and format questions at the moment they block a purchase. This is where ai tools genuinely help conversion: not by decorating the page, but by removing a specific doubt at the moment it appears.</li>
+        <li><strong>Fix mobile speed.</strong> Compress preview images, remove apps you no longer use, and test the page on a mid range phone, not just your desktop.</li>
+      </ul>
+      <p>Work through these in order and measure for at least two weeks between changes. Changing five things at once leaves you unable to tell what worked.</p>
+
+      <h2 id="what-mistakes-do-people-make-when-comparing-conversion-rates">What mistakes do people make when comparing conversion rates?</h2>
+      <p>Three reading errors cause most of the confusion we see when owners compare their rate with published benchmarks.</p>
+      <ul>
+        <li><strong>Mixing devices.</strong> Mobile and desktop convert at different rates on almost every store. A blended figure hides which one is weak, so split the rate by device before comparing it with anything.</li>
+        <li><strong>Judging tiny samples.</strong> With only a few dozen sessions, one order can move your rate by a whole percentage point. Wait until a product or a traffic source has enough sessions for the number to settle before redesigning anything around it.</li>
+        <li><strong>Comparing unlike periods.</strong> A sale week, a launch week and a normal week behave like three different stores. Compare the same kind of period, and compare traffic sources separately, because email, search and cold ads will never convert alike.</li>
+      </ul>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>What is a good conversion rate for a Shopify store selling digital products?</strong>
+      Between 2% and 3.5% of sessions turning into orders is a healthy range for most digital product stores. Under 1% usually points to an unclear offer, weak product pages or mismatched traffic rather than price alone.</p>
+      <p><strong>Is a 1% conversion rate bad for Shopify?</strong>
+      For a digital product store it is a warning sign rather than a disaster. New stores and stores running mostly cold ad traffic often sit near 1% while they find their audience. If the rate stays there on warm or search traffic, the product page, the preview or the delivery explanation is the first place to look.</p>
+      <p><strong>What is a good conversion rate for a brand new store?</strong>
+      Expect the first months to run below the healthy band, often somewhere between 1% and 2%, while traffic is mostly cold and the offer is untested. Judge a new store on whether the rate climbs month by month, not on whether it matches an established store's figure.</p>
+      <p><strong>Do digital products convert better than physical products?</strong>
+      Usually yes, because there is no shipping cost, no delivery wait and often a lower price, so buyers have fewer reasons to hesitate. The gap is not automatic: a digital product with no preview and a vague description can easily convert worse than a well presented physical product.</p>
+      <p><strong>Why do Shopify and GA4 show different conversion rates?</strong>
+      The two tools count sessions differently, and they attribute orders to sessions using different rules, so small gaps between them are normal. Pick one tool as your source of truth for trends and use the other only as a cross check. A very large gap is different: that usually means a tracking setup problem worth fixing.</p>
+      <p><strong>How do I check my own store's conversion rate?</strong>
+      Open Analytics, then Dashboard, in your Shopify admin. The funnel breakdown behind the headline figure shows where sessions drop: at the product page, at checkout, or in traffic quality before the store is even involved.</p>
+      <p>If your store sits below the healthy band and you cannot tell which cause applies, a structured review beats guessing. Book a <a href="/services/shopify-store-audit">Free Shopify Store Audit</a> and we will check your product pages, checkout path and tracking setup, then give you a clear fix list in priority order, the same order this article uses.</p>
+      `
+    },
+    {
+      id: "shopify-theme-liquid-hero-banner-above-image-with-text-section",
+      title: "How to Add a Hero Banner Above the Image With Text Section in Shopify",
+      date: "November 29, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "10 min read",
+      image: "/blog/shopify-theme-liquid-hero-banner-above-image-with-text-section-cover.webp",
+      toc: [
+        { id: "how-do-i-add-a-banner-above-the-image-with-text-section-in-shopify", title: "How do I add a banner above the Image with text section in Shopify?" },
+        { id: "where-is-theme-liquid-in-my-store", title: "Where is theme.liquid in my store?" },
+        { id: "can-i-reorder-sections-without-touching-code", title: "Can I reorder sections without touching code?" },
+        { id: "how-do-i-stop-my-banner-image-being-cropped-on-mobile", title: "How do I stop my banner image being cropped on mobile?" },
+        { id: "when-does-a-hero-section-need-custom-code", title: "When does a hero section need custom code?" },
+        { id: "will-editing-theme-liquid-break-my-theme-updates", title: "Will editing theme.liquid break my theme updates?" },
+        { id: "why-is-my-banner-not-showing-where-i-expect", title: "Why is my banner not showing where I expect?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Yes, you can put a hero banner above the Image with text section on your Shopify homepage, and in most cases you do not need code at all. In the theme editor, add an Image banner section to the homepage template and drag it above the Image with text section. Code only becomes necessary when the banner has to appear above the content on every page, or when you need behaviour the built in sections do not offer.</p>
+
+      <p>This guide walks through the no code method first, then the two code routes, in the safe order: back up your theme before you touch any file.</p>
+
+      <h2 id="how-do-i-add-a-banner-above-the-image-with-text-section-in-shopify">How do I add a banner above the Image with text section in Shopify?</h2>
+      <p><strong>Method 1: the theme editor, no code.</strong> This is the right method for a homepage hero.</p>
+      <ol>
+        <li>In your Shopify admin, go to Online Store, then Themes, then click Customize on your live theme.</li>
+        <li>Make sure you are editing the Home page template.</li>
+        <li>In the left panel, hover where you want the banner and click Add section, then choose Image banner.</li>
+        <li>Upload your image, add your heading, text and button in the section settings.</li>
+        <li>Drag the section by its handle so it sits directly above the Image with text section.</li>
+        <li>Click Save, then check the page on a phone as well as a desktop.</li>
+      </ol>
+      <p>Section order on the homepage is stored per template, so this change affects the homepage only. That is normally exactly what a hero banner needs.</p>
+      <p><strong>Method 2: reorder in the template file.</strong> If you prefer working with files, the homepage layout lives in templates/index.json. The "order" array in that file lists section IDs in display order. Moving the banner's ID above the image with text ID produces the same result as dragging in the editor:</p>
+      <p>"order": [ "image_banner_A1b2C3", "image_with_text_D4e5F6" ]</p>
+      <p>Use the real section IDs from your own file. The editor method is safer for most store owners, because a malformed JSON file will stop the template from loading.</p>
+      <p><strong>Method 3: a banner on every page, using theme.liquid.</strong> If the banner must sit above the main content on all pages, for example a campaign banner with a countdown, it belongs in the layout file. Create a section file for the banner, then call it in theme.liquid directly before the layout content:</p>
+      <p>{% section 'hero-banner' %} {{ content_for_layout }}</p>
+      <p>Everything rendered by the page template appears where content_for_layout sits, so a section placed before it appears above the content of every page that uses that layout. This is a real customisation, and it is the point where the job stops being a settings task.</p>
+
+      <h2 id="where-is-theme-liquid-in-my-store">Where is theme.liquid in my store?</h2>
+      <p>You will find theme.liquid in the code editor:</p>
+      <ol>
+        <li>Go to Online Store, then Themes.</li>
+        <li>Click the three dots on your theme and choose Edit code.</li>
+        <li>Open the Layout folder in the left sidebar.</li>
+        <li>Click theme.liquid.</li>
+      </ol>
+      <p>The Layout folder holds the files that wrap every page. theme.liquid contains the header, the footer and the content_for_layout tag that pulls in each page's sections. Because every page depends on it, a mistake in this file affects the whole store, which is why the backup step below matters more here than anywhere else.</p>
+      <p>Before editing anything, duplicate the theme: Online Store, Themes, three dots, Duplicate. Work on the duplicate, preview it thoroughly, and only publish when it looks right on desktop and mobile. Keep the old published theme untouched until the new one is proven, so you can roll back in one click.</p>
+
+      <h2 id="can-i-reorder-sections-without-touching-code">Can I reorder sections without touching code?</h2>
+      <p>Yes. On Online Store 2.0 themes, including the free shopify dawn theme and other free shopify themes, every section on a template can be dragged up or down in the theme editor. The order you set is saved to that template's JSON file automatically.</p>
+      <p>A few limits are worth knowing:</p>
+      <ul>
+        <li>Reordering applies to the template you are editing. The same section on a product template keeps its own order.</li>
+        <li>Some areas are not draggable sections. The header and footer are fixed groups, and content inside a section, such as the image and text columns of Image with text, is arranged in that section's settings, not by dragging.</li>
+        <li>If a section does not appear in the editor at all, it is probably hardcoded in a template or added by an app, and moving it does need code.</li>
+      </ul>
+      <p>For a homepage hero above Image with text, dragging is not a compromise. It is the intended way to do it.</p>
+
+      <h2 id="how-do-i-stop-my-banner-image-being-cropped-on-mobile">How do I stop my banner image being cropped on mobile?</h2>
+      <p>A desktop banner is wide and short. A phone screen is tall and narrow, so the same image gets cropped hard on mobile, and text that sat safely in a corner on desktop can end up covering the product or the person's face. Three settings fix most of it:</p>
+      <ul>
+        <li><strong>Upload a separate mobile image.</strong> The Image banner section accepts a second image for mobile. A portrait crop of the same photo, composed for a tall screen, almost always looks better than letting the theme crop the desktop shot.</li>
+        <li><strong>Set the focal point.</strong> Tell the section which part of the image matters, so automatic cropping keeps that part in frame on every screen size.</li>
+        <li><strong>Choose the banner height deliberately.</strong> Adapt to image keeps the natural proportions, while the fixed heights crop more aggressively. If faces or product edges keep getting cut, adapt is the safer setting.</li>
+      </ul>
+      <p>Then write the heading for the phone first. A heading that wraps to four lines over a cropped image is the most common reason a hero looks broken on mobile even when every setting is right.</p>
+
+      <h2 id="when-does-a-hero-section-need-custom-code">When does a hero section need custom code?</h2>
+      <p>Settings and dragging cover most stores. Custom code earns its place in situations like these:</p>
+      <ul>
+        <li>The banner must appear above the content on every page, not just one template (Method 3 above).</li>
+        <li>The design needs exact control the section does not offer: text over a video with a specific mobile crop, a banner that changes by collection or customer tag, or a layout that spans sections.</li>
+        <li>The banner needs behaviour, such as a countdown, a rotating message or a dismiss button that stays dismissed.</li>
+        <li>You want the banner built as a reusable custom section with its own schema settings, so staff can update the image and text safely without touching the layout.</li>
+      </ul>
+      <p>In a custom section, the settings are defined in the section's schema, which is what makes it safe for non developers to edit later:</p>
+      <p>{% schema %} { "name": "Hero banner", "settings": [ { "type": "image_picker", "id": "image", "label": "Banner image" }, { "type": "text", "id": "heading", "label": "Heading" } ], "presets": [{ "name": "Hero banner" }] } {% endschema %}</p>
+      <p>This is standard shopify theme development work: small in scope, but it has to be done cleanly so the section survives staff edits and theme changes.</p>
+
+      <h2 id="will-editing-theme-liquid-break-my-theme-updates">Will editing theme.liquid break my theme updates?</h2>
+      <p>Editing theme.liquid does not break your store, but it does change how updates work. When Shopify releases a new version of your theme, the update installs as a fresh copy. Your theme editor settings carry across, but manual code edits do not copy over automatically. Your edited files stay in your old theme version, and the new version starts clean.</p>
+      <p>Practical ways to handle this:</p>
+      <ul>
+        <li>Keep a short change log: file name, date, what you changed and why. Reapplying three documented edits after an update takes minutes; rediscovering them takes hours.</li>
+        <li>Put custom work in its own section files where you can. A separate section file is easy to copy into an updated theme, while edits scattered through theme.liquid are easy to lose.</li>
+        <li>Never edit the only copy of your theme. Always work on a duplicate, as described above.</li>
+      </ul>
+      <p>Stores that skip updates for a year or more usually do so because undocumented code edits made updating feel risky. A change log removes that problem entirely.</p>
+
+      <h2 id="why-is-my-banner-not-showing-where-i-expect">Why is my banner not showing where I expect?</h2>
+      <p>When a banner does not appear, or appears on the wrong page, work through this list before touching code:</p>
+      <ol>
+        <li><strong>You edited a draft theme.</strong> The editor opens whichever theme you selected. Changes made on an unpublished copy do not show on the live store until that theme is published.</li>
+        <li><strong>You edited the wrong template.</strong> Section order is stored per template. A banner added on the product template does nothing to the homepage, and the other way round.</li>
+        <li><strong>The section is hidden.</strong> A section with its visibility eye closed stays in the editor list but does not render on the store. This is the most common cause of a banner that was definitely added and definitely saved.</li>
+        <li><strong>You are looking at a cached page.</strong> Hard refresh, or open the store in a private window, before concluding the save failed.</li>
+        <li><strong>The section is not in the editor at all.</strong> If the banner exists in the theme files but never appears in the editor, it is probably hardcoded or added by an app, and moving it is a code job rather than a settings job.</li>
+      </ol>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How do I move the image banner above the Image with text section?</strong>
+      In the theme editor, open the Home page template, hover over the Image banner section in the left panel, and drag it by its handle until it sits above Image with text. Click Save, then check the result on a phone as well as a desktop. No code is involved.</p>
+      <p><strong>Why is my banner not showing on my store?</strong>
+      The usual causes are editing an unpublished theme, adding the section to the wrong template, or the section being hidden in the editor. Check those three first, then hard refresh the store page before assuming the save failed.</p>
+      <p><strong>Why does my banner image look cropped on mobile?</strong>
+      The theme is cropping a wide desktop image to fit a tall phone screen. Upload the separate mobile image the section offers, set the focal point on the part that must stay visible, and consider the adapt to image height setting if fixed heights keep cutting important detail.</p>
+      <p><strong>Can I put a banner on every page instead of just the homepage?</strong>
+      Yes, but not by dragging. A banner on one page is a template setting. A banner above the content of every page needs a section called in theme.liquid before the layout content, which is custom code work and should be done on a duplicate theme first.</p>
+      <p><strong>Where is theme.liquid in my store?</strong>
+      Go to Online Store, then Themes, click the three dots on your theme, choose Edit code, and open theme.liquid inside the Layout folder. Duplicate your theme before editing it, because every page depends on this file.</p>
+      <p><strong>Will I lose my code changes when my theme updates?</strong>
+      Theme editor settings always carry into an updated theme. Code edits are less certain: Shopify tries to include them when they do not conflict with changes in the new version, and tells you afterwards whether they were included. Keeping custom work in its own section files, plus a short change log, is still the safest way to update without losing anything.</p>
+      <p>If your hero needs the custom route, a banner that changes by collection, a video hero with a proper mobile crop, or a section your team can edit safely, that is development work rather than settings work. Our <a href="/services/shopify-theme-customization-services">Shopify Theme Customization Services</a> and <a href="/services/shopify-development-services">Custom Shopify Development</a> cover exactly this kind of build. Start with a <a href="/services/shopify-store-audit">Free Shopify Store Audit</a> if you want us to look at your current theme first and tell you honestly whether you need code at all.</p>
+      `
+    },
+    {
+      id: "how-to-know-how-many-sku-competitor-shopify-store-has",
+      title: "How to See How Many Products a Competitor's Shopify Store Has",
+      date: "November 30, 2026",
+      author: "Nawaz Ahmad",
+      category: "STRATEGY",
+      readTime: "10 min read",
+      image: "/blog/how-to-know-how-many-sku-competitor-shopify-store-has-cover.webp",
+      toc: [
+        { id: "how-can-i-see-how-many-products-a-competitors-shopify-store-has", title: "How can I see how many products a competitor's Shopify store has?" },
+        { id: "can-i-view-a-stores-full-product-list", title: "Can I view a store's full product list?" },
+        { id: "how-do-i-find-which-theme-a-competitor-uses", title: "How do I find which theme a competitor uses?" },
+        { id: "is-researching-competitor-stores-like-this-allowed", title: "Is researching competitor stores like this allowed?" },
+        { id: "what-else-does-the-product-data-tell-me-besides-the-count", title: "What else does the product data tell me besides the count?" },
+        { id: "what-should-i-actually-do-with-competitor-research", title: "What should I actually do with competitor research?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can see the full product count of most Shopify stores by adding /products.json to the store's web address. Open that page and Shopify returns the store's public product data, including every product title, variant and SKU the store exposes. Count the products, page through with the limit settings described below, and you have the catalog size.</p>
+
+      <p>This is public information the store itself publishes, and used properly it tells you a lot about how a competitor is positioned. The rest of this guide covers the method in detail, the backups for stores that block it, and what to actually do with the numbers.</p>
+
+      <h2 id="how-can-i-see-how-many-products-a-competitors-shopify-store-has">How can I see how many products a competitor's Shopify store has?</h2>
+      <p>The main method uses a built in Shopify endpoint. Here is the process:</p>
+      <ol>
+        <li>Take the competitor's store address, for example competitorstore.com.</li>
+        <li>Add /products.json to the end: competitorstore.com/products.json.</li>
+        <li>The page that loads is raw data, not a designed page. Each product appears as one block of information with its title, variants, prices and images.</li>
+        <li>By default the endpoint returns a limited set of products. Add ?limit=250 to the address to get up to 250 products per page: competitorstore.com/products.json?limit=250.</li>
+        <li>If the store has more than 250 products, add &amp;page=2, then page=3, and keep going until a page comes back empty. Add the counts together.</li>
+      </ol>
+      <p>Counting blocks by eye is slow on a large catalog. Two easier options: paste the address into a browser with a JSON viewer extension, which formats the data so products are easy to count, or save the page and search the file for how many times "title" appears at product level. Either way, you end up with a defensible count rather than a guess.</p>
+      <p>For a faster answer, some stores also expose a count directly. Try competitorstore.com/products/count.json, or competitorstore.com/collections/all/products/count.json. Where the store allows it, you get the product total in one line without paging through anything. Not every store answers these addresses, so treat them as a shortcut to test first, not a guarantee.</p>
+      <p>You also get more than a count. The same data shows variant structure, which tells you how many SKUs sit behind each product, plus prices and product types. A store with 40 products and 600 SKUs is running a very different operation from a store with 400 simple products.</p>
+      <p><strong>When products.json does not work.</strong> Some stores restrict this endpoint, and a few return an empty result. Your backups:</p>
+      <ul>
+        <li>Open the store's sitemap: competitorstore.com/sitemap.xml, then open the product sitemap file it links to and count the product URLs.</li>
+        <li>Browse their all products collection at /collections/all and note how many pages of products you can click through, multiplied by the products shown per page.</li>
+        <li>Use a search engine query: site:competitorstore.com/products/ returns an approximate count of indexed product pages.</li>
+      </ul>
+      <p>Each backup is slightly less precise, but together they get you close enough for planning.</p>
+
+      <h2 id="can-i-view-a-stores-full-product-list">Can I view a store's full product list?</h2>
+      <p>Yes, within the limits above. The products.json data is effectively the store's full public catalog: titles, handles, variants, prices, images and product types. What you cannot see is anything the store has not published: draft products, sales figures, inventory levels held back from the page, and which products actually sell.</p>
+      <p>That last point matters. A full product list shows range, not performance. To estimate what is selling, use these public clues:</p>
+      <ul>
+        <li>Open /collections/all?sort_by=best-selling. Shopify's best selling sort is based on real order activity, so the products at the front of that view are the store's genuine movers.</li>
+        <li>Look at which products carry reviews and how many. Reviewed products are almost always the ones with order volume behind them.</li>
+        <li>Notice which products the store features on its homepage and in its menus. Stores promote what converts.</li>
+      </ul>
+      <p>Catalog size plus these clues gives you a realistic picture: how wide the store is, what it leads with, and where its energy goes.</p>
+
+      <h2 id="how-do-i-find-which-theme-a-competitor-uses">How do I find which theme a competitor uses?</h2>
+      <p>Product count is only one part of competitor research. The theme tells you how much of their presentation is off the shelf and how much is custom work.</p>
+      <p>Run the store's address through a shopify theme detector tool, such as our free <a href="/tools/shopify-theme-detector">Theme Detector</a>, or view the page source and search for "Shopify.theme" to read the theme name directly. Then search the name in the Shopify Theme Store. A listed theme with public demos is a standard starting point; a name that appears nowhere usually means a custom build.</p>
+      <p>Combine the two findings and the picture sharpens. A competitor with a large catalog on a standard theme is competing on range and price. A competitor with a tight catalog on a custom theme is competing on brand and experience. Your store does not beat both with the same moves, which is exactly why this research is worth the ten minutes it takes.</p>
+      <p>While you are looking, note the visible apps too: review widgets, filters, search tools, upsell prompts. Apps are a monthly cost the competitor has decided is worth paying, which makes them a shortlist of features worth testing on your own store.</p>
+
+      <h2 id="is-researching-competitor-stores-like-this-allowed">Is researching competitor stores like this allowed?</h2>
+      <p>Yes. Everything described here reads information the store publishes openly on its own website: its product list, its prices and its theme name. Checking a competitor's public catalog is normal market research, the online equivalent of walking through a rival's shop and counting the shelves.</p>
+      <p>Two boundaries keep it clean. First, research is for positioning decisions, not for copying: lifting a competitor's product descriptions, photos or design wholesale is a copyright and branding problem, not research. Second, be reasonable with automated tools. Loading a public page is fine; hammering a store with scraping software can burden their site and breach their terms of use. Manual checks on a handful of competitors, refreshed every few months, give you everything you need.</p>
+      <p>It is also worth applying the same honesty in reverse: your competitors can see your catalog the same way. That is normal in retail, and it is one more reason to compete on presentation, service and product pages rather than on hiding information.</p>
+
+      <h2 id="what-else-does-the-product-data-tell-me-besides-the-count">What else does the product data tell me besides the count?</h2>
+      <p>The same data rewards a second look, because each product block carries more than a title:</p>
+      <ul>
+        <li><strong>Creation and publish dates.</strong> Each product shows when it was created and published. A cluster of recent dates means the store is actively testing new products. Dates that are all old point to a settled catalog the store rarely changes.</li>
+        <li><strong>Compare at prices.</strong> Where a variant shows a higher compare at price, the store discounts. Counting how much of the catalog is marked down, and by how much, tells you whether they compete on price or hold their prices.</li>
+        <li><strong>Products missing from the menus.</strong> The endpoint lists every published product, including ones not linked from any collection page you can find. Quiet test products and soft launches show up here before they show up in the store's navigation.</li>
+        <li><strong>Variant depth per product.</strong> A product with two variants and a product with sixty are different commitments. Deep variant structures usually mean print on demand, apparel sizing or personalisation, each with its own cost base.</li>
+      </ul>
+      <p>One caveat on prices: the data returns prices in the store's base currency, not the converted price a shopper in another country would see. If the store sells internationally, compare the structure of their pricing rather than the converted numbers.</p>
+
+      <h2 id="what-should-i-actually-do-with-competitor-research">What should I actually do with competitor research?</h2>
+      <p>Raw counts become useful when they turn into decisions. Work through these four:</p>
+      <ol>
+        <li><strong>Assortment gaps.</strong> Compare their catalog with yours by category. If every serious competitor stocks a range you lack, that is a buying decision to consider. If you stock ranges they all dropped, ask why before you reorder.</li>
+        <li><strong>Price bands.</strong> Note their entry price, their middle and their premium end. You do not need to be cheapest, but you do need to know where your prices sit against the market a customer is comparing in the next browser tab.</li>
+        <li><strong>Presentation standard.</strong> Their product pages set the bar your pages are judged against: image count, description depth, reviews, delivery information. If their pages answer questions yours do not, that gap costs you orders.</li>
+        <li><strong>Focus.</strong> A store with 30 products and best sellers clearly promoted is telling you where its profit sits. Compare that focus with your own homepage. If everything on yours is equal, nothing stands out.</li>
+      </ol>
+      <p>A simple table keeps the research usable. One row per competitor, with the same columns every time:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Store</th>
+            <th>Products</th>
+            <th>Approx. SKUs</th>
+            <th>Entry price</th>
+            <th>Premium price</th>
+            <th>Theme</th>
+            <th>Date checked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Competitor A</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Competitor B</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+      <p>Write the findings down with dates. Catalog counts, prices and themes change, and a dated record lets you see direction, not just a snapshot: who is expanding, who is discounting, who just redesigned.</p>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How can I see how many products a competitor's Shopify store has?</strong>
+      Add /products.json to their store address, use ?limit=250 and the page parameter to work through large catalogs, and add the counts together. Some stores also answer /products/count.json with the total directly. If the endpoint is blocked, count product URLs in their sitemap instead.</p>
+      <p><strong>Why does products.json only show 250 products?</strong>
+      Because 250 is the maximum the endpoint returns in a single request, whatever limit you ask for. It is a page size, not the store's catalog size. Keep adding pages until one comes back empty, and the total across all pages is the real count.</p>
+      <p><strong>What is the difference between a product count and an SKU count?</strong>
+      A product is one listing. An SKU is one buyable variant of it, so a shirt in four sizes and three colours is one product with twelve SKUs. Stores with similar product counts can have very different SKU counts, and SKU count is the better guide to how complex their operation really is.</p>
+      <p><strong>Is it legal to look at a competitor's products.json?</strong>
+      Yes. It is a public address the store itself publishes, and reading it is normal market research. The boundary is what you do with it: research and positioning are fine, copying their descriptions, photos or design is not, and heavy automated scraping can breach a site's terms of use.</p>
+      <p><strong>Can I see how much a competitor sells or earns this way?</strong>
+      No. The data shows what a store offers and what it charges, never what it sells. Order volume, revenue and real stock levels stay private. The best selling sort on their all products collection and the spread of reviews are clues about what moves, but they are clues, not figures.</p>
+      <p><strong>Can I see products the store has not linked in its menu?</strong>
+      Yes. The endpoint returns every published product, including ones no menu or collection page links to. Draft products are the exception: those stay private until the store publishes them.</p>
+      <p>Competitor research is most valuable when it is compared against an honest review of your own store. Our <a href="/services/shopify-store-audit">Free Shopify Store Audit</a> does exactly that: we review your product pages, pricing presentation and design standard alongside the competitors your customers are comparing you with, and give you the fix list in priority order.</p>
+      `
+    },
+    {
+      id: "free-shopify-themes",
+      title: "Free Shopify Themes: What You Get, What You Give Up, and When to Upgrade",
+      date: "December 1, 2026",
+      author: "Nawaz Ahmad",
+      category: "DESIGN",
+      readTime: "10 min read",
+      image: "/blog/free-shopify-themes-cover.webp",
+      toc: [
+        { id: "are-free-shopify-themes-good-enough-for-a-real-store", title: "Are free Shopify themes good enough for a real store?" },
+        { id: "what-is-the-best-free-shopify-theme", title: "What is the best free Shopify theme?" },
+        { id: "what-do-free-themes-lack-compared-to-premium-themes", title: "What do free themes lack compared to premium themes?" },
+        { id: "when-should-i-pay-for-a-theme-or-go-custom", title: "When should I pay for a theme or go custom?" },
+        { id: "can-i-switch-themes-later-without-losing-my-products", title: "Can I switch themes later without losing my products?" },
+        { id: "how-do-i-test-a-premium-theme-before-i-pay-for-it", title: "How do I test a premium theme before I pay for it?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Yes, free Shopify themes are good enough to launch and grow a real store. Dawn and Shopify's other free themes are fast, mobile friendly and fully supported, and plenty of stores trade successfully on them for years. What you give up is not quality but range: a limited set of sections, basic filtering, and a look that thousands of other stores share.</p>
+
+      <p>The honest answer is that free themes fail stores at a specific stage, not at the start. This guide covers what you get, the four walls stores eventually hit, and how to judge when paying for a premium theme or a custom design actually makes sense.</p>
+
+      <h2 id="are-free-shopify-themes-good-enough-for-a-real-store">Are free Shopify themes good enough for a real store?</h2>
+      <p>For launching and for the first stage of growth, yes. Shopify's current free themes, including Dawn, Sense, Craft, Studio and Spotlight, are built by Shopify itself, and it shows in the basics:</p>
+      <ul>
+        <li><strong>Speed.</strong> They are among the fastest themes available, because Shopify builds them to show the platform at its best.</li>
+        <li><strong>Mobile design.</strong> Most of your visitors are on phones, and free themes handle mobile layouts properly out of the box.</li>
+        <li><strong>Sections everywhere.</strong> They use Online Store 2.0, so you can add, remove and reorder sections on any page in the theme editor, not just the homepage.</li>
+        <li><strong>Updates and support.</strong> Shopify maintains them, releases improvements, and its support team can help with the theme itself. Paid third party themes cannot match that safety net.</li>
+        <li><strong>Accessibility.</strong> Font sizes, contrast and keyboard navigation are handled carefully, which many cheaper themes neglect.</li>
+      </ul>
+      <p>A store with good products, clear photography and a free theme will outsell a store with weak products on an expensive theme every time. If you are deciding where your first money goes, products and photography win.</p>
+      <p>One warning about where you get them: only install free themes from the official Shopify Theme Store, inside your admin. Sites offering free shopify themes zip download files are a genuine risk. Those files can be outdated, modified or bundled with malicious code, and they receive no updates or support. The official themes are already free, so there is never a reason to download one from anywhere else.</p>
+
+      <h2 id="what-is-the-best-free-shopify-theme">What is the best free Shopify theme?</h2>
+      <p>There is no single best, but there is a best fit for your kind of store:</p>
+      <ul>
+        <li><strong>Dawn</strong> is the default starting point and the most documented. Choose it if you want the safest all rounder with the largest pool of tutorials and developer knowledge behind it.</li>
+        <li><strong>Sense</strong> has a softer, rounded look that suits beauty, wellness and gentle brands.</li>
+        <li><strong>Craft</strong> was designed with makers in mind, with generous spacing and storytelling layouts that suit handmade and craft products.</li>
+        <li><strong>Studio</strong> leans toward art and collections, with layouts that give imagery room.</li>
+        <li><strong>Spotlight</strong> is stripped back and quick to set up, aimed at stores that want to start selling with minimal fuss.</li>
+      </ul>
+      <p>Whichever you choose, judge it in the demo with your own products in mind: your product count, your image shapes and your typical description length. A theme that looks beautiful with the demo's products can feel awkward with yours, and five minutes of honest checking now saves a rebuild later.</p>
+      <p>At a glance, the three routes compare like this:</p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Free themes</th>
+            <th>Premium themes</th>
+            <th>Custom design</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cost</td><td>$0</td><td>One time licence per store</td><td>Priced by scope</td></tr>
+          <tr><td>Support</td><td>Shopify</td><td>Theme developer</td><td>Whoever built it</td></tr>
+          <tr><td>Features</td><td>Solid core set</td><td>Wider built in set</td><td>Whatever you specify</td></tr>
+          <tr><td>Look</td><td>Shared by many stores</td><td>More distinctive</td><td>Unique to your brand</td></tr>
+          <tr><td>Updates</td><td>Handled by Shopify</td><td>Developer releases, you apply</td><td>Manual, by your developer</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="what-do-free-themes-lack-compared-to-premium-themes">What do free themes lack compared to premium themes?</h2>
+      <p>Stores that outgrow free themes tend to hit the same four walls:</p>
+      <ol>
+        <li><strong>Section and layout limits.</strong> Free themes include a solid but fixed set of sections. When you need a layout they do not have, a product story block, a comparison table, a richer collection layout, your options are an app or custom code.</li>
+        <li><strong>Filtering and navigation.</strong> Basic collection filtering is included, but larger catalogs quickly need smarter filters, swatches and mega menus beyond what free themes provide. This is a common reason best shopify themes for clothing and other range heavy stores get bought: apparel lives and dies by filtering.</li>
+        <li><strong>Product page features.</strong> Tabs for specifications and delivery, sticky add to cart bars, advanced image galleries and size guide popups are typical premium theme territory. Stores researching best shopify themes for dropshipping usually land on paid themes for these built in conversion features rather than for looks.</li>
+        <li><strong>Sameness.</strong> Dawn is the world's most common Shopify starting point. Customers may never consciously notice, but a store that looks like the default template works harder to feel like a brand, especially in competitive niches.</li>
+      </ol>
+      <p>Premium themes answer these walls with more built in features, at a one time cost and with support from the theme developer instead of Shopify. They do not answer everything: no theme, free or paid, fixes weak product photography or unclear descriptions, and the best shopify themes for conversion still depend on what you put in them.</p>
+
+      <h2 id="when-should-i-pay-for-a-theme-or-go-custom">When should I pay for a theme or go custom?</h2>
+      <p>Pay for a premium theme when one specific wall is costing you money and a theme feature removes it: filtering for a growing catalog, product page features your products need, or a look your niche expects. Buy for the feature, not for a vague sense of upgrading.</p>
+      <p>There is a simple money test for the middle ground. Add up what you already pay every month for apps whose only job is patching a theme gap: a filter app, a tabs app, a sticky buy bar app. Multiply by twelve. If a year of patches costs more than the one time price of a theme that includes those features, the theme is the cheaper tool, and it usually loads faster than the apps it replaces.</p>
+      <p>Go custom, either a customised theme or a full custom design, when:</p>
+      <ul>
+        <li>Your brand is the product. In fashion, beauty and premium goods, looking like nobody else is part of what customers pay for.</li>
+        <li>You need features no theme offers, such as product personalisation, unusual product page layouts or custom buying flows.</li>
+        <li>You have outgrown workarounds. If you are paying for several apps purely to patch theme gaps, a proper build is often cheaper over a year and faster on the page.</li>
+      </ul>
+      <p>The middle route suits many stores: keep a free theme as the base and pay for targeted customisation of the parts customers see most, the header, product page and homepage sections. Our Full Store Design service is a full custom design at a published price of $299, and smaller customisation work is priced by scope after a quick review of your store.</p>
+      <p>Timing matters too. Changing themes during your busiest sales period is a needless risk. Plan a theme change for a quiet stretch, and you can take the next section's advice at a sensible pace.</p>
+
+      <h2 id="can-i-switch-themes-later-without-losing-my-products">Can I switch themes later without losing my products?</h2>
+      <p>Yes. Your products, collections, customers, orders, discounts and blog posts live in your Shopify account, not in your theme. Installing a new theme does not delete or move any of them, and your old theme stays in your theme library so you can switch back.</p>
+      <p>What does not transfer is the theme's own work:</p>
+      <ul>
+        <li>Theme editor customisation: your section layouts, colours, fonts and settings belong to the old theme and need setting up again in the new one.</li>
+        <li>Images and content uploaded into theme sections, such as homepage banners and feature blocks.</li>
+        <li>Custom code edits and app code placed inside theme files.</li>
+        <li>Your old theme's specific page templates, which need recreating if the new theme structures them differently.</li>
+        <li>Some behind the scenes structure that search engines read, such as heading order on key templates. Recheck your homepage and best selling product pages after the switch.</li>
+      </ul>
+      <p>The practical process is simple. Add the new theme to your library without publishing it, rebuild your homepage and key templates in the editor, check product and collection pages on mobile and desktop, then publish when it is ready. Your store keeps trading on the old theme the whole time, so there is no downtime and no rush.</p>
+
+      <h2 id="how-do-i-test-a-premium-theme-before-i-pay-for-it">How do I test a premium theme before I pay for it?</h2>
+      <p>You do not have to buy a premium theme blind. Add it to your theme library from the Theme Store and it arrives as a trial. On a trial you can open the theme editor, build your homepage and key templates with your own products, and judge the result with your photography and your catalog rather than the demo's.</p>
+      <p>Two limits are worth knowing. A trial theme cannot be published, and you cannot edit its code, so the trial answers design and feature questions, not development ones. And test with your hardest content: your longest product title, your widest size range and your most awkward image shapes, because those are the cases that decide whether a theme fits.</p>
+      <p>When the trial convinces you, buying the licence unlocks publishing on that same copy, so the setup work you did carries over. When it does not, delete the trial and nothing has been spent.</p>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is Dawn good enough, or do I need a paid theme?</strong>
+      For most stores, Dawn is good enough, and it is one of the fastest themes available at any price. A paid theme earns its money when you need a specific built in feature Dawn lacks, such as advanced filtering or product page tabs, not as a general upgrade.</p>
+      <p><strong>How much do paid Shopify themes cost?</strong>
+      Premium themes are a one time licence fee per store, typically a few hundred dollars, bought through the Shopify Theme Store. There is no monthly theme charge. Check the listing for the exact price, and remember the licence covers one store only.</p>
+      <p><strong>Are premium themes faster than free themes?</strong>
+      Usually not. Shopify's free themes are among the fastest available, because Shopify builds them to show the platform at its best. Premium themes carry more features, and features add weight. In practice, your apps and image sizes affect speed far more than which theme family you chose.</p>
+      <p><strong>Can I use one premium theme licence on two stores?</strong>
+      No. Paid themes are licensed per store, so each store needs its own licence bought from the Theme Store. Using an unlicensed copy risks losing the theme, its updates and its support.</p>
+      <p><strong>Is it safe to download free Shopify themes from other websites?</strong>
+      No. Only install themes from the official Shopify Theme Store inside your admin. Theme files from download sites can be outdated or modified, and they receive no updates or support. The official free themes cost nothing, so there is never a reason to get one anywhere else.</p>
+      <p><strong>Will switching themes delete my products?</strong>
+      No. Products, collections, customers and orders live in your Shopify account, not in the theme. What needs redoing is the theme's own work: section layouts, colours, fonts, uploaded banner content and any custom code.</p>
+      <p>If you have hit one of the four walls, a free theme that no longer fits, filtering that cannot handle your catalog, or a store that looks like everyone else's, we can help you choose the right route rather than the most expensive one. Start with a <a href="/services/shopify-store-audit">Free Shopify Store Audit</a> for an honest read on your current theme, or look at our <a href="/services/shopify-theme-customization-services">Shopify Theme Customization Services</a> and Shopify Store Redesign work when you know it is time to move beyond the defaults.</p>
+      `
+    },
+
+    {
+      id: "shopify-dawn-theme",
+      title: "Dawn Theme Customization: Make Shopify's Free Theme Look Like Your Brand",
+      date: "December 2, 2026",
+      author: "Nawaz Ahmad",
+      category: "DESIGN",
+      readTime: "10 min read",
+      image: "/blog/shopify-dawn-theme-cover.webp",
+      toc: [
+        { id: "how-do-i-customize-the-dawn-theme-without-coding", title: "1. How do I customize the Dawn theme without coding?" },
+        { id: "how-do-i-make-dawn-look-less-like-every-other-store", title: "2. How do I make Dawn look less like every other store?" },
+        { id: "can-i-add-custom-sections-to-dawn", title: "3. Can I add custom sections to Dawn?" },
+        { id: "when-does-dawn-customization-need-a-developer", title: "4. When does Dawn customization need a developer?" },
+        { id: "does-customizing-dawn-slow-my-store-down", title: "5. Does customizing Dawn slow my store down?" },
+        { id: "what-should-i-check-before-publishing-a-customized-dawn-theme", title: "What should I check before publishing a customized Dawn theme?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can customize Dawn a long way without touching code. Colors, fonts, layout, buttons and sections all live in the theme editor, and that is where every Dawn store should start. The stores that stop looking like default Dawn go one step further, with small CSS changes and a few sections built for their brand. This guide works through all three levels in order, so you only reach for code when the settings genuinely run out.</p>
+      <p>Dawn is Shopify's own free theme and the starting point for most new stores. It is fast, clean and well supported. Its weakness is sameness: thousands of stores use the same layout with a different logo. The good news is that most of what makes Dawn look generic is fixable in an afternoon, if you work in the right order.</p>
+      <h2 id="how-do-i-customize-the-dawn-theme-without-coding">1. How do I customize the Dawn theme without coding?</h2>
+      <p>Start in the theme editor, under Online Store, then Themes, then Customize. Before you change individual sections, open Theme settings, the gear icon on the left. This is where the store wide decisions live, and setting them first saves you from fixing every section one by one later.</p>
+      <p>Work through these settings in this order:</p>
+      <ul>
+        <li><strong>Color schemes.</strong> Dawn lets you build several schemes, each with a background, text color and button colors. Build one main scheme from your brand colors and one contrasting scheme for banners and footers. Apply them section by section so the whole store shares the same palette.</li>
+        <li><strong>Typography.</strong> Choose your heading and body fonts and set their sizes. One strong heading font does more for a brand feel than any other single change. Keep body text at a size that reads comfortably on a phone.</li>
+        <li><strong>Layout and spacing.</strong> Set the page width and the vertical spacing between sections. Wider spacing and a consistent rhythm make a store feel designed rather than assembled.</li>
+        <li><strong>Buttons, badges and cards.</strong> Dawn has settings for button corner style, card borders, shadows and sale badges. These small details are what people subconsciously read as cheap or premium.</li>
+      </ul>
+      <p>Then set up the parts every visitor sees. In the header, add your logo at a sensible size, choose your menu, and use the announcement bar for one clear message, not three rotating ones. In the footer, add your menus, a short line about the store, the newsletter signup and payment icons. On the product template, choose the media layout, turn on variant swatches or pills if you sell colors or sizes, and place the product information so the price and buy button appear early on mobile.</p>
+      <p>Finish by previewing every change on the mobile view inside the editor, not just desktop. Most of your visitors are on phones, and a setting that looks good on a wide screen can crowd a small one.</p>
+      <h2 id="how-do-i-make-dawn-look-less-like-every-other-store">2. How do I make Dawn look less like every other store?</h2>
+      <p>The default Dawn look comes from default choices: the standard slideshow, the same collection grid, stock spacing and unedited section headings. You make Dawn look like your brand by replacing defaults with decisions.</p>
+      <p>First, tighten the brand basics. Use a limited color palette, ideally two main colors plus a neutral, and use it everywhere. Pair it with one heading font that matches your brand's character. Consistency across the homepage, collections and product pages is what reads as a designed store.</p>
+      <p>Second, change the homepage structure. Remove the sections you do not need instead of filling them. Rearrange the order so your strongest content comes early: a clear hero with one message, your best collections, a short brand story, then proof such as reviews or press mentions. A shorter, deliberate homepage beats a long copy of the demo.</p>
+      <p>Third, invest in your images. Same size, same background style, same lighting direction. Photography is the biggest visual difference between a template store and a branded one, and no theme setting can fix inconsistent product photos.</p>
+      <p>Fourth, write your own section headings. Dawn's placeholder style headings are generic by design. Headings in your voice, specific to your products, change the feel of a page more than most owners expect.</p>
+      <h2 id="can-i-add-custom-sections-to-dawn">3. Can I add custom sections to Dawn?</h2>
+      <p>Yes, in three ways, and it is worth knowing which one you are using.</p>
+      <p>The simplest route is Dawn's built in sections and blocks. The Custom liquid block, available inside many sections, lets you paste small pieces of code or embed code from other services without editing theme files. The Custom CSS field, found in theme settings and inside individual sections, lets you adjust styling for one section or the whole store. These two cover a surprising amount: a custom badge, a tweaked layout, a video embed, a styled message bar.</p>
+      <p>The next level is a new section file built in Liquid, Shopify's theme language. This is code, and it is where a section that does not exist in Dawn gets created properly, with its own settings so you can edit it in the theme editor afterwards. A well built custom section behaves like a native Dawn section. A badly built one is a fixed block of code nobody can adjust without a developer.</p>
+      <p>A practical rule: if the change is visual and small, try settings and Custom CSS first. If you need new behavior, new data from the product, or a layout Dawn simply does not offer, that is a custom section job.</p>
+      <h2 id="when-does-dawn-customization-need-a-developer">4. When does Dawn customization need a developer?</h2>
+      <p>You need a developer when the change involves how the store works, not just how it looks. Common triggers we see:</p>
+      <ul>
+        <li>A product page feature Dawn does not have, such as personalization fields, custom bundles or delivery date pickers</li>
+        <li>Sections that pull live data from products, collections or metafields in ways the editor cannot express</li>
+        <li>Header, cart or checkout related behavior changes</li>
+        <li>Fixes where a previous code edit has broken something and the cause is not obvious</li>
+        <li>Performance work in the theme code itself</li>
+      </ul>
+      <p>There is also a time test. If you have spent two evenings trying to make one change and it still is not right, the change is a developer task. Your time has value, and a focused developer usually finishes that job in one sitting.</p>
+      <p>One safety habit matters before any code work: duplicate the theme first. In the theme library, use the three dot menu on your live theme and choose Duplicate. Edit the copy, preview it, and only publish when it is right. If anything goes wrong, your live store was never touched.</p>
+      <p>Keep a short change log as you go: the date, what changed, and where. It feels like admin until the day something looks wrong and you need to know what was touched last. It also matters when Shopify releases a new version of Dawn. Settings and editor changes carry into the new version; direct edits to code files do not, so a log lets you, or a developer, reapply code changes cleanly instead of guessing.</p>
+      <h2 id="does-customizing-dawn-slow-my-store-down">5. Does customizing Dawn slow my store down?</h2>
+      <p>Settings and CSS changes, no. Choosing colors, fonts and layouts costs nothing in speed, and a few lines of custom CSS are too small to matter. What slows Dawn down is what stores add to it: large unoptimized images, autoplaying video, and above all apps, each of which loads its own code on your pages.</p>
+      <p>Heavy code customization can slow a store if it is done carelessly, for example loading large libraries for one small feature. Done properly, custom code is usually lighter than the app it replaces, because it does exactly one job and nothing else.</p>
+      <p>So the honest order of blame for a slow Dawn store is: images first, apps second, code a distant third. Customize freely at the settings level, and keep an eye on the other two.</p>
+      <h2 id="what-should-i-check-before-publishing-a-customized-dawn-theme">What should I check before publishing a customized Dawn theme?</h2>
+      <p>Run through this list on your duplicated theme before it goes live:</p>
+      <ul>
+        <li>Open the homepage, a collection and a product page in the mobile preview, not only on desktop. The most common Dawn complaint in owner forums is hero text dropping below the image on phones, invisible if you only check on a wide screen.</li>
+        <li>Complete a test purchase: add to cart, open the cart drawer, and go through to the checkout step. A small CSS change can break a button or a drawer in ways a visual once over misses.</li>
+        <li>Read every section heading. Any heading that could belong to any store, or leftover placeholder wording, gets rewritten in your voice before launch.</li>
+        <li>Check the announcement bar carries one message. Three rotating messages usually means visitors read none of them.</li>
+        <li>Confirm the footer holds your menus, a contact route, the newsletter signup and the payment icons for the gateways you actually use.</li>
+        <li>Open the old theme and the new one side by side on your phone. If the new version feels slower, look at image sizes first, then at apps you added.</li>
+      </ul>
+      <p>Twenty minutes of checking here finds nearly everything your customers would otherwise find for you.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is the Dawn theme free?</strong>
+      Yes, completely. Dawn is Shopify's own theme, included with every store on every plan, and Shopify maintains it. There is no paid tier and no licence fee.</p>
+      <p><strong>How customizable is Dawn, really?</strong>
+      Through the editor you control colors, fonts, spacing, section order and content on every template, which covers most of what makes a store look like a brand. What settings cannot change is the internal structure of a section, such as rearranging the elements inside the product form. Past that line, the options are Custom CSS, a custom built section, or a different theme.</p>
+      <p><strong>How do I keep the hero text over the photo on mobile instead of below it?</strong>
+      This is one of the most asked Dawn questions in Shopify's community forums. On phones, Dawn stacks banner content under the image by default. The usual fixes are a shorter mobile banner height in the section settings, a separate image composed for mobile, or a small piece of Custom CSS that keeps the text overlaid. Always check the result on a real phone before publishing.</p>
+      <p><strong>How do I add dropdown sections to my product descriptions?</strong>
+      Use the Collapsible row block on the product template. For content that changes per product, such as materials or dimensions, create a product metafield, fill it in on each product, then connect the row to that metafield using the dynamic source button in the editor. That gives you tidy dropdowns with no app and no code.</p>
+      <p><strong>What happens to my customizations when Shopify updates Dawn?</strong>
+      Changes made in the theme editor, including theme settings and the Custom CSS fields, carry over when you move to a new Dawn version from your theme library. Edits made directly to code files do not carry over, which is why we keep a short log of every code change, so it can be reapplied cleanly.</p>
+      <p><strong>Can I switch themes later if I outgrow Dawn?</strong>
+      Yes. Add the new theme to your library, customize it while Dawn stays live, and publish when it is ready. Products, collections, pages and store settings are store data, not theme data, so they all carry over. What does not carry over is design work and code that lived inside Dawn itself.</p>
+      <p>If your store still looks like the Dawn demo, we can fix that. We customize Dawn and other free themes into stores that look like the brand behind them, from editor settings and custom CSS through to fully custom sections where they are worth it. Start with our free Shopify store audit and we will tell you honestly which level your store needs, or go straight to our <a href="/services/shopify-theme-customization-services">theme customization service</a> if you already know. You can also read how we approach a full build on our store design service page.</p>
+      `
+    },
+    {
+      id: "shopify-migration-services",
+      title: "How to Choose a Shopify Migration Service (and What It Should Include)",
+      date: "December 3, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "10 min read",
+      image: "/blog/shopify-migration-services-cover.webp",
+      toc: [
+        { id: "what-does-a-shopify-migration-service-actually-include", title: "1. What does a Shopify migration service actually include?" },
+        { id: "how-much-does-it-cost-to-migrate-a-store-to-shopify", title: "2. How much does it cost to migrate a store to Shopify?" },
+        { id: "how-long-does-a-store-migration-take", title: "3. How long does a store migration take?" },
+        { id: "will-i-lose-my-google-rankings-when-i-migrate", title: "4. Will I lose my Google rankings when I migrate?" },
+        { id: "what-should-i-check-in-the-first-two-weeks-after-launch", title: "5. What should I check in the first two weeks after launch?" },
+        { id: "what-should-i-check-before-choosing-a-migration-agency", title: "What should I check before choosing a migration agency?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>A proper Shopify migration service moves your products, customers, orders, content and web addresses, then proves everything works before your new store goes live. The difference between a good migration and a cheap one is rarely the product import, which any tool can do. It is the redirects, the blog, the customer accounts and the checks nobody sees. This guide sets out what a complete service should include, what drives the price, and the questions that separate a careful agency from a quick one.</p>
+      <p>Store owners researching a move from WordPress and WooCommerce, Magento or BigCommerce will notice something: honest, complete information is hard to find, and a lot of movers learn what was skipped only after their traffic drops. A migration is one of the few store projects where the cheapest quote is often the most expensive outcome.</p>
+      <h2 id="what-does-a-shopify-migration-service-actually-include">1. What does a Shopify migration service actually include?</h2>
+      <p>A complete service has six parts. If a quote does not mention one of them, ask why.</p>
+      <p><strong>1. Data migration.</strong> Products with variants, images, prices and inventory counts. Customers and their order history. Blog posts and pages. Gift cards and discount codes where the platforms allow it. One honest limit every quote should state up front: customer passwords cannot move between platforms, because they are stored encrypted. Your customers keep their accounts but set a new password on first login, and a good service plans the email that explains this.</p>
+      <p>The order inside the data migration matters too. Products move first, then customers, then orders, because Shopify links every order to the products in it and the customer who placed it; those records have to exist before the orders arrive. Gift cards move last, in the final sync, because balances keep changing while the old store trades and an imported gift card cannot be edited afterwards.</p>
+      <p><strong>2. Store build.</strong> Your new Shopify store set up properly: theme chosen or built, navigation, collections rebuilt from your old categories, taxes, shipping zones, payment gateway and email notifications configured. Moving data into a badly set up store just relocates your problems.</p>
+      <p><strong>3. Redirect mapping.</strong> Every old URL that matters gets a 301 redirect to its new home. This is the step cheap migrations skip, and it is the step that protects your search rankings and every link anyone has ever shared to your store. Product URLs, collection URLs, blog posts and key pages all belong on the redirect list.</p>
+      <p><strong>4. Design matching or redesign.</strong> Either your existing look recreated on Shopify, or a deliberate redesign as part of the move. Be clear about which one you are buying, because they are different amounts of work.</p>
+      <p><strong>5. Testing on a private store.</strong> The new store is built and checked behind a password before launch: test orders, checkout, payment, discount codes, emails, forms and mobile layout. Nothing about your live store changes until this passes.</p>
+      <p><strong>6. Launch and post migration support.</strong> Domain switch, final data sync for orders placed during the build, redirect checks after launch, and a support window for the issues that only appear with real customers.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Part of the service</th>
+            <th>What it covers</th>
+            <th>Often skipped by cheap quotes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Data migration</td><td>Products, customers, orders, content</td><td>Order history, blog images</td></tr>
+          <tr><td>Store build</td><td>Theme, settings, taxes, shipping, payments</td><td>Notification emails, shipping zones</td></tr>
+          <tr><td>Redirects</td><td>Old URLs mapped to new ones</td><td>Blog posts, old collection URLs</td></tr>
+          <tr><td>Testing</td><td>Test orders and checkout on a private store</td><td>Mobile testing, discount codes</td></tr>
+          <tr><td>Launch support</td><td>Domain switch and aftercare</td><td>Post launch redirect checks</td></tr>
+        </tbody>
+      </table>
+      <h2 id="how-much-does-it-cost-to-migrate-a-store-to-shopify">2. How much does it cost to migrate a store to Shopify?</h2>
+      <p>The honest answer is that the price follows the scope, and any agency quoting a fixed number without seeing your store is guessing. These are the factors that move a quote up or down:</p>
+      <ul>
+        <li><strong>Catalog size and messiness.</strong> Five hundred clean products move faster than five thousand products with inconsistent variants, duplicate listings and missing images.</li>
+        <li><strong>Where you are moving from.</strong> A WooCommerce store on WordPress brings a blog and plugin replacements with it. A Magento store often brings custom features that need rebuilding. BigCommerce is closer to Shopify in structure, so the move is usually simpler.</li>
+        <li><strong>Custom features.</strong> Anything your old store does that Shopify does not do natively, such as special pricing rules, product builders or subscription setups, has to be replaced with an app or custom development.</li>
+        <li><strong>Design route.</strong> Recreating your current design costs less than a redesign. A redesign during a migration is efficient, but it is still design work.</li>
+        <li><strong>Data quality work.</strong> Cleaning product data, merging duplicate customers and fixing broken content before the move is real work that pays off for years.</li>
+      </ul>
+      <p>What you should expect is an itemized quote that names these parts separately. A single vague number with no scope list is a red flag, because the missing parts do not disappear. They become your problem after launch.</p>
+      <h2 id="how-long-does-a-store-migration-take">3. How long does a store migration take?</h2>
+      <p>A small, clean store can move in a couple of weeks. A large catalog with custom features and a redesign can take a couple of months. The timeline usually runs in phases: audit and planning, data preparation, store build, data migration and testing, then launch.</p>
+      <p>Two things stretch timelines more than anything else. The first is content and data decisions that sit with the store owner, such as which products to drop and which old blog posts are worth keeping. The second is discovering mid project that an old plugin or custom feature has no simple Shopify equivalent. A proper audit at the start exists to surface both before they become delays.</p>
+      <p>Timing matters too. Avoid launching in your busiest season. A migration finished calmly in a quiet month, with time to watch the results, is worth more than a rushed one before a sale period.</p>
+      <h2 id="will-i-lose-my-google-rankings-when-i-migrate">4. Will I lose my Google rankings when I migrate?</h2>
+      <p>You can lose rankings in a migration, but it is not inevitable, and the losses almost always come from the same few causes. URLs change and no redirects are set, so Google and your visitors hit dead pages. The blog gets dropped or moved without its URLs mapped, and years of content equity vanish. Page content changes at the same time as the platform, so Google rejudges everything at once.</p>
+      <p>The protection is boring and effective: map every important old URL to its new equivalent, set the redirects before or at launch, keep titles and content stable where they were working, and check the store in Google Search Console after launch for crawl errors. Expect some movement while Google reprocesses the move. A well run migration settles back; a careless one does not, and the difference is almost entirely the redirect mapping and the checks.</p>
+      <p>This is also why the blog deserves its own line in any quote. Product pages get attention because they sell. Blog posts quietly carry a large share of many stores' search traffic, and they are the first thing a cheap migration leaves behind.</p>
+      <h2 id="what-should-i-check-in-the-first-two-weeks-after-launch">5. What should I check in the first two weeks after launch?</h2>
+      <ul>
+        <li>Search Console, daily for the first week. Every new 404 is a missing redirect or a link to fix, and both are cheap in week one and expensive in month three.</li>
+        <li>Your ten highest traffic old URLs, typed in by hand, each landing on the right new page.</li>
+        <li>One test order, one refund and one discount code on the live store, not only the preview.</li>
+        <li>The customer sign in. A handful of confused emails is normal after any move. A flood means the launch email explaining the new sign in did not land.</li>
+        <li>Analytics recording orders correctly, checked before you judge any change in traffic.</li>
+      </ul>
+      <p>Read the first fortnight calmly. Some movement while Google reprocesses the move is normal. A steady fall after that points at redirects or content, and both can still be fixed.</p>
+      <h2 id="what-should-i-check-before-choosing-a-migration-agency">What should I check before choosing a migration agency?</h2>
+      <p>Ask these questions and judge the answers for specificity. Vague confidence is cheap; detailed answers show the agency has actually done this work.</p>
+      <ul>
+        <li>What exactly is included in the data migration, and what is not?</li>
+        <li>How do you handle redirects, and will I see the mapping before launch?</li>
+        <li>What happens to my blog and its URLs?</li>
+        <li>How do you handle customer accounts, given passwords cannot move?</li>
+        <li>Will I test the new store myself before it goes live?</li>
+        <li>What does support look like in the first month after launch?</li>
+        <li>Can you show me a store you have migrated from my platform?</li>
+      </ul>
+      <p>Red flags to walk away from: a quote given without looking at your store, no mention of redirects, a promise that rankings are guaranteed to improve, and pressure to launch before you have tested the new store yourself. Green flags: an audit before a quote, an itemized scope, a test store you can click around in, and honest statements about what cannot move.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Can my customers keep their passwords when we move to Shopify?</strong>
+      No, and this is true of every platform move, not only Shopify. Passwords are stored encrypted, so they cannot be transferred. With Shopify's current customer accounts, customers sign in with a one time code sent to their email, so there is no replacement password to remember. A clear launch email explaining this prevents most support tickets.</p>
+      <p><strong>Will I lose my Google rankings when I migrate?</strong>
+      Not if the move is done properly. Rankings are lost when URLs change without redirects, the blog is dropped, or everything changes at once. A full redirect map, stable content and post launch checks in Search Console protect what you have built.</p>
+      <p><strong>What cannot be migrated to Shopify?</strong>
+      Passwords, your old theme and your old plugins. The theme and plugins are replaced by a Shopify theme and apps. Some platform specific data, such as custom fields with no Shopify equivalent, also needs a decision: rebuild it with metafields, fold it into product content, or leave it behind on purpose.</p>
+      <p><strong>Will my old store keep selling while the new one is built?</strong>
+      Yes. The new store is built and tested behind a password while your current store trades as normal. Orders placed during the build are synced at the end, and the switch itself is a domain change, planned for a quiet moment rather than days of downtime.</p>
+      <p><strong>How long does a store migration take?</strong>
+      A small clean store can move in a couple of weeks. Large catalogs, custom features or a redesign can take a couple of months. Most delays come from data decisions and old features that need a Shopify replacement, which is why the audit comes first.</p>
+      <p><strong>Can I migrate my store myself instead of hiring a service?</strong>
+      For a small, clean catalog, yes. CSV imports and migration apps handle products and customers, and patient owners do move their own stores. What owners most often underestimate is the unglamorous half: redirect mapping, order history, blog URLs and the post launch checks. If your traffic matters to your revenue, that half is what a service is really for.</p>
+      <p>We run migrations to Shopify from WordPress and WooCommerce, Magento, BigCommerce and other platforms, and every one starts the same way: with a proper look at your current store. Our <a href="/services/shopify-store-audit">free Shopify store audit</a> works as a pre migration review. We will map what your move involves, what can and cannot transfer, and what it should honestly cost, before you commit to anything. When you are ready, our <a href="/services/shopify-migration-services">migration service</a> page sets out how we handle the full move, from redirect mapping to launch support.</p>
+      `
+    },
+    {
+      id: "shopify-theme-development",
+      title: "Custom Theme or Customized Theme? How to Decide How Your Store Gets Built",
+      date: "December 4, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "10 min read",
+      image: "/blog/shopify-theme-development-cover.webp",
+      toc: [
+        { id: "should-i-buy-a-theme-customize-one-or-build-a-custom-theme", title: "1. Should I buy a theme, customize one, or build a custom theme?" },
+        { id: "what-does-a-shopify-theme-developer-actually-do", title: "2. What does a Shopify theme developer actually do?" },
+        { id: "how-much-does-custom-theme-development-cost", title: "3. How much does custom theme development cost?" },
+        { id: "how-long-does-a-custom-theme-take-to-build", title: "4. How long does a custom theme take to build?" },
+        { id: "what-are-the-risks-of-heavily-customizing-a-premium-theme", title: "5. What are the risks of heavily customizing a premium theme?" },
+        { id: "what-should-i-prepare-before-asking-a-developer-for-a-quote", title: "6. What should I prepare before asking a developer for a quote?" },
+        { id: "who-maintains-a-custom-theme-after-launch", title: "Who maintains a custom theme after launch?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>Most stores do not need a fully custom theme. A well chosen theme, customized properly, covers the majority of brands, and it launches faster for less money. A custom theme earns its cost when your store needs a look, a layout or a set of features that no existing theme was built for. The honest way to decide is to weigh three things: how different the store has to look, how soon you need to launch, and what you can spend, including the cost of looking after the result.</p>
+      <p>This is the decision behind almost every serious design enquiry we receive, and it is one where store owners get pushed in both directions: toward custom builds they do not need, and toward cheap themes that cannot do the job. Here is the framework we use with our own clients.</p>
+      <h2 id="should-i-buy-a-theme-customize-one-or-build-a-custom-theme">1. Should I buy a theme, customize one, or build a custom theme?</h2>
+      <p>There are three routes, and each one is right for somebody.</p>
+      <p><strong>Route one: use a theme as it comes.</strong> Pick a free theme like Dawn or a premium theme, add your branding through the editor, and launch. This suits new stores testing an idea, small catalogs, and owners who would rather spend their budget on products and marketing. The limits arrive when you want the store to look or behave in ways the theme's settings do not offer.</p>
+      <p><strong>Route two: customize a theme.</strong> Start from a strong theme and pay a developer to reshape it: custom sections, a redesigned product page, branded details, features the theme lacks. You keep the theme's tested foundation, its updates and its checkout tested code, and you add the parts that make it yours. This is the right answer for most growing stores.</p>
+      <p><strong>Route three: build a custom theme.</strong> A developer designs and builds your theme from the ground up in Liquid, Shopify's theme language, around your exact design and feature list. You get a store that looks like nothing else and does exactly what your business needs. You also take on a longer timeline, a higher build cost, and full responsibility for maintaining that code.</p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Theme as it comes</th>
+            <th>Customized theme</th>
+            <th>Custom theme</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cost shape</td><td>Lowest; theme fee only</td><td>Middle; theme plus developer time</td><td>Highest; design and build from scratch</td></tr>
+          <tr><td>Timeline</td><td>Days</td><td>A few weeks</td><td>Longest; design, build, test</td></tr>
+          <tr><td>Look</td><td>Shared with many stores</td><td>Mostly yours</td><td>Entirely yours</td></tr>
+          <tr><td>Features</td><td>Whatever the theme offers</td><td>Theme features plus additions</td><td>Whatever you specify</td></tr>
+          <tr><td>Updates</td><td>Handled by the theme maker</td><td>Mostly smooth, custom parts need care</td><td>Your developer maintains everything</td></tr>
+          <tr><td>Best for</td><td>New and testing stores</td><td>Most growing brands</td><td>Distinct brands, unusual features</td></tr>
+        </tbody>
+      </table>
+      <p>A useful test: write down the five things your store must do that a standard store does not. If the list is empty or short, customize a theme. If the list is long and specific, and those things are how your business competes, that is the case for custom.</p>
+      <h2 id="what-does-a-shopify-theme-developer-actually-do">2. What does a Shopify theme developer actually do?</h2>
+      <p>Theme development is more than making pages pretty. A theme developer designs and builds the storefront your customers use, working in Liquid templates, sections and blocks, plus the HTML, CSS and JavaScript around them.</p>
+      <p>In practice the work includes turning a design, often from Figma, into working theme code. It includes building sections you can edit yourself in the theme editor, connecting product data and metafields so content updates without code, and making sure the store is fast, accessible and correct on mobile. It also includes integrating the apps you rely on so they look and behave like part of the store, and setting a performance budget so new features do not quietly slow every page down.</p>
+      <p>The part owners rarely see is judgment. A good developer tells you when a requested feature will cost more than it returns, when an app does the job better than custom code, and when custom code beats an app you would pay for every month forever.</p>
+      <h2 id="how-much-does-custom-theme-development-cost">3. How much does custom theme development cost?</h2>
+      <p>Prices for theme work are hard to compare because quotes bundle different things, so let us be concrete about the parts. A store build has four cost layers: the design work, the development work, the content and setup work, and the ongoing care after launch. When a quote looks strangely cheap, one of those layers is missing, and it usually surfaces later.</p>
+      <p>To give you one real anchor: at Nawaz Builds, a full store design is a fixed $299, covering a complete, ready to sell store built on a strong theme foundation with the customization most stores need. Fully custom theme development, where the theme itself is designed and built from scratch for one brand, is scoped and priced per project because the work varies so much: the number of unique templates, the features involved and the design process all move the number.</p>
+      <p>What drives a custom quote up: many unique page templates, custom product features such as builders or configurators, complex filtering, integrations with outside systems, and a long design process with many revision rounds. What keeps it sensible: a clear feature list agreed before building, reusing proven patterns where originality adds nothing, and deciding early which requests are launch features and which can follow later.</p>
+      <p>Whichever route you take, ask for the quote to be itemized. You should be able to see what design, development, setup and aftercare each cost, the same way you would expect from any other trade.</p>
+      <h2 id="how-long-does-a-custom-theme-take-to-build">4. How long does a custom theme take to build?</h2>
+      <p>A custom theme moves through four phases: design, build, content and testing. Design comes first, because building from an agreed design is far faster than designing inside the code. The build phase turns those designs into sections and templates. Content follows: products, collections, pages and policies loaded and checked. Testing closes the project: checkout, forms, mobile layouts, browsers and speed, all verified before launch.</p>
+      <p>Customized theme projects skip the full design phase, which is why they finish in a few weeks while a from scratch build takes longer. The honest variable in both cases is feedback speed. Projects stall waiting for decisions and content far more often than they stall on development. If you want a fast build, the best thing you can bring is prompt decisions and your content ready early.</p>
+      <h2 id="what-are-the-risks-of-heavily-customizing-a-premium-theme">5. What are the risks of heavily customizing a premium theme?</h2>
+      <p>This is the route nobody warns about. A premium theme that has been customized in dozens of places starts to carry the costs of a custom theme without the benefits.</p>
+      <p>The main risk is updates. Theme makers release improvements and fixes, but heavily edited code cannot always take an update cleanly. Each customization has to be reviewed and sometimes rebuilt, so stores quietly stop updating, and then they miss performance and compatibility improvements too. The second risk is code debt: edits made by different hands over time, without documentation, until nobody is sure what can be safely changed. The third is performance: features layered on features, each loading more code, until the store slows down and nobody can point to one cause.</p>
+      <p>None of this means do not customize. It means customize deliberately. Keep a record of every change and why it was made, prefer the theme's own settings and sections where they exist, and once your list of customizations grows long, have the honest conversation about whether a planned custom build is now the cleaner path.</p>
+      <h2 id="what-should-i-prepare-before-asking-a-developer-for-a-quote">6. What should I prepare before asking a developer for a quote?</h2>
+      <p>A short brief makes quotes cheaper and comparable, because every developer is pricing the same job:</p>
+      <ul>
+        <li>Your must have list: the five things the store has to do or show that it cannot today, in priority order.</li>
+        <li>Examples: two or three stores whose feel you like, with a note on what exactly you like. Screenshots beat adjectives.</li>
+        <li>Your brand basics: logo files, colors, fonts and photography, or an honest note that they do not exist yet.</li>
+        <li>Your content, or the date it will be ready. Content delays stall more builds than development does.</li>
+        <li>Your app list, since every integration has to be planned into the build.</li>
+        <li>One decision maker who can approve designs and answer questions quickly.</li>
+      </ul>
+      <h2 id="who-maintains-a-custom-theme-after-launch">Who maintains a custom theme after launch?</h2>
+      <p>Nobody automatic. A premium theme receives updates from its maker. A custom theme receives updates from whoever built it, when you ask for them. Shopify changes constantly, with new editor and checkout capabilities arriving through the year, and an unmaintained custom theme quietly falls behind them. Before commissioning a custom build, agree who maintains it, what routine care covers, and what it costs. That ongoing layer is real work, and it is exactly what our maintenance plans cover for customized and custom themes alike.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Is a custom Shopify theme worth it?</strong>
+      For most stores, not yet. A custom theme earns its cost when a feature or experience no theme offers is central to how you sell, and your revenue can support the build and its upkeep. If your needs are standard commerce needs, a premium theme, well customized, delivers most of the result for a fraction of the cost and timeline.</p>
+      <p><strong>What is the difference between customizing a theme and building a custom theme?</strong>
+      Customizing starts from an existing theme and reshapes it with settings, CSS and added sections, keeping its foundation and its update path. Building custom means the theme itself is designed and coded for one store, from the ground up. The first is faster and cheaper. The second has no structural ceiling, and no automatic updates.</p>
+      <p><strong>How much does custom theme development cost?</strong>
+      It depends on scope: unique templates, custom features, integrations and design rounds all move the price. For a concrete anchor, our full store design is a fixed $299 on a strong theme foundation, while fully custom builds are quoted per project. Market wide, treat a custom build as a serious project budget rather than a theme purchase, and compare itemized quotes, not headline numbers.</p>
+      <p><strong>How long does it take to build a custom theme?</strong>
+      Longer than customizing one: design, build, content and testing phases, usually weeks to a few months depending on the number of templates and features. The biggest variable is feedback speed. Builds stall waiting for decisions and content far more often than they stall on development.</p>
+      <p><strong>Do custom themes get updates like premium themes do?</strong>
+      No. Premium themes receive new versions from their maker, and your editor settings carry into them. A custom theme changes only when your developer changes it, including when Shopify releases platform features the theme should adopt. That ongoing care is part of the true cost of going custom.</p>
+      <p><strong>Can I start with a premium theme and go custom later?</strong>
+      Yes, and for most brands that is the right order. Launch and grow on a premium theme, learn from real customers what your store actually needs, and let that evidence write the brief for a custom build later. Your products, content and customer data are store data, not theme data, so nothing about starting on a theme locks you in.</p>
+      <p>We build both ways at Nawaz Builds: customized themes for most growing stores, and custom theme development when a brand genuinely needs it. If you are weighing the decision, our <a href="/services/shopify-store-audit">free Shopify store audit</a> includes an honest read on which route your store is ready for. You can also see how our store design service works and what it includes, or <a href="/services/shopify-development-services">talk to us about a custom build</a>. We will tell you if the cheaper route is the right one. It often is.</p>
+      `
+    },
+    {
+      id: "how-to-add-keywords-to-shopify-website",
+      title: "How to Add Keywords to Your Shopify Website (Titles, Descriptions and Collections)",
+      date: "December 5, 2026",
+      author: "Nawaz Ahmad",
+      category: "SEO",
+      readTime: "10 min read",
+      image: "/blog/how-to-add-keywords-to-shopify-website-cover.webp",
+      toc: [
+        { id: "where-do-i-add-keywords-in-shopify", title: "1. Where do I add keywords in Shopify?" },
+        { id: "how-do-i-change-the-meta-title-of-a-shopify-page", title: "2. How do I change the meta title of a Shopify page?" },
+        { id: "which-keyword-should-go-on-which-page", title: "3. Which keyword should go on which page?" },
+        { id: "do-product-tags-count-as-keywords", title: "4. Do product tags count as keywords?" },
+        { id: "what-is-the-difference-between-tags-and-keywords-on-shopify", title: "5. What is the difference between tags and keywords on Shopify?" },
+        { id: "can-i-do-my-stores-seo-myself", title: "6. Can I do my store's SEO myself?" },
+        { id: "what-are-the-most-common-keyword-mistakes-on-shopify", title: "7. What are the most common keyword mistakes on Shopify?" },
+        { id: "how-do-i-know-whether-my-keyword-changes-are-working", title: "How do I know whether my keyword changes are working?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>In Shopify, keywords do not go in a keywords box, because there is not one. They go in the title and description of each page, product and collection, in your image alt text, and naturally inside the words on the page itself. Product tags are not keywords, whatever older advice says. Once you know the handful of places that matter, adding keywords is a short, repeatable job you can do yourself, one page at a time.</p>
+      <p>This guide uses plain language on purpose. It is written for store owners, not SEO specialists, and it is honest about the limits: keywords in the right places help the right customers find you, but they are the basics, not the whole of search visibility.</p>
+      <h2 id="where-do-i-add-keywords-in-shopify">1. Where do I add keywords in Shopify?</h2>
+      <p>There are five places that matter, and they cover almost everything.</p>
+      <p><strong>1. Your homepage title and description.</strong> Go to Online Store, then Preferences. The Title and Meta description fields there are what Google shows for your homepage. Write your main keyword idea into the title in a natural sentence, and use the description to say what you sell and who for.</p>
+      <p><strong>2. Every product, collection and page.</strong> Each one has its own title and description for search, explained in the next section. This is where most of the real work happens, because these are the pages customers actually land on.</p>
+      <p><strong>3. Collection descriptions.</strong> The text at the top of a collection page is real content Google reads. A few sentences that describe the range, using the words customers search with, do more than a blank collection with a grid of products. Our guide to product page SEO best practices covers the product side of this in more depth.</p>
+      <p><strong>4. Image alt text.</strong> Open any product image or file in your admin and add alt text that describes the image in plain words. It helps image search, it helps shoppers using screen readers, and it is another honest place where descriptive words belong.</p>
+      <p><strong>5. The words on the page.</strong> Product descriptions, collection introductions and blog posts are where keywords belong most naturally. Write for the customer first, using the terms they use, and the search side largely looks after itself.</p>
+      <p>One place to be careful: your URL handles. The handle is the last part of a page address. Changing a handle on a page that already ranks or is linked to can break that address, so only edit handles on new pages, or set up a redirect when you change one.</p>
+      <h2 id="how-do-i-change-the-meta-title-of-a-shopify-page">2. How do I change the meta title of a Shopify page?</h2>
+      <p>Every product, collection, blog post and page in Shopify has a Search engine listing section, and the steps are the same for all of them.</p>
+      <ol>
+        <li>Open the product, collection or page in your admin.</li>
+        <li>Scroll to the bottom, to the box labeled Search engine listing.</li>
+        <li>Click Edit.</li>
+        <li>Write your Page title. This is the headline Google shows. Put the most important words early, keep it short enough to display in full, and write it for a human deciding whether to click.</li>
+        <li>Write your Meta description. Two short sentences that say what is on the page and why it is worth visiting. Think of it as a tiny advert, because that is its job.</li>
+        <li>Check the URL handle below it, and leave it alone unless the page is new.</li>
+        <li>Save.</li>
+      </ol>
+      <p>If you leave these fields empty, Shopify builds them from your product title and description, which is rarely as clear as writing them yourself. Doing this for your best selling products and main collections first gives you most of the benefit for a fraction of the total effort.</p>
+      <h2 id="which-keyword-should-go-on-which-page">3. Which keyword should go on which page?</h2>
+      <p>One page, one main search. The most common keyword problem we see is every page chasing the same phrase, so the store competes with itself. This simple map works for most stores:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Keyword type</th>
+            <th>Shape of the phrase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Product page</td><td>Specific and detailed: material, size, use, buyer</td><td>soy candle lavender 8 oz</td></tr>
+          <tr><td>Collection page</td><td>The broader category term</td><td>soy candles</td></tr>
+          <tr><td>Homepage</td><td>Your brand plus your main category</td><td>your brand, handmade candles</td></tr>
+          <tr><td>Blog post</td><td>A question or a how to</td><td>how long a candle should burn the first time</td></tr>
+        </tbody>
+      </table>
+      <p>The candle phrases are examples of the shape, not suggestions; use your own products. Two rules keep the map honest. If two pages would target the same phrase, the stronger page keeps it and the other page takes the next closest phrase or supports the first with a link. And match the page type to the search: someone searching a specific product wants a product page, and someone searching a category wants a collection to browse. Google ranks the page type that satisfies the search, so a blog post rarely wins a buying search however well it is written.</p>
+      <h2 id="do-product-tags-count-as-keywords">4. Do product tags count as keywords?</h2>
+      <p>No. Tags are one of the most misunderstood parts of Shopify, because the word sounds like it should be an SEO feature. It is not. Tags are an internal organization tool. They help you group products, power filtered searches inside some themes, build automated collections and run reports. Google does not read your tag list as a set of keywords for the page.</p>
+      <p>Stuffing tags with search terms does nothing for your rankings, and it can make your store harder to manage, with hundreds of near duplicate tags nobody can keep track of. Use tags for what they are good at: organizing your catalog in ways that help you and your customers. Put your keywords in titles, descriptions and content, where Google actually reads them.</p>
+      <h2 id="what-is-the-difference-between-tags-and-keywords-on-shopify">5. What is the difference between tags and keywords on Shopify?</h2>
+      <p>The simplest way to hold the difference: tags are labels for you, keywords are words for your customers and for Google.</p>
+      <p>Tags live behind the scenes. A tag like "summer-2026" or "gift-guide" means something to your team and your theme's filters, and it never appears as a promise to a search engine. Keywords are not a field at all. A keyword is simply a word or phrase people type into Google, and your job is to make sure the pages you want found contain those words in the places Google weighs most: titles, headings, descriptions and body text.</p>
+      <p>So when someone advises you to add keywords to a Shopify store, they mean edit those visible places. When you organize products with tags, you are doing store management. Both are useful. Only one of them affects search.</p>
+      <h2 id="can-i-do-my-stores-seo-myself">6. Can I do my store's SEO myself?</h2>
+      <p>Yes, the basics in this guide are genuinely owner sized work, and doing them yourself teaches you how customers describe your products, which improves everything else you write. Plenty of stores handle titles, descriptions, alt text and collection content in house and get real value from it.</p>
+      <p>Be equally clear about where DIY reaches its limit. Technical problems, such as duplicate content created by filters, slow templates or structured data errors, are not visible from the admin screens. Deciding which pages deserve your effort, and which searches are even winnable, is a strategy question, not a settings question. And getting products to surface in newer search surfaces, such as Google AI Overviews, depends on complete, clearly structured product information, which is a step beyond filling in titles.</p>
+      <p>A sensible pattern for most small stores: do the basics yourself, following this guide, then get an outside check once or twice a year to catch what you cannot see. Keywords alone will not create sales, and no honest guide should promise they will. They make sure that when someone searches for what you sell, your pages are eligible to be found. The rest, the offer, the product page and the trust signals, is what turns that visit into an order.</p>
+      <h2 id="what-are-the-most-common-keyword-mistakes-on-shopify">7. What are the most common keyword mistakes on Shopify?</h2>
+      <ul>
+        <li>Hunting for a meta keywords field. It does not exist in Shopify, and Google has ignored that tag for many years. Any guide that sends you looking for one is out of date.</li>
+        <li>Stuffing product tags with search terms. Tags are not keywords, and where a theme links to tag filtered pages, heavy tagging creates piles of thin, near duplicate URLs that waste Google's attention.</li>
+        <li>Copying the manufacturer's description. Hundreds of stores carry the same text, which gives Google no reason to rank yours. Rewrite descriptions in your own words, around how your customers actually use the product.</li>
+        <li>Repeating one keyword on every page. Ten pages targeting the same phrase compete with each other, and usually all of them do worse than one clear page would.</li>
+        <li>Changing URL handles on established pages to fit a keyword in. The old address breaks unless you add a redirect, and the benefit is small next to the risk.</li>
+        <li>Writing for the keyword instead of the customer. If a sentence exists only to contain a phrase, rewrite it. Customers decide whether the page deserved the click.</li>
+      </ul>
+      <h2 id="how-do-i-know-whether-my-keyword-changes-are-working">How do I know whether my keyword changes are working?</h2>
+      <p>Check in Google Search Console rather than searching for yourself, because your own results are personalized. Search Console shows the real queries bringing impressions and clicks to each page, and it is where you will see new titles and descriptions picked up, usually within days to a few weeks. Judge a change on a full month of data, not on three days of movement.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Where is the meta keywords field in Shopify?</strong>
+      There is not one, and that is deliberate. Google does not use the meta keywords tag, so Shopify gives you the fields that do matter instead: page titles, meta descriptions, headings and content. If older advice sent you hunting for a keywords box, that advice is out of date.</p>
+      <p><strong>Do product tags help my products rank on Google?</strong>
+      No. Shopify's own documentation says search engines do not use tags. Tags organize your catalog and power filters and automated collections. Heavy tagging can even create thin, tag filtered pages, so keep tags tidy and put search terms in titles, descriptions and content.</p>
+      <p><strong>Should I use blog post tags like keywords?</strong>
+      No, for the same reason. Every blog tag creates its own archive page, so keyword style tagging multiplies thin pages instead of helping the post. Keep blog tags few and broad, more like categories, and let the post's title and content do the search work.</p>
+      <p><strong>How many keywords should one page target?</strong>
+      One main search idea per page, supported by close variations that fit naturally. If a second phrase has its own searcher with different intent, it deserves its own page rather than a share of yours. Pages that chase several unrelated phrases usually rank for none of them.</p>
+      <p><strong>Which keyword should go on which page?</strong>
+      Specific, detailed phrases belong on product pages. Broader category terms belong on collections. Your brand plus your main category belongs on the homepage, and questions and how tos belong in blog posts. Matching the page type to the search matters more than repeating one perfect phrase everywhere.</p>
+      <p><strong>Can I do my store's SEO myself?</strong>
+      The basics, yes: titles, descriptions, alt text and collection content are all manageable in house, and doing them teaches you how customers describe your products. Technical issues, strategy and AI search visibility are where an outside check earns its keep.</p>
+      <p>If you would like a second pair of eyes, our <a href="/services/shopify-store-audit">free Shopify store audit</a> includes the basic SEO checks from this guide: titles, descriptions, collection content and the technical points you cannot see from the admin. We will show you what is already fine, what is missing, and what to fix first, in plain language. Do the basics yourself with confidence, and let us catch the rest.</p>
+      `
+    },
+    {
+      id: "how-to-export-and-import-shopify-flow-files-structure",
+      title: "How to Export and Import Shopify Flow Files: Back Up and Share Your Workflows",
+      date: "December 6, 2026",
+      author: "Nawaz Ahmad",
+      category: "AUTOMATION",
+      readTime: "10 min read",
+      image: "/blog/how-to-export-and-import-shopify-flow-files-structure-cover.webp",
+      toc: [
+        { id: "how-do-i-export-a-shopify-flow-workflow", title: "1. How do I export a Shopify Flow workflow?" },
+        { id: "what-is-inside-a-flow-file", title: "2. What is inside a .flow file?" },
+        { id: "can-i-copy-a-flow-workflow-to-another-store", title: "3. Can I copy a Flow workflow to another store?" },
+        { id: "can-i-edit-a-flow-file-before-importing-it", title: "4. Can I edit a .flow file before importing it?" },
+        { id: "what-should-i-check-if-an-imported-workflow-will-not-turn-on", title: "5. What should I check if an imported workflow will not turn on?" },
+        { id: "how-do-i-back-up-my-store-automations", title: "How do I back up my store automations?" },
+        { id: "faqs", title: "Frequently asked questions" }
+      ],
+      content: `
+      <p>You can export any Shopify Flow workflow as a .flow file and import it later into the same store or a completely different one. The export takes under a minute from inside the Flow app, and keeping a small library of these files is the simplest backup your store automations can have. This guide covers the full process, what travels inside the file, what to check after an import, and the backup routine we recommend to every store that relies on Flow.</p>
+      <p>Flow, Shopify's free automation app, quietly becomes load bearing. Stores use it to tag orders, flag fraud risks, manage inventory alerts, route notifications and run dozens of small jobs nobody thinks about until they stop. Those workflows represent hours of setup, and until you export them, they exist in exactly one place.</p>
+      <h2 id="how-do-i-export-a-shopify-flow-workflow">1. How do I export a Shopify Flow workflow?</h2>
+      <p>Exporting is built into Flow, and it works one workflow at a time.</p>
+      <ol>
+        <li>In your Shopify admin, open Apps, then Flow.</li>
+        <li>Open the workflow you want to save. Use the workflow list if you are exporting several; you will repeat these steps for each one.</li>
+        <li>Open the menu for that workflow (the three dot menu on the workflow, or inside the workflow editor) and choose Export.</li>
+        <li>Flow downloads a file with the .flow extension to your computer.</li>
+        <li>Rename it so future you understands it. A name like orders-fraud-flag-v3-2026-11.flow, with the purpose, version and date, beats workflow-export-final-final.flow every time.</li>
+        <li>Store it somewhere that is not just your downloads folder: a shared drive or document folder where your store's other important files live.</li>
+      </ol>
+      <p>That is the whole process. The habit that matters is when you do it: export a fresh copy every time you change a workflow, and keep the previous version too. Storage is free, and the version you need is always the one from just before the change that broke something.</p>
+      <h2 id="what-is-inside-a-flow-file">2. What is inside a .flow file?</h2>
+      <p>A .flow file is a structured text file, in JSON format, that describes the workflow rather than containing your store's data. Inside it you will find the workflow's name, its trigger (the event that starts it, such as an order being created), the conditions it checks, the actions it takes in order, and the settings those actions use. If the workflow relies on anything outside Flow itself, such as a connected app or a specific resource in the store, the file carries references to those things so Flow can reconnect them on import.</p>
+      <p>Two things are not in the file, and both matter. Your actual store data, orders, customers and products, is not in there, so the file is safe to store and share. And the file does not guarantee the destination store has what the workflow expects. If an action depends on an app the other store has not installed, or a tag, template or metafield that does not exist there, the import will need your attention before the workflow can run.</p>
+      <p>Think of the file as a complete recipe, not the finished dish. It travels well, but the new kitchen still needs the right ingredients.</p>
+      <p>If you plan to share a file outside your own business, open the workflow first and strip out anything identifying: staff email addresses, internal notes, and any value you would not publish. Shopify recommends exactly this before sharing, because the file faithfully carries the details you built with, including notification addresses buried in later steps.</p>
+      <h2 id="can-i-copy-a-flow-workflow-to-another-store">3. Can I copy a Flow workflow to another store?</h2>
+      <p>Yes, and this is one of the most useful things about the format. Agencies use it to roll out standard workflows across client stores, and owners with more than one store use it to keep their operations consistent.</p>
+      <ol>
+        <li>In the destination store, open Apps, then Flow.</li>
+        <li>Choose Import and select your .flow file.</li>
+        <li>Flow creates the workflow in a switched off state. It does not start running on import, which is exactly right.</li>
+        <li>Open the imported workflow and review every step. Reconnect anything Flow flags: app connections, email templates, tags, metafields or staff notifications that point at the old store's setup.</li>
+        <li>Check the trigger and conditions against the new store's reality. A threshold or tag that made sense in one store may be wrong in another.</li>
+        <li>Run a safe test if the workflow allows one, such as placing a test order for an order based workflow, and confirm the actions fire as expected.</li>
+        <li>Only then, turn the workflow on.</li>
+      </ol>
+      <p>One shortcut exists if both stores are on Shopify Plus and belong to the same organization: Flow offers Copy to another store in the workflow's More actions menu, with no file involved. You need Flow access in the destination store, and the review below still applies in full. For standard plans, or stores owned by different businesses, the export and import route above is the way.</p>
+      <p>The review step is the one people skip and regret. An imported workflow that starts tagging, emailing or hiding products based on the old store's assumptions can do quiet damage for days before anyone notices. Ten minutes of checking is cheap insurance.</p>
+      <h2 id="can-i-edit-a-flow-file-before-importing-it">4. Can I edit a .flow file before importing it?</h2>
+      <p>You can, because it is a text file and any text editor will open it. Whether you should is a different question.</p>
+      <p>Small, careful edits are reasonable for someone comfortable with structured files: changing a workflow name, adjusting a simple value, or updating an obvious reference. The risks are real, though. The file's structure is strict, and a misplaced character can make the file fail to import at all. References inside the file also connect to each other, so editing one value in isolation can break a link you did not see.</p>
+      <p>Our honest recommendation: keep an untouched original of every export, and wherever possible, import the file as it is and make your changes inside the Flow editor afterwards. The editor shows you the workflow visually, validates what you build, and makes the change in the place where mistakes are easiest to spot. Edit the raw file only when there is no other route, and test the edited file in a store where a mistake cannot hurt anything first.</p>
+      <h2 id="what-should-i-check-if-an-imported-workflow-will-not-turn-on">5. What should I check if an imported workflow will not turn on?</h2>
+      <p>An import that lands but refuses to run is almost always a missing connection, not a broken file. Work through these in order:</p>
+      <ul>
+        <li>Missing app. If a step uses an app connector, the destination store needs that app installed and connected. Flow flags the step; install the app, or replace the action with a native one, such as sending an internal email.</li>
+        <li>Missing store objects. Tags, metafields, templates, discount codes or specific products the workflow refers to may not exist in the new store. Create them with identical names, or update the steps to the new store's equivalents.</li>
+        <li>Notification destinations. Staff email steps often carry the old store's addresses. Shopify's own guidance for imported workflows starts here: check every email and messaging destination before activation.</li>
+        <li>Secrets and connections. Anything the workflow calls outside Shopify, such as an HTTP request using a stored secret, has to be set up again in the new store. Secrets do not travel inside the file.</li>
+        <li>Plan and permission limits. A few Flow actions need higher plans, and the person importing needs Flow access in that store. If a step is greyed out rather than flagged, suspect one of these.</li>
+      </ul>
+      <p>Fix one flagged step at a time and re-check. Flow validates as you go, so the list of problems only shrinks.</p>
+      <h2 id="how-do-i-back-up-my-store-automations">How do I back up my store automations?</h2>
+      <p>Treat workflow backups as one part of a simple pre change routine. Stores get hurt by changes, a theme update, an app swap, a well meant cleanup, and the time to discover your automations were collateral damage is not during your busiest week.</p>
+      <p>A workable routine looks like this:</p>
+      <ul>
+        <li>Export every active workflow after any change, and name files with purpose, version and date.</li>
+        <li>Keep the exports with your other store records, not on one person's laptop.</li>
+        <li>Before any theme change, app removal or major edit, export the full set again, even if nothing in Flow is changing. App removals in particular can break workflows that quietly depended on them.</li>
+        <li>Once in a while, open the list and delete nothing. Just confirm the files open and match the workflows your store actually runs. A backup you have never checked is a hope, not a backup.</li>
+      </ul>
+      <p>This is also where a workflow library pays off beyond backups. Documented, exported workflows are shareable with a new team member, a second store or a developer in minutes, instead of being rebuilt from memory. If you are still building your automation set, our <a href="/blog/shopify-flow-ai-assistant-prompts">guide to creating workflows with the Flow AI assistant</a> is the natural companion to this one.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How do I export a Shopify Flow workflow?</strong>
+      Open Flow, open the workflow, use its menu and choose Export. Flow downloads a .flow file. Rename it with the workflow's purpose, version and date, and store it with your other store records. Repeat for each workflow; exports are one workflow at a time.</p>
+      <p><strong>Can I copy a workflow to another store without exporting a file?</strong>
+      Only on Shopify Plus, where stores in the same organization can use Copy to another store from the workflow's menu. On other plans, export and import is the route. Either way, the copied workflow arrives off, and needs the same review before it is switched on.</p>
+      <p><strong>Can I export several workflows at once?</strong>
+      Yes. In the workflow list you can select several workflows and export them in one action instead of opening each one. Each workflow still imports as its own file, and each still needs its own review, fixes and activation in the destination store.</p>
+      <p><strong>Does an imported workflow start running immediately?</strong>
+      No. Imported workflows arrive switched off, deliberately. Review every step, reconnect apps, templates and notification addresses, run a safe test where the workflow allows one, and only then turn it on.</p>
+      <p><strong>Is it safe to edit a .flow file by hand?</strong>
+      Shopify builds these files itself and advises against editing them by hand. The structure is strict, and a small change can make the file fail to import or quietly unlink steps inside it. Import the file unchanged and make your changes in the Flow editor, where the workflow is visual and validated.</p>
+      <p><strong>How do I back up my store automations?</strong>
+      Export every active workflow whenever one changes, and export the full set before theme changes or app removals. Store the files with your store records, named clearly, and check them occasionally against the workflows your store actually runs.</p>
+      <p>Workflow backups are a small job that prevents a bad week, and they are part of the monthly care in our <a href="/services/shopify-maintenance-services">maintenance plans</a>. For $99 per month, we keep your store updated, backed up and checked, including the automations it depends on, and we report back in plain language. If your store runs on Flow and nobody could say where the backups are, that is the place to start. You can also begin with our <a href="/services/shopify-store-audit">free Shopify store audit</a>, and we will flag the operational risks we find, automations included.</p>
+      `
+    },
+
 ];
