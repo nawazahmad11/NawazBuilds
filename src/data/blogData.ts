@@ -3382,4 +3382,573 @@ export const blogPosts = [
       `
     },
 
+    {
+      id: "migrate-blog-posts-from-wordpress-to-shopify",
+      title: "Moving Your WordPress Blog to Shopify Without Losing Posts or Rankings",
+      date: "December 7, 2026",
+      author: "Nawaz Ahmad",
+      category: "MIGRATION",
+      readTime: "10 min read",
+      image: "/blog/migrate-blog-posts-from-wordpress-to-shopify-cover.webp",
+      toc: [
+        { id: "can-i-move-my-wordpress-blog-to-shopify-without-losing-traffic", title: "Can I move my WordPress blog to Shopify without losing traffic?" },
+        { id: "what-happens-to-my-blog-urls-when-i-move", title: "What happens to my blog URLs when I move?" },
+        { id: "do-images-move-with-the-posts", title: "Do images move with the posts?" },
+        { id: "what-happens-to-comments-authors-and-tags", title: "What happens to comments, authors and tags?" },
+        { id: "can-i-keep-the-blog-on-wordpress-and-only-move-the-store", title: "Can I keep the blog on WordPress and only move the store?" },
+        { id: "should-i-delete-weak-posts-before-migrating", title: "Should I delete weak posts before migrating?" },
+        { id: "how-long-does-a-blog-migration-take", title: "How long does a blog migration take?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "getting-the-blog-move-handled-properly", title: "Getting the blog move handled properly" }
+      ],
+      content: `
+      <p>Yes, you can migrate blog posts from WordPress to Shopify without losing your posts or your search rankings, but only if the move is planned around URLs, images and redirects rather than treated as a simple import. The posts themselves are the easy part. What quietly kills traffic after a blog only move is everything attached to the posts: old addresses that no longer resolve, images still hosted on the old site, and internal links pointing at pages that moved.</p>
+      <p>Most store owners meet this task in one of two situations. Either the whole store is moving from WordPress and WooCommerce to Shopify and the blog is part of that bigger migrate from WordPress to Shopify project, or the store already runs on Shopify and an older WordPress blog is being folded in so everything lives in one place. This guide covers the blog specific work: the audit before the move, the URL mapping, the image transfer, comments, and the checks to run after launch.</p>
+      <h2 id="can-i-move-my-wordpress-blog-to-shopify-without-losing-traffic">Can I move my WordPress blog to Shopify without losing traffic?</h2>
+      <p>Yes, and the honest condition is this: traffic survives when every old post address lands on a working new page. Search engines have indexed your WordPress post URLs, other sites link to some of them, and readers have bookmarked them. Shopify gives blog posts a different URL structure, so the addresses will change. That is fine, as long as each change is bridged by a redirect.</p>
+      <p>Where blog migrations go wrong is almost never the import tool. It is one of these three things:</p>
+      <ul>
+        <li>Posts imported but redirects never set up, so every old link and indexed page returns a 404.</li>
+        <li>Images left behind on the WordPress host, then broken when the old site or hosting is cancelled.</li>
+        <li>Weak or duplicate posts carried across in bulk, diluting a blog that was working.</li>
+      </ul>
+      <p>Handle those three and a wordpress to shopify blog migration is a low risk job. Skip them and even a small blog can lose most of its organic visits within a few weeks.</p>
+      <h2 id="what-happens-to-my-blog-urls-when-i-move">What happens to my blog URLs when I move?</h2>
+      <p>They change shape. A typical WordPress post lives at something like yourstore.com/blog/post-name or yourstore.com/post-name, depending on your permalink settings. On Shopify, blog articles live under a fixed structure: yourstore.com/blogs/blog-name/post-name. There is no setting that makes Shopify match your old WordPress structure exactly, so redirects are not optional decoration. They are the mechanism that carries your rankings across.</p>
+      <p>Before anything is imported, build a URL map. It is a simple spreadsheet with three columns:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Column</th>
+            <th>What goes in it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Old URL</td><td>Every live WordPress post address, exactly as it exists now</td></tr>
+          <tr><td>New URL</td><td>The Shopify address that post will have after the move</td></tr>
+          <tr><td>Action</td><td>Redirect, merge into another post, or drop</td></tr>
+        </tbody>
+      </table>
+      <p>Pull the old URL list from your WordPress export, your sitemap, and Google Search Console, because each source catches posts the others miss. Search Console matters most: it shows which posts actually get impressions and clicks, and those are the ones that must not break.</p>
+      <p>Shopify lets you create URL redirects from the admin (search the admin search bar for URL Redirects), and you can import them in bulk with a CSV file. For a blog of any real size, bulk import is the only sensible route. Test a handful of old addresses in a private browser window after setup. Each one should land on the correct new post, not the blog homepage. Redirecting everything to the homepage is a common shortcut and search engines treat it as a soft error, which means the ranking value is mostly lost.</p>
+      <p>If your whole store is moving at the same time, the blog map joins the product and collection maps in one master redirect file. Our shopify migration services treat the blog as part of the main move for exactly this reason: <a href=\"/services/shopify-migration-services\">Shopify migration services</a>. A blog handled as an afterthought is where rankings quietly die.</p>
+      <h2 id="do-images-move-with-the-posts">Do images move with the posts?</h2>
+      <p>Not reliably, and this is the step most people get wrong. Many import tools copy the post text and then either hotlink the images from your WordPress site or skip some of them entirely. Hotlinked images look fine on launch day. They break the moment the old hosting lapses, the old domain expires, or someone tidies up the WordPress install.</p>
+      <p>A safe blog import does three things with images:</p>
+      <ol>
+        <li>Downloads every image used in the posts and uploads it to Shopify Files, so Shopify hosts the images itself.</li>
+        <li>Rewrites the image addresses inside each post to point at the new Shopify hosted copies.</li>
+        <li>Keeps the file names and alt text from the original posts where they exist, because image file names and alt text carry a small amount of search value and a lot of accessibility value.</li>
+      </ol>
+      <p>Also check the posts themselves after import. Featured images sometimes arrive as a loose image at the top of the body text instead of the article image field, which looks fine in the editor and wrong on the blog index page. A quick visual pass over every post that gets traffic catches this before your readers do.</p>
+      <h2 id="what-happens-to-comments-authors-and-tags">What happens to comments, authors and tags?</h2>
+      <p>These three need a decision each, because none of them move across perfectly.</p>
+      <p><strong>Comments.</strong> Shopify has its own simple blog comment system, but WordPress comments do not import into it natively. If your comments live in Disqus, they can usually travel, because Disqus is a separate service you embed on both platforms. If your WordPress comments are native and a post has a genuinely valuable discussion, the practical options are to accept losing them, or to fold the best questions and answers into the post itself as an FAQ section. For most store blogs, comments are few and low value, and the honest answer is to let them go.</p>
+      <p><strong>Authors.</strong> WordPress blogs often have several author accounts. Shopify articles are attributed to store staff accounts. Decide whose name each post carries before the import, and keep it consistent.</p>
+      <p><strong>Tags and categories.</strong> WordPress separates categories and tags; Shopify blogs use tags only, and a Shopify store can hold several blogs (for example News, Guides, Recipes) where WordPress used one blog with categories. Map each WordPress category to either a Shopify blog or a tag before importing, otherwise you end up rebuilding the structure by hand afterwards.</p>
+      <h2 id="can-i-keep-the-blog-on-wordpress-and-only-move-the-store">Can I keep the blog on WordPress and only move the store?</h2>
+      <p>Yes, and some stores do exactly this. If your WordPress blog is large, heavily customized, or the main source of your traffic, you can run the store on Shopify at your main domain and keep WordPress on a subdomain such as blog.yourstore.com. Nothing is imported, so nothing can break in an import.</p>
+      <p>The trade offs are real: two systems to update, two analytics views, and a blog sitting slightly apart from the store it supports. Posts that move to the subdomain also change address, so redirects remain part of the job. Our rule of thumb: a supporting blog with dozens of posts belongs inside Shopify. A blog that is the business, with hundreds of posts and its own audience, can justify staying on WordPress.</p>
+      <h2 id="should-i-delete-weak-posts-before-migrating">Should I delete weak posts before migrating?</h2>
+      <p>Yes, some of them, and the migration is the cheapest moment to do it. Moving house is when you decide what is worth carrying. Use Search Console data from the last 12 months and sort your posts into three groups:</p>
+      <ul>
+        <li><strong>Keep and redirect.</strong> Posts with traffic, backlinks or real usefulness to customers. These move exactly as described above.</li>
+        <li><strong>Merge.</strong> Two or three thin posts on the same topic become one stronger post on Shopify, with all the old addresses redirecting to it. Search engines generally prefer one solid page over three weak ones.</li>
+        <li><strong>Drop.</strong> Posts with no traffic, no links and no current relevance: old sale announcements, expired event posts, news nobody needs. Let these return a genuine 404, or redirect them to the closest relevant page if one exists.</li>
+      </ul>
+      <p>One caution: do not prune by gut feeling alone. A post with little traffic may hold a backlink from another site, and that link equity is worth keeping with a redirect. Check backlinks for your top linked posts before anything is dropped. Pruning done with data usually makes the moved blog stronger than the original. Pruning done carelessly is just a quieter way of losing rankings.</p>
+      <h2 id="how-long-does-a-blog-migration-take">How long does a blog migration take?</h2>
+      <p>For the blog itself, most of the time is preparation and checking rather than importing. As a rough guide:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Blog size</th>
+            <th>Typical effort</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Under 30 posts</td><td>A day or two, including the URL map and checks</td></tr>
+          <tr><td>30 to 150 posts</td><td>Several days, mostly audit, mapping and image fixing</td></tr>
+          <tr><td>150 plus posts</td><td>A week or more, with bulk tools and staged checks</td></tr>
+        </tbody>
+      </table>
+      <p>The variables that stretch the timeline are image problems, messy categories, and posts built with WordPress page builder blocks that do not convert cleanly into Shopify article content. Builder heavy posts may need light reformatting by hand. After launch, keep the old WordPress site live until every redirect is verified, then monitor Search Console for two to four weeks. Small dips in the first days are normal; a cliff edge drop means a mapping gap, and it is fixable if you kept the spreadsheet.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How do I migrate blog posts to Shopify without losing SEO rankings?</strong>
+      Export the posts, import them into Shopify, and set up a 301 redirect from every old WordPress address to its new Shopify address before the old site comes down. Carry your SEO titles and descriptions across as well, because import tools can miss the fields SEO plugins store them in.</p>
+      <p><strong>What happens to my blog URLs when I move?</strong>
+      They change to Shopify's fixed structure, yourstore.com/blogs/blog-name/post-name, and there is no setting that keeps the old shape. A redirect for each post is what carries readers and ranking value to the new address.</p>
+      <p><strong>Can I keep my WordPress blog and use Shopify only for the store?</strong>
+      Yes. The usual setup runs the store on Shopify at the main domain and keeps WordPress on a subdomain such as blog.yourstore.com. It suits very large or heavily customized blogs, but means running two systems, and posts whose addresses change still need redirects.</p>
+      <p><strong>Do images move with the posts automatically?</strong>
+      Not reliably. Many tools hotlink images from your WordPress site or skip some entirely, and hotlinked images break when the old hosting ends. A safe migration uploads images to Shopify Files and updates the addresses in each post.</p>
+      <p><strong>What happens to my WordPress comments?</strong>
+      Native WordPress comments do not import into Shopify's comment system. If your comments run through Disqus they can usually travel, because Disqus embeds on both platforms. Otherwise the options are to let them go, or fold the best questions into the post itself.</p>
+      <p><strong>How long does a blog migration take?</strong>
+      A small blog takes a day or two. A blog of 100 or more posts usually takes the better part of a week once auditing, URL mapping, image transfer and post launch checks are included.</p>
+      <h2 id="getting-the-blog-move-handled-properly">Getting the blog move handled properly</h2>
+      <p>If your blog earns traffic, it is an asset, and it deserves the same care as your product catalogue during a move. We handle blog migration as a defined part of our migration work: content audit first, a full URL map, images transferred to Shopify properly, comments and authors decided with you, and redirect checks after launch so nothing you ranked for quietly disappears. If you are planning to migrate blog posts from WordPress to Shopify, whether on its own or inside a full store move, start with our migration services page and tell us how big the blog is: <a href=\"/services/shopify-migration-services\">Shopify migration services</a>. We will tell you honestly what the move involves before you commit to anything.</p>
+      `
+    },
+    {
+      id: "best-shopify-themes-for-clothing",
+      title: "Best Shopify Themes for Clothing Stores (and What to Check Before You Buy)",
+      date: "December 8, 2026",
+      author: "Nawaz Ahmad",
+      category: "DESIGN",
+      readTime: "10 min read",
+      image: "/blog/best-shopify-themes-for-clothing-cover.webp",
+      toc: [
+        { id: "what-is-the-best-shopify-theme-for-a-clothing-brand", title: "What is the best Shopify theme for a clothing brand?" },
+        { id: "do-i-need-a-premium-theme-for-fashion", title: "Do I need a premium theme for fashion?" },
+        { id: "which-theme-features-matter-most-for-apparel-stores", title: "Which theme features matter most for apparel stores?" },
+        { id: "can-a-free-theme-work-for-a-clothing-store", title: "Can a free theme work for a clothing store?" },
+        { id: "how-do-i-test-a-theme-before-i-buy-it", title: "How do I test a theme before I buy it?" },
+        { id: "how-do-i-make-a-fashion-store-look-premium", title: "How do I make a fashion store look premium?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "getting-the-look-without-the-template-feel", title: "Getting the look without the template feel" }
+      ],
+      content: `
+      <p>The best Shopify themes for clothing are the ones built around how people actually buy clothes: browsing collections visually, checking sizes and colors fast, and shopping almost entirely on a phone. A theme can have two hundred features and still be wrong for fashion if its collection pages are clumsy or its product pages bury the size selector. Judge themes on apparel specific needs first, and the generic feature list last.</p>
+      <p>This guide compares the routes clothing brands actually choose between: premium fashion themes such as Prestige and Shapes, and capable free shopify themes led by Dawn, the shopify dawn theme most new stores start on. For each route we cover what it does well for apparel, what to check before you buy, and where the honest limits are. The right answer depends on your catalogue size, your photography, and how much of your brand feel has to come from the theme versus from customization on top of it.</p>
+      <h2 id="what-is-the-best-shopify-theme-for-a-clothing-brand">What is the best Shopify theme for a clothing brand?</h2>
+      <p>There is no single winner, but there is a reliable shortlist, and it splits by budget and catalogue size.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Theme</th>
+            <th>Type</th>
+            <th>Best for</th>
+            <th>Watch out for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Prestige</td><td>Premium</td><td>Established fashion brands that want an editorial, premium feel</td><td>Its polish assumes strong photography; weak images look worse, not better</td></tr>
+          <tr><td>Shapes</td><td>Premium</td><td>Bold, playful apparel brands with a strong visual identity</td><td>The distinctive style can fight your brand if your look is minimal</td></tr>
+          <tr><td>Dawn</td><td>Free</td><td>New and small clothing stores, and anyone testing a concept</td><td>Needs customization work to stop looking like every other starter store</td></tr>
+        </tbody>
+      </table>
+      <p>Prestige has become the default premium recommendation for fashion for a reason: its collection pages, product media handling and storytelling sections suit lookbook style selling. The prestige shopify theme earns its price when a brand has the photography and range to fill it. Shapes, the shapes shopify theme, takes the opposite route: personality first, with unusual layouts that suit streetwear, accessories and youth focused labels. Dawn is the serious free option. It is fast, maintained by Shopify, and flexible enough that a well customized Dawn store can outsell a badly set up premium one.</p>
+      <p>What matters more than the name on the theme is the fit with your catalogue. A five product capsule label and a five hundred SKU fashion store should not buy the same theme.</p>
+      <h2 id="do-i-need-a-premium-theme-for-fashion">Do I need a premium theme for fashion?</h2>
+      <p>No, but you need to know what you are trading. Premium themes charge a one time fee and bundle in features that free themes leave to apps or custom code: advanced product filtering, lookbook sections, mega menus, quick view, color swatches presented properly, and promotional sections. Bought separately as apps, some of those carry monthly fees and slow the store down, so a premium theme can be the cheaper route over a year.</p>
+      <p>Free themes win on speed, simplicity and update safety. Dawn receives Shopify's own updates and tends to score well on performance out of the box. The cost shows up later, in sameness. Thousands of stores run near identical Dawn setups, and clothing is the niche where looking like everyone else hurts most, because the product itself is partly the look.</p>
+      <p>A practical way to decide:</p>
+      <ul>
+        <li>If you are launching, validating products, or your range is small, start free and spend the money on photography.</li>
+        <li>If you are established, running ads, or your brand feel is a real selling point, premium usually pays for itself in built in features and presentation.</li>
+        <li>If neither fits and your store has specific needs, a free or premium base plus professional customization often beats the most expensive theme bought off the shelf. That middle route is what many of the best shopify themes for conversion setups actually are: a solid base, tailored.</li>
+      </ul>
+      <h2 id="which-theme-features-matter-most-for-apparel-stores">Which theme features matter most for apparel stores?</h2>
+      <p>Ignore the total feature count. For apparel, these are the ones that earn money:</p>
+      <p><strong>Collection grids and filtering.</strong> Fashion shoppers browse. They filter by size, color, fit and price, often several at once, and they do it on mobile. Test the theme's demo with your real filtering needs. If filtering by size and color together is awkward, no homepage section will save the theme.</p>
+      <p><strong>Color swatches and variant handling.</strong> Swatches should show the actual color or fabric, change the product image when tapped, and make out of stock sizes obviously unavailable rather than mysteriously unclickable.</p>
+      <p><strong>Size guide pages.</strong> A size guide that opens cleanly from the product page, in a popup or a well formatted page, reduces both hesitation and returns. Check how the theme handles it before you buy, not after.</p>
+      <p><strong>Lookbook layout and brand storytelling.</strong> Fashion sells a world, not just a garment. Themes with genuine lookbook sections, image led storytelling and editorial spacing give you somewhere to build that world. This is where premium themes usually separate themselves.</p>
+      <p><strong>Quick view.</strong> Useful for browsing heavy catalogues, as long as it still exposes size selection properly. Quick view that skips size choice creates orders for the wrong size.</p>
+      <p><strong>Mobile shopping experience.</strong> Most apparel traffic is mobile. Judge every demo on your phone first: sticky add to cart, thumb friendly filters, fast image loading. A theme that dazzles on desktop and fumbles on mobile will cost you daily.</p>
+      <h2 id="can-a-free-theme-work-for-a-clothing-store">Can a free theme work for a clothing store?</h2>
+      <p>Yes, and for many stores it is the right start. Dawn in particular is a legitimate base: fast, accessible, and flexible through its section system. Plenty of clothing stores trade successfully on free shopify themes, especially where the brand is carried by photography and product rather than layout tricks.</p>
+      <p>Know the limits you are accepting. You will likely add apps or custom code for advanced filtering, proper swatch behavior and richer storytelling sections. Each app adds cost and weight. And you will share your basic layout with a large crowd of other stores, which customization fixes: a distinctive color palette, real typography choices, custom sections for your lookbook and size content, and product photography shot in one consistent style. A free theme plus focused customization is a stronger store than a premium theme left on its demo settings. If you go this route, our guide to getting more from Dawn is the natural companion read: Dawn theme customization guide.</p>
+      <h2 id="how-do-i-test-a-theme-before-i-buy-it">How do I test a theme before I buy it?</h2>
+      <p>Premium themes in the Theme Store come with an unpaid trial: you can install the theme, customize it with your real products and photography, and only pay when you publish it. Use that properly instead of judging the demo store, which was art directed around someone else's catalogue.</p>
+      <p>A testing routine that actually tells you something:</p>
+      <ol>
+        <li>Add the theme as an unpublished copy and load in your best sellers, your largest collection, and your most awkward product: many variants, a long size run.</li>
+        <li>On your phone, run the full journey: land on a collection, filter by size and color together, open a product, find the size guide, add to cart.</li>
+        <li>Judge it with your images, not theirs. Fashion themes are sold on photography, and yours is the photography that counts.</li>
+        <li>Check your must have apps against the trial theme, because app conflicts surface after purchase just as easily as before it.</li>
+        <li>Read the theme's documentation and update history. A theme that has not been updated in a long time is a theme you will eventually pay a developer to patch.</li>
+      </ol>
+      <p>If the trial answers your questions, the purchase is low risk. If the trial store feels like a fight, believe it. The published store will feel the same.</p>
+      <h2 id="how-do-i-make-a-fashion-store-look-premium">How do I make a fashion store look premium?</h2>
+      <p>Premium feel comes from restraint and consistency more than from any theme badge. The stores that look expensive tend to share the same habits:</p>
+      <ul>
+        <li>Photography shot or edited in one consistent style, with the same backgrounds and lighting across the catalogue.</li>
+        <li>Generous white space. Crowded pages look cheap regardless of the theme underneath.</li>
+        <li>Two typefaces at most, used consistently, with real hierarchy between headings and body text.</li>
+        <li>A limited color palette on the site chrome, letting the clothing provide the color.</li>
+        <li>Product pages that answer fit questions properly: model measurements, size guidance, fabric detail, and shipping and returns stated plainly.</li>
+        <li>Speed. A slow store never feels premium, whatever it looks like in screenshots.</li>
+      </ul>
+      <p>Notice how much of that list is content and discipline rather than theme features. The theme sets the ceiling; your photography, spacing and consistency decide how close you get to it.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>What is the best Shopify theme for a clothing brand?</strong>
+      For an established fashion brand, Prestige is the most common premium choice for its editorial layout and collection handling. For bold visual brands, Shapes is worth a look. For new stores, Dawn is the strongest free starting point.</p>
+      <p><strong>Why is Dawn rated poorly, and what do I actually gain from a paid theme?</strong>
+      This question comes up constantly in the Shopify Community, and the honest answer is that Dawn's weak ratings reflect limits, not quality: fewer built in merchandising features and less layout flexibility than premium themes. A paid theme buys those features built in, plus a developer maintaining updates. It does not buy speed or sales by itself.</p>
+      <p><strong>Do I need a premium theme for fashion?</strong>
+      No. Premium themes bundle features like advanced filtering, lookbooks and swatches that free themes handle through apps or custom code. Premium makes sense once presentation and built in features matter more than the one time fee.</p>
+      <p><strong>Are premium themes faster than free themes?</strong>
+      Usually the opposite out of the box. Dawn is one of the fastest themes available precisely because it carries less. Premium themes add features, features add weight, and a feature rich theme generally needs more speed care, not less, especially once apps are installed.</p>
+      <p><strong>Can a free theme work for a clothing store?</strong>
+      Yes. Dawn is fast and flexible, and many clothing stores trade well on it. Expect to add apps or customization for filtering and swatches, and invest in customization so the store does not look like every other starter shop.</p>
+      <p><strong>Will changing my theme delete my products or content?</strong>
+      No. Products, collections, pages and blog posts live in Shopify itself, not in the theme. A new theme changes how everything is displayed. Your old theme's settings and section layouts do not carry across, which is why you build and test the new theme as an unpublished copy first.</p>
+      <h2 id="getting-the-look-without-the-template-feel">Getting the look without the template feel</h2>
+      <p>If you have picked a theme and want it to stop looking like a demo, or you are choosing between themes and want an honest second opinion before you spend, that is the work we do. Our store design service covers full builds from $299, and our theme customization work takes a base like Dawn, Prestige or Shapes and tailors the collection pages, product pages and lookbook sections to your brand: Shopify store design services. Tell us your catalogue size and the look you are aiming for, and we will tell you plainly which route gets you there for the least money.</p>
+      `
+    },
+    {
+      id: "landing-page-builder-for-shopify",
+      title: "Landing Page Builders for Shopify: Apps, Native Pages, or a Custom Build?",
+      date: "December 9, 2026",
+      author: "Nawaz Ahmad",
+      category: "CONVERSION",
+      readTime: "10 min read",
+      image: "/blog/landing-page-builder-for-shopify-cover.webp",
+      toc: [
+        { id: "what-is-the-best-landing-page-builder-for-shopify", title: "What is the best landing page builder for Shopify?" },
+        { id: "should-i-build-landing-pages-in-shopify-or-with-an-app", title: "Should I build landing pages in Shopify or with an app?" },
+        { id: "do-page-builders-slow-down-my-store", title: "Do page builders slow down my store?" },
+        { id: "how-much-does-a-landing-page-builder-actually-cost-per-month", title: "How much does a landing page builder actually cost per month?" },
+        { id: "when-is-a-custom-landing-page-worth-paying-for", title: "When is a custom landing page worth paying for?" },
+        { id: "can-i-create-a-landing-page-without-an-app", title: "Can I create a landing page without an app?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "landing-pages-that-load-fast-and-belong-to-you", title: "Landing pages that load fast and belong to you" }
+      ],
+      content: `
+      <p>There are three real ways to build landing pages on Shopify: a page builder app, Shopify's own native pages and templates, or a custom built page developed into your theme. Builder apps are fastest to start and slowest on your store. Native pages cost nothing and load fast but limit your layouts. A custom build costs money once and gives you full control with no monthly fee and no extra scripts. The right choice depends on how many campaign pages you run and how much your ad traffic is worth.</p>
+      <p>Every store that runs ads, email campaigns or influencer promotions hits this question, usually right after sending paid traffic to a homepage or a standard product page and watching it convert poorly. Campaign landing pages exist to fix that: one page, one offer, one audience, no distractions. What follows is an honest comparison of the three routes on the things that actually matter: page speed, total cost, design control, and how much ongoing friction each one adds to your store.</p>
+      <h2 id="what-is-the-best-landing-page-builder-for-shopify">What is the best landing page builder for Shopify?</h2>
+      <p>It depends on which of the three routes suits your volume, so here is the comparison most stores actually need:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>Speed impact</th>
+            <th>Cost shape</th>
+            <th>Design control</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Page builder app</td><td>Heaviest: extra scripts load on its pages, sometimes storewide</td><td>Monthly subscription, forever</td><td>High inside the builder, limited outside it</td><td>Testing offers quickly with no developer</td></tr>
+          <tr><td>Native Shopify pages</td><td>None: uses your theme as it is</td><td>Free</td><td>Limited to your theme's sections</td><td>A few simple campaign and lead capture pages</td></tr>
+          <tr><td>Custom built page</td><td>None beyond what you design</td><td>One time development cost</td><td>Complete: any layout, any logic</td><td>Stores running ongoing paid campaigns</td></tr>
+        </tbody>
+      </table>
+      <p>The best shopify landing page builder question usually assumes an app is the answer. For a store testing its first offer this week, it often is: the established builder apps let a non technical owner assemble a respectable page in an afternoon, with templates for common offer pages and lead capture forms built in. The mistake is treating that first answer as the permanent one. Builder apps charge monthly for as long as the pages exist, and their pages typically load a layer of the app's own code. On a store sending real ad spend to those pages, both costs compound.</p>
+      <p>Native pages are the underrated middle. A Shopify page built from a custom template with your theme's sections can carry a focused offer, a form and a clear call to action, loads at theme speed, and costs nothing extra. If your campaign needs are modest, start here before subscribing to anything.</p>
+      <h2 id="should-i-build-landing-pages-in-shopify-or-with-an-app">Should I build landing pages in Shopify or with an app?</h2>
+      <p>Build in Shopify when the page is simple, long lived, or speed sensitive. Use an app when you need to test many layout variations quickly and nobody on your team can touch the theme.</p>
+      <p>A useful way to decide is to look at what the page must do:</p>
+      <ul>
+        <li><strong>Simple offer or lead capture page.</strong> One message, one form or buy button, some proof. Native template. No app needed.</li>
+        <li><strong>Rapid layout testing.</strong> You want five versions this month and data on each. A builder app earns its fee here, at least during the test period.</li>
+        <li><strong>A page your ads depend on.</strong> If paid traffic lands here every day, the page is infrastructure. Infrastructure should be fast, owned and free of monthly rent. That points to a custom build.</li>
+        <li><strong>Complex behavior.</strong> Quizzes, bundles, calculators, conditional offers. Beyond what sections and most builders handle cleanly; this is development work.</li>
+      </ul>
+      <p>Also consider what happens if you cancel. Pages built inside an app generally stop working or lose their design when the subscription ends, because the design lives in the app. Pages built natively or custom live in your theme and stay yours. Stores are often surprised to learn their two year old campaign pages are effectively rented.</p>
+      <h2 id="do-page-builders-slow-down-my-store">Do page builders slow down my store?</h2>
+      <p>Usually, yes, to some degree, and it is worth understanding why rather than taking anyone's word for it. Builder apps work by injecting their own code: script files that load their editor's output, their styling system, and often tracking of their own. Three costs follow:</p>
+      <ol>
+        <li><strong>Weight on the page itself.</strong> The landing page carries the builder's framework in addition to your theme, so it loads more code than an equivalent native page. On mobile connections, that shows up directly in load time.</li>
+        <li><strong>Spillover.</strong> Some apps load assets storewide or leave code behind in your theme after uninstall. The page you built for one campaign can quietly tax every page.</li>
+        <li><strong>Offer page irony.</strong> Landing pages are where speed matters most, because the visitor arrived from an ad, has no loyalty yet, and leaves fast when a page stalls. Paying to send traffic to your slowest page is the exact wrong way round.</li>
+      </ol>
+      <p>None of this makes builders unusable. It makes them a testing tool with a known tax. The discipline is to rebuild proven winners natively or custom once a page has earned permanent traffic, and to audit what an uninstalled builder left behind. Stores that skip the rebuild step end up with a fast theme wrapped in years of campaign residue.</p>
+      <h2 id="how-much-does-a-landing-page-builder-actually-cost-per-month">How much does a landing page builder actually cost per month?</h2>
+      <p>More than the headline price, once you use it seriously. Based on the established builders' App Store listings, free plans exist but publish only a single page or section. Paid plans start at roughly $24 a month for PageFly, $29 for GemPages and $39 for Shogun, and the features stores actually campaign with, above all A/B testing, sit on higher tiers. A store testing offers properly often ends up paying several times the entry price.</p>
+      <p>Run the yearly maths before deciding the app is the cheap option. Even an entry plan is a few hundred dollars a year, every year, for as long as those pages live. A page that runs for three years can quietly cost more than having it built once. Prices and plan limits change often, so check the current listing for any builder you are considering rather than trusting a comparison article, including this one.</p>
+      <h2 id="when-is-a-custom-landing-page-worth-paying-for">When is a custom landing page worth paying for?</h2>
+      <p>A custom landing page, built as sections and templates inside your own theme, is worth paying for when any of these are true:</p>
+      <ul>
+        <li>The page receives paid traffic every week, so small conversion and speed gains repay the build cost.</li>
+        <li>You run the same campaign pattern repeatedly (seasonal drops, recurring promotions, wholesale or lead capture forms) and want a reusable template your team can duplicate and edit safely.</li>
+        <li>The offer needs behavior a builder cannot do cleanly, such as bundle logic, conditional pricing displays, or integration with your email platform beyond a basic form.</li>
+        <li>You are tired of monthly app fees for pages that have not changed in a year.</li>
+      </ul>
+      <p>The economics are straightforward. A builder subscription is small every month and endless. A custom build is a one time cost, after which the page is yours, loads at theme speed, and can be edited through the normal theme editor if it is built from sections properly. This is the same reasoning behind the best shopify themes for conversion setups: the highest converting stores tend to run lean, with campaign pages built into the theme rather than bolted on. Any best shopify cro agency landing page optimization engagement will look at builder weight early, because it is one of the cheapest conversion wins available.</p>
+      <h2 id="can-i-create-a-landing-page-without-an-app">Can I create a landing page without an app?</h2>
+      <p>Yes, and for many stores it is easier than expected. Shopify lets you create a page, assign it a custom template, and build that template from the same sections you use on your homepage: image banners, featured product, testimonials, FAQ, email signup and buttons. The workflow for how to create landing page on shopify without an app looks like this:</p>
+      <ol>
+        <li>In the theme editor, create a new page template and assemble the sections your offer needs.</li>
+        <li>Create the page in Shopify admin and assign that template to it.</li>
+        <li>Keep the page focused: one headline matched to the ad or email that sends traffic, one offer, proof near the top, one clear call to action repeated at natural breaks.</li>
+        <li>Optionally hide the page from your main navigation and search, so it serves campaigns rather than browsing.</li>
+      </ol>
+      <p>The limits are real: you work within your theme's sections, so unusual layouts need code, and A/B testing pages means duplicating templates manually rather than clicking a builder's test button. For a store with a handful of campaign pages, those limits are mild. For a store testing offers weekly, they are the reason builders exist.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>What is the best landing page builder for Shopify?</strong>
+      For quick testing with no developer, an established builder app. For simple long lived pages, Shopify's native templates cost nothing and load fastest. For pages your ads depend on, a custom build inside your theme wins on speed, control and total cost.</p>
+      <p><strong>Should I use a builder app or a theme page for a campaign?</strong>
+      This is the exact question merchants ask in the Shopify Community, and the practical answer is: test in a builder if you need variations fast, but rebuild the winner in your theme if the campaign keeps running. Theme pages avoid app conflicts with bundles and email tools, monthly fees, and a second system to maintain.</p>
+      <p><strong>How much does a page builder app cost per month?</strong>
+      Free plans publish one page. Paid plans for the established builders start at roughly $24 to $39 a month, and A/B testing usually sits on higher tiers, so a store testing seriously often pays several times the entry price. The fee runs for as long as the pages exist.</p>
+      <p><strong>What happens to my pages if I cancel or uninstall the builder?</strong>
+      It depends on the builder, and you should check before you install, not after. Some builders remove everything published through them when you uninstall; others leave live pages standing but hard to edit without their styling system. Pages built in your theme are unaffected either way.</p>
+      <p><strong>Do page builders slow down my store?</strong>
+      Generally yes. Builders add their own scripts and styling on top of your theme, which weighs most heavily on the landing pages themselves, exactly where ad traffic lands. Some also leave code behind after uninstall.</p>
+      <p><strong>Can I create a landing page without an app?</strong>
+      Yes. Create a custom page template in the theme editor, assemble it from your theme's sections, then assign it to a page. It handles most offer and lead capture pages well.</p>
+      <h2 id="landing-pages-that-load-fast-and-belong-to-you">Landing pages that load fast and belong to you</h2>
+      <p>If your store sends ad traffic to pages built in a subscription app, or your campaign pages are just product pages with the navigation hidden, we can rebuild them properly: custom landing page sections and templates inside your theme, at theme speed, editable by your team, with no monthly fee attached. It sits inside our design and development services, and a full store design starts from $299 if the wider store needs the same treatment: <a href=\"/services/shopify-development-services\">Shopify design and development services</a>. Tell us which campaign matters most and we will tell you honestly whether it needs a custom build, a native template, or five minutes in a builder you already have.</p>
+      `
+    },
+    {
+      id: "how-to-add-made-to-order-on-shopify",
+      title: "How to Sell Made to Order Products on Shopify",
+      date: "December 10, 2026",
+      author: "Nawaz Ahmad",
+      category: "DEVELOPMENT",
+      readTime: "11 min read",
+      image: "/blog/how-to-add-made-to-order-on-shopify-cover.webp",
+      toc: [
+        { id: "how-do-i-sell-made-to-order-products-on-shopify", title: "How do I sell made to order products on Shopify?" },
+        { id: "how-do-i-show-production-time-on-a-product-page", title: "How do I show production time on a product page?" },
+        { id: "can-customers-add-personalization-details-before-checkout", title: "Can customers add personalization details before checkout?" },
+        { id: "should-made-to-order-items-run-as-preorders", title: "Should made to order items run as preorders?" },
+        { id: "how-do-i-stop-confusion-about-delivery-times", title: "How do I stop confusion about delivery times?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "made-to-order-flows-built-into-your-product-pages", title: "Made to order flows built into your product pages" }
+      ],
+      content: `
+      <p>You sell made to order products on Shopify by setting the product up so the waiting time and the personalization are part of the offer, not surprises after checkout. Concretely: state the production time on the product page itself, collect personalization details before checkout with proper input fields, decide whether the item runs as a normal purchase or a preorder, and make sure every email and policy page repeats the same timeline. The products are not the hard part. Managing expectations is.</p>
+      <p>Made to order suits makers, furniture builders, jewelers, print and embroidery shops, custom apparel brands and anyone whose products are produced after the order lands. Shopify handles the basics well, but the default setup assumes ready stock that ships tomorrow. This guide walks through how to add made to order on shopify properly: the product setup, the page design choices that prevent confusion, deposits, and the fulfillment habits that keep custom work profitable instead of chaotic.</p>
+      <h2 id="how-do-i-sell-made-to-order-products-on-shopify">How do I sell made to order products on Shopify?</h2>
+      <p>Start with the product setup, then fix the page around it. The working order looks like this:</p>
+      <ol>
+        <li><strong>Create the product as a made to order item from the start.</strong> Name the timeline in the product setup, not just the description. If the theme supports it, use a product template dedicated to made to order items so every custom product gets the same clear layout.</li>
+        <li><strong>Handle inventory honestly.</strong> Made to order items are usually set to continue selling when out of stock, because there is no stock in the normal sense. That setting is correct here, but it means your production capacity is the real inventory. If one person makes everything, your capacity limit belongs in your planning, and closing orders during peak weeks is a legitimate move.</li>
+        <li><strong>Use variants only for true options.</strong> Size, material and finish are variants. A customer's name, inscription text or measurements are not variants; they are personalization, and they belong in input fields (covered below). Stuffing personalization into variants creates hundreds of combinations and a store you cannot manage.</li>
+        <li><strong>Set the fulfillment timeline in your shipping settings.</strong> Create a shipping profile or rate description that reflects production plus delivery, so the checkout estimate is not promising courier speeds for a product that takes two weeks to make.</li>
+        <li><strong>Write the confirmation flow.</strong> Your order confirmation and any production update emails should restate the timeline the customer saw on the product page. The same number, everywhere, every time.</li>
+      </ol>
+      <p>None of this needs an app to begin. Apps and custom development enter when personalization gets complex or deposits get involved, which the next sections cover.</p>
+      <h2 id="how-do-i-show-production-time-on-a-product-page">How do I show production time on a product page?</h2>
+      <p>On the product page, where the decision happens, not only in a shipping policy page nobody opens. Shoppers judge delivery from the product page and the checkout, and a timeline they discover after paying feels like a trick even when it was published somewhere on the site.</p>
+      <p>Places that work:</p>
+      <ul>
+        <li><strong>A lead time line near the buy button.</strong> Short and specific: \"Made to order. Produced in 7 to 10 working days, then shipped.\" Vague phrases like \"ships soon\" create the disputes you are trying to avoid.</li>
+        <li><strong>A badge or label in the product template.</strong> A small made to order marker near the title sets the frame before the price is even processed.</li>
+        <li><strong>The delivery estimate, stated as production plus shipping.</strong> Customers think in total days until the item is in their hands. Give them that total, in a range, and keep it padded honestly.</li>
+        <li><strong>A short section on process.</strong> Two or three lines on how the item is made, and why it takes the time it takes, converts the wait from a cost into part of the product's value. This is one of the things the best shopify product pages in custom niches do well: they sell the making, not just the object.</li>
+      </ul>
+      <p>Your shopify product page template matters here. If the lead time is typed into each product description by hand, it will drift out of date and contradict itself across the catalogue. A dedicated template or a shared section block keeps one timeline, editable in one place.</p>
+      <h2 id="can-customers-add-personalization-details-before-checkout">Can customers add personalization details before checkout?</h2>
+      <p>Yes, and for made to order products this is usually essential. Names, inscriptions, measurements, color choices beyond variants, gift messages and reference images all need to travel with the order, attached to the line item, so they appear in your admin order view and your fulfillment process.</p>
+      <p>There are three routes, in increasing order of capability:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Route</th>
+            <th>How it works</th>
+            <th>Limits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Order notes and cart attributes</td><td>A notes field at cart or checkout collects free text</td><td>One general field for the whole order; easy for customers to skip; details are not tied to a specific product</td></tr>
+          <tr><td>Line item properties in the theme</td><td>Input fields added to the product form, so the detail attaches to that exact item</td><td>Needs theme code or a capable theme; the cleanest native route</td></tr>
+          <tr><td>Personalization app</td><td>Product option apps add text fields, dropdowns, image upload and conditional logic</td><td>Monthly cost; check it plays well with your theme and checkout</td></tr>
+        </tbody>
+      </table>
+      <p>Whichever route you choose, apply three rules. Make required fields actually required, so an order cannot be placed without the inscription text you need. Show a character limit where one exists, before the customer writes an essay you cannot engrave. And test the full flow yourself: place a test order with personalization and confirm the details appear exactly where you and your makers will look for them in the order. Personalization that lands in an email nobody checks is worse than none.</p>
+      <p>Where personalization involves file uploads, conditional options (choosing one option reveals another) or pricing that changes with the choices, the native routes run out and custom development or a solid options app takes over. That is the most common custom work we do for maker stores, because it sits directly between the customer and a correct order.</p>
+      <h2 id="should-made-to-order-items-run-as-preorders">Should made to order items run as preorders?</h2>
+      <p>Sometimes. The two models feel similar to shoppers but behave differently in your admin and your cash flow:</p>
+      <ul>
+        <li><strong>Made to order as a normal purchase</strong> suits a steady production rhythm. The customer pays in full, the item enters your production queue, and it ships when finished. Simple, and right for most makers.</li>
+        <li><strong>Preorder</strong> suits defined batches and launches: a design that will be produced in one run, a seasonal item, or a product you are validating before committing to production. Shopify supports preorder behavior through purchase options and apps, including partial payment.</li>
+      </ul>
+      <p>Deposits deserve their own mention. For higher value custom work, taking a deposit at order and the balance before shipping protects you when a personalized item, which cannot be resold, is abandoned mid process. Shopify's native options here are limited, so deposits usually mean an app or a draft order workflow: take the order manually, send a deposit invoice, and start production when it is paid. Whichever you choose, state the deposit terms on the product page in plain language, including what happens if the customer cancels after production has started. Personalized goods have different return realities in many jurisdictions, and your policy page should say so clearly rather than borrowing a generic returns text.</p>
+      <p>Write the cancellation terms next to the deposit terms, because customers read them as one promise: how long they have to change their mind, what is refundable once materials are bought, and what you will do if the item arrives wrong. Vague terms create chargebacks, and they are much harder to defend than clear ones.</p>
+      <h2 id="how-do-i-stop-confusion-about-delivery-times">How do I stop confusion about delivery times?</h2>
+      <p>Confusion about delivery times is the number one source of made to order disputes, and it is almost always a communication design problem rather than a customer problem. The fix is repetition in the right places, with identical wording:</p>
+      <ol>
+        <li><strong>Product page:</strong> lead time near the buy button, as above.</li>
+        <li><strong>Cart:</strong> a short line under made to order items restating production time, because the cart is where second thoughts happen.</li>
+        <li><strong>Checkout and confirmation email:</strong> the timeline again. The confirmation email is the message customers actually keep and reread.</li>
+        <li><strong>Production updates:</strong> one email when production starts and one when it ships transforms a silent wait into a watched process. Even a simple manual update beats silence.</li>
+        <li><strong>FAQ and policy pages:</strong> a made to order section that matches the product page wording exactly. Contradictions between pages are what support tickets quote back at you.</li>
+      </ol>
+      <p>Two habits help behind the scenes. Build your stated lead time from your real average plus a buffer, and review it after busy periods; a timeline that was honest in March may be fiction in December. And when you know an order will miss its estimate, message the customer before the deadline passes, not after. Customers forgive delays they hear about early. They do not forgive silence.</p>
+      <p>One more trust builder worth adding once orders start flowing: reviews. Buyers of custom work lean heavily on proof that strangers ordered, waited and were happy. Our guide on how to add reviews to shopify covers collecting and displaying them properly: How to add reviews to your Shopify product pages.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>How do I sell made to order products on Shopify?</strong>
+      Set the product up with production time stated on the product page, collect personalization through proper input fields rather than variants, align your shipping settings with production plus delivery, and repeat the same timeline in the cart, checkout and confirmation emails.</p>
+      <p><strong>What is the difference between made to order and a preorder?</strong>
+      A preorder is a queue for a product that will exist in a batch or a warehouse: a launch or a restock with a ship date. Made to order means the item is only produced because this customer ordered it. Preorders revolve around a release date; made to order revolves around a production timeline and personalization.</p>
+      <p><strong>Does Shopify have a built in preorder feature?</strong>
+      Not as a standalone switch. The only app free route is Continue selling when out of stock, which takes full payment and shows no preorder label, deposit or ship date at checkout. Proper preorders run through Shopify's purchase options, which need a preorder app to set up and manage.</p>
+      <p><strong>Can I take a deposit instead of full payment?</strong>
+      Yes, usually through a preorder or partial payment app, or manually with a draft order and a deposit invoice. Deposit checkout generally requires Shopify Payments or PayPal Express, and some express wallets cannot be used on deposit orders. Publish the balance terms on the product page either way.</p>
+      <p><strong>Can customers add personalization details before checkout?</strong>
+      Yes. Use line item properties in your theme or a personalization app so details like names, inscriptions and measurements attach to the exact item and appear in your order view. Make required fields genuinely required and test the flow with a test order.</p>
+      <p><strong>Can a customer cancel or return a made to order item?</strong>
+      That depends on the terms you published before purchase and on local consumer rules, which often treat personalized goods differently from standard products. Publish a clear cancellation window and what is refundable once production starts. If an item arrives wrong, fixing or remaking it is the fair and usual answer.</p>
+      <h2 id="made-to-order-flows-built-into-your-product-pages">Made to order flows built into your product pages</h2>
+      <p>If your store sells custom work and the personalization is held together with order notes and hope, or customers keep asking where their order is because the timeline was never clear, we can build the flow properly: dedicated made to order product templates with lead time blocks, personalization fields that attach to the order, deposit handling where you need it, and confirmation wording that matches the page. It is part of our custom development work for Shopify stores: <a href=\"/services/shopify-development-services\">Shopify custom development services</a>. Tell us what you make and how your production runs, and we will map the setup your products actually need.</p>
+      `
+    },
+    {
+      id: "how-to-get-sales-on-shopify",
+      title: "Traffic but No Orders: Why Your Shopify Store Is Not Getting Sales",
+      date: "December 11, 2026",
+      author: "Nawaz Ahmad",
+      category: "CONVERSION",
+      readTime: "10 min read",
+      image: "/blog/how-to-get-sales-on-shopify-cover.webp",
+      toc: [
+        { id: "why-is-my-shopify-store-not-getting-sales", title: "Why is my Shopify store not getting sales?" },
+        { id: "what-do-i-fix-first-when-a-store-gets-traffic-but-no-orders", title: "What do I fix first when a store gets traffic but no orders?" },
+        { id: "how-long-does-it-take-to-get-the-first-sale-on-shopify", title: "How long does it take to get the first sale on Shopify?" },
+        { id: "is-my-store-design-costing-me-sales", title: "Is my store design costing me sales?" },
+        { id: "how-do-i-get-reviews-when-nobody-has-bought-yet", title: "How do I get reviews when nobody has bought yet?" },
+        { id: "when-should-i-pay-for-an-audit-instead-of-guessing", title: "When should I pay for an audit instead of guessing?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "get-the-diagnosis-done-properly-free", title: "Get the diagnosis done properly, free" }
+      ],
+      content: `
+      <p>If your Shopify store gets traffic but no orders, the problem is almost never traffic volume. It is usually one of five things, in this order: the wrong visitors, an unclear offer, product pages that do not answer the buyer's questions, missing trust signals, or friction at checkout. Work through them in that order and you will find the leak. Add more traffic before you do, and you are pouring more water into the same leaking bucket.</p>
+      <p>This is the most frustrating situation in ecommerce, and the most searched in its own way: owners asking why is my shopify store not getting sales at midnight, reading advice that mostly tells them to run more ads. This guide takes the opposite approach. It is a diagnosis, cheapest and most likely causes first, written the way we work through a store when an owner asks us how to get sales on shopify. No generic marketing tips, no app shopping list. Just the order to check things in, and what a fix looks like at each step.</p>
+      <h2 id="why-is-my-shopify-store-not-getting-sales">Why is my Shopify store not getting sales?</h2>
+      <p>Because a sale needs four things to line up at once: a visitor who actually wants the product, an offer they understand in seconds, enough trust to hand over money, and a checkout that does not get in the way. Traffic only supplies the first ingredient, and often supplies it badly. When any one of the four fails, the result looks identical from your dashboard: sessions, no orders.</p>
+      <p>It helps to locate where visitors leave, because each exit point points at a different cause:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Where people leave</th>
+            <th>Likely cause</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Within seconds of landing</td><td>Wrong traffic, or the page does not match what they expected</td></tr>
+          <tr><td>On the product page, without adding to cart</td><td>Offer unclear, price unexplained, questions unanswered, no trust</td></tr>
+          <tr><td>After adding to cart, before checkout</td><td>Shipping costs or delivery times appearing as a surprise</td></tr>
+          <tr><td>Inside checkout</td><td>Friction: forced account creation, missing payment options, errors</td></tr>
+        </tbody>
+      </table>
+      <p>Your analytics will not hand you this table filled in, but rough numbers, product page views versus add to carts versus checkouts started, tell you which row you live in. Start there, not with a redesign.</p>
+      <h2 id="what-do-i-fix-first-when-a-store-gets-traffic-but-no-orders">What do I fix first when a store gets traffic but no orders?</h2>
+      <p>Fix in this order, because each step is cheaper than the next and the early ones invalidate the later ones. There is no point polishing checkout for visitors who never wanted the product.</p>
+      <p><strong>1. Check the traffic itself.</strong> Where is it coming from, and what did those visitors expect? A blog post ranking for a loosely related search, a viral social post, or a broad ad audience can send hundreds of visitors who were never buyers. Look at which pages receive the traffic. If most sessions land on a blog post or the homepage rather than product pages, you have a traffic quality problem, not a store problem, and the fix is in targeting and content intent, not design.</p>
+      <p><strong>2. Read your offer as a stranger.</strong> Open your best product page on your phone and give it five seconds. Can a stranger say what the product is, who it is for, what it costs including delivery, and why they should buy it from you rather than the marketplace tab they already have open? Offer clarity failures are quiet killers: prices without context, benefits buried under specifications, delivery costs hidden until checkout. State the offer plainly near the top of the page.</p>
+      <p><strong>3. Answer the product page questions.</strong> Buyers leave when their specific question is not answered: sizing, materials, compatibility, delivery time, returns. Every question you have ever been emailed about a product belongs on that product's page. Reviews matter here too, because they answer questions in a customer's voice; if your pages carry none, our guide on how to add reviews to shopify is a practical early fix: How to add reviews to your Shopify product pages. This clarity work is unglamorous and routinely outperforms a visual redesign.</p>
+      <p><strong>4. Add the missing trust signals.</strong> A store asking strangers for money needs to look like a business: a real About page, contact details a human can find, policies written in plain language, secure checkout badges used honestly, and social proof where you have it. Trust signals do not need to be loud. They need to be present at the moment of doubt, which is the product page and the cart.</p>
+      <p><strong>5. Remove checkout friction.</strong> Walk your own checkout on a phone and count the obstacles: surprise shipping costs, a forced account, a missing wallet payment option your audience expects, a discount code box inviting people to search for codes. Each one is a leak with a known fix.</p>
+      <p>Notice what is not on this list: a new theme, a rebrand, or more apps. The best shopify apps for conversions cannot convert visitors your offer never persuaded, and installing five of them before this diagnosis usually adds popups, weight and monthly fees to a store whose real problem is upstream.</p>
+      <h2 id="how-long-does-it-take-to-get-the-first-sale-on-shopify">How long does it take to get the first sale on Shopify?</h2>
+      <p>There is no honest fixed number, because it depends on whether the traffic is targeted and whether the offer works. Stores with a clear niche, warm traffic from an existing audience, and a product page that answers questions can sell in their first days. Stores relying on cold traffic to an untested offer can go months, and the difference is rarely luck.</p>
+      <p>What we can say plainly: if hundreds of targeted visitors have viewed a product and none have bought, time is not the missing ingredient. Something on the list above is broken, and waiting will not fix it. If traffic is tiny, a handful of visitors a day, the sample is too small to judge the store at all, and the honest priority is a well targeted traffic test rather than store changes. The mistake is mixing the two situations up: redesigning a store that has no data, or buying traffic for a store that leaks.</p>
+      <h2 id="is-my-store-design-costing-me-sales">Is my store design costing me sales?</h2>
+      <p>Possibly, but probably not in the way most owners mean. Design costs sales when it creates friction or doubt: slow loading pages, especially on mobile; text that is hard to read; buy buttons that are hard to find or that move as the page loads; cluttered product pages where the price, the options and the delivery information fight for attention. Those are design problems with measurable effects, and they are fixable one by one.</p>
+      <p>Design rarely costs sales through taste. A plain store with a clear offer outsells a beautiful store with a confusing one every week of the year. The mobile buying experience deserves special attention because most of your visitors are on phones, and many owners only ever review their store on a desktop. Check the whole journey on your own phone: load speed, image zoom, variant selection with a thumb, sticky add to cart, and how much scrolling stands between landing and buying.</p>
+      <p>If you suspect speed, treat it as its own workstream rather than guessing. Slow pages suppress everything downstream of them, and they are one of the few conversion problems you can measure before and after a fix.</p>
+      <h2 id="how-do-i-get-reviews-when-nobody-has-bought-yet">How do I get reviews when nobody has bought yet?</h2>
+      <p>Honestly, you cannot, and that circular problem frustrates almost every new store owner. Reviews come from orders, so a store with no orders has none, and shoppers notice the gap. This worry shows up in the Shopify Community again and again, usually in the same post as the traffic but no sales problem.</p>
+      <p>What you can do is set up honestly for the first ones. Ask every early customer directly, in a personal email a few days after delivery. Put a review request into your post purchase flow so it keeps working once orders start. In the meantime, show other proof: photos of real orders being packed, your own face and story on the About page, a market stall or local press if you have them.</p>
+      <p>What never to do is buy reviews or write your own. Shoppers can smell them, platforms remove them, and a store caught faking proof loses the trust it was meant to build. A handful of real reviews beats a page of suspicious five stars.</p>
+      <h2 id="when-should-i-pay-for-an-audit-instead-of-guessing">When should I pay for an audit instead of guessing?</h2>
+      <p>When you have worked through the list above and the leak is still not obvious, or when your time is worth more than the audit costs. Guessing has a price too: it is paid in app subscriptions, redesigns that change nothing, and ad spend sent to a store that was never fixed. This is the honest case for shopify store optimization services for conversion rate improvement and for audits generally: a structured review checks traffic quality, offer, product pages, trust and checkout in order, with fresh eyes.</p>
+      <p>An audit is also the right spend when the store does sell but underperforms, and you cannot tell whether the ceiling is your traffic, your pages or your checkout. What an audit should give you is a prioritized fix list, cheapest and highest impact first, that you can hand to any developer or work through yourself. If a service will not describe its findings in those terms before you pay, keep looking.</p>
+      <h2 id="faqs">Frequently asked questions</h2>
+      <p><strong>Why is my Shopify store not getting sales?</strong>
+      Usually one of five causes: the traffic is not made of buyers, the offer is unclear, product pages leave questions unanswered, trust signals are missing, or checkout has friction. Locate where visitors leave and the cause narrows quickly.</p>
+      <p><strong>I have lots of traffic but no sales. What am I doing wrong?</strong>
+      Owners post this exact question in the Shopify Community constantly, and the feedback lands on the same mix: traffic quality, trust, offer clarity and user experience. Work the diagnosis in order instead of changing everything at once, because changing everything teaches you nothing about which fix worked.</p>
+      <p><strong>How do I get reviews if nobody is buying yet?</strong>
+      Slowly, and only honestly. Ask early customers personally a few days after delivery, add a review request to your post purchase emails, and use other proof meanwhile: real order photos, an About page, any offline selling you have done. Never buy or invent reviews.</p>
+      <p><strong>Is my ad traffic just bots, or is my store broken?</strong>
+      Check session quality before blaming either. If most ad visitors leave within a second or two without scrolling or clicking, suspect the traffic or the ad to page match. If visitors browse and view products but add nothing to cart, the store is the problem. Shopify's conversion breakdown report separates the two.</p>
+      <p><strong>How long does it take to get the first sale on Shopify?</strong>
+      It varies with traffic quality and the offer. With targeted traffic and a clear product page, sales can come within days. With hundreds of targeted product views and no sales, the store has a fixable problem and more time will not solve it.</p>
+      <p><strong>When should I pay for an audit instead of guessing?</strong>
+      When you have checked the obvious causes and still cannot find the leak, or when the cost of guessing, in apps, redesigns and wasted ad spend, exceeds the audit fee. A good audit returns a prioritized fix list.</p>
+      <h2 id="get-the-diagnosis-done-properly-free">Get the diagnosis done properly, free</h2>
+      <p>Everything in this guide is the order we follow when we audit a store, and our free Shopify store audit is exactly this diagnosis done for you: traffic quality, offer clarity, product pages, trust signals and checkout, checked in order, with the findings written as a prioritized fix list in plain language. No obligation to hire us afterwards, and no fixes sold that your store does not need. If your store gets traffic but no orders, start there instead of guessing: <a href=\"/services/shopify-store-audit\">Free Shopify store audit</a>. Tell us where your traffic comes from and which products get the views, and we will tell you honestly where the leak is.</p>
+      `
+    },
+
+    {
+      id: "shopify-speed-optimization-service",
+      title: "Shopify Speed Optimization Services: What You Are Actually Paying For",
+      date: "December 12, 2026",
+      author: "Nawaz Ahmad",
+      category: "SPEED",
+      readTime: "10 min read",
+      image: "/blog/shopify-speed-optimization-service-cover.webp",
+      toc: [
+        { id: "what-does-a-shopify-speed-optimization-service-actually-do", title: "What does a Shopify speed optimization service actually do?" },
+        { id: "what-does-the-process-look-like-step-by-step", title: "What does the process look like, step by step?" },
+        { id: "can-an-app-fix-my-store-speed", title: "Can an app fix my store speed?" },
+        { id: "are-speed-optimization-services-a-scam", title: "Are speed optimization services a scam?" },
+        { id: "how-fast-should-a-shopify-store-load", title: "How fast should a Shopify store load?" },
+        { id: "how-much-does-speed-optimization-cost", title: "How much does speed optimization cost?" },
+        { id: "will-speed-work-break-my-theme-or-apps", title: "Will speed work break my theme or apps?" },
+        { id: "faqs", title: "Frequently asked questions" },
+        { id: "ready-to-find-out-what-is-slowing-your-store-down", title: "Ready to find out what is slowing your store down?" }
+      ],
+      content: `
+      <h2 id=\"what-does-a-shopify-speed-optimization-service-actually-do\">What does a Shopify speed optimization service actually do?</h2>
+      <p>A proper Shopify speed optimization service finds what is slowing your store down, removes or defers the code and content causing it, and proves the result with a before and after report. You are not paying for a higher score in a testing tool. You are paying for diagnosis, careful cleanup of your theme and apps, and testing that nothing broke along the way.</p>
+      <p>Here is what the work normally includes when it is done properly:</p>
+      <ul>
+        <li>A page speed audit of your homepage, a collection page, a product page and your checkout entry points, on mobile first, because most of your buyers are on phones.</li>
+        <li>An app review. Every app you install adds code to your store, and uninstalled apps often leave code behind. Removing unused app code is one of the biggest wins in most stores.</li>
+        <li>Image work: compressing oversized images, serving the right sizes, and setting lazy loading so images below the fold load only when a shopper scrolls to them.</li>
+        <li>Theme code cleanup: removing leftover code from old apps and old edits, deferring scripts that do not need to run immediately, and reducing the requests your theme makes on every page.</li>
+        <li>A before and after report with the same pages tested the same way, so you can see what actually changed.</li>
+      </ul>
+      <p>This is also where a good shopify speed optimization agency separates itself from a quick fix seller. The careful part is not making the store faster. It is making it faster without breaking your product options, your tracking, your popups or your checkout. That takes testing, and testing takes time, which is what the fee really covers.</p>
+      <h2 id=\"what-does-the-process-look-like-step-by-step\">What does the process look like, step by step?</h2>
+      <p>If a provider cannot describe their process before you pay, that tells you most of what you need to know. Proper speed work follows a predictable order:</p>
+      <ol>
+        <li><strong>Audit first.</strong> Your theme, app list and key pages are checked and the real problems are named in writing, with your store's actual numbers, not a generic checklist.</li>
+        <li><strong>A change list you approve.</strong> You see what will be removed, deferred or resized before anyone touches anything, so there are no surprises.</li>
+        <li><strong>Work on a duplicate theme.</strong> Your live store keeps selling while the cleanup happens on a copy.</li>
+        <li><strong>Testing on the pages that matter.</strong> Homepage, collection, product, cart and checkout entry are clicked through, not just loaded, on mobile and desktop.</li>
+        <li><strong>A before and after report.</strong> The same pages, tested the same way, side by side.</li>
+        <li><strong>A short support window.</strong> If the cleanup disturbed anything in the days after launch, the provider fixes it as part of the job.</li>
+      </ol>
+      <p>Any quote that skips straight to step three, or promises the result before the audit, is selling you a script rather than a service.</p>
+      <h2 id=\"can-an-app-fix-my-store-speed\">Can an app fix my store speed?</h2>
+      <p>An app can help with one or two narrow jobs, like image compression, but no app can fix the main causes of a slow Shopify store. Apps cannot remove the leftover code other apps left behind, and they cannot clean up years of theme edits. In fact, installing a speed app adds more code to your store, which is the opposite of what a slow store needs.</p>
+      <p>Most one click speed apps work by delaying scripts until a visitor interacts with the page. Your score in testing tools goes up because the test never interacts. Your real visitors still load everything, just later, and sometimes the delay breaks things like menus, quick view or add to cart buttons. If you search for a shopify speed optimization expert and their whole offer is installing an app, you are paying for five minutes of work and a misleading score.</p>
+      <p>Apps have a place. A good image compressor running in the background is genuinely useful. But treat apps as tools inside a bigger cleanup, not as the cleanup itself.</p>
+      <h2 id=\"are-speed-optimization-services-a-scam\">Are speed optimization services a scam?</h2>
+      <p>Some are, and store owners ask this question constantly in the Shopify Community and on Reddit, usually after paying for a suspiciously cheap gig. The scam version works like this: a script is added to your theme that detects when a speed testing tool is visiting. While the test runs, the script hides or blocks your apps, images and heavy code, so the tool sees a stripped down page and reports a score above 90. A real customer, arriving a minute later, gets the same slow store you started with. Some of these scripts go further and quietly add hidden links or tracking you never asked for.</p>
+      <p>The warning signs owners report again and again:</p>
+      <ul>
+        <li>A guaranteed score, like 90 plus on PageSpeed, promised within 24 hours for a very low price.</li>
+        <li>Proof that consists only of test screenshots, never of real visitor load times.</li>
+        <li>A seller who will not say exactly what they changed in your theme.</li>
+        <li>A big score jump with no visible difference when you open your own store on your phone.</li>
+      </ul>
+      <p>Real optimization looks boring by comparison: images compressed and served at the right size, unused apps and their leftover code removed, scripts tidied and deferred honestly, and a report that shows your store loading faster for actual visitors. The simplest self check is the one community members recommend to each other: ignore the score for a moment, open your best selling product page on your phone using mobile data, and feel whether it loads faster than it did before you paid.</p>
+      <h2 id=\"how-fast-should-a-shopify-store-load\">How fast should a Shopify store load?</h2>
+      <p>A healthy Shopify store shows its main content on mobile in about two to three seconds on a real phone connection, and the page should feel stable while it loads, with nothing jumping around as images and banners appear. Exact numbers vary by page, so judge your store the way your customers experience it: open your best selling product page on your phone, on mobile data rather than wifi, and time how long before you can read the price and tap buy.</p>
+      <p>Two honest warnings about scores. First, Shopify's own speed score and third party scores move up and down with things you do not control, including how busy Shopify's servers are and which apps must legally run on your store. A store with reviews, chat and analytics will never score like an empty demo store, and it should not try to. Second, chasing the last few points usually means removing features that make you money. Sensible speed optimization shopify work aims for a store that feels fast and converts, not a perfect number.</p>
+      <p>This is also why many providers now bundle shopify optimization services speed and conversion together. A page that loads quickly but confuses buyers still loses sales. Speed gets the shopper to the product; clarity gets them to checkout.</p>
+      <h2 id=\"how-much-does-speed-optimization-cost\">How much does speed optimization cost?</h2>
+      <p>The honest answer is that it depends on the state of your store, and anyone quoting a fixed price without looking at your theme and app list first is guessing. A store on a current theme with a tidy app stack needs a light cleanup. A store with five years of edits, dozens of apps and leftover code from apps deleted long ago needs real development time. In community discussions, owners usually describe one time agency work costing several hundred dollars, while speed apps charge a smaller monthly fee forever and still cannot do the cleanup itself.</p>
+      <p>What you should expect, whatever the price:</p>
+      <ul>
+        <li>A written audit before work starts, naming the specific problems found in your store, not a generic list copied from a blog post.</li>
+        <li>A clear list of what will be changed, so you can approve anything risky in advance.</li>
+        <li>Work done on a duplicate of your theme first, with your live store untouched until you have checked the copy.</li>
+        <li>A before and after report on the same pages, plus a short window after the work where they fix anything the cleanup disturbed.</li>
+      </ul>
+      <p>If a quote is far cheaper than others, ask what is missing. Usually it is the testing and the report, which are the parts that protect you. Our own approach is to start with the free store audit, show you the actual findings, and then quote the fix. That way the price is tied to your store, not to a sales script. You can also use the audit findings to brief any shopify speed optimization services provider you compare us with.</p>
+      <h2 id=\"will-speed-work-break-my-theme-or-apps\">Will speed work break my theme or apps?</h2>
+      <p>It can, if it is done carelessly, which is why the process matters more than the tools. Aggressive script delaying can break sliders, filters, subscription widgets and tracking pixels. Deleting code without checking what uses it can quietly remove a feature you only notice weeks later.</p>
+      <p>Safe speed work follows a simple discipline. Everything happens on a duplicate theme. Each change is tested on the pages that matter: homepage, collection, product, cart and checkout entry. Interactive features get clicked, not just looked at. The optimized theme only goes live once it has been checked, and the original theme stays saved in your theme library as a rollback. If a provider will not describe their testing process, that is your answer about their process.</p>
+      <p>It is also worth knowing that speed is not a one time event. Every app you add and every theme edit slowly adds weight again. Stores that stay fast treat speed as part of regular care, with a quick check after big changes. That is why we include speed checks in ongoing maintenance, so small slowdowns get caught before they turn into another full cleanup project.</p>
+      <h2 id=\"faqs\">Frequently asked questions</h2>
+      <p><strong>Are Shopify speed optimization services a scam?</strong>
+      Some cheap gigs are. The scam version hides your apps and images from speed testing tools so the score jumps while real visitors see no change. A legitimate service names the problems in your store, works on a duplicate theme, and proves the result with load times your customers actually experience.</p>
+      <p><strong>Should I hire a speed service or just install a speed app?</strong>
+      An app can compress images, but it cannot remove leftover app code or clean up theme edits, and installing it adds more code to your store. If your slowness comes from app bloat and old edits, which is the common case, you need the cleanup a service does, not another app.</p>
+      <p><strong>Why is my PageSpeed score higher but my store still feels slow?</strong>
+      Because the test and your customers do not load the same page. Some tools and apps delay scripts until a visitor interacts, which flatters the test while real shoppers still wait, or things break when they tap. Judge the result on your own phone, on mobile data, timing a real product page.</p>
+      <p><strong>How much does Shopify speed optimization cost?</strong>
+      It depends on your theme and app stack. Expect a proper one time cleanup to cost more than a monthly app subscription and less than a rebuild, and expect any trustworthy provider to audit first and quote against real findings rather than selling a fixed package blind.</p>
+      <p><strong>How fast should a Shopify store load?</strong>
+      Aim for main content visible in roughly two to three seconds on a real phone. Judge it on your own phone over mobile data, not on a desktop score.</p>
+      <p><strong>Will speed work break my theme or apps?</strong>
+      Not when it is done on a duplicate theme with proper testing of menus, product options, cart and checkout before anything goes live, and with the original theme kept as a rollback.</p>
+      <h2 id=\"ready-to-find-out-what-is-slowing-your-store-down\">Ready to find out what is slowing your store down?</h2>
+      <p>Start with our <a href=\"/services/shopify-store-audit\">free Shopify store audit</a> and we will show you the specific speed problems in your store, in plain language, before you spend anything. If the fixes need development work, we handle speed optimization inside our development and <a href=\"/services/shopify-maintenance-services\">maintenance services</a>, tested on a theme copy first, with a before and after report you can check yourself.</p>
+      `
+    }
 ];

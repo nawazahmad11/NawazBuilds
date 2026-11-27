@@ -319,4 +319,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/migrate-blog-posts-from-wordpress-to-shopify</loc>
+    <lastmod>2026-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/best-shopify-themes-for-clothing</loc>
+    <lastmod>2026-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/landing-page-builder-for-shopify</loc>
+    <lastmod>2026-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/how-to-add-made-to-order-on-shopify</loc>
+    <lastmod>2026-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/how-to-get-sales-on-shopify</loc>
+    <lastmod>2026-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.nawazbuilds.com/blog/shopify-speed-optimization-service</loc>
+    <lastmod>2026-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
