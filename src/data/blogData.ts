@@ -3385,7 +3385,7 @@ export const blogPosts = [
     {
       id: "migrate-blog-posts-from-wordpress-to-shopify",
       title: "Moving Your WordPress Blog to Shopify Without Losing Posts or Rankings",
-      date: "December 7, 2026",
+      date: "November 28, 2026",
       author: "Nawaz Ahmad",
       category: "MIGRATION",
       readTime: "10 min read",
@@ -3493,7 +3493,7 @@ export const blogPosts = [
     {
       id: "best-shopify-themes-for-clothing",
       title: "Best Shopify Themes for Clothing Stores (and What to Check Before You Buy)",
-      date: "December 8, 2026",
+      date: "November 29, 2026",
       author: "Nawaz Ahmad",
       category: "DESIGN",
       readTime: "10 min read",
@@ -3592,7 +3592,7 @@ export const blogPosts = [
     {
       id: "landing-page-builder-for-shopify",
       title: "Landing Page Builders for Shopify: Apps, Native Pages, or a Custom Build?",
-      date: "December 9, 2026",
+      date: "November 30, 2026",
       author: "Nawaz Ahmad",
       category: "CONVERSION",
       readTime: "10 min read",
@@ -3689,7 +3689,7 @@ export const blogPosts = [
     {
       id: "how-to-add-made-to-order-on-shopify",
       title: "How to Sell Made to Order Products on Shopify",
-      date: "December 10, 2026",
+      date: "December 1, 2026",
       author: "Nawaz Ahmad",
       category: "DEVELOPMENT",
       readTime: "11 min read",
@@ -3784,7 +3784,7 @@ export const blogPosts = [
     {
       id: "how-to-get-sales-on-shopify",
       title: "Traffic but No Orders: Why Your Shopify Store Is Not Getting Sales",
-      date: "December 11, 2026",
+      date: "December 2, 2026",
       author: "Nawaz Ahmad",
       category: "CONVERSION",
       readTime: "10 min read",
@@ -3863,7 +3863,7 @@ export const blogPosts = [
     {
       id: "shopify-speed-optimization-service",
       title: "Shopify Speed Optimization Services: What You Are Actually Paying For",
-      date: "December 12, 2026",
+      date: "December 3, 2026",
       author: "Nawaz Ahmad",
       category: "SPEED",
       readTime: "10 min read",
